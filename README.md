@@ -1,6 +1,7 @@
 # CSC4006 - Edge Benchmarking Online Games
 
 ## Members
+
 * Jonathan McChesney
 
 ## Games Researched
@@ -15,7 +16,7 @@
 * bzflag
 * freeciv-web
 * galaxy
-* ### iPokeMon ###
+* iPokeMon
 * Koru
 * Last-Colony
 * minetest
