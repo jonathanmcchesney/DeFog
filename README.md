@@ -31,6 +31,8 @@
 
 ## Cloud & Edge Based server deployments
 
+I decided to take iPokeMon and Xonotic through to the next stage, cloud and edge server deployments:
+
 iPokeMon AWS cloud server EC2 instance:
 ```
 54.229.126.87
@@ -40,6 +42,10 @@ Xonotic AWS cloud EC2 sever instance:
 ```
 34.243.205.166
 ```
+
+## Apache JMeter
+
+I am using Apache JMeter to test requests to the iPokeMon cloud server, as I do not have a MAC OS device to compile the client.
 
 ## Acknowledgments - Papers researched:
 
