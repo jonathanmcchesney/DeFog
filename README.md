@@ -47,6 +47,15 @@ Xonotic AWS cloud EC2 sever instance:
 
 I am using Apache JMeter to test requests to the iPokeMon cloud server, as I do not have a MAC OS device to compile the client.
 
+## Repositories used
+```
+https://github.com/qub-blesson/ENORM.git
+```
+
+```
+https://gitlab.com/xonotic/xonotic.git
+```
+
 ## Acknowledgments - Papers researched:
 
 * [1]	Benchmarking leading-edge mobile devices for data-intensive distributed mobile cloud appliances
