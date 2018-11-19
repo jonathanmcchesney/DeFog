@@ -62,14 +62,14 @@ https://gitlab.com/xonotic/xonotic.git
 
 ## Acknowledgments - Papers researched:
 
-* [1]	Benchmarking leading-edge mobile devices for data-intensive distributed mobile cloud appliances
-* [2]	Exploiting Google's Edge Network for Massively Multiplayer Online Games
+* [1]	N. Naqvi, T. Vansteenkiste-Muylle and Y. Berbers, "Benchmarking leading-edge mobile devices for data-intensive distributed mobile cloud applications", 2015 IEEE Symposium on Computers and Communication (ISCC), 2015.
+* [2]	J. Plumb and R. Stutsman, "Exploiting Google's Edge Network for Massively Multiplayer Online Games", 2018 IEEE 2nd International Conference on Fog and Edge Computing (ICFEC), 2018.
 * [3]	B. Varghese, O. Akgun, I. Miguel, L. Thai and A. Barker, "Cloud Benchmarking For Maximising Performance of Scientific Applications", IEEE Transactions on Cloud Computing, pp. 1-1, 2016.
 * [4]	N. Wang, B. Varghese, M. Matthaiou and D. Nikolopoulos, "ENORM: A Framework For Edge NOde Resource Management", IEEE Transactions on Services Computing, pp. 1-1, 2017.
-* [5]	Challenges and Opportunities in Edge Computing
-* [6]	MVR: AN Architecture for Computation Offloading in Mobile Edge Computing
-* [7]	Generation of synthetic workloads for multiplayer online gaming benchmarks
-* [8]	MAUI: Making smartphones Last Longer with Code Offload
-* [9]	Energy efficiency of mobile clients in cloud computing
+* [5]	B. Varghese, N. Wang, S. Barbhuiya, P. Kilpatrick and D. Nikolopoulos, "Challenges and Opportunities in Edge Computing", 2016 IEEE International Conference on Smart Cloud (SmartCloud), 2016.
+* [6]	X. Wei, S. Wang, A. Zhou, J. Xu, S. Su, S. Kumar and F. Yang, "MVR: An Architecture for Computation Offloading in Mobile Edge Computing", 2017 IEEE International Conference on Edge Computing (EDGE), 2017.
+* [7]	T. Triebel, M. Lehn, R. Rehner, B. Guthier, S. Kopf and W. Effelsberg, "Generation of synthetic workloads for multiplayer online gaming benchmarks", 2012 11th Annual Workshop on Network and Systems Support for Games (NetGames), 2012.
+* [8]	E. Cuervo, A. Balasubramanian, D. Cho, A. Wolman, S. Saroiu, R. Chandra and P. Bahl, "MAUI", Proceedings of the 8th international conference on Mobile systems, applications, and services - MobiSys '10, 2010.
+* [9]	Antti P. Miettinen , Jukka K. Nurminen, "Energy efficiency of mobile clients in cloud computing", Proceedings of the 2nd USENIX conference on Hot topics in cloud computing, p.4-4, June 22-25, 2010, Boston, MA
 
 
