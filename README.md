@@ -33,6 +33,8 @@
 
 I decided to take iPokeMon and Xonotic through to the next stage, cloud and edge server deployments:
 
+I have server instances running for iPokeMon and Xonotic, using Amazon Web Services:
+
 iPokeMon AWS cloud server EC2 instance:
 ```
 54.229.126.87
@@ -42,6 +44,8 @@ Xonotic AWS cloud EC2 sever instance:
 ```
 34.243.205.166
 ```
+
+Next I am attempting to run a server instance on the ODROID edge node...
 
 ## Apache JMeter
 
