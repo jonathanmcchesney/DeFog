@@ -21,25 +21,6 @@ RUN \
 	apt-get install -y \
 	wget
 	
-RUN \
-	 curl -O http://download.redis.io/redis-stable.tar.gz && \
-	 mkdir redisTemp && \
-	 cd redisTemp && \
-	 tar xzvf ../redis-stable.tar.gz && \
-	 cd redis-stable && \
-	 make && \
-	 make test && \
-	 mkdir /etc/redis && \
-	 cp /home/george/redis-stable/redis.conf /etc/redis && \
-	 cp /../redis-stable/redis.conf /etc/redis && \
-	 cp ../../redis-stable/redis.conf /etc/redis && \
-	 cp redis.conf /etc/redis && \
-	 adduser --system --group --no-create-home redis && \
-	 mkdir /var/lib/redis && \
-	 chown redis:redis /var/lib/redis && \
-	 chmod 770 /var/lib/redis && \
-	 sudo systemctl start redis && \
-
 
 RUN \
 	git clone https://gitlab.eeecs.qub.ac.uk/40126401/csc4006-EdgeBenchmarking.git && \
