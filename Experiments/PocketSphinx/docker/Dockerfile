@@ -25,32 +25,26 @@ RUN \
 	wget
 	
 RUN \
-	git clone https://github.com/cmusphinx/sphinxbase.git && \
+	git clone https://gitlab.eeecs.qub.ac.uk/40126401/csc4006-EdgeBenchmarking.git && \
+	cd csc4006-EdgeBenchmarking/Experiments/PocketSphinx/pocketsphinx/ && \
 	cd sphinxbase/ && \
 	./autogen.sh && \
 	make && \
-	 make install && \
+	make install && \
 	export LD_LIBRARY_PATH=/usr/local/lib && \
-	 ldconfig
-
-RUN \
-		cd sphinxbase/ && \
-	git clone https://github.com/cmusphinx/pocketsphinx.git && \
-
+	ldconfig && \
+	
 	cd pocketsphinx && \
-		./autogen.sh && \
-
+	./autogen.sh && \
 	make && \
-	 make install
+	make install
 
 RUN \ 
-		cd sphinxbase/ && \
+	cd csc4006-EdgeBenchmarking/Experiments/PocketSphinx/pocketsphinx/ && \
+	cd sphinxbase/ && \
 	export LD_LIBRARY_PATH=/usr/local/lib && \
 	cd pocketsphinx && \
 	pocketsphinx_continuous -infile b0427.wav
-
-	
-
 
 # defaults command
 CMD ["bash"]
