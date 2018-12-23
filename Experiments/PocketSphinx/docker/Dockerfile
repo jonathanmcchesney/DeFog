@@ -25,32 +25,22 @@ RUN \
 	wget
 	
 RUN \
-	git clone https://gitlab.eeecs.qub.ac.uk/40126401/csc4006-EdgeBenchmarking.git
-	
-RUN \
-	cd csc4006-EdgeBenchmarking/Experiments/PocketSphinx/ && \
+	git clone https://gitlab.eeecs.qub.ac.uk/40126401/csc4006-EdgeBenchmarking.git && \
+	cd csc4006-EdgeBenchmarking/Experiments/PocketSphinx/pocketsphinx/ && \
 	cd sphinxbase/ && \
-	chmod 777 autogen.sh && \
 	./autogen.sh && \
-		make clean && \
-
 	make && \
-	
 	make install && \
 	export LD_LIBRARY_PATH=/usr/local/lib && \
 	ldconfig && \
 	
-	cd pocketsphinx/ && \
-	chmod 777 autogen.sh && \
+	cd pocketsphinx && \
 	./autogen.sh && \
-			make clean && \
-
 	make && \
 	make install
-	
 
 RUN \ 
-	cd csc4006-EdgeBenchmarking/Experiments/PocketSphinx/ && \
+	cd csc4006-EdgeBenchmarking/Experiments/PocketSphinx/pocketsphinx/ && \
 	cd sphinxbase/ && \
 	export LD_LIBRARY_PATH=/usr/local/lib && \
 	cd pocketsphinx && \
