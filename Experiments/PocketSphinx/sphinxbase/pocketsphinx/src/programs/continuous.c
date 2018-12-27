@@ -182,8 +182,12 @@ recognize_from_file()
             ps_end_utt(ps);
             hyp = ps_get_hyp(ps, NULL);
             if (hyp != NULL)
-        	printf("%s\n", hyp);
-            if (print_times)
+				printf("%s\n", hyp);
+				FILE * fp;
+				fp = fopen("result.txt", "a+");
+				fprintf(fp, hyp);
+				fprintf(fp, "\r\n");
+				fclose(fp);            if (print_times)
         	print_word_times();
             fflush(stdout);
 
@@ -195,8 +199,13 @@ recognize_from_file()
     if (utt_started) {
         hyp = ps_get_hyp(ps, NULL);
         if (hyp != NULL) {
-    	    printf("%s\n", hyp);
-    	    if (print_times) {
+				printf("%s\n", hyp);
+				FILE * fp;
+				fp = fopen("result.txt", "a+");
+				fprintf(fp, hyp);
+				fprintf(fp, "\r\n");
+				fclose(fp);
+				if (print_times) {
     		print_word_times();
 	    }
 	}
@@ -266,12 +275,6 @@ recognize_from_microphone()
             hyp = ps_get_hyp(ps, NULL );
             if (hyp != NULL) {
                 printf("%s\n", hyp);
-				printf("%s\n", hyp);
-				FILE * fp;
-				fp = fopen("result.txt", "a+");
-				fprintf(fp, hyp);
-				fprintf(fp, "\r\n");
-				fclose(fp);
                 fflush(stdout);
             }
 
