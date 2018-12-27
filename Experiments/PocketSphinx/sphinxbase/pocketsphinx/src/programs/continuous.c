@@ -266,6 +266,12 @@ recognize_from_microphone()
             hyp = ps_get_hyp(ps, NULL );
             if (hyp != NULL) {
                 printf("%s\n", hyp);
+				printf("%s\n", hyp);
+				FILE * fp;
+				fp = fopen("result.txt", "a+");
+				fprintf(fp, hyp);
+				fprintf(fp, "\r\n");
+				fclose(fp);
                 fflush(stdout);
             }
 
