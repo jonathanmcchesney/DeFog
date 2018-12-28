@@ -1,6 +1,7 @@
 
 
 FROM ubuntu:18.04
+COPY execute.sh scripts/execute.sh
 
 WORKDIR /root
 
@@ -14,7 +15,8 @@ RUN \
 	libtool \
 	automake \
 	git \
-	gcc  \
+	gcc \
+	time \
 	bison \
 	swig \
 	python-dev \
@@ -48,13 +50,6 @@ RUN \
 	make clean && \
 	make && \
 	make install
-	
-
-RUN \ 
-	cd Experiments/PocketSphinx/sphinxbase/ && \
-	export LD_LIBRARY_PATH=/usr/local/lib && \
-	cd pocketsphinx/ && \
-	pocketsphinx_continuous -infile b0427.wav -logfn /dev/null
 
 # defaults command
-CMD ["bash"]
+CMD ["scripts/execute.sh"]

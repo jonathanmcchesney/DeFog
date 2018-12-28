@@ -9,6 +9,7 @@ RUN \
 	autoconf \
 	build-essential \
 	libtool \
+	time \
 	python \
 	python-pip \
 	automake \
@@ -23,6 +24,7 @@ RUN \
 
 RUN \
 	git init && \
+	ls && \
 	git remote add -f csc4006-EdgeBenchmarking https://gitlab.eeecs.qub.ac.uk/40126401/csc4006-EdgeBenchmarking.git && \
 	git config core.sparsecheckout true && \
 	echo Experiments/YOLO/yolo/ >> .git/info/sparse-checkout && \
@@ -36,11 +38,5 @@ RUN \
 	cd Experiments/YOLO/yolo && \
 	wget https://pjreddie.com/media/files/yolov3-tiny.weights 
 	
-
-RUN \	
-	cd Experiments/YOLO/yolo && \
-	chmod 777 darknet && \
-	./darknet detect cfg/yolov3-tiny.cfg yolov3-tiny.weights data/eagle.jpg
-
 # defaults command
 CMD ["scripts/execute.sh"]
