@@ -20,16 +20,19 @@ RUN \
 	bison \
 	swig \
 	python-dev \
+	python-pip \
 	libpulse-dev 
 
 RUN \
 	apt-get install -y \
 	wget
+
+RUN \
+	pip install boto3
 	
 RUN \
 	git init && \
 	git remote add -f csc4006-EdgeBenchmarking https://gitlab.eeecs.qub.ac.uk/40126401/csc4006-EdgeBenchmarking.git && \
-	ls && \
 	git config core.sparsecheckout true && \
 	echo Experiments/PocketSphinx/sphinxbase >> .git/info/sparse-checkout && \
 	git pull https://gitlab.eeecs.qub.ac.uk/40126401/csc4006-EdgeBenchmarking.git master
@@ -43,7 +46,6 @@ RUN \
 	make install && \
 	export LD_LIBRARY_PATH=/usr/local/lib && \
 	ldconfig && \
-	
 	cd pocketsphinx/ && \
 	chmod 777 autogen.sh && \
 	./autogen.sh && \
