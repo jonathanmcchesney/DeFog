@@ -6,4 +6,5 @@ if [ ! -f dump.rdb ]; then
 	echo "Init DB with wpm data"
 	nohup python scripts/updateDB.py > logs/updateLog &
 fi
+ech0 "Starting server.py..."
 nohup python server.py > logs/cloudServerLog &
