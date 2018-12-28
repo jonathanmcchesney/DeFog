@@ -1,6 +1,6 @@
 
-
 FROM ubuntu:18.04
+COPY execute.sh scripts/execute.sh
 
 WORKDIR /root
 
@@ -9,27 +9,38 @@ RUN \
 	autoconf \
 	build-essential \
 	libtool \
+	python \
+	python-pip \
 	automake \
 	git
 
 RUN \
 	apt-get install -y \
-	wget
+	wget 
 
 RUN \
-	git clone https://gitlab.eeecs.qub.ac.uk/40126401/csc4006-EdgeBenchmarking.git && \
-	ls && \
-	cd csc4006-EdgeBenchmarking/Experiments/YOLO/yolo && \
+	pip install boto3
+
+RUN \
+	git init && \
+	git remote add -f csc4006-EdgeBenchmarking https://gitlab.eeecs.qub.ac.uk/40126401/csc4006-EdgeBenchmarking.git && \
+	git config core.sparsecheckout true && \
+	echo Experiments/YOLO/yolo/ >> .git/info/sparse-checkout && \
+	git pull https://gitlab.eeecs.qub.ac.uk/40126401/csc4006-EdgeBenchmarking.git master
+	
+RUN \
+	cd Experiments/YOLO/yolo && \
 	make
 
 RUN \ 
-	cd csc4006-EdgeBenchmarking/Experiments/YOLO/yolo && \
+	cd Experiments/YOLO/yolo && \
 	wget https://pjreddie.com/media/files/yolov3-tiny.weights 
 	
 
 RUN \	
-	cd csc4006-EdgeBenchmarking/Experiments/YOLO/yolo && \
+	cd Experiments/YOLO/yolo && \
+	chmod 777 darknet && \
 	./darknet detect cfg/yolov3-tiny.cfg yolov3-tiny.weights data/eagle.jpg
 
 # defaults command
-CMD ["bash"]
+CMD ["scripts/execute.sh"]

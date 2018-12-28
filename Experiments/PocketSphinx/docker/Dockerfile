@@ -25,17 +25,19 @@ RUN \
 	wget
 	
 RUN \
-	git clone https://gitlab.eeecs.qub.ac.uk/40126401/csc4006-EdgeBenchmarking.git
+	git init && \
+	git remote add -f csc4006-EdgeBenchmarking https://gitlab.eeecs.qub.ac.uk/40126401/csc4006-EdgeBenchmarking.git && \
+	ls && \
+	git config core.sparsecheckout true && \
+	echo Experiments/PocketSphinx/sphinxbase >> .git/info/sparse-checkout && \
+	git pull https://gitlab.eeecs.qub.ac.uk/40126401/csc4006-EdgeBenchmarking.git master
 	
 RUN \
-	cd csc4006-EdgeBenchmarking/Experiments/PocketSphinx/ && \
-	cd sphinxbase/ && \
+	cd Experiments/PocketSphinx/sphinxbase/ && \
 	chmod 777 autogen.sh && \
 	./autogen.sh && \
-		make clean && \
-
+	make clean && \
 	make && \
-	
 	make install && \
 	export LD_LIBRARY_PATH=/usr/local/lib && \
 	ldconfig && \
@@ -43,18 +45,16 @@ RUN \
 	cd pocketsphinx/ && \
 	chmod 777 autogen.sh && \
 	./autogen.sh && \
-			make clean && \
-
+	make clean && \
 	make && \
 	make install
 	
 
 RUN \ 
-	cd csc4006-EdgeBenchmarking/Experiments/PocketSphinx/ && \
-	cd sphinxbase/ && \
+	cd Experiments/PocketSphinx/sphinxbase/ && \
 	export LD_LIBRARY_PATH=/usr/local/lib && \
-	cd pocketsphinx && \
-	pocketsphinx_continuous -infile b0427.wav
+	cd pocketsphinx/ && \
+	pocketsphinx_continuous -infile b0427.wav -logfn /dev/null
 
 # defaults command
 CMD ["bash"]
