@@ -1,2 +1,2 @@
-docker run --rm -it --name ipokemon ipokemon bash
+docker run --rm --net=host -it --name ipokemon ipokemon ../scripts/execute.sh
 

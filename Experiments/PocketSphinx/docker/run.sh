@@ -1,1 +1,1 @@
-docker run --rm -it --name psphinx psphinx ../scripts/execute.sh
+docker run --rm --name psphinx psphinx ../scripts/execute.sh
