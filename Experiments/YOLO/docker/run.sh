@@ -1,1 +1,1 @@
-docker run --rm --name darknet darknet ../scripts/execute.sh
+docker run --rm  --name darknet darknet ../scripts/execute.sh
