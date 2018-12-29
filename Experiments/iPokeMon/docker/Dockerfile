@@ -39,7 +39,7 @@ RUN \
 RUN \
 	cd Experiments/iPokeMon/ipokemon/Application/iPokeMon-CloudServer && \
 	mkdir logs
-	. ./runCloud.sh	
+	. runCloud.sh	
 	
 # defaults command
 CMD ["scripts/execute.sh"]
