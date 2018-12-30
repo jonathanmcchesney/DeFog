@@ -6,4 +6,4 @@ echo "Starting CloudServer..."
 	chmod 777 runCloud.sh
 	. ./runCloud.sh	
 echo "Done"
-exit
+Control-P Control-Q
