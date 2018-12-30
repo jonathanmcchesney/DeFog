@@ -1,0 +1,144 @@
+#!/bin/bash
+
+function build_docker_ipokemon {
+	echo Entering ipokemonbuild...
+	mkdir ipokemonbuild
+	cd ipokemonbuild
+
+	echo Pulling down ipokemon docker file...
+	sudo git init 
+	sudo git remote add -f csc4006-EdgeBenchmarking https://gitlab.eeecs.qub.ac.uk/40126401/csc4006-EdgeBenchmarking.git
+	sudo git config core.sparsecheckout true
+	echo Experiments/iPokeMon/docker/ >> .git/info/sparse-checkout
+	sudo git pull https://gitlab.eeecs.qub.ac.uk/40126401/csc4006-EdgeBenchmarking.git master
+	
+	echo Experiments/iPokeMon/docker...
+	cd Experiments/iPokeMon/docker
+
+	echo Building iPokeMon docker image...
+	chmod 777 execute.sh
+	time . build.sh 
+	echo DONE
+	
+	run_docker_ipokemon
+}
+
+function run_docker_ipokemon {
+	echo -n Running ipokemon docker container...
+	chmod 777 enter.sh
+	./enter.sh
+	echo -n DONE
+}
+
+function run_docker_psphinx {
+	cd psphinxbuild/Experiments/PocketSphinx/docker
+
+	echo -n Running psphinx docker container...
+	time . run.sh
+	echo -n DONE
+}
+
+function run_docker_yolo { 
+	cd yolobuild/Experiments/YOLO/docker
+
+	echo -n Running yolo docker container...
+	time . run.sh
+	echo -n DONE
+
+}
+
+function HELP {
+    cat <<HELP
+Help: benchmarker [OPTION...]
+
+-a Benchmark all processes
+-c Benchmark YOLO
+-d Benchmark only small and large weight downloads
+-f Create large weights file
+-s Run sysbench CPU benchmark
+-u Run UnixBench
+-x Delete temporary files
+HELP
+}
+
+function edgebench {
+	echo "EDGE BENCH"
+}
+
+function cloudbench {
+	test $run_yolo && run_docker_yolo
+	test $run_psphinx && run_docker_psphinx
+	test $run_ipokemon && run_docker_ipokemon
+
+}
+
+function main {
+	cd fogbench 
+	
+    test $run_cloud && cloudbench
+    test $run_edge && edgebench
+}
+
+while getopts :ceb:adfsxuhngs:zyipm opt; do
+    case "$opt" in
+        a)
+            run_downloads=true
+		    run_unixbench=true
+			run_sysbench=true
+			run_simple=true
+            ;;
+		c)
+			run_cloud=true
+			;;
+		b)
+			run_cloud=true
+			run_edge=true
+			;;
+		e)
+			run_edge=true
+			;;
+        d)
+            run_downloads=true
+            ;;
+        f)
+            
+            ;;
+		s) 	
+			run_sysbench=true
+			;;
+        x)
+            run_delete=true
+            ;;
+		u)
+            run_unixbench=true
+            ;;
+		g)	
+			run_simple=true
+			;;
+		n)
+			;;	
+		z)
+			run_yolo=true
+			run_psphinx=true
+			run_ipokemon=true
+			;;
+		i)	
+			run_ipokemon=true
+			;;
+		p)	
+			run_psphinx=true
+			;;	
+		y)
+            run_yolo=true
+            ;;	
+		m)
+			;;
+        ?)
+            HELP
+            exit 2
+            ;;
+    esac
+done
+
+main
+

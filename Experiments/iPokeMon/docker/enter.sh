@@ -1,2 +1,2 @@
-docker run --rm --net=host -it --name ipokemon ipokemon bash
+docker run --net=host -it --name ipokemon ipokemon bash
 

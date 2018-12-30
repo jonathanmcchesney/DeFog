@@ -1,0 +1,236 @@
+#!/bin/bash
+
+function HELP {
+    cat <<HELP
+Help: fogbenchmarker [OPTION...]
+
+-b Run Benchmarks on both Cloud and Edge
+-c Run Benchmarks on Cloud
+-e Run Benchmarks on Edge
+
+HELP
+}
+
+function executebenchmarkhelp {
+		ssh -i ~/Documents/csc4006awskey.pem ubuntu@ec2-52-31-99-235.eu-west-1.compute.amazonaws.com 'bash -s' -- < ./fogbench -?
+}
+
+function executebenchmarkoncloud {
+		echo "ssh into cloud instance.."
+		ssh -i ~/Documents/csc4006awskey.pem ubuntu@ec2-52-31-99-235.eu-west-1.compute.amazonaws.com ' sudo bash -s' -- < ./fogbenchactions $environment $actions $applications
+		echo "Done ssh"
+}
+
+function executebenchmarkapplicationoncloud {
+		
+		echo "ssh into cloud instance.."
+			ssh -i ~/Documents/csc4006awskey.pem ubuntu@ec2-52-31-99-235.eu-west-1.compute.amazonaws.com ' sudo bash -s' -- < ./fogbenchapplications $environment $actions $applications
+		echo "Done ssh"
+		
+}
+
+function determineapplicationbenchmarks {
+		if [ "$applications" == "-y" ];
+		then	
+			setupandexecuteyolobenchmarks
+		elif [ "$applications" == "-p" ];
+		then	
+			setupandexecutepsphinxbenchmarks
+		elif [ "$applications" == "-i" ];
+		then	
+			setupandexecutepipokemonbenchmarks	
+		fi	
+}
+
+function setupandexecutepipokemonbenchmarks {
+	ssh -i ~/Documents/csc4006awskey.pem ubuntu@ec2-52-31-99-235.eu-west-1.compute.amazonaws.com -t "cd fogbench/ipokemonbuild/Experiments/iPokeMon/docker ; bash"
+}
+
+function setupandexecuteyolobenchmarks {
+	declare -a arrPics
+			
+	for file in ./assets/*.jpg
+	do
+		arrPics=("${Pics[@]}" "$file")
+		asset=$arrPics
+		echo "Sending asset at path: " $asset "to application..."
+		sendAsset
+		echo "DONE"
+
+		
+	done
+	
+	executebenchmarkapplicationoncloud
+}
+
+function setupandexecutepsphinxbenchmarks {
+	declare -a arrWav
+			
+	for file in ./assets/*.wav
+	do
+		arrWavs=("${Wavs[@]}" "$file")
+		asset=$arrWavs
+		echo "Sending asset at path: " $asset "to application..."
+		sendAsset
+		echo "DONE"
+
+		
+	done
+	
+	executebenchmarkapplicationoncloud
+}
+
+function sendAsset {
+	time scp -i ~/Documents/csc4006awskey.pem $asset ubuntu@ec2-52-31-99-235.eu-west-1.compute.amazonaws.com:~/fogbench/assets
+}
+
+function executebenchmarkonedge {
+	echo "EDGE!"
+}
+
+function actionsuserinput {
+while true; do
+	echo ""
+	echo "Actions:"
+		echo ""
+		echo "0. All"
+		echo "1. Small and large weight downloads"
+		echo "2. Large weights file"
+		echo "3. Sysbench"
+		echo "4. UnixBench"
+		echo "5. Delete temporary files"
+		echo "6. Simple System Benchmarks"
+		echo "7. None"
+		echo ""
+  read -p "What actions would you like to run:[0,1,2,3,4,5,6,7]" ANS
+  case $ANS in 
+    '0') 
+       actions="-a"
+       break;;
+    '1') 
+       actions="d"
+       break;;
+	'2') 
+       actions="-f" 
+       break;;  
+	'3') 
+       actions="-s"
+       break;;
+    '4') 
+       actions="-u"
+       break;;
+	'5') 
+       actions="-x"
+	   break;;
+	'6') 
+       actions="-g"   
+	   break;;
+	'7') 
+       actions="-n"  
+       break;;   	
+    *) 
+       echo "Wrong input, try again";;
+  esac
+done
+echo "Actions value:$actions"
+}
+
+function environmentuserinput {
+while true; do
+	echo ""
+	echo "Environments:"
+		echo ""
+		echo "0. Cloud"
+		echo "1. Edge"
+		echo "2. Both"
+		echo ""
+  read -p "What environment would you like to benchmark: [0,1,2]" ANS
+  case $ANS in 
+    '0') 
+       environment="-c"
+       break;;
+    '1') 
+       environment="-e" 
+       break;;
+	'2') 
+       environment="-b"
+       break;;   
+    *) 
+       echo "Wrong input, try again";;
+  esac
+done
+echo "Enviroment value:$environment"
+}
+
+function applicationsuserinput {
+while true; do
+	echo ""
+	echo "Applications:"
+		echo ""
+		echo "0. Yolo"
+		echo "1. PocketSphinx"
+		echo "2. iPokeMon"
+		echo "3. None"
+		echo ""
+  read -p "What Applications would you like to benchmark: [0,1,2,3]" ANS
+  case $ANS in 
+    '0') 
+       applications="-y"
+       break;;
+    '1') 
+       applications="-p" 
+       break;;
+	'2') 
+       applications="-i"
+       break;;   
+	'3') 
+       applications="-m"
+       break;;    
+    *) 
+       echo "Wrong input, try again";;
+  esac
+done
+echo "Applications value:$applications"
+}
+
+function main {
+
+	environmentuserinput
+	actionsuserinput
+	applicationsuserinput
+	
+	echo ""
+	echo "Enivironment value:$environment"
+	echo "Actions value:$actions"
+	echo "Applications value:$applications"
+	echo ""
+
+	
+	if [ "$environment" == "-c" ] || [ "$environment" == "-b" ];
+	then	
+		executebenchmarkoncloud
+		determineapplicationbenchmarks
+	fi	
+	
+	if [ "$environment" == "-e" ] || [ "$environment" == "-b" ];
+	then	
+		executebenchmarkonedge
+	fi	
+
+}
+
+
+while getopts :h: opt; do
+    case "$opt" in
+        h)
+            bench_help=true
+            ;;	
+        ?)
+            HELP
+            exit 2
+            ;;
+    esac
+done
+
+main
+
