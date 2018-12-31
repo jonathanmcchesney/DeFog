@@ -169,13 +169,6 @@ function build_docker_ipokemon {
 	
 }
 
-function run_docker_ipokemon {
-	echo -n Running ipokemon docker container...
-	chmod 777 enter.sh
-	./enter.sh
-	echo -n DONE
-}
-
 function build_docker_psphinx {
 	echo Entering psphinxbuild...
 	mkdir psphinxbuild
@@ -191,9 +184,10 @@ function build_docker_psphinx {
 	echo Experiments/PocketSphinx/docker...
 	cd Experiments/PocketSphinx/docker
 
-	echo Building PocketSphinx docker image...
+	echo Building PocketSphinx docker image - console logs suppressed...
+	echo Please wait as this may take a few minutes...
 	chmod 777 execute.sh
-	time . build.sh 
+	time . build.sh &>/dev/null
 	echo DONE
 	
 }
@@ -213,9 +207,10 @@ function build_docker_yolo {
 	echo Experiments/YOLO/docker...
 	cd Experiments/YOLO/docker
 
-	echo Building yolo docker image...
+	echo Building yolo docker image - console logs suppressed...
+	echo Please wait as this may take a few minutes...
 	chmod 777 execute.sh
-	time . build.sh 
+	time . build.sh &>/dev/null
 	echo DONE
 	
 }
@@ -239,31 +234,33 @@ function edgebench {
 }
 
 function cloudbench {
+	echo -e "Running on the Cloud: " | tee -a actionsresults.txt
+
+	test $run_simple && simple_benchmark
 	test $run_downloads && downloads_benchmark
 	test $run_sysbench && benchmark_sysbench
 	test $run_unixbench && benchmark_unixbench
 	
 	test $run_yolo && build_docker_yolo
 	test $run_psphinx && build_docker_psphinx
-	test $run_ipokemon && build_docker_ipokemon
+	test $build_ipokemon && build_docker_ipokemon
 
 }
 
 function main {
-	mkdir -p fogbench
-	cd fogbench 
+	mkdir -p fogbench && cd fogbench 	
 	test $run_delete && delete_temps
 
-	mkdir -p assets
-	chmod 777 assets
+	rm -rf dir assets && mkdir assets && chmod 777 assets
 	
-	test $run_simple && simple_benchmark
-
+	echo -e "Actions Benchmarks: " | tee actionsresults.txt
+	
     test $run_cloud && cloudbench
     test $run_edge && edgebench
+	
 }
 
-while getopts :ceb:adfsxuhngs:zyipm opt; do
+while getopts :ceb:adfsxuhngs:zyipmk opt; do
     case "$opt" in
         a)
             run_downloads=true
@@ -308,8 +305,12 @@ while getopts :ceb:adfsxuhngs:zyipm opt; do
 			run_ipokemon=true
 			;;
 		i)	
+			build_ipokemon=true
 			run_ipokemon=true
 			;;
+		k)	
+			run_ipokemon=true
+			;;	
 		p)	
 			run_psphinx=true
 			;;	

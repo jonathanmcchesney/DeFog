@@ -1,1 +1,1 @@
-docker run --rm -it --name darknet darknet bash
+docker run --rm -it -v /home/ubuntu/fogbench/assets:/mnt/assets --name darknet darknet bash

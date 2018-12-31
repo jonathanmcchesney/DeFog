@@ -17,13 +17,14 @@ function executebenchmarkhelp {
 
 function executebenchmarkoncloud {
 		echo "ssh into cloud instance.."
-		ssh -i ~/Documents/csc4006awskey.pem ubuntu@ec2-52-31-99-235.eu-west-1.compute.amazonaws.com ' sudo bash -s' -- < ./fogbenchactions $environment $actions $applications
+		echo "perfoming actions benchmarks.."
+		ssh -i ~/Documents/csc4006awskey.pem ubuntu@ec2-52-31-99-235.eu-west-1.compute.amazonaws.com ' sudo bash -s' -- < ./fogbenchactions $environment $actions $applications ./result.txt
 		echo "Done ssh"
 }
 
 function executebenchmarkapplicationoncloud {
 		
-		echo "ssh into cloud instance.."
+		echo "ssh into cloud instance for application benchmarks.."
 			ssh -i ~/Documents/csc4006awskey.pem ubuntu@ec2-52-31-99-235.eu-west-1.compute.amazonaws.com ' sudo bash -s' -- < ./fogbenchapplications $environment $actions $applications
 		echo "Done ssh"
 		
@@ -38,34 +39,44 @@ function determineapplicationbenchmarks {
 			setupandexecutepsphinxbenchmarks
 		elif [ "$applications" == "-i" ];
 		then	
-			setupandexecutepipokemonbenchmarks	
+			setupipokemonserver	
+			setupandexecuteipokemonbenchmarks
+		elif [ "$applications" == "-k" ];
+		then	
+			setupandexecuteipokemonbenchmarks	
 		fi	
 }
 
-function setupandexecutepipokemonbenchmarks {
-	ssh -i ~/Documents/csc4006awskey.pem ubuntu@ec2-52-31-99-235.eu-west-1.compute.amazonaws.com -t "cd fogbench/ipokemonbuild/Experiments/iPokeMon/docker ; bash"
+function setupandexecuteipokemonbenchmarks {
+	echo "JMETER!!!"
+}
+
+function setupipokemonserver {
+	ssh -i ~/Documents/csc4006awskey.pem ubuntu@ec2-52-31-99-235.eu-west-1.compute.amazonaws.com -t "cd fogbench/ipokemonbuild/Experiments/iPokeMon/docker && sudo -sH && . enter.sh; bash"
 }
 
 function setupandexecuteyolobenchmarks {
 	declare -a arrPics
+	newassetname=./assets/yoloimage.jpg		
 			
 	for file in ./assets/*.jpg
 	do
 		arrPics=("${Pics[@]}" "$file")
 		asset=$arrPics
-		echo "Sending asset at path: " $asset "to application..."
+		echo $asset
+		echo "Sending asset at path: " $newassetname "to application..."
 		sendAsset
 		echo "DONE"
-
+		executebenchmarkapplicationoncloud
 		
 	done
 	
-	executebenchmarkapplicationoncloud
 }
 
 function setupandexecutepsphinxbenchmarks {
 	declare -a arrWav
-			
+	newassetname=./assets/psphinx.wav
+	
 	for file in ./assets/*.wav
 	do
 		arrWavs=("${Wavs[@]}" "$file")
@@ -73,15 +84,18 @@ function setupandexecutepsphinxbenchmarks {
 		echo "Sending asset at path: " $asset "to application..."
 		sendAsset
 		echo "DONE"
-
-		
-	done
+		executebenchmarkapplicationoncloud
 	
-	executebenchmarkapplicationoncloud
+	done	
 }
 
 function sendAsset {
-	time scp -i ~/Documents/csc4006awskey.pem $asset ubuntu@ec2-52-31-99-235.eu-west-1.compute.amazonaws.com:~/fogbench/assets
+	TIMEFORMAT=%R
+	cp $asset $newassetname
+	echo Time to send $asset to server: | tee -a $filename.txt
+	{ time scp -i ~/Documents/csc4006awskey.pem $newassetname ubuntu@ec2-52-31-99-235.eu-west-1.compute.amazonaws.com:~/fogbench/assets > /dev/null 2>&1 ; } |& tee -a $filename.txt
+
+	rm $newassetname
 }
 
 function executebenchmarkonedge {
@@ -169,10 +183,11 @@ while true; do
 		echo ""
 		echo "0. Yolo"
 		echo "1. PocketSphinx"
-		echo "2. iPokeMon"
-		echo "3. None"
+		echo "2. iPokeMon (build and run)"
+		echo "3. iPokeMon (run benchmarks only)"
+		echo "4. None"
 		echo ""
-  read -p "What Applications would you like to benchmark: [0,1,2,3]" ANS
+  read -p "What Applications would you like to benchmark: [0,1,2,3,4]" ANS
   case $ANS in 
     '0') 
        applications="-y"
@@ -184,8 +199,11 @@ while true; do
        applications="-i"
        break;;   
 	'3') 
+       applications="-k"
+       break;;   
+	'4') 
        applications="-m"
-       break;;    
+       break;; 	   
     *) 
        echo "Wrong input, try again";;
   esac
@@ -193,8 +211,38 @@ done
 echo "Applications value:$applications"
 }
 
+function asciiheader {
+
+echo "   ___ ___   ___          ___              _    ";
+echo "  / __/ __| | __|__  __ _| _ ) ___ _ _  __| |_  ";
+echo " | (__\__ \ | _/ _ \/ _\` | _ \/ -_) ' \/ _| ' \ ";
+echo "  \___|___/ |_|\___/\__, |___/\___|_||_\__|_||_|";
+echo "                    |___/                       ";
+echo ""
+echo -e "CS FogBench:" | tee $filename.txt
+echo -e "Welcome, you are using CS FogBench: a cloud and edge benchmarking tool!" | tee -a $filename.txt
+echo -e "	Created by: Jonathan McChesney, student at Queen's University Belfast" | tee -a $filename.txt
+echo -e "	CSC4006 Final Year Research and Development Project" | tee -a $filename.txt
+echo -e "" | tee -a $filename.txt
+
+}
+
+function createresultfile {
+filename=result
+if [[ -e $filename.txt ]] ; then
+    i=0
+    while [[ -e $filename-$i.txt ]] ; do
+        let i++
+    done
+    filename=$filename-$i
+fi
+}
+
 function main {
 
+	createresultfile
+	asciiheader
+	
 	environmentuserinput
 	actionsuserinput
 	applicationsuserinput

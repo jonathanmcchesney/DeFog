@@ -1,6 +1,16 @@
 #!/bin/bash
 
+function removedockerimages {
+	docker stop $(docker ps -aq)
+	docker rm $(docker ps -aq)
+	docker rmi $(docker images -q)
+}
+
 function build_docker_ipokemon {
+	echo Removing docker images and containers...
+	removedockerimages
+	echo DONE
+
 	echo Entering ipokemonbuild...
 	mkdir ipokemonbuild
 	cd ipokemonbuild
@@ -18,9 +28,7 @@ function build_docker_ipokemon {
 	echo Building iPokeMon docker image...
 	chmod 777 execute.sh
 	time . build.sh 
-	echo DONE
-	
-	run_docker_ipokemon
+	echo DONE	
 }
 
 function run_docker_ipokemon {
@@ -79,7 +87,7 @@ function main {
     test $run_edge && edgebench
 }
 
-while getopts :ceb:adfsxuhngs:zyipm opt; do
+while getopts :ceb:adfsxuhngs:zyipmk opt; do
     case "$opt" in
         a)
             run_downloads=true
@@ -123,8 +131,12 @@ while getopts :ceb:adfsxuhngs:zyipm opt; do
 			run_ipokemon=true
 			;;
 		i)	
+			build_ipokemon=true
 			run_ipokemon=true
 			;;
+		k)	
+			run_ipokemon=true
+			;;	
 		p)	
 			run_psphinx=true
 			;;	
