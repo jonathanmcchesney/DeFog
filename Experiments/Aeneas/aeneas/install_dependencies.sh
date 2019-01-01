@@ -30,38 +30,38 @@
         #echo "[INFO] A.2 Downloading and installing deb-multimedia keyring... done"
 
     echo "[INFO] A.1 Adding deb-multimedia to apt sources..."
-    sudo sh -c 'echo "deb http://www.deb-multimedia.org jessie main" > /etc/apt/sources.list.d/deb-multimedia.list'
+     sh -c 'echo "deb http://www.deb-multimedia.org jessie main" > /etc/apt/sources.list.d/deb-multimedia.list'
     echo "[INFO] A.1 Adding deb-multimedia to apt sources... done"
 
     echo "[INFO] A.2 Updating apt..."
-    sudo apt-get update
+     apt-get update
     echo "[INFO] A.2 Updating apt... done"
 
     echo "[INFO] A.3 Downloading and installing deb-multimedia keyring..."
-    sudo apt-get install -y --force-yes deb-multimedia-keyring
+     apt-get install -y --force-yes deb-multimedia-keyring
     echo "[INFO] A.3 Downloading and installing deb-multimedia keyring... done"
 
     echo "[INFO] A.4 Updating apt..."
-    sudo apt-get update
+     apt-get update
     echo "[INFO] A.4 Updating apt... done"
 
     echo "[INFO] B.1 Installing ffmpeg (from deb-multimedia)..."
-    sudo apt-get install -y --force-yes ffmpeg
+     apt-get install -y --force-yes ffmpeg
     echo "[INFO] B.1 Installing ffmpeg (from deb-multimedia)... done"
 
     echo "[INFO] B.2 Installing espeak..."
-    sudo apt-get install -y espeak espeak-data libespeak1 libespeak-dev
+     apt-get install -y espeak espeak-data libespeak1 libespeak-dev
     echo "[INFO] B.2 Installing espeak... done"
 
     echo "[INFO] B.3 Installing festival..."
-    sudo apt-get install -y festival*
+     apt-get install -y festival*
     echo "[INFO] B.3 Installing festival... done"
 
     echo "[INFO] B.4 Installing common libs using apt-get..."
-    sudo apt-get install -y build-essential
-    sudo apt-get install -y flac libasound2-dev libsndfile1-dev vorbis-tools
-    sudo apt-get install -y libxml2-dev libxslt-dev zlib1g-dev
-    sudo apt-get install -y python-dev python-pip
+     apt-get install -y build-essential
+     apt-get install -y flac libasound2-dev libsndfile1-dev vorbis-tools
+     apt-get install -y libxml2-dev libxslt-dev zlib1g-dev
+     apt-get install -y python-dev python-pip
     echo "[INFO] B.4 Installing common libs using apt-get... done"
 
 echo "[INFO] Congratulations, now you can use aeneas!"
