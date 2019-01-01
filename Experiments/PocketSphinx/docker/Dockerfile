@@ -16,6 +16,7 @@ RUN \
 	automake \
 	git \
 	gcc \
+	bc \
 	time \
 	bison \
 	swig \

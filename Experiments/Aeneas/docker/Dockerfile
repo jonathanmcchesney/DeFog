@@ -10,6 +10,7 @@ RUN \
 	build-essential \
 	libtool \
 	time \
+	bc \
 	python \
 	python-pip \
 	git

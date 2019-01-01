@@ -8,7 +8,7 @@ The ```FogBench``` folder contains the scripts and assets needed to execute the 
 
 The ```Application``` folders contain the modified src code to be used for benchmarking on the cloud and edge, as well as a docker folder for building and running the applications.
 
-The ```docker`` folder within each application allows the application(s) to be easily compiled on the respective platform. This is currently tested using ubuntu:18.04. To build the image run ```. build.sh```, then to run the automated process run ```. run.sh``` or to manually enter the container run ```. enter.sh```. To stop and remove all instances and containers run ```. remove.sh```.
+The ```docker``` folder within each application allows the application(s) to be easily compiled on the respective platform. This is currently tested using ubuntu:18.04. To build the image run ```. build.sh```, then to run the automated process run ```. run.sh``` or to manually enter the container run ```. enter.sh```. To stop and remove all instances and containers run ```. remove.sh```.
 
 ## List of Benchmark Application
 

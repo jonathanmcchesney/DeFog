@@ -18,6 +18,7 @@ RUN \
 	redis \
 	redis-server \
 	tcl \
+	bc \
 	git
 
 RUN \
