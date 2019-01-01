@@ -139,6 +139,7 @@ function delete_temps {
 	rm -rf yolobuild
 	rm -rf psphinxbuild
 	rm -rf ipokemonbuild
+	rm -rf aeneasbuild
 	rm -rf assets
     echo OK
 	

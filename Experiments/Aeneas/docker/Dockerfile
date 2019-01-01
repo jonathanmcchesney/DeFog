@@ -17,6 +17,9 @@ RUN \
 RUN \
 	apt-get install -y \
 	wget 
+	
+RUN \
+	pip install boto3	
 
 RUN \
 	git init && \
