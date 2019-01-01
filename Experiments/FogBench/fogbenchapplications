@@ -81,8 +81,10 @@ function edgebench {
 }
 
 function cloudbench {
+
 	test $run_yolo && run_docker_yolo
 	test $run_psphinx && run_docker_psphinx
+	test $run_aeneas && run_docker_aeneas
 	test $run_ipokemon && run_docker_ipokemon
 
 }
