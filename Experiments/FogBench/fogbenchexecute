@@ -18,7 +18,7 @@ function executebenchmarkhelp {
 function executebenchmarkoncloud {
 		echo "ssh into cloud instance.."
 		echo "perfoming actions benchmarks.."
-		ssh -i ~/Documents/csc4006awskey.pem ubuntu@ec2-52-31-99-235.eu-west-1.compute.amazonaws.com ' sudo bash -s' -- < ./fogbenchactions $environment $actions $applications ./result.txt
+		ssh -i ~/Documents/csc4006awskey.pem ubuntu@ec2-52-31-99-235.eu-west-1.compute.amazonaws.com ' sudo bash -s' -- < ./fogbenchactions $environment $actions $applications
 		echo "Done ssh"
 }
 
@@ -95,7 +95,6 @@ function sendAsset {
 	echo Time to send $asset to server: | tee -a $filename.txt
 	{ time scp -i ~/Documents/csc4006awskey.pem $newassetname ubuntu@ec2-52-31-99-235.eu-west-1.compute.amazonaws.com:~/fogbench/assets > /dev/null 2>&1 ; } |& tee -a $filename.txt
 
-	rm $newassetname
 }
 
 function executebenchmarkonedge {
