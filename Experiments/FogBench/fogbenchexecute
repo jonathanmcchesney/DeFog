@@ -37,6 +37,9 @@ function determineapplicationbenchmarks {
 		elif [ "$applications" == "-p" ];
 		then	
 			setupandexecutepsphinxbenchmarks
+		elif [ "$applications" == "-j" ];
+		then	
+			setupandexecuteaeneasbenchmarks	
 		elif [ "$applications" == "-i" ];
 		then	
 			setupipokemonserver	
@@ -57,9 +60,9 @@ function setupipokemonserver {
 
 function setupandexecuteyolobenchmarks {
 	declare -a arrPics
-	newassetname=./assets/yoloimage.jpg		
+	newassetname=./assets/yolo-assets/yoloimage.jpg		
 			
-	for file in ./assets/*.jpg
+	for file in ./assets/yolo-assets/*.jpg
 	do
 		arrPics=("${Pics[@]}" "$file")
 		asset=$arrPics
@@ -75,9 +78,9 @@ function setupandexecuteyolobenchmarks {
 
 function setupandexecutepsphinxbenchmarks {
 	declare -a arrWav
-	newassetname=./assets/psphinx.wav
+	newassetname=./assets/psphinx-assets/psphinx.wav
 	
-	for file in ./assets/*.wav
+	for file in ./assets/psphinx-assets/*.wav
 	do
 		arrWavs=("${Wavs[@]}" "$file")
 		asset=$arrWavs
@@ -87,6 +90,49 @@ function setupandexecutepsphinxbenchmarks {
 		executebenchmarkapplicationoncloud
 	
 	done	
+}
+
+function setupandexecuteaeneasbenchmarks {
+
+	declare -a arrAudios
+	
+	for file1 in ./assets/aeneas-assets/audio/*.mp3
+	do
+		arrAudios=("${arrAudios[@]}" "$file1")
+	done
+
+
+	declare -a arrTexts
+	
+	for file2 in ./assets/aeneas-assets/text/*.xhtml
+	do
+	
+		local arrTexts=("${arrTexts[@]}" "$file2")	
+	done	
+		
+		
+	total=${#arrAudios[@]}
+	
+	for (( i=0; i<=$(( $total -1 )); i++ ))
+	do 
+		asset=${arrAudios[$i]}
+		newassetname=./assets/aeneas-assets/aeneasaudio.mp3
+
+		echo "Sending asset at path: " $asset "to application..."
+		sendAsset
+		echo "DONE"
+		
+		asset=${arrTexts[$i]}
+		newassetname=./assets/aeneas-assets/aeneastext.xhtml
+
+		echo "Sending asset at path: " $asset "to application..."
+		sendAsset
+		echo "DONE"
+		
+		executebenchmarkapplicationoncloud
+
+	done
+
 }
 
 function sendAsset {
@@ -182,9 +228,10 @@ while true; do
 		echo ""
 		echo "0. Yolo"
 		echo "1. PocketSphinx"
-		echo "2. iPokeMon (build and run)"
-		echo "3. iPokeMon (run benchmarks only)"
-		echo "4. None"
+		echo "2. Aeneas"
+		echo "3. iPokeMon (build and run)"
+		echo "4. iPokeMon (run benchmarks only)"
+		echo "5. None"
 		echo ""
   read -p "What Applications would you like to benchmark: [0,1,2,3,4]" ANS
   case $ANS in 
@@ -195,12 +242,15 @@ while true; do
        applications="-p" 
        break;;
 	'2') 
-       applications="-i"
-       break;;   
+       applications="-j"
+       break;;
 	'3') 
+       applications="-i"
+       break;;	   
+	'4') 
        applications="-k"
        break;;   
-	'4') 
+	'5') 
        applications="-m"
        break;; 	   
     *) 

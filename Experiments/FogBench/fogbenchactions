@@ -143,7 +143,7 @@ function delete_temps {
     echo OK
 	
 	echo Removing docker containers and images...
-		removedockerimages
+		removedockerimages &>/dev/null
 	echo OK
 }
 
@@ -164,7 +164,7 @@ function build_docker_ipokemon {
 
 	echo Building iPokeMon docker image...
 	chmod 777 execute.sh
-	time . build.sh 
+	time . build.sh &>/dev/null
 	echo DONE
 	
 }
@@ -215,6 +215,29 @@ function build_docker_yolo {
 	
 }
 
+function build_docker_aeneas {
+    echo Entering aeneasbuild...
+	mkdir aeneasbuild
+	cd aeneasbuild
+
+	echo Pulling down aeneas docker file...
+	sudo git init 
+	sudo git remote add -f csc4006-EdgeBenchmarking https://gitlab.eeecs.qub.ac.uk/40126401/csc4006-EdgeBenchmarking.git
+	sudo git config core.sparsecheckout true
+	echo Experiments/Aeneas/docker/ >> .git/info/sparse-checkout
+	sudo git pull https://gitlab.eeecs.qub.ac.uk/40126401/csc4006-EdgeBenchmarking.git master
+	
+	echo Experiments/Aeneas/docker...
+	cd Experiments/Aeneas/docker
+
+	echo Building aeneas docker image - console logs suppressed...
+	echo Please wait as this may take a few minutes...
+	chmod 777 execute.sh
+	time . build.sh &>/dev/null
+	echo DONE
+	
+}
+
 function HELP {
     cat <<HELP
 Help: benchmarker [OPTION...]
@@ -243,6 +266,7 @@ function cloudbench {
 	
 	test $run_yolo && build_docker_yolo
 	test $run_psphinx && build_docker_psphinx
+	test $run_aeneas && build_docker_aeneas
 	test $build_ipokemon && build_docker_ipokemon
 
 }
@@ -260,7 +284,7 @@ function main {
 	
 }
 
-while getopts :ceb:adfsxuhngs:zyipmk opt; do
+while getopts :ceb:adfsxuhngs:zyijpmk opt; do
     case "$opt" in
         a)
             run_downloads=true
@@ -303,11 +327,15 @@ while getopts :ceb:adfsxuhngs:zyipmk opt; do
 			run_yolo=true
 			run_psphinx=true
 			run_ipokemon=true
+			run_aeneas=true
 			;;
 		i)	
 			build_ipokemon=true
 			run_ipokemon=true
 			;;
+		j)	
+			run_aeneas=true
+			;;	
 		k)	
 			run_ipokemon=true
 			;;	
