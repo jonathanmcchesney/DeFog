@@ -28,24 +28,44 @@ function executebenchmarkapplicationoncloud {
 			ssh -i ~/Documents/csc4006awskey.pem ubuntu@ec2-52-31-99-235.eu-west-1.compute.amazonaws.com ' sudo bash -s' -- < ./fogbenchapplications $environment $actions $applications
 		echo "Done ssh"
 		
+		local start=$(date +%s.%N)
+		scp -i ~/Documents/csc4006awskey.pem ubuntu@ec2-52-31-99-235.eu-west-1.compute.amazonaws.com:~/fogbench/results/results.txt cloudresult.txt
+		local end=$(date +%s.%N)
+		local runtime=$( echo "$end - $start" | bc -l )
+		
+		echo Transfer cloud application results: completed in $runtime secs | tee -a $filename.txt
+		
+		cat cloudresult.txt >> $filename.txt
+		rm cloudresult.txt
+	
 }
 
 function determineapplicationbenchmarks {
 		if [ "$applications" == "-y" ];
-		then	
+		then
+			echo YOLO Benchmarks: | tee -a $filename.txt
+			seperator
 			setupandexecuteyolobenchmarks
 		elif [ "$applications" == "-p" ];
 		then	
+			echo Pocket Sphinx Benchmarks: | tee -a $filename.txt
+			seperator
 			setupandexecutepsphinxbenchmarks
 		elif [ "$applications" == "-j" ];
 		then	
+			echo Aeneas Benchmarks: | tee -a $filename.txt
+			seperator
 			setupandexecuteaeneasbenchmarks	
 		elif [ "$applications" == "-i" ];
 		then	
+			echo iPokeMon Benchmarks: | tee -a $filename.txt
+			seperator
 			setupipokemonserver	
 			setupandexecuteipokemonbenchmarks
 		elif [ "$applications" == "-k" ];
 		then	
+			echo iPokeMon Benchmarks: | tee -a $filename.txt
+			seperator
 			setupandexecuteipokemonbenchmarks	
 		fi	
 }
@@ -61,9 +81,15 @@ function setupipokemonserver {
 function setupandexecuteyolobenchmarks {
 	declare -a arrPics
 	newassetname=./assets/yolo-assets/yoloimage.jpg		
-			
+	local count=1
+	
 	for file in ./assets/yolo-assets/*.jpg
 	do
+		echo -e "" | tee -a $filename.txt
+		echo YOLO Benchmark Run $count: | tee -a $filename.txt
+		echo "" | tee -a $filename.txt
+		
+		((count++))
 		arrPics=("${Pics[@]}" "$file")
 		asset=$arrPics
 		echo $asset
@@ -138,8 +164,11 @@ function setupandexecuteaeneasbenchmarks {
 function sendAsset {
 	TIMEFORMAT=%R
 	cp $asset $newassetname
-	echo Time to send $asset to server: | tee -a $filename.txt
-	{ time scp -i ~/Documents/csc4006awskey.pem $newassetname ubuntu@ec2-52-31-99-235.eu-west-1.compute.amazonaws.com:~/fogbench/assets > /dev/null 2>&1 ; } |& tee -a $filename.txt
+	local start=$(date +%s.%N)
+	scp -i ~/Documents/csc4006awskey.pem $newassetname ubuntu@ec2-52-31-99-235.eu-west-1.compute.amazonaws.com:~/fogbench/assets > /dev/null 2>&1
+	local end=$(date +%s.%N)
+	local runtime=$( echo "$end - $start" | bc -l )
+	echo Upload $asset to server: completed in $runtime secs | tee -a $filename.txt
 
 }
 
@@ -260,6 +289,10 @@ done
 echo "Applications value:$applications"
 }
 
+function seperator {
+echo -e "*****************************************************************************" | tee -a $filename.txt
+}
+
 function asciiheader {
 
 echo "   ___ ___   ___          ___              _    ";
@@ -272,6 +305,9 @@ echo -e "CS FogBench:" | tee $filename.txt
 echo -e "Welcome, you are using CS FogBench: a cloud and edge benchmarking tool!" | tee -a $filename.txt
 echo -e "	Created by: Jonathan McChesney, student at Queen's University Belfast" | tee -a $filename.txt
 echo -e "	CSC4006 Final Year Research and Development Project" | tee -a $filename.txt
+echo -e "" | tee -a $filename.txt
+echo -e "*****************************************************************************" | tee -a $filename.txt
+echo -e "*****************************************************************************" | tee -a $filename.txt
 echo -e "" | tee -a $filename.txt
 
 }
