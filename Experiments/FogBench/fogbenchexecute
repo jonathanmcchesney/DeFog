@@ -167,6 +167,8 @@ function sendAsset {
 	local start=$(date +%s.%N)
 	scp -i ~/Documents/csc4006awskey.pem $newassetname ubuntu@ec2-52-31-99-235.eu-west-1.compute.amazonaws.com:~/fogbench/assets > /dev/null 2>&1
 	local end=$(date +%s.%N)
+	rm $newassetname
+	
 	local runtime=$( echo "$end - $start" | bc -l )
 	echo Upload $asset to server: completed in $runtime secs | tee -a $filename.txt
 
