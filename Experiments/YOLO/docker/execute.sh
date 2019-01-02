@@ -20,7 +20,7 @@ python s3Upload.py predictions.png predict.png
 end=$(date +%s.%N)
 runtime=$( echo "$end - $start" | bc -l )
 echo "Upload to S3 bucket: completed in $runtime seconds" | tee -a results.txt
-cat results.txt >> /mnt/results/
+cat results.txt >> /mnt/results/results.txt
 
 exit
 
