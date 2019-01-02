@@ -1,0 +1,11 @@
+CS FogBench:
+Welcome, you are using CS FogBench: a cloud and edge benchmarking tool!
+	Created by: Jonathan McChesney, student at Queen's University Belfast
+	CSC4006 Final Year Research and Development Project
+
+Time to send ./assets/psphinx-assets/b0430.wav to server:
+2.266
+Time to send ./assets/psphinx-assets/b0431.wav to server:
+1.229
+Time to send ./assets/psphinx-assets/b0433.wav to server:
+1.226

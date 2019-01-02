@@ -3,11 +3,13 @@
 cd ~/Experiments/YOLO/yolo
 chmod 777 darknet
 
+
+echo "Starting YOLO detection..."
 start=$(date +%s.%N)
 ./darknet detect cfg/yolov3-tiny.cfg yolov3-tiny.weights /mnt/assets/yoloimage.jpg
 end=$(date +%s.%N)
 runtime=$( echo "$end - $start" | bc -l )
-echo "Completed in $runtime seconds"
+echo "Computation: completed in $runtime secs" | tee results.txt
 
 
 echo "Starting Upload to S3 Bucket..."
@@ -17,8 +19,7 @@ start=$(date +%s.%N)
 python s3Upload.py predictions.png predict.png
 end=$(date +%s.%N)
 runtime=$( echo "$end - $start" | bc -l )
-echo "Completed in $runtime seconds"
-echo "Done"
+echo "Upload to S3 bucket: completed in $runtime seconds" | tee -a results.txt
 
 exit
 
