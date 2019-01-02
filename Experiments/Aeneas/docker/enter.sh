@@ -1,1 +1,1 @@
-docker run --rm -it -v /home/ubuntu/fogbench/assets:/mnt/assets --name aeneas aeneas bash
+docker run --rm -it -v /home/ubuntu/fogbench/assets:/mnt/assets -v /home/ubuntu/fogbench/results:/mnt/results --name aeneas aeneas bash

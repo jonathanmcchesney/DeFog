@@ -1,2 +1,2 @@
-docker run --rm -it -v /home/ubuntu/fogbench/assets:/mnt/assets --name psphinx psphinx bash
+docker run --rm -it -v /home/ubuntu/fogbench/assets:/mnt/assets -v /home/ubuntu/fogbench/results:/mnt/results --name psphinx psphinx bash
 

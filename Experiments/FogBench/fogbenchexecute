@@ -33,7 +33,7 @@ function executebenchmarkapplicationoncloud {
 		local end=$(date +%s.%N)
 		local runtime=$( echo "$end - $start" | bc -l )
 		
-		echo Transfer cloud application results: completed in $runtime secs | tee -a $filename.txt
+		echo Transfer cloud application results to edge device: completed in $runtime secs | tee -a $filename.txt
 		
 		cat cloudresult.txt >> $filename.txt
 		rm cloudresult.txt
@@ -105,9 +105,15 @@ function setupandexecuteyolobenchmarks {
 function setupandexecutepsphinxbenchmarks {
 	declare -a arrWav
 	newassetname=./assets/psphinx-assets/psphinx.wav
+	local count=1
 	
 	for file in ./assets/psphinx-assets/*.wav
 	do
+		echo -e "" | tee -a $filename.txt
+		echo Pocket Sphinx Benchmark Run $count: | tee -a $filename.txt
+		echo "" | tee -a $filename.txt
+		
+		((count++))
 		arrWavs=("${Wavs[@]}" "$file")
 		asset=$arrWavs
 		echo "Sending asset at path: " $asset "to application..."
@@ -138,9 +144,15 @@ function setupandexecuteaeneasbenchmarks {
 		
 		
 	total=${#arrAudios[@]}
+	local count=1
 	
 	for (( i=0; i<=$(( $total -1 )); i++ ))
 	do 
+		echo -e "" | tee -a $filename.txt
+		echo Aeneas Benchmark Run $count: | tee -a $filename.txt
+		echo "" | tee -a $filename.txt
+		
+		((count++))
 		asset=${arrAudios[$i]}
 		newassetname=./assets/aeneas-assets/aeneasaudio.mp3
 
@@ -342,7 +354,9 @@ function main {
 
 	
 	if [ "$environment" == "-c" ] || [ "$environment" == "-b" ];
-	then	
+	then
+		echo "Cloud Benchmarks: " | tee -a $filename.txt
+		echo "" | tee -a $filename.txt
 		executebenchmarkoncloud
 		determineapplicationbenchmarks
 	fi	

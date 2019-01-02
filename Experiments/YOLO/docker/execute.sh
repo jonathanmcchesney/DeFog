@@ -5,7 +5,6 @@ rm /mnt/results/results.txt
 cd ~/Experiments/YOLO/yolo
 chmod 777 darknet
 
-echo "Starting YOLO detection..." | tee results.txt
 start=$(date +%s.%N)
 ./darknet detect cfg/yolov3-tiny.cfg yolov3-tiny.weights /mnt/assets/yoloimage.jpg
 end=$(date +%s.%N)
