@@ -1,35 +1,109 @@
 #!/bin/bash
 
+cloudaddress=ec2-34-244-90-151.eu-west-1.compute.amazonaws.com
+clouduser=ubuntu
+edgeaddress=192.168.0.38
+edgeuser=root
+awskey=~/Documents/csc4006awskey.pem
+
 function HELP {
     cat <<HELP
 Help: fogbenchmarker [OPTION...]
+
+Environments:
 
 -b Run Benchmarks on both Cloud and Edge
 -c Run Benchmarks on Cloud
 -e Run Benchmarks on Edge
 
+Actions:
+-a Run all system benchmarks
+- Runs small and large weight downloads test
+- Test large file create/remove speed
+- Run Sysbench
+- Run UnixBench
+- Delete temporary files
+- Run Simple System Benchmarks
+- No actions run
+
+Applications
+-y Run Yolo
+-p Run Pocket Sphinx
+- Run Aeneas
+-i Build and Run iPokeMon
+-j Run iPokeMon
+- No Applications run
+
 HELP
 }
 
 function executebenchmarkhelp {
-		ssh -i ~/Documents/csc4006awskey.pem ubuntu@ec2-52-31-99-235.eu-west-1.compute.amazonaws.com 'bash -s' -- < ./fogbench -?
+		ssh -i $awskey $clouduser@$cloudaddress 'bash -s' -- < ./fogbench -?
+}
+
+function executebenchmarkonedge {
+		echo "ssh into edge instance for actions and system benchmarks.."
+		echo "perfoming actions benchmarks.."
+		ssh $edgeuser@$edgeaddress ' sudo bash -s' -- < ./fogbenchactions $environment $actions $applications
+		echo "Done ssh"
+		
+		local start=$(date +%s.%N)
+		scp $edgeuser@$edgeaddress:~/fogbench/results/results.txt edgeresult.txt
+		local end=$(date +%s.%N)
+		local runtime=$( echo "$end - $start" | bc -l )
+		
+		echo Transfer edge action results to edge device: completed in $runtime secs | tee -a $filename.txt
+		echo "" | tee -a $filename.txt
+		
+		cat edgeresult.txt >> $filename.txt
+		rm edgeresult.txt
+}
+
+function executebenchmarkapplicationonedge {
+		
+		echo "ssh into edge instance for application benchmarks.."
+			ssh	$edgeuser@$edgeaddress ' sudo bash -s' -- < ./fogbenchapplications $environment $actions $applications
+		echo "Done ssh"
+		
+		local start=$(date +%s.%N)
+		scp $edgeuser@$edgeaddress:~/fogbench/results/results.txt edgeresult.txt
+		local end=$(date +%s.%N)
+		local runtime=$( echo "$end - $start" | bc -l )
+		
+		echo Transfer edge application results to edge device: completed in $runtime secs | tee -a $filename.txt
+		
+		cat edgeresult.txt >> $filename.txt
+		rm edgeresult.txt
+	
 }
 
 function executebenchmarkoncloud {
-		echo "ssh into cloud instance.."
+		echo "ssh into cloud instance for actions and system benchmarks.."
 		echo "perfoming actions benchmarks.."
-		ssh -i ~/Documents/csc4006awskey.pem ubuntu@ec2-52-31-99-235.eu-west-1.compute.amazonaws.com ' sudo bash -s' -- < ./fogbenchactions $environment $actions $applications
+		ssh -i $awskey $clouduser@$cloudaddress ' sudo bash -s' -- < ./fogbenchactions $environment $actions $applications
 		echo "Done ssh"
+		
+		local start=$(date +%s.%N)
+		scp -i $awskey $clouduser@$cloudaddress:~/fogbench/results/results.txt cloudresult.txt
+		local end=$(date +%s.%N)
+		local runtime=$( echo "$end - $start" | bc -l )
+		
+		echo Transfer cloud action results to edge device: completed in $runtime secs | tee -a $filename.txt
+		echo "" | tee -a $filename.txt
+		
+		cat cloudresult.txt >> $filename.txt
+		rm cloudresult.txt
+				
 }
 
 function executebenchmarkapplicationoncloud {
 		
 		echo "ssh into cloud instance for application benchmarks.."
-			ssh -i ~/Documents/csc4006awskey.pem ubuntu@ec2-52-31-99-235.eu-west-1.compute.amazonaws.com ' sudo bash -s' -- < ./fogbenchapplications $environment $actions $applications
+			ssh -i $awskey $clouduser@$cloudaddress ' sudo bash -s' -- < ./fogbenchapplications $environment $actions $applications
 		echo "Done ssh"
 		
 		local start=$(date +%s.%N)
-		scp -i ~/Documents/csc4006awskey.pem ubuntu@ec2-52-31-99-235.eu-west-1.compute.amazonaws.com:~/fogbench/results/results.txt cloudresult.txt
+		scp -i $awskey $clouduser@$cloudaddress:~/fogbench/results/results.txt cloudresult.txt
 		local end=$(date +%s.%N)
 		local runtime=$( echo "$end - $start" | bc -l )
 		
@@ -75,7 +149,7 @@ function setupandexecuteipokemonbenchmarks {
 }
 
 function setupipokemonserver {
-	ssh -i ~/Documents/csc4006awskey.pem ubuntu@ec2-52-31-99-235.eu-west-1.compute.amazonaws.com -t "cd fogbench/ipokemonbuild/Experiments/iPokeMon/docker && sudo -sH && . enter.sh; bash"
+	ssh -i $awskey $clouduser@$cloudaddress -t "cd fogbench/ipokemonbuild/Experiments/iPokeMon/docker && sudo -sH && . enter.sh; bash"
 }
 
 function setupandexecuteyolobenchmarks {
@@ -96,7 +170,15 @@ function setupandexecuteyolobenchmarks {
 		echo "Sending asset at path: " $newassetname "to application..."
 		sendAsset
 		echo "DONE"
-		executebenchmarkapplicationoncloud
+		
+		if [ "$environment" == "-c" ] || [ "$environment" == "-b" ];
+		then
+			executebenchmarkapplicationoncloud
+		fi	
+		if [ "$environment" == "-e" ] || [ "$environment" == "-b" ];
+		then
+			executebenchmarkapplicationonedge
+		fi
 		
 	done
 	
@@ -119,7 +201,15 @@ function setupandexecutepsphinxbenchmarks {
 		echo "Sending asset at path: " $asset "to application..."
 		sendAsset
 		echo "DONE"
-		executebenchmarkapplicationoncloud
+		
+		if [ "$environment" == "-c" ] || [ "$environment" == "-b" ];
+		then
+			executebenchmarkapplicationoncloud
+		fi	
+		if [ "$environment" == "-e" ] || [ "$environment" == "-b" ];
+		then
+			executebenchmarkapplicationonedge
+		fi
 	
 	done	
 }
@@ -167,7 +257,14 @@ function setupandexecuteaeneasbenchmarks {
 		sendAsset
 		echo "DONE"
 		
-		executebenchmarkapplicationoncloud
+		if [ "$environment" == "-c" ] || [ "$environment" == "-b" ];
+		then
+			executebenchmarkapplicationoncloud
+		fi	
+		if [ "$environment" == "-e" ] || [ "$environment" == "-b" ];
+		then
+			executebenchmarkapplicationonedge
+		fi
 
 	done
 
@@ -177,7 +274,7 @@ function sendAsset {
 	TIMEFORMAT=%R
 	cp $asset $newassetname
 	local start=$(date +%s.%N)
-	scp -i ~/Documents/csc4006awskey.pem $newassetname ubuntu@ec2-52-31-99-235.eu-west-1.compute.amazonaws.com:~/fogbench/assets > /dev/null 2>&1
+	scp -i $awskey $newassetname $clouduser@$cloudaddress:~/fogbench/assets > /dev/null 2>&1
 	local end=$(date +%s.%N)
 	rm $newassetname
 	
@@ -186,9 +283,6 @@ function sendAsset {
 
 }
 
-function executebenchmarkonedge {
-	echo "EDGE!"
-}
 
 function actionsuserinput {
 while true; do
@@ -197,7 +291,7 @@ while true; do
 		echo ""
 		echo "0. All"
 		echo "1. Small and large weight downloads"
-		echo "2. Large weights file"
+		echo "2. Test large file create/remove speed"
 		echo "3. Sysbench"
 		echo "4. UnixBench"
 		echo "5. Delete temporary files"
@@ -210,7 +304,7 @@ while true; do
        actions="-a"
        break;;
     '1') 
-       actions="d"
+       actions="-d"
        break;;
 	'2') 
        actions="-f" 
@@ -328,6 +422,7 @@ echo -e "" | tee -a $filename.txt
 
 function createresultfile {
 filename=result
+cd results
 if [[ -e $filename.txt ]] ; then
     i=0
     while [[ -e $filename-$i.txt ]] ; do
@@ -335,6 +430,7 @@ if [[ -e $filename.txt ]] ; then
     done
     filename=$filename-$i
 fi
+cd ../
 }
 
 function main {
@@ -356,15 +452,23 @@ function main {
 	if [ "$environment" == "-c" ] || [ "$environment" == "-b" ];
 	then
 		echo "Cloud Benchmarks: " | tee -a $filename.txt
+		seperator
 		echo "" | tee -a $filename.txt
+		
 		executebenchmarkoncloud
 		determineapplicationbenchmarks
 	fi	
 	
 	if [ "$environment" == "-e" ] || [ "$environment" == "-b" ];
 	then	
+		echo "Edge/Cloud Benchmarks: " | tee -a $filename.txt
+		seperator
+		echo "" | tee -a $filename.txt
 		executebenchmarkonedge
+		determineapplicationbenchmarks
 	fi	
+	
+	mv $filename.txt results/
 
 }
 

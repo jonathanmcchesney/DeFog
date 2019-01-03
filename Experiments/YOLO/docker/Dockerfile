@@ -9,7 +9,6 @@ RUN \
 	autoconf \
 	build-essential \
 	libtool \
-	time \
 	bc \
 	python \
 	python-pip \
@@ -37,7 +36,8 @@ RUN \
 
 RUN \ 
 	cd Experiments/YOLO/yolo && \
-	wget https://pjreddie.com/media/files/yolov3-tiny.weights 
+	wget https://pjreddie.com/media/files/yolov3-tiny.weights >/dev/null 2>&1
+	wget https://pjreddie.com/media/files/tiny.weights >/dev/null 2>&1
 	
 # defaults command
 CMD ["scripts/execute.sh"]

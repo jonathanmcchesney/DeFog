@@ -11,7 +11,7 @@ function simple_benchmark {
 
 	simple_network_benchmark
 	
-	displayInfo
+	displayInfo | tee -a $filename.txt
 
 }
 
@@ -24,8 +24,8 @@ CPU Model Name: $cpuNume
 Number of Cores: $cpuCores
 CPU Frequency: $cpuFrequency MHz
 System Uptime: $sysUptime
-Small Weights dl time: $smallWeights
-Large Weights rate: $downloadTest
+Small Weights dl speed: $smallWeights
+Large Weights dl rate: $downloadTest
 Sys I/O Rate: $inputOutput
 *********************************
 
@@ -64,8 +64,13 @@ function simple_network_benchmark {
 }
 
 function _downloadTest {
-    time wget -O /dev/null "$1" 2>&1 | awk '/\/dev\/null/ {downloadRate=$3 $4} END {gsub(/\(|\)/,"",downloadRate); print downloadRate}'
-    perf stat -d wget -O /dev/null "$1" 2>&1 | awk '/\/dev\/null/ {downloadRate=$3 $4} END {gsub(/\(|\)/,"",downloadRate); print downloadRate}'
+	local start=$(date +%s.%N)
+
+    wget -O /dev/null "$1" 2>&1 | awk '/\/dev\/null/ {downloadRate=$3 $4} END {gsub(/\(|\)/,"",downloadRate); print downloadRate}' | tee -a $filename.txt
+	local end=$(date +%s.%N)
+	local runtime=$( echo "$end - $start" | bc -l )
+		
+	echo Download test: completed in $runtime secs | tee -a $filename.txt
 }
 
 
@@ -86,10 +91,27 @@ function downloads_benchmark {
 }
 
 function instantiate_file {
-	cd fogbench 
     echo -n Creating file ...
+	local start=$(date +%s.%N)
     dd if=/dev/urandom of=large_file bs=1024 count=102400
     echo OK
+	local end=$(date +%s.%N)
+	local runtime=$( echo "$end - $start" | bc -l )
+		
+	echo Create large file speed: completed in $runtime secs | tee -a $filename.txt
+	
+	remove_file
+}
+
+function remove_file {
+	echo -n Removing file ...
+	local start=$(date +%s.%N)
+	rm large_file
+    echo OK
+	local end=$(date +%s.%N)
+	local runtime=$( echo "$end - $start" | bc -l )
+		
+	echo Remove large file speed: completed in $runtime secs | tee -a $filename.txt
 }
 
 function install_unixbench {
@@ -98,7 +120,7 @@ function install_unixbench {
 
     local file_ver=UnixBench5.1.3
 	echo "Getting UnixBench..."
- 	time wget -N https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/teddysun/UnixBench5.1.3.tgz
+ 	wget -N https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/teddysun/UnixBench5.1.3.tgz
 	tar xvfz $file_ver.tgz
 }
 
@@ -111,8 +133,8 @@ function benchmark_unixbench {
     install_unixbench
 
     pushd UnixBench > /dev/null
-    ./Run index
-    popd > /dev/null
+    ./Run index 
+    popd > /dev/null | tee -a $filename.txt
 }
 
 function benchmark_sysbench {
@@ -121,7 +143,7 @@ function benchmark_sysbench {
 	install_sysbench
 	
 	echo -n Benchmarking using sysbench...
-	sysbench --test=cpu --cpu-max-prime=20000 run
+	sysbench --test=cpu --cpu-max-prime=20000 run | tee -a $filename.txt
 }
 
 function removedockerimages {
@@ -165,7 +187,7 @@ function build_docker_ipokemon {
 
 	echo Building iPokeMon docker image...
 	chmod 777 execute.sh
-	time . build.sh &>/dev/null
+	time . build.sh 
 	echo DONE
 	
 }
@@ -211,7 +233,7 @@ function build_docker_yolo {
 	echo Building yolo docker image - console logs suppressed...
 	echo Please wait as this may take a few minutes...
 	chmod 777 execute.sh
-	time . build.sh &>/dev/null
+	time . build.sh
 	echo DONE
 	
 }
@@ -253,15 +275,32 @@ Help: benchmarker [OPTION...]
 HELP
 }
 
-function edgebench {
-	echo "EDGE BENCH"
+function seperator {
+echo -e "*****************************************************************************" | tee -a $filename.txt
 }
 
-function cloudbench {
-	echo -e "Running on the Cloud: " | tee -a actionsresults.txt
+function edgebench {
+echo "Edge actions and system benchmarks: " | tee $filename.txt
+	seperator
+	
 
 	test $run_simple && simple_benchmark
 	test $run_downloads && downloads_benchmark
+	test $run_lfile && instantiate_file
+	test $run_sysbench && benchmark_sysbench
+	test $run_unixbench && benchmark_unixbench
+	
+	test $run_yolo && build_docker_yolo
+	
+}
+
+function cloudbench {
+	echo "Cloud actions and system benchmarks: " | tee $filename.txt
+	seperator
+
+	test $run_simple && simple_benchmark
+	test $run_downloads && downloads_benchmark
+	test $run_lfile && instantiate_file
 	test $run_sysbench && benchmark_sysbench
 	test $run_unixbench && benchmark_unixbench
 	
@@ -275,15 +314,17 @@ function cloudbench {
 function main {
 	mkdir -p fogbench && cd fogbench 	
 	test $run_delete && delete_temps
-
+	rm results.txt
 	rm -rf dir assets && mkdir assets && chmod 777 assets
 	rm -rf dir results && mkdir results && chmod 777 results
-	
-	echo -e "Actions Benchmarks: " | tee actionsresults.txt
+		
+	filename=results
 	
     test $run_cloud && cloudbench
     test $run_edge && edgebench
 	
+	mv $filename.txt results/results.txt
+
 }
 
 while getopts :ceb:adfsxuhngs:zyijpmk opt; do
@@ -308,8 +349,7 @@ while getopts :ceb:adfsxuhngs:zyijpmk opt; do
             run_downloads=true
             ;;
         f)
-            instantiate_file
-            exit
+            run_lfile=true
             ;;
 		s) 	
 			run_sysbench=true

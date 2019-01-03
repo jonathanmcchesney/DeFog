@@ -78,6 +78,13 @@ HELP
 
 function edgebench {
 	echo "EDGE BENCH"
+	
+	echo $run_yolo
+	
+	test $run_yolo && run_docker_yolo
+	test $run_psphinx && run_docker_psphinx
+	test $run_aeneas && run_docker_aeneas
+
 }
 
 function cloudbench {

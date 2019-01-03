@@ -1,0 +1,30 @@
+CS FogBench:
+Welcome, you are using CS FogBench: a cloud and edge benchmarking tool!
+	Created by: Jonathan McChesney, student at Queen's University Belfast
+	CSC4006 Final Year Research and Development Project
+
+*****************************************************************************
+*****************************************************************************
+
+Edge/Cloud Benchmarks: 
+*****************************************************************************
+
+Transfer edge action results to edge device: completed in .990830200 secs
+
+Edge actions and system benchmarks: 
+*****************************************************************************
+468KB/s
+Download test: completed in 518.891012419 secs
+
+Run Date: 01/03/2019 
+*********************************
+CPU Model Name:  ARMv7 Processor rev 3 (v7l)
+Number of Cores: 8
+CPU Frequency:  MHz
+System Uptime:   1:04,       
+Small Weights dl speed: bash: line 46: /usr/bin/time: No such file or directory
+Large Weights dl rate: 468KB/s
+Download test: completed in 518.891012419 secs
+Sys I/O Rate:  11.2 MB/s
+*********************************
+
