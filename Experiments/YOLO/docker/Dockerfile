@@ -32,6 +32,7 @@ RUN \
 	
 RUN \
 	cd Experiments/YOLO/yolo && \
+	make clean && \
 	make
 
 RUN \ 

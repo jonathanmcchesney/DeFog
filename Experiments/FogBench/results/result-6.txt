@@ -1,0 +1,36 @@
+CS FogBench:
+Welcome, you are using CS FogBench: a cloud and edge benchmarking tool!
+	Created by: Jonathan McChesney, student at Queen's University Belfast
+	CSC4006 Final Year Research and Development Project
+
+*****************************************************************************
+*****************************************************************************
+
+Cloud Benchmarks: 
+*****************************************************************************
+
+Transfer cloud action results to edge device: completed in 1.313153400 secs
+
+YOLO Benchmarks:
+*****************************************************************************
+
+YOLO Benchmark Run 1:
+
+Upload ./assets/yolo-assets/dog.jpg to server: completed in 1.338348000 secs
+Transfer cloud application results to edge device: completed in .997171100 secs
+Computation: completed in 1.599803817 secs
+Upload to S3 bucket: completed in .702992729 secs
+
+YOLO Benchmark Run 2:
+
+Upload ./assets/yolo-assets/eagle.jpg to server: completed in 1.433124000 secs
+Transfer cloud application results to edge device: completed in 1.146897800 secs
+Computation: completed in 1.509313367 secs
+Upload to S3 bucket: completed in .357381925 secs
+
+YOLO Benchmark Run 3:
+
+Upload ./assets/yolo-assets/giraffe.jpg to server: completed in 1.703273300 secs
+Transfer cloud application results to edge device: completed in .979826800 secs
+Computation: completed in 1.403842109 secs
+Upload to S3 bucket: completed in .355058631 secs
