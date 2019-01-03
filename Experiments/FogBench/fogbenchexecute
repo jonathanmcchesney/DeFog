@@ -274,7 +274,17 @@ function sendAsset {
 	TIMEFORMAT=%R
 	cp $asset $newassetname
 	local start=$(date +%s.%N)
-	scp -i $awskey $newassetname $clouduser@$cloudaddress:~/fogbench/assets > /dev/null 2>&1
+	
+	if [ "$environment" == "-c" ] || [ "$environment" == "-b" ];
+	then
+		scp -i $awskey $newassetname $clouduser@$cloudaddress:~/fogbench/assets > /dev/null 2>&1
+	fi	
+	if [ "$environment" == "-e" ] || [ "$environment" == "-b" ];
+	then
+		scp $newassetname $edgeuser@$edgeaddress:~/fogbench/assets > /dev/null 2>&1
+
+	fi
+
 	local end=$(date +%s.%N)
 	rm $newassetname
 	

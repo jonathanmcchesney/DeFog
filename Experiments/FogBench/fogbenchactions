@@ -291,6 +291,8 @@ echo "Edge actions and system benchmarks: " | tee $filename.txt
 	test $run_unixbench && benchmark_unixbench
 	
 	test $run_yolo && build_docker_yolo
+	test $run_psphinx && build_docker_psphinx
+	test $run_aeneas && build_docker_aeneas
 	
 }
 
