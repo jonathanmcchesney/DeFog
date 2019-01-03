@@ -50,14 +50,17 @@ function run_docker_yolo {
 	cd yolobuild/Experiments/YOLO/docker
 
 	echo -n Running yolo docker container...
-	if [ "$environment" == "-c" ] || [ "$environment" == "-b" ];
-		then
-			. run.sh
-		fi	
-		if [ "$environment" == "-e" ] || [ "$environment" == "-b" ];
-		then
-			. runedge.sh
-		fi
+	echo hi
+	echo $environment
+	if [ "$run_cloud" ];
+	then
+		echo in here
+		. run.sh
+	fi	
+	if [ "$run_edge" ];
+	then
+		. runedge.sh
+	fi
 	echo -n DONE
 }
 
