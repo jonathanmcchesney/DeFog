@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cloudaddress=ec2-34-244-90-151.eu-west-1.compute.amazonaws.com
+cloudaddress=ec2-18-203-187-177.eu-west-1.compute.amazonaws.com
 clouduser=ubuntu
 edgeaddress=192.168.0.38
 edgeuser=root
@@ -79,7 +79,12 @@ function executebenchmarkapplicationonedge {
 
 function executebenchmarkoncloud {
 		echo "ssh into cloud instance for actions and system benchmarks.."
-			ssh -i $awskey $clouduser@$cloudaddress ' sudo bash -s' -- < ./fogbenchactions $environment $actions $applications
+		A=3;
+		ssh -i $awskey $clouduser@$cloudaddress  ' sudo bash -s ' -- < ./fogbenchactions $environment $actions $applications
+		ssh -i $awskey $clouduser@$cloudaddress  "echo $A; echo \$B;"
+		echo $A
+		echo $B
+		echo $C		
 		echo "Done ssh"
 		
 		local start=$(date +%s.%N)

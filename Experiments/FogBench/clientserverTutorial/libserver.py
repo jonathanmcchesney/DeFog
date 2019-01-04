@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import sys
 import selectors
 import json
@@ -5,9 +6,8 @@ import io
 import struct
 
 request_search = {
-    "morpheus": "Follow the white rabbit. \U0001f430",
-    "ring": "In the caves beneath the Misty Mountains. \U0001f48d",
-    "\U0001f436": "\U0001f43e Playing ball! \U0001f3d0",
+    "morpheus": "Follow the white rabbit. ",
+    "ring": "In the caves beneath the Misty Mountains.",
 }
 
 

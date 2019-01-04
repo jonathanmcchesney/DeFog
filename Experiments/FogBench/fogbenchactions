@@ -335,6 +335,8 @@ function main {
 	rm -rf dir results && mkdir results && chmod 777 results
 		
 	filename=results
+	B=4
+	server_var=hellllllllllllo
 	
     test $run_cloud && cloudbench
     test $run_edge && edgebench

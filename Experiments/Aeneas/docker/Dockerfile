@@ -34,8 +34,7 @@ RUN \
 	cd Experiments/Aeneas/aeneas && \
 	bash install_dependencies.sh && \
 	pip install -r requirements.txt && \
-	python setup.py build_ext --inplace && \
-	python aeneas_check_setup.py
+	python setup.py build_ext --inplace
 	
 # defaults command
 CMD ["scripts/execute.sh"]
