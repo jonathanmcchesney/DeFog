@@ -42,7 +42,15 @@ function run_docker_psphinx {
 	cd psphinxbuild/Experiments/PocketSphinx/docker
 
 	echo -n Running psphinx docker container...
-	time . run.sh
+	if [ "$run_cloud" ];
+	then
+		echo in here
+		. run.sh
+	fi	
+	if [ "$run_edge" ];
+	then
+		. runedge.sh
+	fi	
 	echo -n DONE
 }
 
@@ -50,8 +58,6 @@ function run_docker_yolo {
 	cd yolobuild/Experiments/YOLO/docker
 
 	echo -n Running yolo docker container...
-	echo hi
-	echo $environment
 	if [ "$run_cloud" ];
 	then
 		echo in here
@@ -68,7 +74,15 @@ function run_docker_aeneas {
 	cd aeneasbuild/Experiments/Aeneas/docker
 
 	echo -n Running aeneas docker container...
-	time . run.sh
+	if [ "$run_cloud" ];
+	then
+		echo in here
+		. run.sh
+	fi	
+	if [ "$run_edge" ];
+	then
+		. runedge.sh
+	fi	
 	echo -n DONE
 }
 

@@ -1,0 +1,38 @@
+CS FogBench:
+Welcome, you are using CS FogBench: a cloud and edge benchmarking tool!
+	Created by: Jonathan McChesney, student at Queen's University Belfast
+	CSC4006 Final Year Research and Development Project
+
+*****************************************************************************
+*****************************************************************************
+
+Cloud Benchmarks: 
+*****************************************************************************
+
+Transfer cloud action results to edge device: completed in 1.497279100 secs
+
+Cloud actions and system benchmarks: 
+*****************************************************************************
+Pocket Sphinx Benchmarks:
+*****************************************************************************
+
+Pocket Sphinx Benchmark Run 1:
+
+Upload ./assets/psphinx-assets/b0430.wav to server: completed in 1.872957800 secs
+Transfer cloud application results to edge device: completed in 1.547151200 secs
+Computation: completed in 2.430729601 secs
+Upload to S3 bucket: completed in .350080644 secs
+
+Pocket Sphinx Benchmark Run 2:
+
+Upload ./assets/psphinx-assets/b0431.wav to server: completed in 1.829593800 secs
+Transfer cloud application results to edge device: completed in 2.606507500 secs
+Computation: completed in 3.650622418 secs
+Upload to S3 bucket: completed in .357101441 secs
+
+Pocket Sphinx Benchmark Run 3:
+
+Upload ./assets/psphinx-assets/b0433.wav to server: completed in 2.098907200 secs
+Transfer cloud application results to edge device: completed in 1.630900500 secs
+Computation: completed in 4.129831121 secs
+Upload to S3 bucket: completed in .299494912 secs

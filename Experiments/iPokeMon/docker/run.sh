@@ -1,2 +1,2 @@
-docker run --net=host --name ipokemon ipokemon ../scripts/execute.sh
+docker run --net=host -v /root/.aws:/root/.aws --name ipokemon ipokemon ../scripts/execute.sh
 

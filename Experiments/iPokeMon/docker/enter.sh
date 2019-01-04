@@ -1,2 +1,2 @@
-docker run --net=host -it --name ipokemon ipokemon bash
+docker run --net=host -it -v /root/.aws:/root/.aws --name ipokemon ipokemon bash
 

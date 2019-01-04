@@ -193,6 +193,9 @@ function build_docker_ipokemon {
 }
 
 function build_docker_psphinx {
+	local DIRECTORY=psphinxbuild
+
+	if [ ! -d "$DIRECTORY" ]; then
 	echo Entering psphinxbuild...
 	mkdir psphinxbuild
 	cd psphinxbuild
@@ -210,13 +213,17 @@ function build_docker_psphinx {
 	echo Building PocketSphinx docker image - console logs suppressed...
 	echo Please wait as this may take a few minutes...
 	chmod 777 execute.sh
-	time . build.sh &>/dev/null
-	echo DONE
+	time . build.sh
+	echo DONE	
+	fi
 	
 }
 
 function build_docker_yolo {
-    echo Entering yolobuild...
+	local DIRECTORY=yolobuild
+
+	if [ ! -d "$DIRECTORY" ]; then
+	echo Entering yolobuild...
 	mkdir yolobuild
 	cd yolobuild
 
@@ -234,12 +241,18 @@ function build_docker_yolo {
 	echo Please wait as this may take a few minutes...
 	chmod 777 execute.sh
 	time . build.sh
-	echo DONE
+	echo DONE	
+	fi
+
+    
 	
 }
 
 function build_docker_aeneas {
-    echo Entering aeneasbuild...
+	local DIRECTORY=aeneasbuild
+
+	if [ ! -d "$DIRECTORY" ]; then
+	echo Entering aeneasbuild...
 	mkdir aeneasbuild
 	cd aeneasbuild
 
@@ -256,8 +269,9 @@ function build_docker_aeneas {
 	echo Building aeneas docker image - console logs suppressed...
 	echo Please wait as this may take a few minutes...
 	chmod 777 execute.sh
-	time . build.sh &>/dev/null
-	echo DONE
+	time . build.sh
+	echo DONE	
+	fi
 	
 }
 
