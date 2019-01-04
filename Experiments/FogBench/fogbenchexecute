@@ -43,8 +43,7 @@ function executebenchmarkhelp {
 
 function executebenchmarkonedge {
 		echo "ssh into edge instance for actions and system benchmarks.."
-		echo "perfoming actions benchmarks.."
-		ssh $edgeuser@$edgeaddress ' sudo bash -s' -- < ./fogbenchactions $environment $actions $applications
+			ssh $edgeuser@$edgeaddress ' sudo bash -s' -- < ./fogbenchactions $environment $actions $applications
 		echo "Done ssh"
 		
 		local start=$(date +%s.%N)
@@ -52,11 +51,11 @@ function executebenchmarkonedge {
 		local end=$(date +%s.%N)
 		local runtime=$( echo "$end - $start" | bc -l )
 		
-		echo Transfer edge action results to edge device: completed in $runtime secs | tee -a $filename.txt
-		echo "" | tee -a $filename.txt
-		
 		cat edgeresult.txt >> $filename.txt
 		rm edgeresult.txt
+		
+		echo Transfer edge action results to edge device: completed in $runtime secs | tee -a $filename.txt
+		echo "" | tee -a $filename.txt
 }
 
 function executebenchmarkapplicationonedge {
@@ -69,18 +68,18 @@ function executebenchmarkapplicationonedge {
 		scp $edgeuser@$edgeaddress:~/fogbench/results/results.txt edgeresult.txt
 		local end=$(date +%s.%N)
 		local runtime=$( echo "$end - $start" | bc -l )
-		
-		echo Transfer edge application results to edge device: completed in $runtime secs | tee -a $filename.txt
-		
+				
 		cat edgeresult.txt >> $filename.txt
 		rm edgeresult.txt
+		
+		echo Transfer edge application results to edge device: completed in $runtime secs | tee -a $filename.txt
+		echo "" | tee -a $filename.txt
 	
 }
 
 function executebenchmarkoncloud {
 		echo "ssh into cloud instance for actions and system benchmarks.."
-		echo "perfoming actions benchmarks.."
-		ssh -i $awskey $clouduser@$cloudaddress ' sudo bash -s' -- < ./fogbenchactions $environment $actions $applications
+			ssh -i $awskey $clouduser@$cloudaddress ' sudo bash -s' -- < ./fogbenchactions $environment $actions $applications
 		echo "Done ssh"
 		
 		local start=$(date +%s.%N)
@@ -88,12 +87,11 @@ function executebenchmarkoncloud {
 		local end=$(date +%s.%N)
 		local runtime=$( echo "$end - $start" | bc -l )
 		
-		echo Transfer cloud action results to edge device: completed in $runtime secs | tee -a $filename.txt
-		echo "" | tee -a $filename.txt
-		
 		cat cloudresult.txt >> $filename.txt
 		rm cloudresult.txt
-				
+		
+		echo Transfer cloud action results to edge device: completed in $runtime secs | tee -a $filename.txt
+		echo "" | tee -a $filename.txt
 }
 
 function executebenchmarkapplicationoncloud {
@@ -106,12 +104,13 @@ function executebenchmarkapplicationoncloud {
 		scp -i $awskey $clouduser@$cloudaddress:~/fogbench/results/results.txt cloudresult.txt
 		local end=$(date +%s.%N)
 		local runtime=$( echo "$end - $start" | bc -l )
-		
-		echo Transfer cloud application results to edge device: completed in $runtime secs | tee -a $filename.txt
-		
+				
 		cat cloudresult.txt >> $filename.txt
 		rm cloudresult.txt
 	
+		echo Transfer cloud application results to edge device: completed in $runtime secs | tee -a $filename.txt
+		echo "" | tee -a $filename.txt
+
 }
 
 function determineapplicationbenchmarks {
@@ -166,7 +165,6 @@ function setupandexecuteyolobenchmarks {
 		((count++))
 		arrPics=("${Pics[@]}" "$file")
 		asset=$arrPics
-		echo $asset
 		echo "Sending asset at path: " $newassetname "to application..."
 		sendAsset
 		echo "DONE"
