@@ -1,4 +1,5 @@
-#!/bin/sh
+#!/bin/bash
+
 
 rm /mnt/results/results.txt
 rm /mnt/results/arrresult.txt
