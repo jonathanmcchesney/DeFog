@@ -41,112 +41,183 @@ function executebenchmarkhelp {
 		ssh -i $awskey $clouduser@$cloudaddress 'bash -s' -- < ./fogbench -?
 }
 
-function executebenchmarkonedge {
+function benchmark_edge_actions {
 		echo "ssh into edge instance for actions and system benchmarks.."
 			ssh $edgeuser@$edgeaddress ' sudo bash -s' -- < ./fogbenchactions $environment $actions $applications
 		echo "Done ssh"
 		
 		local start=$(date +%s.%N)
-		scp $edgeuser@$edgeaddress:~/fogbench/results/results.txt edgeresult.txt
+			scp $edgeuser@$edgeaddress:~/fogbench/results/* edgeresult.txt
 		local end=$(date +%s.%N)
 		local runtime=$( echo "$end - $start" | bc -l )
 		
-		cat edgeresult.txt >> $filename.txt
+		cat edgeresult.txt >> $verbose_filename.txt
 		rm edgeresult.txt
 		
-		echo Transfer edge action results to edge device: completed in $runtime secs | tee -a $filename.txt
-		echo "" | tee -a $filename.txt
+		echo Transfer edge action results to edge device: completed in $runtime secs | tee -a $verbose_filename.txt
+		echo "" | tee -a $verbose_filename.txt
+		
 }
 
-function executebenchmarkapplicationonedge {
+function benchmark_edge_applications {
 		
 		echo "ssh into edge instance for application benchmarks.."
 			ssh	$edgeuser@$edgeaddress ' sudo bash -s' -- < ./fogbenchapplications $environment $actions $applications
 		echo "Done ssh"
 		
 		local start=$(date +%s.%N)
-		scp $edgeuser@$edgeaddress:~/fogbench/results/results.txt edgeresult.txt
+		scp $edgeuser@$edgeaddress:~/fogbench/results/* edgeresult.txt
 		local end=$(date +%s.%N)
 		local runtime=$( echo "$end - $start" | bc -l )
-				
-		cat edgeresult.txt >> $filename.txt
+		metricsValues[3]=$runtime
+
+		cat edgeresult.txt >> $verbose_filename.txt
 		rm edgeresult.txt
 		
-		echo Transfer edge application results to edge device: completed in $runtime secs | tee -a $filename.txt
-		echo "" | tee -a $filename.txt
+		read -a newarr < arrresult.txt 
+		rm arrresult.txt
+		
+		set_returned_application_metrics	
+		
+		echo Transfer edge application results to edge device: completed in $runtime secs | tee -a $verbose_filename.txt
+		echo "" | tee -a $verbose_filename.txt
 	
 }
 
-function executebenchmarkoncloud {
+function benchmark_cloud_actions {
 		echo "ssh into cloud instance for actions and system benchmarks.."
 			ssh -i $awskey $clouduser@$cloudaddress ' sudo bash -s' -- < ./fogbenchactions $environment $actions $applications
-		echo hiiiiii
-		echo $local_var
-		echo hiiiiii
 		echo "Done ssh"
 		
 		local start=$(date +%s.%N)
-		scp -i $awskey $clouduser@$cloudaddress:~/fogbench/results/* 
+			scp -i $awskey $clouduser@$cloudaddress:~/fogbench/results/* 
 		local end=$(date +%s.%N)
 		local runtime=$( echo "$end - $start" | bc -l )
 		
-		cat cloudresult.txt >> $filename.txt
+		cat cloudresult.txt >> $verbose_filename.txt
 		rm cloudresult.txt
 		
-		echo Transfer cloud action results to edge device: completed in $runtime secs | tee -a $filename.txt
-		echo "" | tee -a $filename.txt
+		echo Transfer cloud action results to edge device: completed in $runtime secs | tee -a $verbose_filename.txt
+		echo "" | tee -a $verbose_filename.txt
+
 }
 
-function executebenchmarkapplicationoncloud {
+function benchmark_cloud_applications {
 		
 		echo "ssh into cloud instance for application benchmarks.."
 			ssh -i $awskey $clouduser@$cloudaddress ' sudo bash -s' -- < ./fogbenchapplications $environment $actions $applications
 		echo "Done ssh"
 		
 		local start=$(date +%s.%N)
-		scp -i $awskey $clouduser@$cloudaddress:~/fogbench/results/results.txt cloudresult.txt
+		scp -i $awskey $clouduser@$cloudaddress:~/fogbench/results/* ./
 		local end=$(date +%s.%N)
 		local runtime=$( echo "$end - $start" | bc -l )
-				
-		cat cloudresult.txt >> $filename.txt
-		rm cloudresult.txt
-	
-		echo Transfer cloud application results to edge device: completed in $runtime secs | tee -a $filename.txt
-		echo "" | tee -a $filename.txt
+		metricsValues[3]=$runtime
 
+		cat cloudresult.txt >> $verbose_filename.txt
+		rm cloudresult.txt
+		
+		read -a newarr < arrresult.txt 
+		rm arrresult.txt
+		
+		set_returned_application_metrics		
+			
+		echo Transfer cloud application results to edge device: completed in $runtime secs | tee -a $verbose_filename.txt
+		echo "" | tee -a $verbose_filename.txt
+		
 }
 
-function determineapplicationbenchmarks {
+function calc_cloud_cost {
+	local awshrcost=0.016
+	local convert=3600
+	local awsseccost=$(bc <<< "scale=10;$awshrcost/$convert")
+	local minruntime=60
+	local computetime=${metricsValues[1]}
+	
+	local cost=$(bc <<< "$computetime*$awsseccost")
+	local newCost=$(bc <<< "$totalcost+$cost")
+	
+	totalcost=$newCost	
+	
+	metricsValues[6]=$cost
+	
+}
+
+function calc_edge_cost {
+	local edgeseccost=0.003
+	local computetime=${metricsValues[1]}
+	
+	local cost=$(bc <<< "$computetime*$edgeseccost")
+	local newCost=$(bc <<< "$totalcost+$cost")
+	
+	totalcost=$newCost
+		
+	metricsValues[6]=$cost
+}
+
+function calc_rtt {
+
+	local T1=${metricsValues[0]} 
+	local E=${metricsValues[1]} 
+	local T2=${metricsValues[2]} 
+	local rtt=$(bc <<< "$T1+$T2")
+
+	echo yeet
+		echo $rtt
+
+	metricsValues[4]=$rtt
+	echo ${metricsValues[4]}
+}
+
+function set_returned_application_metrics {
+	local mets=${#metricsValues[@]}
+	local count=1
+	
+	for (( i=0; i<=$(( $mets -1 )); i++ ))
+	do 
+		((count++))
+		
+		if [ ${metricsValues[$i]} == "NA" ] && [ ${newarr[$i]} != "NA" ];
+		then
+			metricsValues[$i]=${newarr[$i]}
+		fi
+	done
+	
+	echo help
+	echo ${metricsValues[@]}
+}
+
+function benchmark_applications {
 		if [ "$applications" == "-y" ];
 		then
-			echo YOLO Benchmarks: | tee -a $filename.txt
+			echo YOLO Benchmarks: | tee -a $verbose_filename.txt
 			seperator
-			setupandexecuteyolobenchmarks
+			benchmark_yolo
 		elif [ "$applications" == "-p" ];
 		then	
-			echo Pocket Sphinx Benchmarks: | tee -a $filename.txt
+			echo Pocket Sphinx Benchmarks: | tee -a $verbose_filename.txt
 			seperator
-			setupandexecutepsphinxbenchmarks
+			benchmark_pocket_sphinx
 		elif [ "$applications" == "-j" ];
 		then	
-			echo Aeneas Benchmarks: | tee -a $filename.txt
+			echo Aeneas Benchmarks: | tee -a $verbose_filename.txt
 			seperator
-			setupandexecuteaeneasbenchmarks	
+			benchmark_aeneas	
 		elif [ "$applications" == "-i" ];
 		then	
-			echo iPokeMon Benchmarks: | tee -a $filename.txt
+			echo iPokeMon Benchmarks: | tee -a $verbose_filename.txt
 			seperator
-			setupipokemonserver	
-			setupandexecuteipokemonbenchmarks
+			start_ipokemon_server	
+			benchmark_ipokemon
 		elif [ "$applications" == "-k" ];
 		then	
-			echo iPokeMon Benchmarks: | tee -a $filename.txt
+			echo iPokeMon Benchmarks: | tee -a $verbose_filename.txt
 			seperator
-			setupandexecuteipokemonbenchmarks	
+			benchmark_ipokemon	
 		fi	
 }
 
-function setupandexecuteipokemonbenchmarks {
+function benchmark_ipokemon {
 	cd jmeter/bin
 
 	echo "Running JMETER!!!"
@@ -154,7 +225,7 @@ function setupandexecuteipokemonbenchmarks {
 	cd ../../
 }
 
-function setupipokemonserver {
+function start_ipokemon_server {
 		if [ "$environment" == "-c" ] || [ "$environment" == "-b" ];
 		then
 			ssh -i $awskey $clouduser@$cloudaddress -t "cd fogbench/ipokemonbuild/Experiments/iPokeMon/docker && sudo -sH && . enter.sh; bash"
@@ -163,9 +234,26 @@ function setupipokemonserver {
 		then
 			ssh $edgeuser@$edgeaddress -t "cd fogbench/ipokemonbuild/Experiments/iPokeMon/docker && sudo -sH && . enter.sh; bash"
 		fi	
-	}
+}
+	
+function benchmark_application {
+		if [ "$environment" == "-c" ] || [ "$environment" == "-b" ];
+		then
+			benchmark_cloud_applications
+			calc_rtt
+			calc_cloud_cost
+		fi	
+		if [ "$environment" == "-e" ] || [ "$environment" == "-b" ];
+		then
+			benchmark_edge_applications
+			calc_rtt
+			calc_edge_cost
+		fi
+		
+		echo ${metricsValues[@]} | tee -a $metrics_verbose_filename.txt
+}
 
-function setupandexecuteyolobenchmarks {
+function benchmark_yolo {
 	declare -a arrPics
 	newassetname=./assets/yolo-assets/yoloimage.jpg		
 	local count=1
@@ -173,66 +261,54 @@ function setupandexecuteyolobenchmarks {
 	for file in ./assets/yolo-assets/*.jpg
 	do
 	
-		createMetrics
+		create_metric_array
 		
-		echo -e "" | tee -a $filename.txt
-		echo YOLO Benchmark Run $count: | tee -a $filename.txt
-		echo "" | tee -a $filename.txt
+		echo -e "" | tee -a $verbose_filename.txt
+		echo YOLO Benchmark Run $count: | tee -a $verbose_filename.txt
+		echo "" | tee -a $verbose_filename.txt
 		
-		((count++))
 		arrPics=("${Pics[@]}" "$file")
 		asset=$arrPics
+		
 		echo "Sending asset at path: " $newassetname "to application..."
-		sendAsset
+		scp_asset
 		echo "DONE"
 		
-		if [ "$environment" == "-c" ] || [ "$environment" == "-b" ];
-		then
-			executebenchmarkapplicationoncloud
-		fi	
-		if [ "$environment" == "-e" ] || [ "$environment" == "-b" ];
-		then
-			executebenchmarkapplicationonedge
-		fi
+		benchmark_application
 		
-		echo ${metricsLabels[@]}
-		echo ${metricsValues[@]}
-		
+		((count++))
+
 	done
 	
 }
 
-function setupandexecutepsphinxbenchmarks {
+function benchmark_pocket_sphinx {
 	declare -a arrWavs
 	newassetname=./assets/psphinx-assets/psphinx.wav
 	local count=1
 	
 	for file in ./assets/psphinx-assets/*.wav
 	do
-		echo -e "" | tee -a $filename.txt
-		echo Pocket Sphinx Benchmark Run $count: | tee -a $filename.txt
-		echo "" | tee -a $filename.txt
+		echo -e "" | tee -a $verbose_filename.txt
+		echo Pocket Sphinx Benchmark Run $count: | tee -a $verbose_filename.txt
+		echo "" | tee -a $verbose_filename.txt
 		
-		((count++))
 		arrWavs=("${Wavs[@]}" "$file")
 		asset=$arrWavs
+		
 		echo "Sending asset at path: " $asset "to application..."
-		sendAsset
+		scp_asset
 		echo "DONE"
 		
-		if [ "$environment" == "-c" ] || [ "$environment" == "-b" ];
-		then
-			executebenchmarkapplicationoncloud
-		fi	
-		if [ "$environment" == "-e" ] || [ "$environment" == "-b" ];
-		then
-			executebenchmarkapplicationonedge
-		fi
+		benchmark_application
+	
+		((count++))
+
 	
 	done	
 }
 
-function setupandexecuteaeneasbenchmarks {
+function benchmark_aeneas {
 
 	declare -a arrAudios
 	
@@ -256,45 +332,39 @@ function setupandexecuteaeneasbenchmarks {
 	
 	for (( i=0; i<=$(( $total -1 )); i++ ))
 	do 
-		echo -e "" | tee -a $filename.txt
-		echo Aeneas Benchmark Run $count: | tee -a $filename.txt
-		echo "" | tee -a $filename.txt
+		echo -e "" | tee -a $verbose_filename.txt
+		echo Aeneas Benchmark Run $count: | tee -a $verbose_filename.txt
+		echo "" | tee -a $verbose_filename.txt
 		
-		((count++))
 		asset=${arrAudios[$i]}
 		newassetname=./assets/aeneas-assets/aeneasaudio.mp3
 
 		echo "Sending asset at path: " $asset "to application..."
-		sendAsset
+		scp_asset
 		echo "DONE"
 		
 		asset=${arrTexts[$i]}
 		newassetname=./assets/aeneas-assets/aeneastext.xhtml
 
 		echo "Sending asset at path: " $asset "to application..."
-		sendAsset
+		scp_asset
 		echo "DONE"
 		
-		if [ "$environment" == "-c" ] || [ "$environment" == "-b" ];
-		then
-			executebenchmarkapplicationoncloud
-		fi	
-		if [ "$environment" == "-e" ] || [ "$environment" == "-b" ];
-		then
-			executebenchmarkapplicationonedge
-		fi
+		benchmark_application
+		
+		((count++))
 
 	done
 
 }
 
-function createMetrics {
+function create_metric_array {
 	declare -g metricsLabels=('T1' 'ET' 'T2' 'T3' 'RTT' 'RTF' 'Cost' 'MEM' 'CPU')
 	declare -g metricsValues=('NA' 'NA' 'NA' 'NA' 'NA' 'NA' 'NA' 'NA' 'NA')
 		
 }
 
-function sendAsset {
+function scp_asset {
 	TIMEFORMAT=%R
 	cp $asset $newassetname
 	local start=$(date +%s.%N)
@@ -310,16 +380,16 @@ function sendAsset {
 	fi
 
 	local end=$(date +%s.%N)
-	rm $newassetname
-	
 	local runtime=$( echo "$end - $start" | bc -l )
+	
 	metricsValues[0]=$runtime
-	echo Upload $asset to server: completed in $runtime secs | tee -a $filename.txt
+
+	rm $newassetname
 
 }
 
 
-function actionsuserinput {
+function actions_user_input {
 while true; do
 	echo ""
 	echo "Actions:"
@@ -366,7 +436,7 @@ done
 echo "Actions value:$actions"
 }
 
-function environmentuserinput {
+function env_user_input {
 while true; do
 	echo ""
 	echo "Environments:"
@@ -393,7 +463,7 @@ done
 echo "Enviroment value:$environment"
 }
 
-function applicationsuserinput {
+function applications_user_input {
 while true; do
 	echo ""
 	echo "Applications:"
@@ -433,10 +503,10 @@ echo "Applications value:$applications"
 }
 
 function seperator {
-echo -e "*****************************************************************************" | tee -a $filename.txt
+echo -e "*****************************************************************************" | tee -a $verbose_filename.txt
 }
 
-function asciiheader {
+function display_ascii_header {
 
 echo "   ___ ___   ___          ___              _    ";
 echo "  / __/ __| | __|__  __ _| _ ) ___ _ _  __| |_  ";
@@ -444,68 +514,87 @@ echo " | (__\__ \ | _/ _ \/ _\` | _ \/ -_) ' \/ _| ' \ ";
 echo "  \___|___/ |_|\___/\__, |___/\___|_||_\__|_||_|";
 echo "                    |___/                       ";
 echo ""
-echo -e "CS FogBench:" | tee $filename.txt
-echo -e "Welcome, you are using CS FogBench: a cloud and edge benchmarking tool!" | tee -a $filename.txt
-echo -e "	Created by: Jonathan McChesney, student at Queen's University Belfast" | tee -a $filename.txt
-echo -e "	CSC4006 Final Year Research and Development Project" | tee -a $filename.txt
-echo -e "" | tee -a $filename.txt
-echo -e "*****************************************************************************" | tee -a $filename.txt
-echo -e "*****************************************************************************" | tee -a $filename.txt
-echo -e "" | tee -a $filename.txt
+echo -e "CS FogBench:" | tee $verbose_filename.txt
+echo -e "Welcome, you are using CS FogBench: a cloud and edge benchmarking tool!" | tee -a $verbose_filename.txt
+echo -e "	Created by: Jonathan McChesney, student at Queen's University Belfast" | tee -a $verbose_filename.txt
+echo -e "	CSC4006 Final Year Research and Development Project" | tee -a $verbose_filename.txt
+echo -e "" | tee -a $verbose_filename.txt
+echo -e "*****************************************************************************" | tee -a $verbose_filename.txt
+echo -e "*****************************************************************************" | tee -a $verbose_filename.txt
+echo -e "" | tee -a $verbose_filename.txt
 
 }
 
-function createresultfile {
-filename=result
+function create_result_files {
+verbose_filename=result
+metrics_verbose_filename=metrics
 cd results
-if [[ -e $filename.txt ]] ; then
+if [[ -e $verbose_filename.txt ]] ; then
     i=0
-    while [[ -e $filename-$i.txt ]] ; do
+    while [[ -e $verbose_filename-$i.txt ]] ; do
         let i++
     done
-    filename=$filename-$i
+    verbose_filename=$verbose_filename-$i
+fi
+if [[ -e $metrics_verbose_filename.txt ]] ; then
+    i=0
+    while [[ -e $metrics_verbose_filename-$i.txt ]] ; do
+        let i++
+    done
+    metrics_verbose_filename=$metrics_verbose_filename-$i
 fi
 cd ../
 }
 
 function main {
 
-	createresultfile
-	createMetrics
+	create_result_files
+	create_metric_array
 
-	asciiheader
+	display_ascii_header
 	
-	environmentuserinput
-	actionsuserinput
-	applicationsuserinput
+	env_user_input
+	actions_user_input
+	applications_user_input
 	
-	echo ""
-	echo "Enivironment value:$environment"
-	echo "Actions value:$actions"
-	echo "Applications value:$applications"
-	echo ""
-
+	totalcost=0
 	
 	if [ "$environment" == "-c" ] || [ "$environment" == "-b" ];
 	then
-		echo "Cloud Benchmarks: " | tee -a $filename.txt
+		echo "Cloud Benchmarks: " | tee -a $verbose_filename.txt
 		seperator
-		echo "" | tee -a $filename.txt
+		echo "" | tee -a $verbose_filename.txt
 		
-		executebenchmarkoncloud
-		determineapplicationbenchmarks
+		echo ${metricsLabels[@]} >> $metrics_verbose_filename.txt
+
+		
+		run_cloud=true
+		run_edge=false
+		
+		benchmark_cloud_actions
+		benchmark_applications
 	fi	
 	
 	if [ "$environment" == "-e" ] || [ "$environment" == "-b" ];
 	then	
-		echo "Edge/Cloud Benchmarks: " | tee -a $filename.txt
+		echo "Edge/Cloud Benchmarks: " | tee -a $verbose_filename.txt
 		seperator
-		echo "" | tee -a $filename.txt
-		executebenchmarkonedge
-		determineapplicationbenchmarks
+		echo "" | tee -a $verbose_filename.txt
+		
+		echo ${metricsLabels[@]} >> $metrics_verbose_filename.txt
+		
+		run_cloud=false
+		run_edge=true
+		
+		benchmark_edge_actions
+		benchmark_applications
 	fi	
 	
-	mv $filename.txt results/
+	echo metrics to be saved:
+	echo ${metricsValues[@]}
+	
+	mv $verbose_filename.txt results/
+	mv $metrics_verbose_filename.txt results/
 
 }
 
