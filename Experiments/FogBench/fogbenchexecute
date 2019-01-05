@@ -86,7 +86,7 @@ function executebenchmarkoncloud {
 		echo "Done ssh"
 		
 		local start=$(date +%s.%N)
-		scp -i $awskey $clouduser@$cloudaddress:~/fogbench/results/results.txt cloudresult.txt
+		scp -i $awskey $clouduser@$cloudaddress:~/fogbench/results/* 
 		local end=$(date +%s.%N)
 		local runtime=$( echo "$end - $start" | bc -l )
 		

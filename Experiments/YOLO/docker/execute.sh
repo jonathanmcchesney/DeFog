@@ -1,12 +1,12 @@
-#!/bin/bash/
+#!/bin/bash
 
-rm /mnt/results/results.txt
-rm /mnt/results/newResults.txt
+rm /mnt/results/cloudresult.txt
+rm /mnt/results/arrresult.txt
 
 cd ~/Experiments/YOLO/yolo
 chmod 777 darknet
 
-declare -a metricsValues=('NA' 'NA' 'NA' 'NA' 'NA' 'NA' 'NA' 'NA' 'NA')
+metricsValues=("NA" "NA" "NA" "NA" "NA" "NA" "NA" "NA" "NA")
 
 start=$(date +%s.%N)
 ./darknet detect cfg/yolov3-tiny.cfg yolov3-tiny.weights /mnt/assets/yoloimage.jpg
@@ -27,9 +27,7 @@ echo "Upload to S3 bucket: completed in $runtime secs" | tee -a results.txt
 
 metricsValues[2]=$runtime
 
-echo ${metricsValues[@]} >> /mnt/results/newResults.txt
-
-cat results.txt >> /mnt/results/results.txt
+cat results.txt >> /mnt/results/cloudresult.txt
+echo ${metricsValues[@]} >> /mnt/results/arrresult.txt
 
 exit
-
