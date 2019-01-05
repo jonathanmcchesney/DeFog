@@ -307,6 +307,8 @@ echo "Edge actions and system benchmarks: " | tee $filename.txt
 	test $run_yolo && build_docker_yolo
 	test $run_psphinx && build_docker_psphinx
 	test $run_aeneas && build_docker_aeneas
+	test $build_ipokemon && build_docker_ipokemon
+
 	
 }
 
@@ -333,11 +335,7 @@ function main {
 	rm results.txt
 	rm -rf dir assets && mkdir assets && chmod 777 assets
 	rm -rf dir results && mkdir results && chmod 777 results
-		
-	filename=results
-	B=4
-	server_var=hellllllllllllo
-	
+			
     test $run_cloud && cloudbench
     test $run_edge && edgebench
 	

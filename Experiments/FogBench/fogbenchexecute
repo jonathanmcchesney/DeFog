@@ -79,12 +79,10 @@ function executebenchmarkapplicationonedge {
 
 function executebenchmarkoncloud {
 		echo "ssh into cloud instance for actions and system benchmarks.."
-		A=3;
-		ssh -i $awskey $clouduser@$cloudaddress  ' sudo bash -s ' -- < ./fogbenchactions $environment $actions $applications
-		ssh -i $awskey $clouduser@$cloudaddress  "echo $A; echo \$B;"
-		echo $A
-		echo $B
-		echo $C		
+			ssh -i $awskey $clouduser@$cloudaddress ' sudo bash -s' -- < ./fogbenchactions $environment $actions $applications
+		echo hiiiiii
+		echo $local_var
+		echo hiiiiii
 		echo "Done ssh"
 		
 		local start=$(date +%s.%N)
@@ -149,12 +147,23 @@ function determineapplicationbenchmarks {
 }
 
 function setupandexecuteipokemonbenchmarks {
-	echo "JMETER!!!"
+	cd jmeter/bin
+
+	echo "Running JMETER!!!"
+		./jmeter -n -t iPokeMon.jmx -l testresults.csv
+	cd ../../
 }
 
 function setupipokemonserver {
-	ssh -i $awskey $clouduser@$cloudaddress -t "cd fogbench/ipokemonbuild/Experiments/iPokeMon/docker && sudo -sH && . enter.sh; bash"
-}
+		if [ "$environment" == "-c" ] || [ "$environment" == "-b" ];
+		then
+			ssh -i $awskey $clouduser@$cloudaddress -t "cd fogbench/ipokemonbuild/Experiments/iPokeMon/docker && sudo -sH && . enter.sh; bash"
+		fi
+		if [ "$environment" == "-e" ] || [ "$environment" == "-b" ];
+		then
+			ssh $edgeuser@$edgeaddress -t "cd fogbench/ipokemonbuild/Experiments/iPokeMon/docker && sudo -sH && . enter.sh; bash"
+		fi	
+	}
 
 function setupandexecuteyolobenchmarks {
 	declare -a arrPics
@@ -163,6 +172,9 @@ function setupandexecuteyolobenchmarks {
 	
 	for file in ./assets/yolo-assets/*.jpg
 	do
+	
+		createMetrics
+		
 		echo -e "" | tee -a $filename.txt
 		echo YOLO Benchmark Run $count: | tee -a $filename.txt
 		echo "" | tee -a $filename.txt
@@ -183,12 +195,15 @@ function setupandexecuteyolobenchmarks {
 			executebenchmarkapplicationonedge
 		fi
 		
+		echo ${metricsLabels[@]}
+		echo ${metricsValues[@]}
+		
 	done
 	
 }
 
 function setupandexecutepsphinxbenchmarks {
-	declare -a arrWav
+	declare -a arrWavs
 	newassetname=./assets/psphinx-assets/psphinx.wav
 	local count=1
 	
@@ -273,6 +288,12 @@ function setupandexecuteaeneasbenchmarks {
 
 }
 
+function createMetrics {
+	declare -g metricsLabels=('T1' 'ET' 'T2' 'T3' 'RTT' 'RTF' 'Cost' 'MEM' 'CPU')
+	declare -g metricsValues=('NA' 'NA' 'NA' 'NA' 'NA' 'NA' 'NA' 'NA' 'NA')
+		
+}
+
 function sendAsset {
 	TIMEFORMAT=%R
 	cp $asset $newassetname
@@ -292,6 +313,7 @@ function sendAsset {
 	rm $newassetname
 	
 	local runtime=$( echo "$end - $start" | bc -l )
+	metricsValues[0]=$runtime
 	echo Upload $asset to server: completed in $runtime secs | tee -a $filename.txt
 
 }
@@ -449,6 +471,8 @@ cd ../
 function main {
 
 	createresultfile
+	createMetrics
+
 	asciiheader
 	
 	environmentuserinput
