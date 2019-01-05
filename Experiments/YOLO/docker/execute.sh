@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash/
 
 rm /mnt/results/results.txt
 rm /mnt/results/newResults.txt
@@ -6,7 +6,7 @@ rm /mnt/results/newResults.txt
 cd ~/Experiments/YOLO/yolo
 chmod 777 darknet
 
-declare -g metricsValues=('NA' 'NA' 'NA' 'NA' 'NA' 'NA' 'NA' 'NA' 'NA')
+declare -a metricsValues=('NA' 'NA' 'NA' 'NA' 'NA' 'NA' 'NA' 'NA' 'NA')
 
 start=$(date +%s.%N)
 ./darknet detect cfg/yolov3-tiny.cfg yolov3-tiny.weights /mnt/assets/yoloimage.jpg
