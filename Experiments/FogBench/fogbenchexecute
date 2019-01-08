@@ -46,7 +46,7 @@ function benchmark_edge_cloud_actions {
 			ssh -i $awskey $clouduser@$cloudaddress ' sudo bash -s' -- < ./fogbenchactions -z $actions $applications
 		echo "Done ssh"
 		
-		#
+		
 		
 }
 
@@ -643,7 +643,6 @@ function main {
 		run_edge=true
 		
 		benchmark_edge_cloud_actions
-		# benchmark_applications
 	fi	
 	
 	echo metrics to be saved:

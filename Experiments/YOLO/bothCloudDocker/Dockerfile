@@ -25,11 +25,11 @@ RUN \
 	git init && \
 	git remote add -f csc4006-EdgeBenchmarking https://gitlab.eeecs.qub.ac.uk/40126401/csc4006-EdgeBenchmarking.git && \
 	git config core.sparsecheckout true && \
-	echo Experiments/YOLO/bothCloudYolo/ >> .git/info/sparse-checkout && \
+	echo Experiments/YOLO/bothcloudyolo/ >> .git/info/sparse-checkout && \
 	git pull https://gitlab.eeecs.qub.ac.uk/40126401/csc4006-EdgeBenchmarking.git master
 	
 RUN \ 
-	cd Experiments/YOLO/bothCloudYolo && \
+	cd Experiments/YOLO/bothcloudyolo && \
 	wget https://pjreddie.com/media/files/yolov3-tiny.weights >/dev/null 2>&1
 	
 # defaults command

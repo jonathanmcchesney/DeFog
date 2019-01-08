@@ -1,1 +1,1 @@
-docker build -t bothEdgeYolo .
+docker build -t bothedgeyolo .

@@ -247,22 +247,22 @@ function build_docker_yolo {
 }
 
 function build_docker_yolo_edge {
-	local DIRECTORY=edgeyolobuild
+	local DIRECTORY=bothedgeyolobuild
 
 	if [ ! -d "$DIRECTORY" ]; then
-	echo Entering edgeyolobuild...
-	mkdir edgeyolobuild
-	cd edgeyolobuild
+	echo Entering bothedgeyolobuild...
+	mkdir bothedgeyolobuild
+	cd bothedgeyolobuild
 
 	echo Pulling down edgeyolo docker file...
 	sudo git init 
 	sudo git remote add -f csc4006-EdgeBenchmarking https://gitlab.eeecs.qub.ac.uk/40126401/csc4006-EdgeBenchmarking.git
 	sudo git config core.sparsecheckout true
-	echo Experiments/YOLO/edgeDocker/ >> .git/info/sparse-checkout
+	echo Experiments/YOLO/bothedgedocker/ >> .git/info/sparse-checkout
 	sudo git pull https://gitlab.eeecs.qub.ac.uk/40126401/csc4006-EdgeBenchmarking.git master
 	
-	echo Experiments/YOLO/edgeDocker...
-	cd Experiments/YOLO/edgeDocker
+	echo Experiments/YOLO/bothedgedocker...
+	cd Experiments/YOLO/bothedgedocker
 
 	echo Building edgeyolo docker image - console logs suppressed...
 	echo Please wait as this may take a few minutes...
@@ -274,24 +274,24 @@ function build_docker_yolo_edge {
 }
 
 function build_docker_yolo_cloud {
-	local DIRECTORY=edgeyolobuild
+	local DIRECTORY=bothcloudyolobuild
 
 	if [ ! -d "$DIRECTORY" ]; then
-	echo Entering edgeyolobuild...
-	mkdir edgeyolobuild
-	cd edgeyolobuild
+	echo Entering bothcloudyolobuild...
+	mkdir bothcloudyolobuild
+	cd bothcloudyolobuild
 
-	echo Pulling down edgeyolo docker file...
+	echo Pulling down bothcloudyolobuild docker file...
 	sudo git init 
 	sudo git remote add -f csc4006-EdgeBenchmarking https://gitlab.eeecs.qub.ac.uk/40126401/csc4006-EdgeBenchmarking.git
 	sudo git config core.sparsecheckout true
-	echo Experiments/YOLO/edgeDocker/ >> .git/info/sparse-checkout
+	echo Experiments/YOLO/bothCloudDocker/ >> .git/info/sparse-checkout
 	sudo git pull https://gitlab.eeecs.qub.ac.uk/40126401/csc4006-EdgeBenchmarking.git master
 	
-	echo Experiments/YOLO/edgeDocker...
-	cd Experiments/YOLO/edgeDocker
+	echo Experiments/YOLO/bothclouddocker...
+	cd Experiments/YOLO/bothclouddocker
 
-	echo Building edgeyolo docker image - console logs suppressed...
+	echo Building bothcloudyolobuild docker image - console logs suppressed...
 	echo Please wait as this may take a few minutes...
 	chmod 777 execute.sh
 	time . build.sh

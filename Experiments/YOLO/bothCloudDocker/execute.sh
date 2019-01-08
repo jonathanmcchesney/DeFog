@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd ~/Experiments/YOLO/bothCloudYolo
+cd ~/Experiments/YOLO/bothcloudyolo
 
 echo "Starting connection to edge..."
 python sender.py ./yolov3-tiny.weights

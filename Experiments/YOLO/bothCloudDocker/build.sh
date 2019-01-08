@@ -1,1 +1,1 @@
-docker build -t bothCloudYolo .
+docker build -t bothcloudyolo .
