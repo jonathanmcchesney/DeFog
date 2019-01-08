@@ -44,7 +44,7 @@ function simple_CPU_benchmark {
     dd if=/dev/urandom of=$zippedFile bs=1024 count=20000 >>/dev/null 2>&1
 	echo -n "Unzipping small weights file ..."
     smallWeights=$( (/usr/bin/time -f "%es" tar cfj $zippedFile.bz2 $zippedFile) 2>&1 )
-    rm -f zipFile*
+    rm -f zipFile* ||:
     echo DONE
 		
 }
@@ -106,7 +106,7 @@ function instantiate_file {
 function remove_file {
 	echo -n Removing file ...
 	local start=$(date +%s.%N)
-	rm large_file
+	rm large_file ||:
     echo OK
 	local end=$(date +%s.%N)
 	local runtime=$( echo "$end - $start" | bc -l )
@@ -154,16 +154,17 @@ function removedockerimages {
 
 function delete_temps {
     echo Deleting cleanup files ...
-    rm -f large_file
-	rm -f benchmarker__*
-    rm -rf zipFile*
-	rm -rf UnixBench*
-	rm -rf yolobuild
-	rm -rf bothcloudyolobuild
-	rm -rf psphinxbuild
-	rm -rf ipokemonbuild
-	rm -rf aeneasbuild
-	rm -rf assets
+    rm -f large_file ||:
+	rm -f benchmarker__* ||:
+    rm -rf zipFile* ||:
+	rm -rf UnixBench* ||:
+	rm -rf yolobuild ||:
+	rm -rf bothcloudyolobuild ||:
+	rm -rf bothedgeyolobuild ||:
+	rm -rf psphinxbuild ||:
+	rm -rf ipokemonbuild ||:
+	rm -rf aeneasbuild ||:
+	rm -rf assets ||:
     echo OK
 	
 	echo Removing docker containers and images...
@@ -245,11 +246,36 @@ function build_docker_yolo {
 	echo DONE	
 	fi
 
-    
-	
 }
 
-function build_docker_yolo_both_cloud {
+function build_docker_yolo_edge {
+	local DIRECTORY=bothedgeyolobuild
+
+	if [ ! -d "$DIRECTORY" ]; then
+	echo Entering bothedgeyolobuild...
+	mkdir bothedgeyolobuild
+	cd bothedgeyolobuild
+
+	echo Pulling down bothedgeyolobuild docker file...
+	sudo git init 
+	sudo git remote add -f csc4006-EdgeBenchmarking https://gitlab.eeecs.qub.ac.uk/40126401/csc4006-EdgeBenchmarking.git
+	sudo git config core.sparsecheckout true
+	echo Experiments/YOLO/bothedgedocker/ >> .git/info/sparse-checkout
+	sudo git pull https://gitlab.eeecs.qub.ac.uk/40126401/csc4006-EdgeBenchmarking.git master
+	
+	echo Experiments/YOLO/bothedgedocker...
+	cd Experiments/YOLO/bothedgedocker
+
+	echo Building bothedgeyolobuild docker image - console logs suppressed...
+	echo Please wait as this may take a few minutes...
+	chmod 777 execute.sh
+	time . build.sh
+	echo DONE	
+	fi
+
+}
+
+function build_docker_yolo_cloud {
 	local DIRECTORY=bothcloudyolobuild
 
 	if [ ! -d "$DIRECTORY" ]; then
@@ -257,25 +283,23 @@ function build_docker_yolo_both_cloud {
 	mkdir bothcloudyolobuild
 	cd bothcloudyolobuild
 
-	echo Pulling down bothcloudyolo docker file...
+	echo Pulling down bothcloudyolobuild docker file...
 	sudo git init 
 	sudo git remote add -f csc4006-EdgeBenchmarking https://gitlab.eeecs.qub.ac.uk/40126401/csc4006-EdgeBenchmarking.git
 	sudo git config core.sparsecheckout true
-	echo Experiments/YOLO/bothclouddocker/ >> .git/info/sparse-checkout
+	echo Experiments/YOLO/bothCloudDocker/ >> .git/info/sparse-checkout
 	sudo git pull https://gitlab.eeecs.qub.ac.uk/40126401/csc4006-EdgeBenchmarking.git master
 	
 	echo Experiments/YOLO/bothclouddocker...
 	cd Experiments/YOLO/bothclouddocker
 
-	echo Building bothcloudyolo docker image - console logs suppressed...
+	echo Building bothcloudyolobuild docker image - console logs suppressed...
 	echo Please wait as this may take a few minutes...
 	chmod 777 execute.sh
 	time . build.sh
 	echo DONE	
 	fi
 
-    
-	
 }
 
 function build_docker_aeneas {
@@ -323,24 +347,6 @@ function seperator {
 echo -e "*****************************************************************************" | tee -a $filename.txt
 }
 
-function bothedgebench {
-echo EDGE
-}
-
-function bothcloudbench {
-echo "Cloud/Edge - Cloud actions and system benchmarks: " | tee $filename.txt
-	seperator
-
-	test $run_simple && simple_benchmark
-	test $run_downloads && downloads_benchmark
-	test $run_lfile && instantiate_file
-	test $run_sysbench && benchmark_sysbench
-	test $run_unixbench && benchmark_unixbench
-	
-	test $run_yolo && build_docker_yolo_both_cloud
-	
-}
-
 function edgebench {
 echo "Edge actions and system benchmarks: " | tee $filename.txt
 	seperator
@@ -376,23 +382,58 @@ function cloudbench {
 
 }
 
+function bothcloudbench {
+	echo "Cloud/Edge - Cloud actions and system benchmarks: " | tee $filename.txt
+	seperator
+	
+				echo aghhhhhhhh
+
+	
+	test $run_simple && simple_benchmark
+	test $run_downloads && downloads_benchmark
+	test $run_lfile && instantiate_file
+	test $run_sysbench && benchmark_sysbench
+	test $run_unixbench && benchmark_unixbench
+	
+	test $run_yolo && build_docker_yolo_cloud
+}
+
+function bothedgebench {
+	echo "Cloud/Edge - Edge actions and system benchmarks: " | tee $filename.txt
+	seperator
+	
+	test $run_simple && simple_benchmark
+	test $run_downloads && downloads_benchmark
+	test $run_lfile && instantiate_file
+	test $run_sysbench && benchmark_sysbench
+	test $run_unixbench && benchmark_unixbench
+	
+	test $run_yolo && build_docker_yolo_edge
+}
+
 function main {
 	mkdir -p fogbench && cd fogbench 	
+	echo delete val
+	echo $run_delete
 	test $run_delete && delete_temps
-	rm results.txt
-	rm -rf dir assets && mkdir assets && chmod 777 assets
-	rm -rf dir results && mkdir results && chmod 777 results
+	rm results.txt ||:
+	
+	local ASSETS=assets
+	local RESULTS=results
+	
+	if [ -d "$ASSETS" ]; then rm -Rf $ASSETS && mkdir $ASSETS && chmod 777 $ASSETS; fi
+	if [ -d "$RESULTS" ]; then rm -Rf $RESULTS && mkdir $RESULTS && chmod 777 $RESULTS; fi
 			
     test $run_cloud && cloudbench
     test $run_edge && edgebench
-    test $run_both_cloud && bothcloudbench
-    test $run_both_edge && echo EDGEEEE
+	test $run_both_cloud && echo CLOUD!!!
+	test $run_both_edge && echo EDGE!!!
 	
 	mv $filename.txt results/results.txt
 
 }
 
-while getopts :ceb:adfsxuhngs:zyijpmk opt; do
+while getopts :zceb:adfsxuhngs:yijpmk opt; do
     case "$opt" in
         a)
             run_downloads=true
@@ -404,7 +445,7 @@ while getopts :ceb:adfsxuhngs:zyijpmk opt; do
 			run_cloud=true
 			;;
 		b)
-			run_both_edge=true
+			run_both_cloud=true
 			;;
 		e)
 			run_edge=true
@@ -421,6 +462,8 @@ while getopts :ceb:adfsxuhngs:zyijpmk opt; do
         x)
             run_delete=true
             ;;
+		l)
+            ;;
 		u)
             run_unixbench=true
             ;;
@@ -429,9 +472,6 @@ while getopts :ceb:adfsxuhngs:zyijpmk opt; do
 			;;
 		n)
 			;;	
-		z)
-			run_both_cloud=true
-			;;
 		i)	
 			build_ipokemon=true
 			run_ipokemon=true
@@ -458,3 +498,4 @@ while getopts :ceb:adfsxuhngs:zyijpmk opt; do
 done
 
 main
+

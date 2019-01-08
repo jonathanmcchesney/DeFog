@@ -70,6 +70,24 @@ function run_docker_yolo {
 	echo -n DONE
 }
 
+function run_docker_yolo_both_cloud {
+	cd yolobuild/Experiments/YOLO/edgeDocker
+
+	echo -n Running edgeYolo docker container...
+		. run.sh
+	echo -n DONE
+
+}
+
+function run_docker_yolo_both_edge {
+	cd yolobuild/Experiments/YOLO/edgeDocker
+
+	echo -n Running edgeYolo docker container...
+		. run.sh
+	echo -n DONE
+
+}
+
 function run_docker_aeneas { 
 	cd aeneasbuild/Experiments/Aeneas/docker
 
@@ -100,10 +118,15 @@ Help: benchmarker [OPTION...]
 HELP
 }
 
+function bothedgebench {
+	echo This function will run the docker container on the cloud...
+}
+
+function bothcloudbench {
+	echo This function will run the docker container on the edge...
+}
+
 function edgebench {
-	echo "EDGE BENCH"
-	
-	echo $run_yolo
 	
 	test $run_yolo && run_docker_yolo
 	test $run_psphinx && run_docker_psphinx
@@ -125,9 +148,12 @@ function main {
 	
     test $run_cloud && cloudbench
     test $run_edge && edgebench
+	test $run_both_cloud && bothcloudbench
+	test $run_both_edge && bothedgebench
+	
 }
 
-while getopts :ceb:adfsxuhngs:zyipjmk opt; do
+while getopts :cebz:adfsxuhngs:yipjmk opt; do
     case "$opt" in
         a)
             run_downloads=true
@@ -139,8 +165,7 @@ while getopts :ceb:adfsxuhngs:zyipjmk opt; do
 			run_cloud=true
 			;;
 		b)
-			run_cloud=true
-			run_edge=true
+			run_both_edge=true
 			;;
 		e)
 			run_edge=true
@@ -186,6 +211,9 @@ while getopts :ceb:adfsxuhngs:zyipjmk opt; do
 		y)
             run_yolo=true
             ;;	
+		z)
+			run_both_cloud=true
+            ;;	
 		m)
 			;;
         ?)
@@ -196,3 +224,4 @@ while getopts :ceb:adfsxuhngs:zyipjmk opt; do
 done
 
 main
+
