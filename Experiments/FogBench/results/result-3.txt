@@ -1,0 +1,20 @@
+CS FogBench:
+Welcome, you are using CS FogBench: a cloud and edge benchmarking tool!
+	Created by: Jonathan McChesney, student at Queen's University Belfast
+	CSC4006 Final Year Research and Development Project
+
+*****************************************************************************
+*****************************************************************************
+
+Cloud Benchmarks: 
+*****************************************************************************
+
+Transfer cloud action results to edge device: completed in .276197300 secs
+
+Aeneas Benchmarks:
+*****************************************************************************
+
+Aeneas Benchmark Run 1:
+
+Transfer cloud application results to edge device: completed in 1.225269400 secs
+

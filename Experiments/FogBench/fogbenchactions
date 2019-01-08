@@ -44,7 +44,7 @@ function simple_CPU_benchmark {
     dd if=/dev/urandom of=$zippedFile bs=1024 count=20000 >>/dev/null 2>&1
 	echo -n "Unzipping small weights file ..."
     smallWeights=$( (/usr/bin/time -f "%es" tar cfj $zippedFile.bz2 $zippedFile) 2>&1 )
-    rm -f zipFile*
+    rm -f zipFile* ||:
     echo DONE
 		
 }
@@ -106,7 +106,7 @@ function instantiate_file {
 function remove_file {
 	echo -n Removing file ...
 	local start=$(date +%s.%N)
-	rm large_file
+	rm large_file ||:
     echo OK
 	local end=$(date +%s.%N)
 	local runtime=$( echo "$end - $start" | bc -l )
@@ -154,15 +154,15 @@ function removedockerimages {
 
 function delete_temps {
     echo Deleting cleanup files ...
-    rm -f large_file
-	rm -f benchmarker__*
-    rm -rf zipFile*
-	rm -rf UnixBench*
-	rm -rf yolobuild
-	rm -rf psphinxbuild
-	rm -rf ipokemonbuild
-	rm -rf aeneasbuild
-	rm -rf assets
+    rm -f large_file ||:
+	rm -f benchmarker__* ||:
+    rm -rf zipFile* ||:
+	rm -rf UnixBench* ||:
+	rm -rf yolobuild ||:
+	rm -rf psphinxbuild ||:
+	rm -rf ipokemonbuild ||:
+	rm -rf aeneasbuild ||:
+	rm -rf assets ||:
     echo OK
 	
 	echo Removing docker containers and images...
@@ -244,8 +244,60 @@ function build_docker_yolo {
 	echo DONE	
 	fi
 
-    
+}
+
+function build_docker_yolo_edge {
+	local DIRECTORY=edgeyolobuild
+
+	if [ ! -d "$DIRECTORY" ]; then
+	echo Entering edgeyolobuild...
+	mkdir edgeyolobuild
+	cd edgeyolobuild
+
+	echo Pulling down edgeyolo docker file...
+	sudo git init 
+	sudo git remote add -f csc4006-EdgeBenchmarking https://gitlab.eeecs.qub.ac.uk/40126401/csc4006-EdgeBenchmarking.git
+	sudo git config core.sparsecheckout true
+	echo Experiments/YOLO/edgeDocker/ >> .git/info/sparse-checkout
+	sudo git pull https://gitlab.eeecs.qub.ac.uk/40126401/csc4006-EdgeBenchmarking.git master
 	
+	echo Experiments/YOLO/edgeDocker...
+	cd Experiments/YOLO/edgeDocker
+
+	echo Building edgeyolo docker image - console logs suppressed...
+	echo Please wait as this may take a few minutes...
+	chmod 777 execute.sh
+	time . build.sh
+	echo DONE	
+	fi
+
+}
+
+function build_docker_yolo_cloud {
+	local DIRECTORY=edgeyolobuild
+
+	if [ ! -d "$DIRECTORY" ]; then
+	echo Entering edgeyolobuild...
+	mkdir edgeyolobuild
+	cd edgeyolobuild
+
+	echo Pulling down edgeyolo docker file...
+	sudo git init 
+	sudo git remote add -f csc4006-EdgeBenchmarking https://gitlab.eeecs.qub.ac.uk/40126401/csc4006-EdgeBenchmarking.git
+	sudo git config core.sparsecheckout true
+	echo Experiments/YOLO/edgeDocker/ >> .git/info/sparse-checkout
+	sudo git pull https://gitlab.eeecs.qub.ac.uk/40126401/csc4006-EdgeBenchmarking.git master
+	
+	echo Experiments/YOLO/edgeDocker...
+	cd Experiments/YOLO/edgeDocker
+
+	echo Building edgeyolo docker image - console logs suppressed...
+	echo Please wait as this may take a few minutes...
+	chmod 777 execute.sh
+	time . build.sh
+	echo DONE	
+	fi
+
 }
 
 function build_docker_aeneas {
@@ -297,7 +349,6 @@ function edgebench {
 echo "Edge actions and system benchmarks: " | tee $filename.txt
 	seperator
 	
-
 	test $run_simple && simple_benchmark
 	test $run_downloads && downloads_benchmark
 	test $run_lfile && instantiate_file
@@ -329,21 +380,53 @@ function cloudbench {
 
 }
 
+function bothcloudbench {
+	echo "Cloud/Edge - Cloud actions and system benchmarks: " | tee $filename.txt
+	seperator
+	
+	test $run_simple && simple_benchmark
+	test $run_downloads && downloads_benchmark
+	test $run_lfile && instantiate_file
+	test $run_sysbench && benchmark_sysbench
+	test $run_unixbench && benchmark_unixbench
+	
+	test $run_yolo && build_docker_yolo_cloud
+}
+
+function bothedgebench {
+	echo "Cloud/Edge - Edge actions and system benchmarks: " | tee $filename.txt
+	seperator
+	
+	test $run_simple && simple_benchmark
+	test $run_downloads && downloads_benchmark
+	test $run_lfile && instantiate_file
+	test $run_sysbench && benchmark_sysbench
+	test $run_unixbench && benchmark_unixbench
+	
+	test $run_yolo && build_docker_yolo_edge
+}
+
 function main {
 	mkdir -p fogbench && cd fogbench 	
 	test $run_delete && delete_temps
-	rm results.txt
-	rm -rf dir assets && mkdir assets && chmod 777 assets
-	rm -rf dir results && mkdir results && chmod 777 results
+	rm results.txt ||:
+	
+	local ASSETS=assets
+	local RESULTS=results
+	
+	if [ -d "$ASSETS" ]; then rm -Rf $ASSETS && mkdir $ASSETS && chmod 777 $ASSETS; fi
+	if [ -d "$RESULTS" ]; then rm -Rf $RESULTS && mkdir $RESULTS && chmod 777 $RESULTS; fi
 			
     test $run_cloud && cloudbench
     test $run_edge && edgebench
+	test $run_both_cloud && bothcloudbench
+	test $run_both_edge && bothedgebench
 	
 	mv $filename.txt results/results.txt
 
 }
 
-while getopts :ceb:adfsxuhngs:zyijpmk opt; do
+while getopts :cebz:adfsxuhngs:yijpmk opt; do
     case "$opt" in
         a)
             run_downloads=true
@@ -355,8 +438,7 @@ while getopts :ceb:adfsxuhngs:zyijpmk opt; do
 			run_cloud=true
 			;;
 		b)
-			run_cloud=true
-			run_edge=true
+			run_both_edge=true
 			;;
 		e)
 			run_edge=true
@@ -382,10 +464,7 @@ while getopts :ceb:adfsxuhngs:zyijpmk opt; do
 		n)
 			;;	
 		z)
-			run_yolo=true
-			run_psphinx=true
-			run_ipokemon=true
-			run_aeneas=true
+			run_both_cloud=true
 			;;
 		i)	
 			build_ipokemon=true

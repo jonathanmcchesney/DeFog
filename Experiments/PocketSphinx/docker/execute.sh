@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-rm /mnt/results/results.txt
+rm /mnt/results/cloudresult.txt
 rm /mnt/results/arrresult.txt
 
 cd ~/Experiments/PocketSphinx/sphinxbase/ 
@@ -29,7 +29,7 @@ echo "Upload to S3 bucket: completed in $runtime secs" | tee -a results.txt
 
 metricsValues[2]=$runtime
 
-cat results.txt >> /mnt/results/results.txt
+cat results.txt >> /mnt/results/cloudresult.txt
 echo ${metricsValues[@]} >> /mnt/results/arrresult.txt
 
 exit
