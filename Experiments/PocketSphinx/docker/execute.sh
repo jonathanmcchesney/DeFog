@@ -29,11 +29,9 @@ echo "Upload to S3 bucket: completed in $runtime secs" | tee -a results.txt
 
 metricsValues[2]=$runtime
 
-length=ffprobe -v error -show_entries format=duration \
-  -of default=noprint_wrappers=1:nokey=1 /mnt/assets/psphinx.wav
+length=$(ffprobe -v error -show_entries format=duration -of default=noprint_wrappers=1:nokey=1 /mnt/assets/psphinx.wav)
   
 metricsValues[6]=$length
-
 
 cat results.txt >> /mnt/results/cloudresult.txt
 echo ${metricsValues[@]} >> /mnt/results/arrresult.txt
