@@ -27,7 +27,10 @@ end=$(date +%s.%N)
 runtime=$( echo "$end - $start" | bc -l )
 echo "Upload to S3 bucket: completed in $runtime secs" | tee -a results.txt
 
-metricsValues[2]=$runtime
+metricsValues[5]=$runtime
+
+length=ffprobe -v error -show_entries format=duration \
+  -of default=noprint_wrappers=1:nokey=1 /mnt/assets/psphinx.wav
 
 cat results.txt >> /mnt/results/cloudresult.txt
 echo ${metricsValues[@]} >> /mnt/results/arrresult.txt

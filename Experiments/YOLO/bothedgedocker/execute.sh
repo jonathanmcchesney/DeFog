@@ -3,13 +3,20 @@
 rm /mnt/results/cloudresult.txt
 rm /mnt/results/arrresult.txt
 
+source /mnt/assets/config.sh
+
+cloudaddress=$cloudaddress
+clouduser=$clouduser
+awskey=$awskey
+
 cd ~/Experiments/YOLO/yolo
 chmod 777 darknet
 
 metricsValues=("NA" "NA" "NA" "NA" "NA" "NA" "NA" "NA" "NA")
 
 start=$(date +%s.%N)
-python receiver.py yolov3-tiny.weights
+#python receiver.py yolov3-tiny.weights
+	scp -v -i $awskey $clouduser@$cloudaddress:/mnt/assets/yolov3-tiny.weights
 end=$(date +%s.%N)
 runtime=$( echo "$end - $start" | bc -l )
 echo "Cloud Transfer: completed in $runtime secs" | tee -a results.txt
@@ -35,5 +42,7 @@ metricsValues[2]=$runtime
 
 cat results.txt >> /mnt/results/cloudresult.txt
 echo ${metricsValues[@]} >> /mnt/results/arrresult.txt
+
+rm /mnt/assets/config.sh
 
 exit
