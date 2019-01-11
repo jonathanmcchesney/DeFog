@@ -1,6 +1,6 @@
 #!/bin/bash
 
-function removedockerimages {
+function remove_docker_images_and_containers {
 	docker stop $(docker ps -aq)
 	docker rm $(docker ps -aq)
 	docker rmi $(docker images -q)
@@ -8,7 +8,7 @@ function removedockerimages {
 
 function build_docker_ipokemon {
 	echo Removing docker images and containers...
-	removedockerimages
+	remove_docker_images_and_containers
 	echo DONE
 
 	echo Entering ipokemonbuild...
@@ -101,7 +101,6 @@ HELP
 }
 
 function edgebench {
-	echo "EDGE BENCH"
 	
 	echo $run_yolo
 	

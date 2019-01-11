@@ -146,7 +146,13 @@ function benchmark_sysbench {
 	sysbench --test=cpu --cpu-max-prime=20000 run | tee -a $filename.txt
 }
 
-function removedockerimages {
+function remove_docker_images_and_containers {
+	docker stop $(docker ps -aq)
+	docker rm $(docker ps -aq)
+	docker rmi $(docker images -q)
+}
+
+function remove_docker_containers {
 	docker stop $(docker ps -aq)
 	docker rm $(docker ps -aq)
 	docker rmi $(docker images -q)
@@ -167,7 +173,7 @@ function delete_temps {
     echo OK
 	
 	echo Removing docker containers and images...
-		removedockerimages &>/dev/null
+		remove_docker_images_and_containers &>/dev/null
 	echo OK
 }
 
@@ -330,14 +336,16 @@ echo EDGE
 function bothcloudbench {
 echo "Cloud/Edge - Cloud actions and system benchmarks: " | tee $filename.txt
 	seperator
-
-	test $run_simple && simple_benchmark
-	test $run_downloads && downloads_benchmark
-	test $run_lfile && instantiate_file
-	test $run_sysbench && benchmark_sysbench
-	test $run_unixbench && benchmark_unixbench
 	
 	test $run_yolo && build_docker_yolo_both_cloud
+	
+}
+
+function bothedgebench {
+echo "Cloud/Edge - Edge actions and system benchmarks: " | tee $filename.txt
+	seperator
+	
+	test $run_yolo && build_docker_yolo_both_edge
 	
 }
 
@@ -379,6 +387,8 @@ function cloudbench {
 function main {
 	mkdir -p fogbench && cd fogbench 	
 	test $run_delete && delete_temps
+	test $run_remove_containers && remove_docker_containers
+	
 	rm results.txt
 	rm -rf dir assets && mkdir assets && chmod 777 assets
 	rm -rf dir results && mkdir results && chmod 777 results
@@ -386,7 +396,7 @@ function main {
     test $run_cloud && cloudbench
     test $run_edge && edgebench
     test $run_both_cloud && bothcloudbench
-    test $run_both_edge && echo EDGEEEE
+    test $run_both_edge && bothedgebench
 	
 	mv $filename.txt results/results.txt
 
@@ -421,6 +431,9 @@ while getopts :ceb:adfsxuhngs:zyijpmk opt; do
         x)
             run_delete=true
             ;;
+		v)	
+			run_remove_containers=true
+			;;
 		u)
             run_unixbench=true
             ;;

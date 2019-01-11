@@ -1,0 +1,35 @@
+		Demystifying Fog Systems Interaction via Container based benchmarking
+	Created by: Jonathan McChesney, student at Queen's University Belfast
+	CSC4006 Final Year Research and Development Project
+
+*****************************************************************************
+*****************************************************************************
+
+Cloud Only Benchmarks: 
+*****************************************************************************
+
+Transfer cloud action results to edge device: completed in .122322000 secs
+
+Pocket Sphinx Benchmarks:
+*****************************************************************************
+
+Pocket Sphinx Benchmark Run 1:
+
+Computation: completed in 2.515046628 secs
+Upload to S3 bucket: completed in .896674998 secs
+Transfer cloud application results to edge device: completed in 1.494046100 secs
+
+
+Pocket Sphinx Benchmark Run 2:
+
+Computation: completed in 4.054163139 secs
+Upload to S3 bucket: completed in .299847355 secs
+Transfer cloud application results to edge device: completed in 1.516986100 secs
+
+
+Pocket Sphinx Benchmark Run 3:
+
+Computation: completed in 3.746347418 secs
+Upload to S3 bucket: completed in .298686195 secs
+Transfer cloud application results to edge device: completed in 1.551008300 secs
+

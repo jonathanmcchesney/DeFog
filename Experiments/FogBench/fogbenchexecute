@@ -1,14 +1,17 @@
 #!/bin/bash
 
-cloudaddress=ec2-54-77-174-143.eu-west-1.compute.amazonaws.com
-clouduser=ubuntu
-edgeaddress=192.168.0.38
-edgeuser=root
-awskey=~/Documents/csc4006awskey.pem
+source ~/Documents/config.sh
+
+cloudaddress=$cloudaddress
+clouduser=$clouduser
+edgeaddress=$edgeaddress
+edgeuser=$edgeuser
+awskey=$awskey
+configlocation=~/Documents/config.sh
 
 function HELP {
     cat <<HELP
-Help: fogbenchmarker [OPTION...]
+Help: DeFog: Demystifying Fog Systems Interaction via Container based benchmarking [OPTION...]
 
 Environments:
 
@@ -17,22 +20,22 @@ Environments:
 -e Run Benchmarks on Edge
 
 Actions:
--a Run all system benchmarks
+- Run all system benchmarks
 - Runs small and large weight downloads test
 - Test large file create/remove speed
 - Run Sysbench
 - Run UnixBench
 - Delete temporary files
 - Run Simple System Benchmarks
-- No actions run
+- No actions
 
 Applications
--y Run Yolo
--p Run Pocket Sphinx
+- Run Yolo
+- Run Pocket Sphinx
 - Run Aeneas
--i Build and Run iPokeMon
--j Run iPokeMon
-- No Applications run
+- Build and Run iPokeMon
+- Run iPokeMon
+- No Applications
 
 HELP
 }
@@ -44,6 +47,10 @@ function executebenchmarkhelp {
 function benchmark_both_actions {
 		echo "ssh into edge/cloud - cloud instance for actions and system benchmarks.."
 			ssh -i $awskey $clouduser@$cloudaddress ' sudo bash -s' -- < ./fogbenchactions -z $actions $applications
+		echo "Done ssh"
+		
+		echo "ssh into edge instance for actions and system benchmarks.."
+			ssh $edgeuser@$edgeaddress ' sudo bash -s' -- < ./fogbenchactions $environment $actions $applications
 		echo "Done ssh"
 		
 		
@@ -75,7 +82,7 @@ function benchmark_edge_applications {
 		echo "Done ssh"
 		
 		local start=$(date +%s.%N)
-		scp $edgeuser@$edgeaddress:~/fogbench/results/* edgeresult.txt
+			scp $edgeuser@$edgeaddress:~/fogbench/results/* edgeresult.txt
 		local end=$(date +%s.%N)
 		local runtime=$( echo "$end - $start" | bc -l )
 		metricsValues[3]=$runtime
@@ -118,7 +125,7 @@ function benchmark_cloud_applications {
 		echo "Done ssh"
 		
 		local start=$(date +%s.%N)
-		scp -i $awskey $clouduser@$cloudaddress:~/fogbench/results/* ./
+			scp -i $awskey $clouduser@$cloudaddress:~/fogbench/results/* ./
 		local end=$(date +%s.%N)
 		local runtime=$( echo "$end - $start" | bc -l )
 		metricsValues[3]=$runtime
@@ -171,11 +178,25 @@ function calc_rtt {
 	local T2=${metricsValues[2]} 
 	local rtt=$(bc <<< "$T1+$T2")
 
-	echo yeet
-		echo $rtt
+	#echo yeet
+	#echo $rtt
 
 	metricsValues[4]=$rtt
 	echo ${metricsValues[4]}
+}
+
+function calc_rtf {
+	local length=${newarr[5]}
+	local computation=${newarr[1]}
+	echo length
+	echo $length
+	echo comp
+	echo $computation
+	local rtf=$(bc <<< "scale=10;$computation/$length")
+
+	metricsValues[5]=rtf
+	echo ${metricsValues[5]}
+
 }
 
 function set_returned_application_metrics {
@@ -250,12 +271,20 @@ function benchmark_application {
 		then
 			benchmark_cloud_applications
 			calc_rtt
+			if [ ${metricsValues[5]} != "NA" ];
+			then
+				calc_rtf
+			fi
 			calc_cloud_cost
 		fi	
 		if [ "$environment" == "-e" ] || [ "$environment" == "-b" ];
 		then
 			benchmark_edge_applications
 			calc_rtt
+			if [${metricsValues[5]} != "NA"];
+			then
+				calc_rtf
+			fi
 			calc_edge_cost
 		fi
 		
@@ -397,6 +426,16 @@ function scp_asset {
 
 }
 
+function send_config_cloud {
+echo here
+	scp -i $awskey $configlocation $clouduser@$cloudaddress:~/fogbench/assets > /dev/null 2>&1
+}
+
+function send_config_edge {
+
+	scp $configlocation $edgeuser@$edgeaddress:~/fogbench/assets > /dev/null 2>&1
+
+}
 
 function actions_user_input {
 while true; do
@@ -450,9 +489,9 @@ while true; do
 	echo ""
 	echo "Environments:"
 		echo ""
-		echo "0. Cloud"
-		echo "1. Edge"
-		echo "2. Both"
+		echo "0. Cloud Only"
+		echo "1. Edge Only"
+		echo "2. Cloud & Edge"
 		echo ""
   read -p "What environment would you like to benchmark: [0,1,2]" ANS
   case $ANS in 
@@ -517,14 +556,14 @@ echo -e "***********************************************************************
 
 function display_ascii_header {
 
-echo "   ___ ___   ___          ___              _    ";
-echo "  / __/ __| | __|__  __ _| _ ) ___ _ _  __| |_  ";
-echo " | (__\__ \ | _/ _ \/ _\` | _ \/ -_) ' \/ _| ' \ ";
-echo "  \___|___/ |_|\___/\__, |___/\___|_||_\__|_||_|";
-echo "                    |___/                       ";
+echo "  ___      ___            _ ";
+echo " |   \ ___| __|__  __ _  (_)";
+echo " | |) / -_) _/ _ \/ _\` |  _ ";
+echo " |___/\___|_|\___/\__, | (_)";
+echo "                  |___/     ";
 echo ""
-echo -e "CS FogBench:" | tee $verbose_filename.txt
-echo -e "Welcome, you are using CS FogBench: a cloud and edge benchmarking tool!" | tee -a $verbose_filename.txt
+echo -e "DeFog: " | tee $verbose_filename.txt
+echo -e "		Demystifying Fog Systems Interaction via Container based benchmarking" | tee $verbose_filename.txt
 echo -e "	Created by: Jonathan McChesney, student at Queen's University Belfast" | tee -a $verbose_filename.txt
 echo -e "	CSC4006 Final Year Research and Development Project" | tee -a $verbose_filename.txt
 echo -e "" | tee -a $verbose_filename.txt
@@ -576,8 +615,7 @@ function main {
 		
 		echo ${metricsLabels[@]} >> $metrics_verbose_filename.txt
 
-		
-		
+		#send_config_cloud
 		benchmark_cloud_actions
 		benchmark_applications
 	fi	
@@ -591,7 +629,7 @@ function main {
 		echo ${metricsLabels[@]} >> $metrics_verbose_filename.txt
 		
 		
-		
+		#send_config_edge
 		benchmark_edge_actions
 		benchmark_applications
 	fi	
@@ -604,7 +642,8 @@ function main {
 		
 		echo ${metricsLabels[@]} >> $metrics_verbose_filename.txt
 		
-		
+		#send_config_cloud
+		send_config_edge
 		benchmark_both_actions
 		# benchmark_applications
 	fi	

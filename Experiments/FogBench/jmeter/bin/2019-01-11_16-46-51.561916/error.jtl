@@ -1,0 +1,1738 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testResults version="1.2">
+<httpSample t="21136" lt="0" ts="1547225412776" s="false" lb="uu" rc="Non HTTP response code: org.apache.http.conn.HttpHostConnectException" rm="Non HTTP response message: Connect to 192.168.0.38:8000 [/192.168.0.38] failed: Connection timed out: connect" tn="ipokemon 1-4" dt="text" de="" by="2805" ng="5" na="5">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Accept: application/json
+Accept-Encoding: gzip, deflate
+Accept-Language: en;q=1
+Connection: keep-alive
+key: iPokeMonClientIdentifier
+provider: 0
+User-Agent: Master/50 (iPhone; iOS 10.0; Scale/2.00)
+identity: 4bb0469d181f71294d545c1f5ab0194e
+Content-Length: 296
+Content-Type: multipart/form-data; boundary=mmDWG_ZFNbzrKoAdCe6wFhX866cewFS
+Host: 192.168.0.38:8000
+</requestHeader>
+  <responseData class="java.lang.String">org.apache.http.conn.HttpHostConnectException: Connect to 192.168.0.38:8000 [/192.168.0.38] failed: Connection timed out: connect&#xd;
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:159)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl$JMeterDefaultHttpClientConnectionOperator.connect(HTTPHC4Impl.java:331)&#xd;
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:373)&#xd;
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:394)&#xd;
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:237)&#xd;
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)&#xd;
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)&#xd;
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)&#xd;
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)&#xd;
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.executeRequest(HTTPHC4Impl.java:832)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.sample(HTTPHC4Impl.java:570)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy.sample(HTTPSamplerProxy.java:67)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1231)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1220)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:622)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:546)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:486)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:253)&#xd;
+	at java.base/java.lang.Thread.run(Unknown Source)&#xd;
+Caused by: java.net.ConnectException: Connection timed out: connect&#xd;
+	at java.base/java.net.DualStackPlainSocketImpl.connect0(Native Method)&#xd;
+	at java.base/java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source)&#xd;
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(Unknown Source)&#xd;
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source)&#xd;
+	at java.base/java.net.AbstractPlainSocketImpl.connect(Unknown Source)&#xd;
+	at java.base/java.net.PlainSocketImpl.connect(Unknown Source)&#xd;
+	at java.base/java.net.SocksSocketImpl.connect(Unknown Source)&#xd;
+	at java.base/java.net.Socket.connect(Unknown Source)&#xd;
+	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:75)&#xd;
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)&#xd;
+	... 19 more&#xd;
+</responseData>
+  <cookies class="java.lang.String"></cookies>
+  <method class="java.lang.String">POST</method>
+  <queryString class="java.lang.String">--mmDWG_ZFNbzrKoAdCe6wFhX866cewFS&#xd;
+Content-Disposition: form-data; name=&quot;bag&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+0:1,300,2,300,3,300,9,300,13,300,19,300,22,300:23,300,6,300,15,300:4,300,7,300,16,300:1,296:0:0:0:0&#xd;
+--mmDWG_ZFNbzrKoAdCe6wFhX866cewFS--&#xd;
+</queryString>
+  <java.net.URL>http://192.168.0.38:8000/uu</java.net.URL>
+</httpSample>
+<httpSample t="21136" lt="0" ts="1547225412776" s="false" lb="uu" rc="Non HTTP response code: org.apache.http.conn.HttpHostConnectException" rm="Non HTTP response message: Connect to 192.168.0.38:8000 [/192.168.0.38] failed: Connection timed out: connect" tn="ipokemon 1-2" dt="text" de="" by="2805" ng="5" na="5">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Accept: application/json
+Accept-Encoding: gzip, deflate
+Accept-Language: en;q=1
+Connection: keep-alive
+key: iPokeMonClientIdentifier
+provider: 0
+User-Agent: Master/50 (iPhone; iOS 10.0; Scale/2.00)
+identity: 4bb0469d181f71294d545c1f5ab0194e
+Content-Length: 304
+Content-Type: multipart/form-data; boundary=JPSzjECjxMGyMjyMl3ew640h1OsARmRgiD8
+Host: 192.168.0.38:8000
+</requestHeader>
+  <responseData class="java.lang.String">org.apache.http.conn.HttpHostConnectException: Connect to 192.168.0.38:8000 [/192.168.0.38] failed: Connection timed out: connect&#xd;
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:159)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl$JMeterDefaultHttpClientConnectionOperator.connect(HTTPHC4Impl.java:331)&#xd;
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:373)&#xd;
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:394)&#xd;
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:237)&#xd;
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)&#xd;
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)&#xd;
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)&#xd;
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)&#xd;
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.executeRequest(HTTPHC4Impl.java:832)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.sample(HTTPHC4Impl.java:570)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy.sample(HTTPSamplerProxy.java:67)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1231)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1220)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:622)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:546)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:486)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:253)&#xd;
+	at java.base/java.lang.Thread.run(Unknown Source)&#xd;
+Caused by: java.net.ConnectException: Connection timed out: connect&#xd;
+	at java.base/java.net.DualStackPlainSocketImpl.connect0(Native Method)&#xd;
+	at java.base/java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source)&#xd;
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(Unknown Source)&#xd;
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source)&#xd;
+	at java.base/java.net.AbstractPlainSocketImpl.connect(Unknown Source)&#xd;
+	at java.base/java.net.PlainSocketImpl.connect(Unknown Source)&#xd;
+	at java.base/java.net.SocksSocketImpl.connect(Unknown Source)&#xd;
+	at java.base/java.net.Socket.connect(Unknown Source)&#xd;
+	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:75)&#xd;
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)&#xd;
+	... 19 more&#xd;
+</responseData>
+  <cookies class="java.lang.String"></cookies>
+  <method class="java.lang.String">POST</method>
+  <queryString class="java.lang.String">--JPSzjECjxMGyMjyMl3ew640h1OsARmRgiD8&#xd;
+Content-Disposition: form-data; name=&quot;bag&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+0:1,300,2,300,3,300,9,300,13,300,19,300,22,300:23,300,6,300,15,300:4,300,7,300,16,300:1,296:0:0:0:0&#xd;
+--JPSzjECjxMGyMjyMl3ew640h1OsARmRgiD8--&#xd;
+</queryString>
+  <java.net.URL>http://192.168.0.38:8000/uu</java.net.URL>
+</httpSample>
+<httpSample t="21137" lt="0" ts="1547225412776" s="false" lb="upm" rc="Non HTTP response code: org.apache.http.conn.HttpHostConnectException" rm="Non HTTP response message: Connect to 192.168.0.38:8000 [/192.168.0.38] failed: Connection timed out: connect" tn="ipokemon 1-3" dt="text" de="" by="2805" ng="5" na="5">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Accept: application/json
+Accept-Encoding: gzip, deflate
+Accept-Language: en;q=1
+Connection: keep-alive
+key: iPokeMonClientIdentifier
+provider: 0
+User-Agent: Master/50 (iPhone; iOS 10.0; Scale/2.00)
+identity: 4bb0469d181f71294d545c1f5ab0194e
+Content-Length: 2210
+Content-Type: multipart/form-data; boundary=IQcs1s0pxWJEh8KnJzmrMm7zpCxnFv
+Host: 192.168.0.38:8000
+</requestHeader>
+  <responseData class="java.lang.String">org.apache.http.conn.HttpHostConnectException: Connect to 192.168.0.38:8000 [/192.168.0.38] failed: Connection timed out: connect&#xd;
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:159)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl$JMeterDefaultHttpClientConnectionOperator.connect(HTTPHC4Impl.java:331)&#xd;
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:373)&#xd;
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:394)&#xd;
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:237)&#xd;
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)&#xd;
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)&#xd;
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)&#xd;
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)&#xd;
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.executeRequest(HTTPHC4Impl.java:832)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.sample(HTTPHC4Impl.java:570)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy.sample(HTTPSamplerProxy.java:67)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1231)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1220)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:622)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:546)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:486)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:253)&#xd;
+	at java.base/java.lang.Thread.run(Unknown Source)&#xd;
+Caused by: java.net.ConnectException: Connection timed out: connect&#xd;
+	at java.base/java.net.DualStackPlainSocketImpl.connect0(Native Method)&#xd;
+	at java.base/java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source)&#xd;
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(Unknown Source)&#xd;
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source)&#xd;
+	at java.base/java.net.AbstractPlainSocketImpl.connect(Unknown Source)&#xd;
+	at java.base/java.net.PlainSocketImpl.connect(Unknown Source)&#xd;
+	at java.base/java.net.SocksSocketImpl.connect(Unknown Source)&#xd;
+	at java.base/java.net.Socket.connect(Unknown Source)&#xd;
+	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:75)&#xd;
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)&#xd;
+	... 19 more&#xd;
+</responseData>
+  <cookies class="java.lang.String"></cookies>
+  <method class="java.lang.String">POST</method>
+  <queryString class="java.lang.String">--IQcs1s0pxWJEh8KnJzmrMm7zpCxnFv&#xd;
+Content-Disposition: form-data; name=&quot;exp&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+560&#xd;
+--IQcs1s0pxWJEh8KnJzmrMm7zpCxnFv&#xd;
+Content-Disposition: form-data; name=&quot;fourMoves&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+53,40,40,112,35,35,144,35,35&#xd;
+--IQcs1s0pxWJEh8KnJzmrMm7zpCxnFv&#xd;
+Content-Disposition: form-data; name=&quot;happiness&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+70&#xd;
+--IQcs1s0pxWJEh8KnJzmrMm7zpCxnFv&#xd;
+Content-Disposition: form-data; name=&quot;hp&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+31&#xd;
+--IQcs1s0pxWJEh8KnJzmrMm7zpCxnFv&#xd;
+Content-Disposition: form-data; name=&quot;level&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+10&#xd;
+--IQcs1s0pxWJEh8KnJzmrMm7zpCxnFv&#xd;
+Content-Disposition: form-data; name=&quot;maxStats&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+31,14,15,13,13,13&#xd;
+--IQcs1s0pxWJEh8KnJzmrMm7zpCxnFv&#xd;
+Content-Disposition: form-data; name=&quot;status&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+0&#xd;
+--IQcs1s0pxWJEh8KnJzmrMm7zpCxnFv&#xd;
+Content-Disposition: form-data; name=&quot;toNextLevel&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+182&#xd;
+--IQcs1s0pxWJEh8KnJzmrMm7zpCxnFv&#xd;
+Content-Disposition: form-data; name=&quot;uid&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+5&#xd;
+--IQcs1s0pxWJEh8KnJzmrMm7zpCxnFv&#xd;
+Content-Disposition: form-data; name=&quot;box&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+0&#xd;
+--IQcs1s0pxWJEh8KnJzmrMm7zpCxnFv&#xd;
+Content-Disposition: form-data; name=&quot;gender&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+0&#xd;
+--IQcs1s0pxWJEh8KnJzmrMm7zpCxnFv&#xd;
+Content-Disposition: form-data; name=&quot;memo&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+PMSMemoTest&#xd;
+--IQcs1s0pxWJEh8KnJzmrMm7zpCxnFv&#xd;
+Content-Disposition: form-data; name=&quot;sid&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+29&#xd;
+--IQcs1s0pxWJEh8KnJzmrMm7zpCxnFv--&#xd;
+</queryString>
+  <java.net.URL>http://192.168.0.38:8000/upm</java.net.URL>
+</httpSample>
+<httpSample t="21136" lt="0" ts="1547225412776" s="false" lb="u" rc="Non HTTP response code: org.apache.http.conn.HttpHostConnectException" rm="Non HTTP response message: Connect to 192.168.0.38:8000 [/192.168.0.38] failed: Connection timed out: connect" tn="ipokemon 1-1" dt="text" de="" by="2805" ng="5" na="5">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Accept: application/json
+Accept-Encoding: gzip, deflate
+Accept-Language: en;q=1
+Connection: keep-alive
+key: iPokeMonClientIdentifier
+provider: 0
+User-Agent: Master/50 (iPhone; iOS 10.0; Scale/2.00)
+identity: 4bb0469d181f71294d545c1f5ab0194e
+Host: 192.168.0.38:8000
+</requestHeader>
+  <responseData class="java.lang.String">org.apache.http.conn.HttpHostConnectException: Connect to 192.168.0.38:8000 [/192.168.0.38] failed: Connection timed out: connect&#xd;
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:159)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl$JMeterDefaultHttpClientConnectionOperator.connect(HTTPHC4Impl.java:331)&#xd;
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:373)&#xd;
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:394)&#xd;
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:237)&#xd;
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)&#xd;
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)&#xd;
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)&#xd;
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)&#xd;
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.executeRequest(HTTPHC4Impl.java:832)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.sample(HTTPHC4Impl.java:570)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy.sample(HTTPSamplerProxy.java:67)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1231)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1220)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:622)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:546)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:486)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:253)&#xd;
+	at java.base/java.lang.Thread.run(Unknown Source)&#xd;
+Caused by: java.net.ConnectException: Connection timed out: connect&#xd;
+	at java.base/java.net.DualStackPlainSocketImpl.connect0(Native Method)&#xd;
+	at java.base/java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source)&#xd;
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(Unknown Source)&#xd;
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source)&#xd;
+	at java.base/java.net.AbstractPlainSocketImpl.connect(Unknown Source)&#xd;
+	at java.base/java.net.PlainSocketImpl.connect(Unknown Source)&#xd;
+	at java.base/java.net.SocksSocketImpl.connect(Unknown Source)&#xd;
+	at java.base/java.net.Socket.connect(Unknown Source)&#xd;
+	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:75)&#xd;
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)&#xd;
+	... 19 more&#xd;
+</responseData>
+  <cookies class="java.lang.String"></cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>http://192.168.0.38:8000/u</java.net.URL>
+</httpSample>
+<httpSample t="21014" lt="0" ts="1547225419476" s="false" lb="pd" rc="Non HTTP response code: org.apache.http.conn.HttpHostConnectException" rm="Non HTTP response message: Connect to 192.168.0.38:8000 [/192.168.0.38] failed: Connection timed out: connect" tn="ipokemon 1-5" dt="text" de="" by="2805" ng="5" na="5">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Accept: application/json
+Accept-Encoding: gzip, deflate
+Accept-Language: en;q=1
+Connection: keep-alive
+key: iPokeMonClientIdentifier
+provider: 0
+User-Agent: Master/50 (iPhone; iOS 10.0; Scale/2.00)
+identity: 4bb0469d181f71294d545c1f5ab0194e
+Host: 192.168.0.38:8000
+</requestHeader>
+  <responseData class="java.lang.String">org.apache.http.conn.HttpHostConnectException: Connect to 192.168.0.38:8000 [/192.168.0.38] failed: Connection timed out: connect&#xd;
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:159)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl$JMeterDefaultHttpClientConnectionOperator.connect(HTTPHC4Impl.java:331)&#xd;
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:373)&#xd;
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:394)&#xd;
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:237)&#xd;
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)&#xd;
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)&#xd;
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)&#xd;
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)&#xd;
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.executeRequest(HTTPHC4Impl.java:832)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.sample(HTTPHC4Impl.java:570)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy.sample(HTTPSamplerProxy.java:67)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1231)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1220)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:622)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:546)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:486)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:253)&#xd;
+	at java.base/java.lang.Thread.run(Unknown Source)&#xd;
+Caused by: java.net.ConnectException: Connection timed out: connect&#xd;
+	at java.base/java.net.DualStackPlainSocketImpl.connect0(Native Method)&#xd;
+	at java.base/java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source)&#xd;
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(Unknown Source)&#xd;
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source)&#xd;
+	at java.base/java.net.AbstractPlainSocketImpl.connect(Unknown Source)&#xd;
+	at java.base/java.net.PlainSocketImpl.connect(Unknown Source)&#xd;
+	at java.base/java.net.SocksSocketImpl.connect(Unknown Source)&#xd;
+	at java.base/java.net.Socket.connect(Unknown Source)&#xd;
+	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:75)&#xd;
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)&#xd;
+	... 19 more&#xd;
+</responseData>
+  <cookies class="java.lang.String"></cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>http://192.168.0.38:8000/pd</java.net.URL>
+</httpSample>
+<httpSample t="21003" lt="0" ts="1547225433922" s="false" lb="ur" rc="Non HTTP response code: org.apache.http.conn.HttpHostConnectException" rm="Non HTTP response message: Connect to 192.168.0.38:8000 [/192.168.0.38] failed: Connection timed out: connect" tn="ipokemon 1-4" dt="text" de="" by="2805" ng="5" na="5">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Accept: application/json
+Accept-Encoding: gzip, deflate
+Accept-Language: en;q=1
+Connection: keep-alive
+key: iPokeMonClientIdentifier
+provider: 0
+User-Agent: Master/50 (iPhone; iOS 10.0; Scale/2.00)
+identity: 4bb0469d181f71294d545c1f5ab0194e
+Content-Length: 230
+Content-Type: multipart/form-data; boundary=ah9enzyEOngFDRIdHz7fQnLmoRrXECxMixEtiv0
+Host: 192.168.0.38:8000
+</requestHeader>
+  <responseData class="java.lang.String">org.apache.http.conn.HttpHostConnectException: Connect to 192.168.0.38:8000 [/192.168.0.38] failed: Connection timed out: connect&#xd;
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:159)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl$JMeterDefaultHttpClientConnectionOperator.connect(HTTPHC4Impl.java:331)&#xd;
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:373)&#xd;
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:394)&#xd;
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:237)&#xd;
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)&#xd;
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)&#xd;
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)&#xd;
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)&#xd;
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.executeRequest(HTTPHC4Impl.java:832)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.sample(HTTPHC4Impl.java:570)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy.sample(HTTPSamplerProxy.java:67)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1231)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1220)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:622)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:546)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:486)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:253)&#xd;
+	at java.base/java.lang.Thread.run(Unknown Source)&#xd;
+Caused by: java.net.ConnectException: Connection timed out: connect&#xd;
+	at java.base/java.net.DualStackPlainSocketImpl.connect0(Native Method)&#xd;
+	at java.base/java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source)&#xd;
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(Unknown Source)&#xd;
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source)&#xd;
+	at java.base/java.net.AbstractPlainSocketImpl.connect(Unknown Source)&#xd;
+	at java.base/java.net.PlainSocketImpl.connect(Unknown Source)&#xd;
+	at java.base/java.net.SocksSocketImpl.connect(Unknown Source)&#xd;
+	at java.base/java.net.Socket.connect(Unknown Source)&#xd;
+	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:75)&#xd;
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)&#xd;
+	... 19 more&#xd;
+</responseData>
+  <cookies class="java.lang.String"></cookies>
+  <method class="java.lang.String">POST</method>
+  <queryString class="java.lang.String">--ah9enzyEOngFDRIdHz7fQnLmoRrXECxMixEtiv0&#xd;
+Content-Disposition: form-data; name=&quot;ri&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+CN=Beijing=Beijing&#xd;
+--ah9enzyEOngFDRIdHz7fQnLmoRrXECxMixEtiv0--&#xd;
+</queryString>
+  <java.net.URL>http://192.168.0.38:8000/ur</java.net.URL>
+</httpSample>
+<httpSample t="21002" lt="0" ts="1547225433924" s="false" lb="uu" rc="Non HTTP response code: org.apache.http.conn.HttpHostConnectException" rm="Non HTTP response message: Connect to 192.168.0.38:8000 [/192.168.0.38] failed: Connection timed out: connect" tn="ipokemon 1-2" dt="text" de="" by="2805" ng="5" na="5">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Accept: application/json
+Accept-Encoding: gzip, deflate
+Accept-Language: en;q=1
+Connection: keep-alive
+key: iPokeMonClientIdentifier
+provider: 0
+User-Agent: Master/50 (iPhone; iOS 10.0; Scale/2.00)
+identity: 4bb0469d181f71294d545c1f5ab0194e
+Content-Length: 300
+Content-Type: multipart/form-data; boundary=V4YrGw6Fy3LKj5H8lbylAxT8IgjNS4seH
+Host: 192.168.0.38:8000
+</requestHeader>
+  <responseData class="java.lang.String">org.apache.http.conn.HttpHostConnectException: Connect to 192.168.0.38:8000 [/192.168.0.38] failed: Connection timed out: connect&#xd;
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:159)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl$JMeterDefaultHttpClientConnectionOperator.connect(HTTPHC4Impl.java:331)&#xd;
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:373)&#xd;
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:394)&#xd;
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:237)&#xd;
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)&#xd;
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)&#xd;
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)&#xd;
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)&#xd;
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.executeRequest(HTTPHC4Impl.java:832)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.sample(HTTPHC4Impl.java:570)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy.sample(HTTPSamplerProxy.java:67)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1231)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1220)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:622)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:546)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:486)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:253)&#xd;
+	at java.base/java.lang.Thread.run(Unknown Source)&#xd;
+Caused by: java.net.ConnectException: Connection timed out: connect&#xd;
+	at java.base/java.net.DualStackPlainSocketImpl.connect0(Native Method)&#xd;
+	at java.base/java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source)&#xd;
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(Unknown Source)&#xd;
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source)&#xd;
+	at java.base/java.net.AbstractPlainSocketImpl.connect(Unknown Source)&#xd;
+	at java.base/java.net.PlainSocketImpl.connect(Unknown Source)&#xd;
+	at java.base/java.net.SocksSocketImpl.connect(Unknown Source)&#xd;
+	at java.base/java.net.Socket.connect(Unknown Source)&#xd;
+	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:75)&#xd;
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)&#xd;
+	... 19 more&#xd;
+</responseData>
+  <cookies class="java.lang.String"></cookies>
+  <method class="java.lang.String">POST</method>
+  <queryString class="java.lang.String">--V4YrGw6Fy3LKj5H8lbylAxT8IgjNS4seH&#xd;
+Content-Disposition: form-data; name=&quot;bag&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+0:1,300,2,300,3,300,9,300,13,300,19,300,22,300:23,300,6,299,15,300:4,300,7,300,16,300:1,292:0:0:0:0&#xd;
+--V4YrGw6Fy3LKj5H8lbylAxT8IgjNS4seH--&#xd;
+</queryString>
+  <java.net.URL>http://192.168.0.38:8000/uu</java.net.URL>
+</httpSample>
+<httpSample t="21001" lt="0" ts="1547225433926" s="false" lb="pma/4" rc="Non HTTP response code: org.apache.http.conn.HttpHostConnectException" rm="Non HTTP response message: Connect to 192.168.0.38:8000 [/192.168.0.38] failed: Connection timed out: connect" tn="ipokemon 1-1" dt="text" de="" by="2805" ng="5" na="5">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Accept: application/json
+Accept-Encoding: gzip, deflate
+Accept-Language: en;q=1
+Connection: keep-alive
+key: iPokeMonClientIdentifier
+provider: 0
+User-Agent: Master/50 (iPhone; iOS 10.0; Scale/2.00)
+identity: 4bb0469d181f71294d545c1f5ab0194e
+Host: 192.168.0.38:8000
+</requestHeader>
+  <responseData class="java.lang.String">org.apache.http.conn.HttpHostConnectException: Connect to 192.168.0.38:8000 [/192.168.0.38] failed: Connection timed out: connect&#xd;
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:159)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl$JMeterDefaultHttpClientConnectionOperator.connect(HTTPHC4Impl.java:331)&#xd;
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:373)&#xd;
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:394)&#xd;
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:237)&#xd;
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)&#xd;
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)&#xd;
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)&#xd;
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)&#xd;
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.executeRequest(HTTPHC4Impl.java:832)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.sample(HTTPHC4Impl.java:570)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy.sample(HTTPSamplerProxy.java:67)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1231)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1220)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:622)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:546)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:486)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:253)&#xd;
+	at java.base/java.lang.Thread.run(Unknown Source)&#xd;
+Caused by: java.net.ConnectException: Connection timed out: connect&#xd;
+	at java.base/java.net.DualStackPlainSocketImpl.connect0(Native Method)&#xd;
+	at java.base/java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source)&#xd;
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(Unknown Source)&#xd;
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source)&#xd;
+	at java.base/java.net.AbstractPlainSocketImpl.connect(Unknown Source)&#xd;
+	at java.base/java.net.PlainSocketImpl.connect(Unknown Source)&#xd;
+	at java.base/java.net.SocksSocketImpl.connect(Unknown Source)&#xd;
+	at java.base/java.net.Socket.connect(Unknown Source)&#xd;
+	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:75)&#xd;
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)&#xd;
+	... 19 more&#xd;
+</responseData>
+  <cookies class="java.lang.String"></cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>http://192.168.0.38:8000/pma/4</java.net.URL>
+</httpSample>
+<httpSample t="21011" lt="0" ts="1547225454930" s="false" lb="upm" rc="Non HTTP response code: org.apache.http.conn.HttpHostConnectException" rm="Non HTTP response message: Connect to 192.168.0.38:8000 [/192.168.0.38] failed: Connection timed out: connect" tn="ipokemon 1-2" dt="text" de="" by="2805" ng="5" na="5">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Accept: application/json
+Accept-Encoding: gzip, deflate
+Accept-Language: en;q=1
+Connection: keep-alive
+key: iPokeMonClientIdentifier
+provider: 0
+User-Agent: Master/50 (iPhone; iOS 10.0; Scale/2.00)
+identity: 4bb0469d181f71294d545c1f5ab0194e
+Content-Length: 1654
+Content-Type: multipart/form-data; boundary=YkuZHiy0_u3sB2JxKCzR5IobeMY0wKb7RdA97t9k
+Host: 192.168.0.38:8000
+</requestHeader>
+  <responseData class="java.lang.String">org.apache.http.conn.HttpHostConnectException: Connect to 192.168.0.38:8000 [/192.168.0.38] failed: Connection timed out: connect&#xd;
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:159)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl$JMeterDefaultHttpClientConnectionOperator.connect(HTTPHC4Impl.java:331)&#xd;
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:373)&#xd;
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:394)&#xd;
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:237)&#xd;
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)&#xd;
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)&#xd;
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)&#xd;
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)&#xd;
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.executeRequest(HTTPHC4Impl.java:832)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.sample(HTTPHC4Impl.java:570)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy.sample(HTTPSamplerProxy.java:67)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1231)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1220)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:622)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:546)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:486)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:253)&#xd;
+	at java.base/java.lang.Thread.run(Unknown Source)&#xd;
+Caused by: java.net.ConnectException: Connection timed out: connect&#xd;
+	at java.base/java.net.DualStackPlainSocketImpl.connect0(Native Method)&#xd;
+	at java.base/java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source)&#xd;
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(Unknown Source)&#xd;
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source)&#xd;
+	at java.base/java.net.AbstractPlainSocketImpl.connect(Unknown Source)&#xd;
+	at java.base/java.net.PlainSocketImpl.connect(Unknown Source)&#xd;
+	at java.base/java.net.SocksSocketImpl.connect(Unknown Source)&#xd;
+	at java.base/java.net.Socket.connect(Unknown Source)&#xd;
+	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:75)&#xd;
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)&#xd;
+	... 19 more&#xd;
+</responseData>
+  <cookies class="java.lang.String"></cookies>
+  <method class="java.lang.String">POST</method>
+  <queryString class="java.lang.String">--YkuZHiy0_u3sB2JxKCzR5IobeMY0wKb7RdA97t9k&#xd;
+Content-Disposition: form-data; name=&quot;exp&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+650&#xd;
+--YkuZHiy0_u3sB2JxKCzR5IobeMY0wKb7RdA97t9k&#xd;
+Content-Disposition: form-data; name=&quot;fourMoves&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+16,29,30,144,32,35,145,29,30&#xd;
+--YkuZHiy0_u3sB2JxKCzR5IobeMY0wKb7RdA97t9k&#xd;
+Content-Disposition: form-data; name=&quot;happiness&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+70&#xd;
+--YkuZHiy0_u3sB2JxKCzR5IobeMY0wKb7RdA97t9k&#xd;
+Content-Disposition: form-data; name=&quot;hp&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+28&#xd;
+--YkuZHiy0_u3sB2JxKCzR5IobeMY0wKb7RdA97t9k&#xd;
+Content-Disposition: form-data; name=&quot;level&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+10&#xd;
+--YkuZHiy0_u3sB2JxKCzR5IobeMY0wKb7RdA97t9k&#xd;
+Content-Disposition: form-data; name=&quot;maxStats&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+28,15,18,15,18,14&#xd;
+--YkuZHiy0_u3sB2JxKCzR5IobeMY0wKb7RdA97t9k&#xd;
+Content-Disposition: form-data; name=&quot;status&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+0&#xd;
+--YkuZHiy0_u3sB2JxKCzR5IobeMY0wKb7RdA97t9k&#xd;
+Content-Disposition: form-data; name=&quot;toNextLevel&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+92&#xd;
+--YkuZHiy0_u3sB2JxKCzR5IobeMY0wKb7RdA97t9k&#xd;
+Content-Disposition: form-data; name=&quot;uid&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+4&#xd;
+--YkuZHiy0_u3sB2JxKCzR5IobeMY0wKb7RdA97t9k--&#xd;
+</queryString>
+  <java.net.URL>http://192.168.0.38:8000/upm</java.net.URL>
+</httpSample>
+<httpSample t="21013" lt="0" ts="1547225454928" s="false" lb="upm" rc="Non HTTP response code: org.apache.http.conn.HttpHostConnectException" rm="Non HTTP response message: Connect to 192.168.0.38:8000 [/192.168.0.38] failed: Connection timed out: connect" tn="ipokemon 1-4" dt="text" de="" by="2805" ng="5" na="5">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Accept: application/json
+Accept-Encoding: gzip, deflate
+Accept-Language: en;q=1
+Connection: keep-alive
+key: iPokeMonClientIdentifier
+provider: 0
+User-Agent: Master/50 (iPhone; iOS 10.0; Scale/2.00)
+identity: 4bb0469d181f71294d545c1f5ab0194e
+Content-Length: 2165
+Content-Type: multipart/form-data; boundary=0wYdizV6NbgbLlzszmFy3yImuXvOmKkTyULvsYw
+Host: 192.168.0.38:8000
+</requestHeader>
+  <responseData class="java.lang.String">org.apache.http.conn.HttpHostConnectException: Connect to 192.168.0.38:8000 [/192.168.0.38] failed: Connection timed out: connect&#xd;
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:159)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl$JMeterDefaultHttpClientConnectionOperator.connect(HTTPHC4Impl.java:331)&#xd;
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:373)&#xd;
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:394)&#xd;
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:237)&#xd;
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)&#xd;
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)&#xd;
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)&#xd;
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)&#xd;
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.executeRequest(HTTPHC4Impl.java:832)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.sample(HTTPHC4Impl.java:570)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy.sample(HTTPSamplerProxy.java:67)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1231)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1220)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:622)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:546)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:486)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:253)&#xd;
+	at java.base/java.lang.Thread.run(Unknown Source)&#xd;
+Caused by: java.net.ConnectException: Connection timed out: connect&#xd;
+	at java.base/java.net.DualStackPlainSocketImpl.connect0(Native Method)&#xd;
+	at java.base/java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source)&#xd;
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(Unknown Source)&#xd;
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source)&#xd;
+	at java.base/java.net.AbstractPlainSocketImpl.connect(Unknown Source)&#xd;
+	at java.base/java.net.PlainSocketImpl.connect(Unknown Source)&#xd;
+	at java.base/java.net.SocksSocketImpl.connect(Unknown Source)&#xd;
+	at java.base/java.net.Socket.connect(Unknown Source)&#xd;
+	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:75)&#xd;
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)&#xd;
+	... 19 more&#xd;
+</responseData>
+  <cookies class="java.lang.String"></cookies>
+  <method class="java.lang.String">POST</method>
+  <queryString class="java.lang.String">--0wYdizV6NbgbLlzszmFy3yImuXvOmKkTyULvsYw&#xd;
+Content-Disposition: form-data; name=&quot;exp&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+650&#xd;
+--0wYdizV6NbgbLlzszmFy3yImuXvOmKkTyULvsYw&#xd;
+Content-Disposition: form-data; name=&quot;fourMoves&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+16,29,30,144,32,35,145,29,30&#xd;
+--0wYdizV6NbgbLlzszmFy3yImuXvOmKkTyULvsYw&#xd;
+Content-Disposition: form-data; name=&quot;gender&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+1&#xd;
+--0wYdizV6NbgbLlzszmFy3yImuXvOmKkTyULvsYw&#xd;
+Content-Disposition: form-data; name=&quot;happiness&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+70&#xd;
+--0wYdizV6NbgbLlzszmFy3yImuXvOmKkTyULvsYw&#xd;
+Content-Disposition: form-data; name=&quot;hp&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+28&#xd;
+--0wYdizV6NbgbLlzszmFy3yImuXvOmKkTyULvsYw&#xd;
+Content-Disposition: form-data; name=&quot;level&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+10&#xd;
+--0wYdizV6NbgbLlzszmFy3yImuXvOmKkTyULvsYw&#xd;
+Content-Disposition: form-data; name=&quot;maxStats&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+28,15,18,15,18,14&#xd;
+--0wYdizV6NbgbLlzszmFy3yImuXvOmKkTyULvsYw&#xd;
+Content-Disposition: form-data; name=&quot;memo&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+PMSMemo001&#xd;
+--0wYdizV6NbgbLlzszmFy3yImuXvOmKkTyULvsYw&#xd;
+Content-Disposition: form-data; name=&quot;sid&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+7&#xd;
+--0wYdizV6NbgbLlzszmFy3yImuXvOmKkTyULvsYw&#xd;
+Content-Disposition: form-data; name=&quot;status&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+0&#xd;
+--0wYdizV6NbgbLlzszmFy3yImuXvOmKkTyULvsYw&#xd;
+Content-Disposition: form-data; name=&quot;toNextLevel&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+182&#xd;
+--0wYdizV6NbgbLlzszmFy3yImuXvOmKkTyULvsYw&#xd;
+Content-Disposition: form-data; name=&quot;uid&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+4&#xd;
+--0wYdizV6NbgbLlzszmFy3yImuXvOmKkTyULvsYw--&#xd;
+</queryString>
+  <java.net.URL>http://192.168.0.38:8000/upm</java.net.URL>
+</httpSample>
+<httpSample t="21002" lt="0" ts="1547225457339" s="false" lb="uu" rc="Non HTTP response code: org.apache.http.conn.HttpHostConnectException" rm="Non HTTP response message: Connect to 192.168.0.38:8000 [/192.168.0.38] failed: Connection timed out: connect" tn="ipokemon 1-5" dt="text" de="" by="2805" ng="5" na="5">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Accept: application/json
+Accept-Encoding: gzip, deflate
+Accept-Language: en;q=1
+Connection: keep-alive
+key: iPokeMonClientIdentifier
+provider: 0
+User-Agent: Master/50 (iPhone; iOS 10.0; Scale/2.00)
+identity: 4bb0469d181f71294d545c1f5ab0194e
+Content-Length: 306
+Content-Type: multipart/form-data; boundary=_pawXH0wRqyhOguTh0oDVAfOObrwCXTDYEh8
+Host: 192.168.0.38:8000
+</requestHeader>
+  <responseData class="java.lang.String">org.apache.http.conn.HttpHostConnectException: Connect to 192.168.0.38:8000 [/192.168.0.38] failed: Connection timed out: connect&#xd;
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:159)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl$JMeterDefaultHttpClientConnectionOperator.connect(HTTPHC4Impl.java:331)&#xd;
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:373)&#xd;
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:394)&#xd;
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:237)&#xd;
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)&#xd;
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)&#xd;
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)&#xd;
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)&#xd;
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.executeRequest(HTTPHC4Impl.java:832)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.sample(HTTPHC4Impl.java:570)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy.sample(HTTPSamplerProxy.java:67)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1231)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1220)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:622)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:546)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:486)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:253)&#xd;
+	at java.base/java.lang.Thread.run(Unknown Source)&#xd;
+Caused by: java.net.ConnectException: Connection timed out: connect&#xd;
+	at java.base/java.net.DualStackPlainSocketImpl.connect0(Native Method)&#xd;
+	at java.base/java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source)&#xd;
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(Unknown Source)&#xd;
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source)&#xd;
+	at java.base/java.net.AbstractPlainSocketImpl.connect(Unknown Source)&#xd;
+	at java.base/java.net.PlainSocketImpl.connect(Unknown Source)&#xd;
+	at java.base/java.net.SocksSocketImpl.connect(Unknown Source)&#xd;
+	at java.base/java.net.Socket.connect(Unknown Source)&#xd;
+	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:75)&#xd;
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)&#xd;
+	... 19 more&#xd;
+</responseData>
+  <cookies class="java.lang.String"></cookies>
+  <method class="java.lang.String">POST</method>
+  <queryString class="java.lang.String">--_pawXH0wRqyhOguTh0oDVAfOObrwCXTDYEh8&#xd;
+Content-Disposition: form-data; name=&quot;bag&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+0:1,300,2,300,3,300,9,300,13,300,19,300,22,300:23,300,6,299,15,300:4,300,7,300,16,300:1,294:0:0:0:0&#xd;
+--_pawXH0wRqyhOguTh0oDVAfOObrwCXTDYEh8--&#xd;
+</queryString>
+  <java.net.URL>http://192.168.0.38:8000/uu</java.net.URL>
+</httpSample>
+<httpSample t="21004" lt="0" ts="1547225461579" s="false" lb="uu" rc="Non HTTP response code: org.apache.http.conn.HttpHostConnectException" rm="Non HTTP response message: Connect to 192.168.0.38:8000 [/192.168.0.38] failed: Connection timed out: connect" tn="ipokemon 1-3" dt="text" de="" by="2805" ng="5" na="5">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Accept: application/json
+Accept-Encoding: gzip, deflate
+Accept-Language: en;q=1
+Connection: keep-alive
+key: iPokeMonClientIdentifier
+provider: 0
+User-Agent: Master/50 (iPhone; iOS 10.0; Scale/2.00)
+identity: 4bb0469d181f71294d545c1f5ab0194e
+Content-Length: 219
+Content-Type: multipart/form-data; boundary=R_NoUDyEYF1e8zBRJZLJR2gi477qpdWg_jgFgNiJ
+Host: 192.168.0.38:8000
+</requestHeader>
+  <responseData class="java.lang.String">org.apache.http.conn.HttpHostConnectException: Connect to 192.168.0.38:8000 [/192.168.0.38] failed: Connection timed out: connect&#xd;
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:159)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl$JMeterDefaultHttpClientConnectionOperator.connect(HTTPHC4Impl.java:331)&#xd;
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:373)&#xd;
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:394)&#xd;
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:237)&#xd;
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)&#xd;
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)&#xd;
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)&#xd;
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)&#xd;
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.executeRequest(HTTPHC4Impl.java:832)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.sample(HTTPHC4Impl.java:570)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy.sample(HTTPSamplerProxy.java:67)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1231)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1220)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:622)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:546)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:486)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:253)&#xd;
+	at java.base/java.lang.Thread.run(Unknown Source)&#xd;
+Caused by: java.net.ConnectException: Connection timed out: connect&#xd;
+	at java.base/java.net.DualStackPlainSocketImpl.connect0(Native Method)&#xd;
+	at java.base/java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source)&#xd;
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(Unknown Source)&#xd;
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source)&#xd;
+	at java.base/java.net.AbstractPlainSocketImpl.connect(Unknown Source)&#xd;
+	at java.base/java.net.PlainSocketImpl.connect(Unknown Source)&#xd;
+	at java.base/java.net.SocksSocketImpl.connect(Unknown Source)&#xd;
+	at java.base/java.net.Socket.connect(Unknown Source)&#xd;
+	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:75)&#xd;
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)&#xd;
+	... 19 more&#xd;
+</responseData>
+  <cookies class="java.lang.String"></cookies>
+  <method class="java.lang.String">POST</method>
+  <queryString class="java.lang.String">--R_NoUDyEYF1e8zBRJZLJR2gi477qpdWg_jgFgNiJ&#xd;
+Content-Disposition: form-data; name=&quot;name&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+Nan&#xd;
+--R_NoUDyEYF1e8zBRJZLJR2gi477qpdWg_jgFgNiJ--&#xd;
+</queryString>
+  <java.net.URL>http://192.168.0.38:8000/uu</java.net.URL>
+</httpSample>
+<httpSample t="21008" lt="0" ts="1547225470847" s="false" lb="uu" rc="Non HTTP response code: org.apache.http.conn.HttpHostConnectException" rm="Non HTTP response message: Connect to 192.168.0.38:8000 [/192.168.0.38] failed: Connection timed out: connect" tn="ipokemon 1-1" dt="text" de="" by="2805" ng="5" na="5">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Accept: application/json
+Accept-Encoding: gzip, deflate
+Accept-Language: en;q=1
+Connection: keep-alive
+key: iPokeMonClientIdentifier
+provider: 0
+User-Agent: Master/50 (iPhone; iOS 10.0; Scale/2.00)
+identity: 4bb0469d181f71294d545c1f5ab0194e
+Content-Length: 204
+Content-Type: multipart/form-data; boundary=jM9j--gaVlVx7c6jnIl7mq3WexJaiwb8
+Host: 192.168.0.38:8000
+</requestHeader>
+  <responseData class="java.lang.String">org.apache.http.conn.HttpHostConnectException: Connect to 192.168.0.38:8000 [/192.168.0.38] failed: Connection timed out: connect&#xd;
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:159)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl$JMeterDefaultHttpClientConnectionOperator.connect(HTTPHC4Impl.java:331)&#xd;
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:373)&#xd;
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:394)&#xd;
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:237)&#xd;
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)&#xd;
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)&#xd;
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)&#xd;
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)&#xd;
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.executeRequest(HTTPHC4Impl.java:832)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.sample(HTTPHC4Impl.java:570)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy.sample(HTTPSamplerProxy.java:67)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1231)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1220)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:622)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:546)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:486)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:253)&#xd;
+	at java.base/java.lang.Thread.run(Unknown Source)&#xd;
+Caused by: java.net.ConnectException: Connection timed out: connect&#xd;
+	at java.base/java.net.DualStackPlainSocketImpl.connect0(Native Method)&#xd;
+	at java.base/java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source)&#xd;
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(Unknown Source)&#xd;
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source)&#xd;
+	at java.base/java.net.AbstractPlainSocketImpl.connect(Unknown Source)&#xd;
+	at java.base/java.net.PlainSocketImpl.connect(Unknown Source)&#xd;
+	at java.base/java.net.SocksSocketImpl.connect(Unknown Source)&#xd;
+	at java.base/java.net.Socket.connect(Unknown Source)&#xd;
+	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:75)&#xd;
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)&#xd;
+	... 19 more&#xd;
+</responseData>
+  <cookies class="java.lang.String"></cookies>
+  <method class="java.lang.String">POST</method>
+  <queryString class="java.lang.String">--jM9j--gaVlVx7c6jnIl7mq3WexJaiwb8&#xd;
+Content-Disposition: form-data; name=&quot;money&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+800&#xd;
+--jM9j--gaVlVx7c6jnIl7mq3WexJaiwb8--&#xd;
+</queryString>
+  <java.net.URL>http://192.168.0.38:8000/uu</java.net.URL>
+</httpSample>
+<httpSample t="21006" lt="0" ts="1547225478342" s="false" lb="upm" rc="Non HTTP response code: org.apache.http.conn.HttpHostConnectException" rm="Non HTTP response message: Connect to 192.168.0.38:8000 [/192.168.0.38] failed: Connection timed out: connect" tn="ipokemon 1-5" dt="text" de="" by="2805" ng="5" na="5">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Accept: application/json
+Accept-Encoding: gzip, deflate
+Accept-Language: en;q=1
+Connection: keep-alive
+key: iPokeMonClientIdentifier
+provider: 0
+User-Agent: Master/50 (iPhone; iOS 10.0; Scale/2.00)
+identity: 4bb0469d181f71294d545c1f5ab0194e
+Content-Length: 901
+Content-Type: multipart/form-data; boundary=cC3Nx-oqeXvR1nkDbqDL_suewcKquu4Bxj
+Host: 192.168.0.38:8000
+</requestHeader>
+  <responseData class="java.lang.String">org.apache.http.conn.HttpHostConnectException: Connect to 192.168.0.38:8000 [/192.168.0.38] failed: Connection timed out: connect&#xd;
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:159)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl$JMeterDefaultHttpClientConnectionOperator.connect(HTTPHC4Impl.java:331)&#xd;
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:373)&#xd;
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:394)&#xd;
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:237)&#xd;
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)&#xd;
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)&#xd;
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)&#xd;
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)&#xd;
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.executeRequest(HTTPHC4Impl.java:832)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.sample(HTTPHC4Impl.java:570)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy.sample(HTTPSamplerProxy.java:67)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1231)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1220)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:622)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:546)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:486)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:253)&#xd;
+	at java.base/java.lang.Thread.run(Unknown Source)&#xd;
+Caused by: java.net.ConnectException: Connection timed out: connect&#xd;
+	at java.base/java.net.DualStackPlainSocketImpl.connect0(Native Method)&#xd;
+	at java.base/java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source)&#xd;
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(Unknown Source)&#xd;
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source)&#xd;
+	at java.base/java.net.AbstractPlainSocketImpl.connect(Unknown Source)&#xd;
+	at java.base/java.net.PlainSocketImpl.connect(Unknown Source)&#xd;
+	at java.base/java.net.SocksSocketImpl.connect(Unknown Source)&#xd;
+	at java.base/java.net.Socket.connect(Unknown Source)&#xd;
+	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:75)&#xd;
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)&#xd;
+	... 19 more&#xd;
+</responseData>
+  <cookies class="java.lang.String"></cookies>
+  <method class="java.lang.String">POST</method>
+  <queryString class="java.lang.String">--cC3Nx-oqeXvR1nkDbqDL_suewcKquu4Bxj&#xd;
+Content-Disposition: form-data; name=&quot;exp&quot;&#xd;
+&#xd;
+650&#xd;
+--cC3Nx-oqeXvR1nkDbqDL_suewcKquu4Bxj&#xd;
+Content-Disposition: form-data; name=&quot;fourMoves&quot;&#xd;
+&#xd;
+16,28,30,144,31,35,145,28,30&#xd;
+--cC3Nx-oqeXvR1nkDbqDL_suewcKquu4Bxj&#xd;
+Content-Disposition: form-data; name=&quot;happiness&quot;&#xd;
+&#xd;
+70&#xd;
+--cC3Nx-oqeXvR1nkDbqDL_suewcKquu4Bxj&#xd;
+Content-Disposition: form-data; name=&quot;hp&quot;&#xd;
+&#xd;
+20&#xd;
+--cC3Nx-oqeXvR1nkDbqDL_suewcKquu4Bxj&#xd;
+Content-Disposition: form-data; name=&quot;level&quot;&#xd;
+&#xd;
+10&#xd;
+--cC3Nx-oqeXvR1nkDbqDL_suewcKquu4Bxj&#xd;
+Content-Disposition: form-data; name=&quot;maxStats&quot;&#xd;
+&#xd;
+28,15,18,15,18,14&#xd;
+--cC3Nx-oqeXvR1nkDbqDL_suewcKquu4Bxj&#xd;
+Content-Disposition: form-data; name=&quot;status&quot;&#xd;
+&#xd;
+0&#xd;
+--cC3Nx-oqeXvR1nkDbqDL_suewcKquu4Bxj&#xd;
+Content-Disposition: form-data; name=&quot;toNextLevel&quot;&#xd;
+&#xd;
+92&#xd;
+--cC3Nx-oqeXvR1nkDbqDL_suewcKquu4Bxj&#xd;
+Content-Disposition: form-data; name=&quot;uid&quot;&#xd;
+&#xd;
+4&#xd;
+--cC3Nx-oqeXvR1nkDbqDL_suewcKquu4Bxj--&#xd;
+</queryString>
+  <java.net.URL>http://192.168.0.38:8000/upm</java.net.URL>
+</httpSample>
+<httpSample t="21004" lt="0" ts="1547225489457" s="false" lb="upm" rc="Non HTTP response code: org.apache.http.conn.HttpHostConnectException" rm="Non HTTP response message: Connect to 192.168.0.38:8000 [/192.168.0.38] failed: Connection timed out: connect" tn="ipokemon 1-3" dt="text" de="" by="2805" ng="5" na="5">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Accept: application/json
+Accept-Encoding: gzip, deflate
+Accept-Language: en;q=1
+Connection: keep-alive
+key: iPokeMonClientIdentifier
+provider: 0
+User-Agent: Master/50 (iPhone; iOS 10.0; Scale/2.00)
+identity: 4bb0469d181f71294d545c1f5ab0194e
+Content-Length: 1643
+Content-Type: multipart/form-data; boundary=cAiQErUqTQcIf4JgKvQWOm0MtkkNFu8195WTUWS
+Host: 192.168.0.38:8000
+</requestHeader>
+  <responseData class="java.lang.String">org.apache.http.conn.HttpHostConnectException: Connect to 192.168.0.38:8000 [/192.168.0.38] failed: Connection timed out: connect&#xd;
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:159)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl$JMeterDefaultHttpClientConnectionOperator.connect(HTTPHC4Impl.java:331)&#xd;
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:373)&#xd;
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:394)&#xd;
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:237)&#xd;
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)&#xd;
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)&#xd;
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)&#xd;
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)&#xd;
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.executeRequest(HTTPHC4Impl.java:832)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.sample(HTTPHC4Impl.java:570)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy.sample(HTTPSamplerProxy.java:67)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1231)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1220)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:622)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:546)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:486)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:253)&#xd;
+	at java.base/java.lang.Thread.run(Unknown Source)&#xd;
+Caused by: java.net.ConnectException: Connection timed out: connect&#xd;
+	at java.base/java.net.DualStackPlainSocketImpl.connect0(Native Method)&#xd;
+	at java.base/java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source)&#xd;
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(Unknown Source)&#xd;
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source)&#xd;
+	at java.base/java.net.AbstractPlainSocketImpl.connect(Unknown Source)&#xd;
+	at java.base/java.net.PlainSocketImpl.connect(Unknown Source)&#xd;
+	at java.base/java.net.SocksSocketImpl.connect(Unknown Source)&#xd;
+	at java.base/java.net.Socket.connect(Unknown Source)&#xd;
+	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:75)&#xd;
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)&#xd;
+	... 19 more&#xd;
+</responseData>
+  <cookies class="java.lang.String"></cookies>
+  <method class="java.lang.String">POST</method>
+  <queryString class="java.lang.String">--cAiQErUqTQcIf4JgKvQWOm0MtkkNFu8195WTUWS&#xd;
+Content-Disposition: form-data; name=&quot;exp&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+650&#xd;
+--cAiQErUqTQcIf4JgKvQWOm0MtkkNFu8195WTUWS&#xd;
+Content-Disposition: form-data; name=&quot;fourMoves&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+16,29,30,144,32,35,145,29,30&#xd;
+--cAiQErUqTQcIf4JgKvQWOm0MtkkNFu8195WTUWS&#xd;
+Content-Disposition: form-data; name=&quot;happiness&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+70&#xd;
+--cAiQErUqTQcIf4JgKvQWOm0MtkkNFu8195WTUWS&#xd;
+Content-Disposition: form-data; name=&quot;hp&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+7&#xd;
+--cAiQErUqTQcIf4JgKvQWOm0MtkkNFu8195WTUWS&#xd;
+Content-Disposition: form-data; name=&quot;level&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+10&#xd;
+--cAiQErUqTQcIf4JgKvQWOm0MtkkNFu8195WTUWS&#xd;
+Content-Disposition: form-data; name=&quot;maxStats&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+28,15,18,15,18,14&#xd;
+--cAiQErUqTQcIf4JgKvQWOm0MtkkNFu8195WTUWS&#xd;
+Content-Disposition: form-data; name=&quot;status&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+0&#xd;
+--cAiQErUqTQcIf4JgKvQWOm0MtkkNFu8195WTUWS&#xd;
+Content-Disposition: form-data; name=&quot;toNextLevel&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+92&#xd;
+--cAiQErUqTQcIf4JgKvQWOm0MtkkNFu8195WTUWS&#xd;
+Content-Disposition: form-data; name=&quot;uid&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+4&#xd;
+--cAiQErUqTQcIf4JgKvQWOm0MtkkNFu8195WTUWS--&#xd;
+</queryString>
+  <java.net.URL>http://192.168.0.38:8000/upm</java.net.URL>
+</httpSample>
+<httpSample t="21003" lt="0" ts="1547225492791" s="false" lb="uu" rc="Non HTTP response code: org.apache.http.conn.HttpHostConnectException" rm="Non HTTP response message: Connect to 192.168.0.38:8000 [/192.168.0.38] failed: Connection timed out: connect" tn="ipokemon 1-4" dt="text" de="" by="2805" ng="5" na="5">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Accept: application/json
+Accept-Encoding: gzip, deflate
+Accept-Language: en;q=1
+Connection: keep-alive
+key: iPokeMonClientIdentifier
+provider: 0
+User-Agent: Master/50 (iPhone; iOS 10.0; Scale/2.00)
+identity: 4bb0469d181f71294d545c1f5ab0194e
+Content-Length: 465
+Content-Type: multipart/form-data; boundary=hlg8wrMFtpC4T6ojg7bkp6U2HkF2FP
+Host: 192.168.0.38:8000
+</requestHeader>
+  <responseData class="java.lang.String">org.apache.http.conn.HttpHostConnectException: Connect to 192.168.0.38:8000 [/192.168.0.38] failed: Connection timed out: connect&#xd;
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:159)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl$JMeterDefaultHttpClientConnectionOperator.connect(HTTPHC4Impl.java:331)&#xd;
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:373)&#xd;
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:394)&#xd;
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:237)&#xd;
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)&#xd;
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)&#xd;
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)&#xd;
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)&#xd;
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.executeRequest(HTTPHC4Impl.java:832)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.sample(HTTPHC4Impl.java:570)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy.sample(HTTPSamplerProxy.java:67)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1231)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1220)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:622)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:546)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:486)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:253)&#xd;
+	at java.base/java.lang.Thread.run(Unknown Source)&#xd;
+Caused by: java.net.ConnectException: Connection timed out: connect&#xd;
+	at java.base/java.net.DualStackPlainSocketImpl.connect0(Native Method)&#xd;
+	at java.base/java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source)&#xd;
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(Unknown Source)&#xd;
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source)&#xd;
+	at java.base/java.net.AbstractPlainSocketImpl.connect(Unknown Source)&#xd;
+	at java.base/java.net.PlainSocketImpl.connect(Unknown Source)&#xd;
+	at java.base/java.net.SocksSocketImpl.connect(Unknown Source)&#xd;
+	at java.base/java.net.Socket.connect(Unknown Source)&#xd;
+	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:75)&#xd;
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)&#xd;
+	... 19 more&#xd;
+</responseData>
+  <cookies class="java.lang.String"></cookies>
+  <method class="java.lang.String">POST</method>
+  <queryString class="java.lang.String">--hlg8wrMFtpC4T6ojg7bkp6U2HkF2FP&#xd;
+Content-Disposition: form-data; name=&quot;pokedex&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+10400040&#xd;
+--hlg8wrMFtpC4T6ojg7bkp6U2HkF2FP&#xd;
+Content-Disposition: form-data; name=&quot;bag&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+0:1,300,2,300,3,300,9,300,13,300,19,300,22,300:23,300,6,300,15,300:4,300,7,300,16,300:1,299:0:0:0:0&#xd;
+--hlg8wrMFtpC4T6ojg7bkp6U2HkF2FP--&#xd;
+</queryString>
+  <java.net.URL>http://192.168.0.38:8000/uu</java.net.URL>
+</httpSample>
+<httpSample t="21002" lt="0" ts="1547225499349" s="false" lb="id" rc="Non HTTP response code: org.apache.http.conn.HttpHostConnectException" rm="Non HTTP response message: Connect to 192.168.0.38:8000 [/192.168.0.38] failed: Connection timed out: connect" tn="ipokemon 1-5" dt="text" de="" by="2805" ng="5" na="5">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Accept: application/json
+Accept-Encoding: gzip, deflate
+Accept-Language: en;q=1
+Connection: keep-alive
+key: iPokeMonClientIdentifier
+provider: 0
+User-Agent: Master/50 (iPhone; iOS 10.0; Scale/2.00)
+identity: 4bb0469d181f71294d545c1f5ab0194e
+Host: 192.168.0.38:8000
+</requestHeader>
+  <responseData class="java.lang.String">org.apache.http.conn.HttpHostConnectException: Connect to 192.168.0.38:8000 [/192.168.0.38] failed: Connection timed out: connect&#xd;
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:159)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl$JMeterDefaultHttpClientConnectionOperator.connect(HTTPHC4Impl.java:331)&#xd;
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:373)&#xd;
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:394)&#xd;
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:237)&#xd;
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)&#xd;
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)&#xd;
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)&#xd;
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)&#xd;
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.executeRequest(HTTPHC4Impl.java:832)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.sample(HTTPHC4Impl.java:570)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy.sample(HTTPSamplerProxy.java:67)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1231)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1220)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:622)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:546)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:486)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:253)&#xd;
+	at java.base/java.lang.Thread.run(Unknown Source)&#xd;
+Caused by: java.net.ConnectException: Connection timed out: connect&#xd;
+	at java.base/java.net.DualStackPlainSocketImpl.connect0(Native Method)&#xd;
+	at java.base/java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source)&#xd;
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(Unknown Source)&#xd;
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source)&#xd;
+	at java.base/java.net.AbstractPlainSocketImpl.connect(Unknown Source)&#xd;
+	at java.base/java.net.PlainSocketImpl.connect(Unknown Source)&#xd;
+	at java.base/java.net.SocksSocketImpl.connect(Unknown Source)&#xd;
+	at java.base/java.net.Socket.connect(Unknown Source)&#xd;
+	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:75)&#xd;
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)&#xd;
+	... 19 more&#xd;
+</responseData>
+  <cookies class="java.lang.String"></cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>http://192.168.0.38:8000/id</java.net.URL>
+</httpSample>
+<httpSample t="21001" lt="0" ts="1547225499771" s="false" lb="cc" rc="Non HTTP response code: org.apache.http.conn.HttpHostConnectException" rm="Non HTTP response message: Connect to 192.168.0.38:8000 [/192.168.0.38] failed: Connection timed out: connect" tn="ipokemon 1-1" dt="text" de="" by="2805" ng="5" na="5">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Accept: application/json
+Accept-Encoding: gzip, deflate
+Accept-Language: en;q=1
+Connection: keep-alive
+key: iPokeMonClientIdentifier
+provider: 0
+User-Agent: Master/50 (iPhone; iOS 10.0; Scale/2.00)
+identity: 4bb0469d181f71294d545c1f5ab0194e
+Host: 192.168.0.38:8000
+</requestHeader>
+  <responseData class="java.lang.String">org.apache.http.conn.HttpHostConnectException: Connect to 192.168.0.38:8000 [/192.168.0.38] failed: Connection timed out: connect&#xd;
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:159)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl$JMeterDefaultHttpClientConnectionOperator.connect(HTTPHC4Impl.java:331)&#xd;
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:373)&#xd;
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:394)&#xd;
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:237)&#xd;
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)&#xd;
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)&#xd;
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)&#xd;
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)&#xd;
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.executeRequest(HTTPHC4Impl.java:832)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.sample(HTTPHC4Impl.java:570)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy.sample(HTTPSamplerProxy.java:67)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1231)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1220)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:622)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:546)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:486)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:253)&#xd;
+	at java.base/java.lang.Thread.run(Unknown Source)&#xd;
+Caused by: java.net.ConnectException: Connection timed out: connect&#xd;
+	at java.base/java.net.DualStackPlainSocketImpl.connect0(Native Method)&#xd;
+	at java.base/java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source)&#xd;
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(Unknown Source)&#xd;
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source)&#xd;
+	at java.base/java.net.AbstractPlainSocketImpl.connect(Unknown Source)&#xd;
+	at java.base/java.net.PlainSocketImpl.connect(Unknown Source)&#xd;
+	at java.base/java.net.SocksSocketImpl.connect(Unknown Source)&#xd;
+	at java.base/java.net.Socket.connect(Unknown Source)&#xd;
+	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:75)&#xd;
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)&#xd;
+	... 19 more&#xd;
+</responseData>
+  <cookies class="java.lang.String"></cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>http://192.168.0.38:8000/cc</java.net.URL>
+</httpSample>
+<httpSample t="21013" lt="0" ts="1547225510464" s="false" lb="upm" rc="Non HTTP response code: org.apache.http.conn.HttpHostConnectException" rm="Non HTTP response message: Connect to 192.168.0.38:8000 [/192.168.0.38] failed: Connection timed out: connect" tn="ipokemon 1-3" dt="text" de="" by="2805" ng="5" na="5">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Accept: application/json
+Accept-Encoding: gzip, deflate
+Accept-Language: en;q=1
+Connection: keep-alive
+key: iPokeMonClientIdentifier
+provider: 0
+User-Agent: Master/50 (iPhone; iOS 10.0; Scale/2.00)
+identity: 4bb0469d181f71294d545c1f5ab0194e
+Content-Length: 1615
+Content-Type: multipart/form-data; boundary=4SXF9qMU2E9pj-Xrd7zQp58Cxtnz2A_zw_0k
+Host: 192.168.0.38:8000
+</requestHeader>
+  <responseData class="java.lang.String">org.apache.http.conn.HttpHostConnectException: Connect to 192.168.0.38:8000 [/192.168.0.38] failed: Connection timed out: connect&#xd;
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:159)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl$JMeterDefaultHttpClientConnectionOperator.connect(HTTPHC4Impl.java:331)&#xd;
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:373)&#xd;
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:394)&#xd;
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:237)&#xd;
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)&#xd;
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)&#xd;
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)&#xd;
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)&#xd;
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.executeRequest(HTTPHC4Impl.java:832)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.sample(HTTPHC4Impl.java:570)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy.sample(HTTPSamplerProxy.java:67)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1231)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1220)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:622)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:546)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:486)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:253)&#xd;
+	at java.base/java.lang.Thread.run(Unknown Source)&#xd;
+Caused by: java.net.ConnectException: Connection timed out: connect&#xd;
+	at java.base/java.net.DualStackPlainSocketImpl.connect0(Native Method)&#xd;
+	at java.base/java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source)&#xd;
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(Unknown Source)&#xd;
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source)&#xd;
+	at java.base/java.net.AbstractPlainSocketImpl.connect(Unknown Source)&#xd;
+	at java.base/java.net.PlainSocketImpl.connect(Unknown Source)&#xd;
+	at java.base/java.net.SocksSocketImpl.connect(Unknown Source)&#xd;
+	at java.base/java.net.Socket.connect(Unknown Source)&#xd;
+	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:75)&#xd;
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)&#xd;
+	... 19 more&#xd;
+</responseData>
+  <cookies class="java.lang.String"></cookies>
+  <method class="java.lang.String">POST</method>
+  <queryString class="java.lang.String">--4SXF9qMU2E9pj-Xrd7zQp58Cxtnz2A_zw_0k&#xd;
+Content-Disposition: form-data; name=&quot;exp&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+560&#xd;
+--4SXF9qMU2E9pj-Xrd7zQp58Cxtnz2A_zw_0k&#xd;
+Content-Disposition: form-data; name=&quot;fourMoves&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+53,39,40,112,35,35,144,35,35&#xd;
+--4SXF9qMU2E9pj-Xrd7zQp58Cxtnz2A_zw_0k&#xd;
+Content-Disposition: form-data; name=&quot;happiness&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+70&#xd;
+--4SXF9qMU2E9pj-Xrd7zQp58Cxtnz2A_zw_0k&#xd;
+Content-Disposition: form-data; name=&quot;hp&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+30&#xd;
+--4SXF9qMU2E9pj-Xrd7zQp58Cxtnz2A_zw_0k&#xd;
+Content-Disposition: form-data; name=&quot;level&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+10&#xd;
+--4SXF9qMU2E9pj-Xrd7zQp58Cxtnz2A_zw_0k&#xd;
+Content-Disposition: form-data; name=&quot;maxStats&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+31,14,15,13,13,13&#xd;
+--4SXF9qMU2E9pj-Xrd7zQp58Cxtnz2A_zw_0k&#xd;
+Content-Disposition: form-data; name=&quot;status&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+0&#xd;
+--4SXF9qMU2E9pj-Xrd7zQp58Cxtnz2A_zw_0k&#xd;
+Content-Disposition: form-data; name=&quot;toNextLevel&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+182&#xd;
+--4SXF9qMU2E9pj-Xrd7zQp58Cxtnz2A_zw_0k&#xd;
+Content-Disposition: form-data; name=&quot;uid&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+5&#xd;
+--4SXF9qMU2E9pj-Xrd7zQp58Cxtnz2A_zw_0k--&#xd;
+</queryString>
+  <java.net.URL>http://192.168.0.38:8000/upm</java.net.URL>
+</httpSample>
+<httpSample t="21006" lt="0" ts="1547225515347" s="false" lb="uu" rc="Non HTTP response code: org.apache.http.conn.HttpHostConnectException" rm="Non HTTP response message: Connect to 192.168.0.38:8000 [/192.168.0.38] failed: Connection timed out: connect" tn="ipokemon 1-2" dt="text" de="" by="2805" ng="5" na="5">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Accept: application/json
+Accept-Encoding: gzip, deflate
+Accept-Language: en;q=1
+Connection: keep-alive
+key: iPokeMonClientIdentifier
+provider: 0
+User-Agent: Master/50 (iPhone; iOS 10.0; Scale/2.00)
+identity: 4bb0469d181f71294d545c1f5ab0194e
+Content-Length: 310
+Content-Type: multipart/form-data; boundary=WSQAGve_toJqRajqZS8uibDu54FDUJivV2HCR0
+Host: 192.168.0.38:8000
+</requestHeader>
+  <responseData class="java.lang.String">org.apache.http.conn.HttpHostConnectException: Connect to 192.168.0.38:8000 [/192.168.0.38] failed: Connection timed out: connect&#xd;
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:159)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl$JMeterDefaultHttpClientConnectionOperator.connect(HTTPHC4Impl.java:331)&#xd;
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:373)&#xd;
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:394)&#xd;
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:237)&#xd;
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)&#xd;
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)&#xd;
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)&#xd;
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)&#xd;
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.executeRequest(HTTPHC4Impl.java:832)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.sample(HTTPHC4Impl.java:570)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy.sample(HTTPSamplerProxy.java:67)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1231)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1220)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:622)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:546)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:486)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:253)&#xd;
+	at java.base/java.lang.Thread.run(Unknown Source)&#xd;
+Caused by: java.net.ConnectException: Connection timed out: connect&#xd;
+	at java.base/java.net.DualStackPlainSocketImpl.connect0(Native Method)&#xd;
+	at java.base/java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source)&#xd;
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(Unknown Source)&#xd;
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source)&#xd;
+	at java.base/java.net.AbstractPlainSocketImpl.connect(Unknown Source)&#xd;
+	at java.base/java.net.PlainSocketImpl.connect(Unknown Source)&#xd;
+	at java.base/java.net.SocksSocketImpl.connect(Unknown Source)&#xd;
+	at java.base/java.net.Socket.connect(Unknown Source)&#xd;
+	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:75)&#xd;
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)&#xd;
+	... 19 more&#xd;
+</responseData>
+  <cookies class="java.lang.String"></cookies>
+  <method class="java.lang.String">POST</method>
+  <queryString class="java.lang.String">--WSQAGve_toJqRajqZS8uibDu54FDUJivV2HCR0&#xd;
+Content-Disposition: form-data; name=&quot;bag&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+0:1,300,2,300,3,300,9,300,13,300,19,300,22,300:23,300,6,299,15,300:4,300,7,300,16,300:1,295:0:0:0:0&#xd;
+--WSQAGve_toJqRajqZS8uibDu54FDUJivV2HCR0--&#xd;
+</queryString>
+  <java.net.URL>http://192.168.0.38:8000/uu</java.net.URL>
+</httpSample>
+<httpSample t="21010" lt="0" ts="1547225520352" s="false" lb="uu" rc="Non HTTP response code: org.apache.http.conn.HttpHostConnectException" rm="Non HTTP response message: Connect to 192.168.0.38:8000 [/192.168.0.38] failed: Connection timed out: connect" tn="ipokemon 1-5" dt="text" de="" by="2805" ng="5" na="5">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Accept: application/json
+Accept-Encoding: gzip, deflate
+Accept-Language: en;q=1
+Connection: keep-alive
+key: iPokeMonClientIdentifier
+provider: 0
+User-Agent: Master/50 (iPhone; iOS 10.0; Scale/2.00)
+identity: 4bb0469d181f71294d545c1f5ab0194e
+Content-Length: 505
+Content-Type: multipart/form-data; boundary=SQntWqCGW6Z0NKxZdtsZekoY9dV_MSiXd56YsUIU
+Host: 192.168.0.38:8000
+</requestHeader>
+  <responseData class="java.lang.String">org.apache.http.conn.HttpHostConnectException: Connect to 192.168.0.38:8000 [/192.168.0.38] failed: Connection timed out: connect&#xd;
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:159)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl$JMeterDefaultHttpClientConnectionOperator.connect(HTTPHC4Impl.java:331)&#xd;
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:373)&#xd;
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:394)&#xd;
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:237)&#xd;
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)&#xd;
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)&#xd;
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)&#xd;
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)&#xd;
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.executeRequest(HTTPHC4Impl.java:832)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.sample(HTTPHC4Impl.java:570)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy.sample(HTTPSamplerProxy.java:67)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1231)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1220)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:622)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:546)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:486)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:253)&#xd;
+	at java.base/java.lang.Thread.run(Unknown Source)&#xd;
+Caused by: java.net.ConnectException: Connection timed out: connect&#xd;
+	at java.base/java.net.DualStackPlainSocketImpl.connect0(Native Method)&#xd;
+	at java.base/java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source)&#xd;
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(Unknown Source)&#xd;
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source)&#xd;
+	at java.base/java.net.AbstractPlainSocketImpl.connect(Unknown Source)&#xd;
+	at java.base/java.net.PlainSocketImpl.connect(Unknown Source)&#xd;
+	at java.base/java.net.SocksSocketImpl.connect(Unknown Source)&#xd;
+	at java.base/java.net.Socket.connect(Unknown Source)&#xd;
+	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:75)&#xd;
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)&#xd;
+	... 19 more&#xd;
+</responseData>
+  <cookies class="java.lang.String"></cookies>
+  <method class="java.lang.String">POST</method>
+  <queryString class="java.lang.String">--SQntWqCGW6Z0NKxZdtsZekoY9dV_MSiXd56YsUIU&#xd;
+Content-Disposition: form-data; name=&quot;bag&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+0:1,300,2,300,3,300,9,300,13,300,19,300,22,300:23,299,6,299,15,300:4,300,7,300,16,300:1,291:0:0:0:0&#xd;
+--SQntWqCGW6Z0NKxZdtsZekoY9dV_MSiXd56YsUIU&#xd;
+Content-Disposition: form-data; name=&quot;pokedex&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+100000000010400040&#xd;
+--SQntWqCGW6Z0NKxZdtsZekoY9dV_MSiXd56YsUIU--&#xd;
+</queryString>
+  <java.net.URL>http://192.168.0.38:8000/uu</java.net.URL>
+</httpSample>
+<httpSample t="21021" lt="0" ts="1547225521494" s="false" lb="upm" rc="Non HTTP response code: org.apache.http.conn.HttpHostConnectException" rm="Non HTTP response message: Connect to 192.168.0.38:8000 [/192.168.0.38] failed: Connection timed out: connect" tn="ipokemon 1-4" dt="text" de="" by="2805" ng="5" na="5">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Accept: application/json
+Accept-Encoding: gzip, deflate
+Accept-Language: en;q=1
+Connection: keep-alive
+key: iPokeMonClientIdentifier
+provider: 0
+User-Agent: Master/50 (iPhone; iOS 10.0; Scale/2.00)
+identity: 4bb0469d181f71294d545c1f5ab0194e
+Content-Length: 1555
+Content-Type: multipart/form-data; boundary=Onc1p4LFy_GBfOFQlequStWYR2SKuo
+Host: 192.168.0.38:8000
+</requestHeader>
+  <responseData class="java.lang.String">org.apache.http.conn.HttpHostConnectException: Connect to 192.168.0.38:8000 [/192.168.0.38] failed: Connection timed out: connect&#xd;
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:159)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl$JMeterDefaultHttpClientConnectionOperator.connect(HTTPHC4Impl.java:331)&#xd;
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:373)&#xd;
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:394)&#xd;
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:237)&#xd;
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)&#xd;
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)&#xd;
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)&#xd;
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)&#xd;
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.executeRequest(HTTPHC4Impl.java:832)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.sample(HTTPHC4Impl.java:570)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy.sample(HTTPSamplerProxy.java:67)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1231)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1220)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:622)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:546)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:486)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:253)&#xd;
+	at java.base/java.lang.Thread.run(Unknown Source)&#xd;
+Caused by: java.net.ConnectException: Connection timed out: connect&#xd;
+	at java.base/java.net.DualStackPlainSocketImpl.connect0(Native Method)&#xd;
+	at java.base/java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source)&#xd;
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(Unknown Source)&#xd;
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source)&#xd;
+	at java.base/java.net.AbstractPlainSocketImpl.connect(Unknown Source)&#xd;
+	at java.base/java.net.PlainSocketImpl.connect(Unknown Source)&#xd;
+	at java.base/java.net.SocksSocketImpl.connect(Unknown Source)&#xd;
+	at java.base/java.net.Socket.connect(Unknown Source)&#xd;
+	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:75)&#xd;
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)&#xd;
+	... 19 more&#xd;
+</responseData>
+  <cookies class="java.lang.String"></cookies>
+  <method class="java.lang.String">POST</method>
+  <queryString class="java.lang.String">--Onc1p4LFy_GBfOFQlequStWYR2SKuo&#xd;
+Content-Disposition: form-data; name=&quot;exp&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+560&#xd;
+--Onc1p4LFy_GBfOFQlequStWYR2SKuo&#xd;
+Content-Disposition: form-data; name=&quot;fourMoves&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+53,39,40,112,35,35,144,35,35&#xd;
+--Onc1p4LFy_GBfOFQlequStWYR2SKuo&#xd;
+Content-Disposition: form-data; name=&quot;happiness&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+70&#xd;
+--Onc1p4LFy_GBfOFQlequStWYR2SKuo&#xd;
+Content-Disposition: form-data; name=&quot;hp&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+30&#xd;
+--Onc1p4LFy_GBfOFQlequStWYR2SKuo&#xd;
+Content-Disposition: form-data; name=&quot;level&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+10&#xd;
+--Onc1p4LFy_GBfOFQlequStWYR2SKuo&#xd;
+Content-Disposition: form-data; name=&quot;maxStats&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+31,14,15,13,13,13&#xd;
+--Onc1p4LFy_GBfOFQlequStWYR2SKuo&#xd;
+Content-Disposition: form-data; name=&quot;status&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+0&#xd;
+--Onc1p4LFy_GBfOFQlequStWYR2SKuo&#xd;
+Content-Disposition: form-data; name=&quot;toNextLevel&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+182&#xd;
+--Onc1p4LFy_GBfOFQlequStWYR2SKuo&#xd;
+Content-Disposition: form-data; name=&quot;uid&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+5&#xd;
+--Onc1p4LFy_GBfOFQlequStWYR2SKuo--&#xd;
+</queryString>
+  <java.net.URL>http://192.168.0.38:8000/upm</java.net.URL>
+</httpSample>
+<httpSample t="21003" lt="0" ts="1547225524047" s="false" lb="uu" rc="Non HTTP response code: org.apache.http.conn.HttpHostConnectException" rm="Non HTTP response message: Connect to 192.168.0.38:8000 [/192.168.0.38] failed: Connection timed out: connect" tn="ipokemon 1-1" dt="text" de="" by="2805" ng="5" na="5">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Accept: application/json
+Accept-Encoding: gzip, deflate
+Accept-Language: en;q=1
+Connection: keep-alive
+key: iPokeMonClientIdentifier
+provider: 0
+User-Agent: Master/50 (iPhone; iOS 10.0; Scale/2.00)
+identity: 4bb0469d181f71294d545c1f5ab0194e
+Content-Length: 375
+Content-Type: multipart/form-data; boundary=qlv06sJqpY1TLpTN3hTdHVDB9udcI7kN
+Host: 192.168.0.38:8000
+</requestHeader>
+  <responseData class="java.lang.String">org.apache.http.conn.HttpHostConnectException: Connect to 192.168.0.38:8000 [/192.168.0.38] failed: Connection timed out: connect&#xd;
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:159)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl$JMeterDefaultHttpClientConnectionOperator.connect(HTTPHC4Impl.java:331)&#xd;
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:373)&#xd;
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:394)&#xd;
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:237)&#xd;
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)&#xd;
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)&#xd;
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)&#xd;
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)&#xd;
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.executeRequest(HTTPHC4Impl.java:832)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.sample(HTTPHC4Impl.java:570)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy.sample(HTTPSamplerProxy.java:67)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1231)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1220)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:622)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:546)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:486)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:253)&#xd;
+	at java.base/java.lang.Thread.run(Unknown Source)&#xd;
+Caused by: java.net.ConnectException: Connection timed out: connect&#xd;
+	at java.base/java.net.DualStackPlainSocketImpl.connect0(Native Method)&#xd;
+	at java.base/java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source)&#xd;
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(Unknown Source)&#xd;
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source)&#xd;
+	at java.base/java.net.AbstractPlainSocketImpl.connect(Unknown Source)&#xd;
+	at java.base/java.net.PlainSocketImpl.connect(Unknown Source)&#xd;
+	at java.base/java.net.SocksSocketImpl.connect(Unknown Source)&#xd;
+	at java.base/java.net.Socket.connect(Unknown Source)&#xd;
+	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:75)&#xd;
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)&#xd;
+	... 19 more&#xd;
+</responseData>
+  <cookies class="java.lang.String"></cookies>
+  <method class="java.lang.String">POST</method>
+  <queryString class="java.lang.String">--qlv06sJqpY1TLpTN3hTdHVDB9udcI7kN&#xd;
+Content-Disposition: form-data; name=&quot;pokedex&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+40&#xd;
+--qlv06sJqpY1TLpTN3hTdHVDB9udcI7kN&#xd;
+Content-Disposition: form-data; name=&quot;sixPokemons&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+4&#xd;
+--qlv06sJqpY1TLpTN3hTdHVDB9udcI7kN--&#xd;
+</queryString>
+  <java.net.URL>http://192.168.0.38:8000/uu</java.net.URL>
+</httpSample>
