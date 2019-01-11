@@ -17,7 +17,7 @@ RUN \
 	git \
 	gcc \
 	bc \
-	time \
+	ffmpeg \
 	bison \
 	swig \
 	python-dev \
