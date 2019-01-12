@@ -464,13 +464,13 @@ function scp_asset {
 }
 
 function send_config_cloud {
-echo here
-	scp -i $awskey $configlocation $clouduser@$cloudaddress:~/fogbench/assets > /dev/null 2>&1
+	rm -rf dir configs && mkdir configs && chmod 777 configs
+	scp -i $awskey $configlocation $clouduser@$cloudaddress:~/fogbench/configs > /dev/null 2>&1
 }
 
 function send_config_edge {
-
-	scp $configlocation $edgeuser@$edgeaddress:~/fogbench/assets > /dev/null 2>&1
+	rm -rf dir configs && mkdir configs && chmod 777 configs
+	scp $configlocation $edgeuser@$edgeaddress:~/fogbench/configs > /dev/null 2>&1
 
 }
 
@@ -680,8 +680,8 @@ function main {
 		echo ${metricsLabels[@]} >> $metrics_verbose_filename.txt
 		
 		#send_config_cloud
-		send_config_edge
 		benchmark_both_actions
+		send_config_edge
 		benchmark_applications
 	fi	
 	
