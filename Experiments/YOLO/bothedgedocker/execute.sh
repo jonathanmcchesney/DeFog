@@ -5,9 +5,9 @@ rm /mnt/results/arrresult.txt
 
 source /mnt/configs/config.sh
 
-cloudaddress=$cloudaddress
-clouduser=$clouduser
-edgeawskey=$edgeawskey
+cloudaddress="${cloudaddress/$'\r'/}"
+clouduser="${clouduser/$'\r'/}"
+edgeawskey="${edgeawskey/$'\r'/}"
 
 cd ~/Experiments/YOLO/yolo
 chmod 777 darknet
@@ -17,7 +17,7 @@ metricsValues=("NA" "NA" "NA" "NA" "NA" "NA" "NA" "NA" "NA")
 
 start=$(date +%s.%N)
 	# python receiver.py yolov3-tiny.weights
-	scp -o StrictHostKeyChecking=no -i $edgeawskey $clouduser@$cloudaddress:/home/ubuntu/fogbench/assets/yolov3-tiny.weights ./
+	scp -i $edgeawskey $clouduser@$cloudaddress:/home/ubuntu/fogbench/assets/yolov3-tiny.weights ./
 end=$(date +%s.%N)
 runtime=$( echo "$end - $start" | bc -l )
 echo "Cloud Transfer: completed in $runtime secs" | tee -a results.txt
