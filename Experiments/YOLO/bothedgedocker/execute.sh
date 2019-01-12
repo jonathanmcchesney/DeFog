@@ -11,12 +11,13 @@ edgeawskey=$edgeawskey
 
 cd ~/Experiments/YOLO/yolo
 chmod 777 darknet
+chmod 400 /mnt/configs/csc4006awskey.pem
 
 metricsValues=("NA" "NA" "NA" "NA" "NA" "NA" "NA" "NA" "NA")
 
 start=$(date +%s.%N)
 	# python receiver.py yolov3-tiny.weights
-	scp -v -i $edgeawskey $clouduser@$cloudaddress:/mnt/assets/yolov3-tiny.weights ./
+	scp -i $edgeawskey $clouduser@$cloudaddress:/home/ubuntu/fogbench/yolov3-tiny.weights ./
 end=$(date +%s.%N)
 runtime=$( echo "$end - $start" | bc -l )
 echo "Cloud Transfer: completed in $runtime secs" | tee -a results.txt
