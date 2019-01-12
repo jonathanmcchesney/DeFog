@@ -443,7 +443,9 @@ function scp_asset {
 	cp $asset $newassetname
 	local start=$(date +%s.%N)
 	
-	if [ "$environment" == "-c" ] || [ "$environment" == "-b" ];
+	echo also
+	
+	if [ "$environment" == "-c" ];
 	then
 		local transfer_cloud=$(scp -v -i $awskey $newassetname $clouduser@$cloudaddress:~/fogbench/assets 2>&1 | grep "Transferred") 		
 		echo ${transfer_cloud//[!0-9\\ \\.]/}
@@ -451,7 +453,12 @@ function scp_asset {
 	fi	
 	if [ "$environment" == "-e" ] || [ "$environment" == "-b" ];
 	then
-		local transfer_edge=$(scp -v -i $newassetname $edgeuser@$edgeaddress:~/fogbench/assets 2>&1 | grep "Transferred") 		
+		echo in here
+		echo $newassetname
+		echo $edgeuser
+		echo $edgeaddress
+		#scp -v $newassetname $edgeuser@$edgeaddress:~/fogbench/assets 2>&1
+		local transfer_edge=$(scp -v $newassetname $edgeuser@$edgeaddress:~/fogbench/assets 2>&1 | grep "Transferred") 		
 		echo ${transfer_edge//[!0-9\\ \\.]/}
 	fi
 
@@ -680,7 +687,6 @@ function main {
 		
 		echo ${metricsLabels[@]} >> $metrics_verbose_filename.txt
 		
-		#send_config_cloud
 		benchmark_both_actions
 		send_config_edge
 		benchmark_applications

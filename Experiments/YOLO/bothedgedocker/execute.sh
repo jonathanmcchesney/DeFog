@@ -1,5 +1,5 @@
 #!/bin/bash
-set -xv
+
 rm /mnt/results/cloudresult.txt
 rm /mnt/results/arrresult.txt
 
