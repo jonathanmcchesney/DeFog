@@ -51,10 +51,34 @@ function benchmark_both_actions {
 		
 		echo "ssh into edge instance for actions and system benchmarks.."
 			ssh $edgeuser@$edgeaddress ' sudo bash -s' -- < ./fogbenchactions $environment $actions $applications
+		echo "Done ssh"	
+}
+
+function benchmark_both_applications {
+		echo "ssh into edge/cloud - cloud instance for applications benchmarks.."
+			ssh -i $awskey $clouduser@$cloudaddress ' sudo bash -s' -- < ./fogbenchapplications -z $actions $applications
 		echo "Done ssh"
 		
+		echo "ssh into edge/cloud instance for applications benchmarks.."
+			ssh $edgeuser@$edgeaddress ' sudo bash -s' -- < ./fogbenchapplications $environment $actions $applications
+		echo "Done ssh"	
 		
+		local start=$(date +%s.%N)
+			scp $edgeuser@$edgeaddress:~/fogbench/results/* ./
+		local end=$(date +%s.%N)
+		local runtime=$( echo "$end - $start" | bc -l )
+		metricsValues[3]=$runtime
 
+		cat edgeresult.txt >> $verbose_filename.txt
+		rm edgeresult.txt
+		
+		read -a newarr < arrresult.txt 
+		rm arrresult.txt
+		
+		set_returned_application_metrics	
+		
+		echo Transfer both pipeline edge application results to edge device: completed in $runtime secs | tee -a $verbose_filename.txt
+		echo "" | tee -a $verbose_filename.txt
 }
 
 function benchmark_edge_actions {
@@ -63,7 +87,7 @@ function benchmark_edge_actions {
 		echo "Done ssh"
 		
 		local start=$(date +%s.%N)
-			scp $edgeuser@$edgeaddress:~/fogbench/results/* edgeresult.txt
+			scp $edgeuser@$edgeaddress:~/fogbench/results/* ./
 		local end=$(date +%s.%N)
 		local runtime=$( echo "$end - $start" | bc -l )
 		
@@ -82,7 +106,7 @@ function benchmark_edge_applications {
 		echo "Done ssh"
 		
 		local start=$(date +%s.%N)
-			scp $edgeuser@$edgeaddress:~/fogbench/results/* edgeresult.txt
+			scp $edgeuser@$edgeaddress:~/fogbench/results/* ./
 		local end=$(date +%s.%N)
 		local runtime=$( echo "$end - $start" | bc -l )
 		metricsValues[3]=$runtime
@@ -106,7 +130,7 @@ function benchmark_cloud_actions {
 		echo "Done ssh"
 		
 		local start=$(date +%s.%N)
-			scp -i $awskey $clouduser@$cloudaddress:~/fogbench/results/* 
+			scp -i $awskey $clouduser@$cloudaddress:~/fogbench/results/* ./
 		local end=$(date +%s.%N)
 		local runtime=$( echo "$end - $start" | bc -l )
 		
@@ -186,15 +210,15 @@ function calc_rtt {
 }
 
 function calc_rtf {
-	local length=${newarr[5]}
 	local computation=${newarr[1]}
+	local length=${newarr[5]}
 	echo length
 	echo $length
 	echo comp
 	echo $computation
 	local rtf=$(bc <<< "scale=10;$computation/$length")
 
-	metricsValues[5]=rtf
+	metricsValues[5]=$rtf
 	echo ${metricsValues[5]}
 
 }
@@ -252,6 +276,8 @@ function benchmark_ipokemon {
 
 	echo "Running JMETER!!!"
 		./jmeter -n -t iPokeMon.jmx -l testresults.csv
+	echo "Taurus..."
+		bzt iPokeMon.jmx
 	cd ../../
 }
 
@@ -267,7 +293,7 @@ function start_ipokemon_server {
 }
 	
 function benchmark_application {
-		if [ "$environment" == "-c" ] || [ "$environment" == "-b" ];
+		if [ "$environment" == "-c" ];
 		then
 			benchmark_cloud_applications
 			calc_rtt
@@ -277,17 +303,26 @@ function benchmark_application {
 			fi
 			calc_cloud_cost
 		fi	
-		if [ "$environment" == "-e" ] || [ "$environment" == "-b" ];
+		if [ "$environment" == "-e" ];
 		then
 			benchmark_edge_applications
 			calc_rtt
-			if [${metricsValues[5]} != "NA"];
+			if [ ${metricsValues[5]} != "NA" ];
 			then
 				calc_rtf
 			fi
 			calc_edge_cost
 		fi
-		
+		if [ "$environment" == "-b" ];
+		then
+			benchmark_both_applications
+			calc_rtt
+			if [ ${metricsValues[5]} != "NA" ];
+			then
+				calc_rtf
+			fi
+			calc_edge_cost
+		fi
 		echo ${metricsValues[@]} | tee -a $metrics_verbose_filename.txt
 }
 
@@ -409,12 +444,14 @@ function scp_asset {
 	
 	if [ "$environment" == "-c" ] || [ "$environment" == "-b" ];
 	then
-		scp -i $awskey $newassetname $clouduser@$cloudaddress:~/fogbench/assets > /dev/null 2>&1
+		local transfer_cloud=$(scp -v -i $awskey $newassetname $clouduser@$cloudaddress:~/fogbench/assets 2>&1 | grep "Transferred") 		
+		echo ${transfer_cloud//[!0-9\\ \\.]/}
+		
 	fi	
 	if [ "$environment" == "-e" ] || [ "$environment" == "-b" ];
 	then
-		scp $newassetname $edgeuser@$edgeaddress:~/fogbench/assets > /dev/null 2>&1
-
+		local transfer_edge=$(scp -v -i $newassetname $edgeuser@$edgeaddress:~/fogbench/assets 2>&1 | grep "Transferred") 		
+		echo ${transfer_edge//[!0-9\\ \\.]/}
 	fi
 
 	local end=$(date +%s.%N)
@@ -645,7 +682,7 @@ function main {
 		#send_config_cloud
 		send_config_edge
 		benchmark_both_actions
-		# benchmark_applications
+		benchmark_applications
 	fi	
 	
 	echo metrics to be saved:

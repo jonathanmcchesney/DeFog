@@ -1,0 +1,3 @@
+Cloud Transfer: completed in .008813121 secs
+Computation: completed in 1.810541343 secs
+Upload to S3 bucket: completed in .798664871 secs

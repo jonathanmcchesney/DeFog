@@ -1,0 +1,25 @@
+Transfer edge action results to edge device: completed in 1.248904400 secs
+
+YOLO Benchmarks:
+*****************************************************************************
+
+YOLO Benchmark Run 1:
+
+Computation: completed in 11.879734314 secs
+Upload to S3 bucket: completed in 3.067225034 secs
+Transfer edge application results to edge device: completed in 1.164925100 secs
+
+
+YOLO Benchmark Run 2:
+
+Computation: completed in 11.175112383 secs
+Upload to S3 bucket: completed in 5.138993199 secs
+Transfer edge application results to edge device: completed in 1.782476500 secs
+
+
+YOLO Benchmark Run 3:
+
+Computation: completed in 11.361931261 secs
+Upload to S3 bucket: completed in 3.686651796 secs
+Transfer edge application results to edge device: completed in 1.197899500 secs
+

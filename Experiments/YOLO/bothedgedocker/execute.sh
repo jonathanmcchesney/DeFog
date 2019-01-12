@@ -15,7 +15,7 @@ chmod 777 darknet
 metricsValues=("NA" "NA" "NA" "NA" "NA" "NA" "NA" "NA" "NA")
 
 start=$(date +%s.%N)
-#python receiver.py yolov3-tiny.weights
+# python receiver.py yolov3-tiny.weights
 	scp -v -i $awskey $clouduser@$cloudaddress:/mnt/assets/yolov3-tiny.weights
 end=$(date +%s.%N)
 runtime=$( echo "$end - $start" | bc -l )

@@ -255,6 +255,33 @@ function build_docker_yolo {
 	
 }
 
+function build_docker_yolo_both_edge {
+	local DIRECTORY=bothedgeyolobuild
+
+	if [ ! -d "$DIRECTORY" ]; then
+	echo Entering bothedgeyolobuild...
+	mkdir bothedgeyolobuild
+	cd bothedgeyolobuild
+
+	echo Pulling down bothedgeyolo docker file...
+	sudo git init 
+	sudo git remote add -f csc4006-EdgeBenchmarking https://gitlab.eeecs.qub.ac.uk/40126401/csc4006-EdgeBenchmarking.git
+	sudo git config core.sparsecheckout true
+	echo Experiments/YOLO/bothedgedocker/ >> .git/info/sparse-checkout
+	sudo git pull https://gitlab.eeecs.qub.ac.uk/40126401/csc4006-EdgeBenchmarking.git master
+	
+	echo Experiments/YOLO/bothedgedocker...
+	cd Experiments/YOLO/bothedgedocker
+
+	echo Building bothedgeyolo docker image - console logs suppressed...
+	echo Please wait as this may take a few minutes...
+	chmod 777 execute.sh
+	time . build.sh
+	echo DONE	
+	fi
+
+}
+
 function build_docker_yolo_both_cloud {
 	local DIRECTORY=bothcloudyolobuild
 
@@ -280,8 +307,6 @@ function build_docker_yolo_both_cloud {
 	echo DONE	
 	fi
 
-    
-	
 }
 
 function build_docker_aeneas {
@@ -327,10 +352,6 @@ HELP
 
 function seperator {
 echo -e "*****************************************************************************" | tee -a $filename.txt
-}
-
-function bothedgebench {
-echo EDGE
 }
 
 function bothcloudbench {
@@ -402,7 +423,7 @@ function main {
 
 }
 
-while getopts :ceb:adfsxuhngs:zyijpmk opt; do
+while getopts :cebz:adfsxuhngs:yijpmk opt; do
     case "$opt" in
         a)
             run_downloads=true

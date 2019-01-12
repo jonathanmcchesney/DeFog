@@ -9,4 +9,6 @@ cd ~/Experiments/YOLO/bothcloudyolo
 #echo "Finished sending weights to Yolo Edge!"
 #echo "Closing connection to edge..."
 
+mv ./yolov3-tiny.weights /mnt/assets/
+
 exit

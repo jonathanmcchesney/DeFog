@@ -54,13 +54,32 @@ function run_docker_psphinx {
 	echo -n DONE
 }
 
+function run_docker_yolo_both_edge {
+	cd bothedgeyolobuild/Experiments/YOLO/bothedgedocker
+	
+	echo -n Running bothedgedocker container...
+
+	. runedge.sh
+	
+	echo -n DONE
+}
+
+function run_docker_yolo_both_cloud {
+	cd bothcloudyolobuild/Experiments/YOLO/bothclouddocker
+	
+	echo -n Running bothclouddocker container...
+
+	. run.sh
+	
+	echo -n DONE
+}
+
 function run_docker_yolo { 
 	cd yolobuild/Experiments/YOLO/docker
 
 	echo -n Running yolo docker container...
 	if [ "$run_cloud" ];
 	then
-		echo in here
 		. run.sh
 	fi	
 	if [ "$run_edge" ];
@@ -100,9 +119,24 @@ Help: benchmarker [OPTION...]
 HELP
 }
 
+function bothcloudbench {
+echo "Cloud/Edge - Cloud applications benchmarks: " | tee $filename.txt
+	seperator
+	
+	test $run_yolo && run_docker_yolo_both_cloud
+	
+}
+
+function bothedgebench {
+echo "Cloud/Edge - Edge applications benchmarks: " | tee $filename.txt
+	seperator
+	
+	test $run_yolo && run_docker_yolo_both_edge
+	
+}
+
 function edgebench {
 	
-	echo $run_yolo
 	
 	test $run_yolo && run_docker_yolo
 	test $run_psphinx && run_docker_psphinx
@@ -122,11 +156,16 @@ function cloudbench {
 function main {
 	cd fogbench 
 	
+	echo $run_both_cloud
+	echo $run_both_edge
+	
     test $run_cloud && cloudbench
     test $run_edge && edgebench
+	test $run_both_cloud && bothcloudbench
+    test $run_both_edge && bothedgebench
 }
 
-while getopts :ceb:adfsxuhngs:zyipjmk opt; do
+while getopts :cebz:adfsxuhngs:yipjmk opt; do
     case "$opt" in
         a)
             run_downloads=true
@@ -138,8 +177,7 @@ while getopts :ceb:adfsxuhngs:zyipjmk opt; do
 			run_cloud=true
 			;;
 		b)
-			run_cloud=true
-			run_edge=true
+			run_both_edge=true
 			;;
 		e)
 			run_edge=true
@@ -165,9 +203,7 @@ while getopts :ceb:adfsxuhngs:zyipjmk opt; do
 		n)
 			;;	
 		z)
-			run_yolo=true
-			run_psphinx=true
-			run_ipokemon=true
+			run_both_cloud=true
 			;;
 		i)	
 			build_ipokemon=true
