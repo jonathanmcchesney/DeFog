@@ -1,13 +1,14 @@
 #!/bin/bash
 
-source ~/Documents/config.sh
+source ~/Documents/configs/config.sh
 
 cloudaddress=$cloudaddress
 clouduser=$clouduser
 edgeaddress=$edgeaddress
 edgeuser=$edgeuser
 awskey=$awskey
-configlocation=~/Documents/config.sh
+configslocation=~/Documents/configs/*
+configfilelocation=~/Documents/configs/config.sh
 
 function HELP {
     cat <<HELP
@@ -464,13 +465,13 @@ function scp_asset {
 }
 
 function send_config_cloud {
-	rm -rf dir configs && mkdir configs && chmod 777 configs
-	scp -i $awskey $configlocation $clouduser@$cloudaddress:~/fogbench/configs > /dev/null 2>&1
+	scp -i $awskey $configfilelocation $clouduser@$cloudaddress:~/fogbench/configs > /dev/null 2>&1
 }
 
 function send_config_edge {
-	rm -rf dir configs && mkdir configs && chmod 777 configs
-	scp $configlocation $edgeuser@$edgeaddress:~/fogbench/configs > /dev/null 2>&1
+	echo sending config to edge
+	scp $configslocation $edgeuser@$edgeaddress:~/fogbench/configs > /dev/null 2>&1
+	echo done
 
 }
 

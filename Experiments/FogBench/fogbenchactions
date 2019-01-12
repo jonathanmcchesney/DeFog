@@ -413,6 +413,7 @@ function main {
 	rm results.txt
 	rm -rf dir assets && mkdir assets && chmod 777 assets
 	rm -rf dir results && mkdir results && chmod 777 results
+	rm -rf dir configs && mkdir configs && chmod 777 configs
 			
     test $run_cloud && cloudbench
     test $run_edge && edgebench
