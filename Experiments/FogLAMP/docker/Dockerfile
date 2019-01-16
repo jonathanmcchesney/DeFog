@@ -4,6 +4,10 @@ COPY execute.sh scripts/execute.sh
 
 WORKDIR /root
 
+ENV TZ=Europe/London
+ARG DEBIAN_FRONTEND=noninteractive
+
+
 RUN \
 	apt-get update && apt-get install -y \
 	autoconf \
@@ -24,6 +28,7 @@ RUN \
 	uuid-dev \
 	python-dev \ 
 	python3-pip \ 
+	python-pip \
 	python-dbus \
 	postgresql \
 	bluez \
