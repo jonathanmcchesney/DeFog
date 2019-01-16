@@ -1,7 +1,0 @@
-{
-  "aggregate": {
-    "column": "values",
-    "operation": "max",
-    "alias": "max_values"
-  }
-}

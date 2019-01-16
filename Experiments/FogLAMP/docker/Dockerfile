@@ -39,21 +39,12 @@ RUN \
 	pip install boto3
 
 RUN \
-	git init && \
-	ls && \
-	git remote add -f csc4006-EdgeBenchmarking https://gitlab.eeecs.qub.ac.uk/40126401/csc4006-EdgeBenchmarking.git && \
-	git config core.sparsecheckout true && \
-	echo Experiments/FogLAMP/foglamp/ >> .git/info/sparse-checkout && \
-	git pull https://gitlab.eeecs.qub.ac.uk/40126401/csc4006-EdgeBenchmarking.git master
+	git clone https://github.com/foglamp/FogLAMP.git
 	
 RUN \
-	cd Experiments/FogLAMP/foglamp/ && \
-	make clean && \
-	make
-	
-RUN \ 
-	export FOGLAMP_ROOT=Experiments/FogLAMP/foglamp/ && \
-	cd Experiments/FogLAMP/foglamp/ && \
+	ls && \
+	export FOGLAMP_ROOT=FogLAMP/ && \
+	cd FogLAMP && \
 	scripts/foglamp start && \
 	scripts/foglamp status && \
 	curl -s http://localhost:8081/foglamp/echo | jq && \

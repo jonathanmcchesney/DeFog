@@ -1,7 +1,0 @@
-{
-  "aggregate": {
-    "column": "values",
-    "operation": "min",
-    "alias": "min_values"
-  }
-}

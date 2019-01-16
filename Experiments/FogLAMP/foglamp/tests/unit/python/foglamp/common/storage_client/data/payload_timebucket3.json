@@ -1,8 +1,0 @@
-{
-  "timebucket" : {
-                    "timestamp" : "user_ts",
-                    "size"      : "5",
-                    "format"    : "DD-MM-YYYYY HH24:MI:SS",
-                    "alias"     : "bucket"
-  }
-}

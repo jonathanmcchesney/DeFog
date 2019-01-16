@@ -1,8 +1,0 @@
-{
-    "key" : "CAT_A",
-    "description" : "category_A",
-    "value" :
-        {
-           "a": {"description": "a", "type": "integer", "default" : "20"}
-        }
-}
