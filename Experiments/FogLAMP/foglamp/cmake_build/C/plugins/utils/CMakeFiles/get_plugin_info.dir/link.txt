@@ -1,1 +1,0 @@
-/usr/bin/c++  -std=c++11 -O3 -std=c++11  -rdynamic CMakeFiles/get_plugin_info.dir/get_plugin_info.o  -o get_plugin_info -ldl 
