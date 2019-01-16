@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC -std=c++11 -O3 -std=c++11  -shared -Wl,-soname,libservices-common-lib.so.1 -o ../../lib/libservices-common-lib.so.1 CMakeFiles/services-common-lib.dir/management_api.o CMakeFiles/services-common-lib.dir/plugin.o CMakeFiles/services-common-lib.dir/plugin_manager.o -ldl 

@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../C/plugins/storage/common/include/sql_buffer.h
+string
+-
+list
+-
+
+/home/ubuntu/FogLAMP/C/plugins/storage/common/sql_buffer.cpp
+sql_buffer.h
+-
+string.h
+-
+
