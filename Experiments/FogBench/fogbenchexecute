@@ -158,8 +158,9 @@ function benchmark_cloud_applications {
 		local end=$(date +%s.%N)
 		local runtime=$( echo "$end - $start" | bc -l )
 		metricsValues[3]=$runtime
-			metricsValues[8]=${newarr1[0]}
+		metricsValues[8]=${newarr1[0]}
 
+		rm returnedasset.*
 
 		cat cloudresult.txt >> $verbose_filename.txt
 		rm cloudresult.txt
@@ -191,7 +192,9 @@ function calc_cloud_cost {
 }
 
 function calc_edge_cost {
-	local edgeseccost=0.003
+	local edgehrcost=0.008
+	local convert=3600
+	local edgeseccost=$(bc <<< "scale=10;$edgehrcost/$convert")
 	local computetime=${metricsValues[1]}
 	
 	local cost=$(bc <<< "$computetime*$edgeseccost")
@@ -206,8 +209,8 @@ function calc_rtt {
 
 	local T1=${metricsValues[0]} 
 	local E=${metricsValues[1]} 
-	local T2=${metricsValues[2]} 
-	local rtt=$(bc <<< "$T1+$T2+$E")
+	local T3=${metricsValues[3]} 
+	local rtt=$(bc <<< "$T1+$T3+$E")
 
 	metricsValues[4]=$rtt
 }
