@@ -2,7 +2,7 @@
 
 rm -rf /mnt/assets/en-us
 
-cd ~/Experiments/PocketSphinx/bothcloudpshinx
+cd ~/Experiments/PocketSphinx/bothcloudpsphinx
 
 #echo "Starting connection to edge..."
 #python sender.py ./en-us
