@@ -493,7 +493,7 @@ function benchmark_aeneas {
 }
 
 function create_metric_array {
-	declare -g metricsLabels=('T1' 'ET' 'T2' 'T3' 'RTT' 'RTF' 'Cost' 'BytesUp1' 'BytesDown1' 'BytesUp2' 'BytesDown2')
+	declare -g metricsLabels=('T1' 'ET' 'T2' 'T3' 'RTT' 'RTF' 'Cost' 'BytesUp' 'BytesDown' 'BytesDownEdgeCloud' 'EdgeCloudT4')
 	declare -g metricsValues=('NA' 'NA' 'NA' 'NA' 'NA' 'NA' 'NA' 'NA' 'NA' 'NA' 'NA')
 		
 }
@@ -517,7 +517,7 @@ function scp_asset {
 	if [ "$environment" == "-e" ] || [ "$environment" == "-b" ];
 	then
 		local transfer_edge=$(scp -v $newassetname $edgeuser@$edgeaddress:~/fogbench/assets 2>&1 | grep "Transferred") 		
-		local newboy=${transfer_cloud//[!0-9\\ \\.]/}
+		local newboy=${transfer_edge//[!0-9\\ \\.]/}
 		newarr1=(`echo ${newboy}`);
 		echo ${newarr1[@]}
 	fi
@@ -526,6 +526,8 @@ function scp_asset {
 	local runtime=$( echo "$end - $start" | bc -l )
 	
 	metricsValues[0]=$runtime
+	echo this here
+	echo ${newarr1[0]}
 	metricsValues[7]=${newarr1[0]}
 
 	rm $newassetname

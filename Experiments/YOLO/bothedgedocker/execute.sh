@@ -21,10 +21,19 @@ metricsValues=("NA" "NA" "NA" "NA" "NA" "NA" "NA" "NA" "NA" "NA" "NA")
 
 start=$(date +%s.%N)
 	# python receiver.py yolov3-tiny.weights
-	scp -o StrictHostKeyChecking=no -i $edgeawskey2 $clouduser2@$cloudaddress2:/home/ubuntu/fogbench/assets/yolov3-tiny.weights ./
+	# scp -o StrictHostKeyChecking=no -i $edgeawskey2 $clouduser2@$cloudaddress2:/home/ubuntu/fogbench/assets/yolov3-tiny.weights ./
+	
+	local transfer_cloud=$(scp -v -o StrictHostKeyChecking=no -i $edgeawskey2 $clouduser2@$cloudaddress2:/home/ubuntu/fogbench/assets/yolov3-tiny.weights ./ 2>&1 | grep "Transferred") 		
+	local nocarriagereturns=${transfer_cloud//[!0-9\\ \\.]/}
+	newarr1=(`echo ${nocarriagereturns}`);
+	echo ${newarr1[@]}
+	
 end=$(date +%s.%N)
 runtime=$( echo "$end - $start" | bc -l )
 echo "Cloud Transfer: completed in $runtime secs" | tee -a results.txt
+metricsValues[9]=${newarr1[0]}
+metricsValues[10]=$runtime
+
 
 start=$(date +%s.%N)
 	./darknet detect cfg/yolov3-tiny.cfg yolov3-tiny.weights /mnt/assets/yoloimage.jpg

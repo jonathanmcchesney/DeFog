@@ -1,0 +1,2 @@
+Computation: completed in 8.734969960 secs
+Upload to S3 bucket: completed in 1.137591588 secs
