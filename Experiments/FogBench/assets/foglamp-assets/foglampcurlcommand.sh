@@ -1,1 +1,0 @@
-curl -s http://localhost:8081/foglamp/statistics | jq

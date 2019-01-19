@@ -55,7 +55,8 @@ RUN \
         cd FogLAMP && \
         pwd && \
         make && \
-        export FOGLAMP_ROOT=/root/FogLAMP
+        export FOGLAMP_ROOT=/root/FogLAMP && \
+		cp ~/Experiments/Scripts/* .
 
 # defaults command
 CMD ["scripts/execute.sh"]
