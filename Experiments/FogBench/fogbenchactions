@@ -155,7 +155,6 @@ function remove_docker_images_and_containers {
 function remove_docker_containers {
 	docker stop $(docker ps -aq)
 	docker rm $(docker ps -aq)
-	docker rmi $(docker images -q)
 }
 
 function delete_temps {
@@ -550,6 +549,7 @@ function cloudbench {
 function main {
 	mkdir -p fogbench && cd fogbench 	
 	test $run_delete && delete_temps
+	# remove_docker_containers
 	test $run_remove_containers && remove_docker_containers
 	
 	rm results.txt

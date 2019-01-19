@@ -158,7 +158,7 @@ function benchmark_cloud_applications {
 		local end=$(date +%s.%N)
 		local runtime=$( echo "$end - $start" | bc -l )
 		metricsValues[3]=$runtime
-		metricsValues[8]=${newarr1[0]}
+		metricsValues[8]=${newarr1[1]}
 
 		rm returnedasset.*
 
@@ -535,7 +535,9 @@ function scp_asset {
 }
 
 function send_config_cloud {
+	echo sending config to cloud
 	scp -i $awskey $configfilelocation $clouduser@$cloudaddress:~/fogbench/configs > /dev/null 2>&1
+	echo done
 }
 
 function send_config_edge {
@@ -727,8 +729,8 @@ function main {
 		
 		echo ${metricsLabels[@]} >> $metrics_verbose_filename.txt
 
-		#send_config_cloud
 		benchmark_cloud_actions
+		send_config_cloud
 		benchmark_applications
 	fi	
 	
@@ -741,8 +743,8 @@ function main {
 		echo ${metricsLabels[@]} >> $metrics_verbose_filename.txt
 		
 		
-		#send_config_edge
 		benchmark_edge_actions
+		send_config_edge
 		benchmark_applications
 	fi	
 	

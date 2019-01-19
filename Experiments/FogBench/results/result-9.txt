@@ -8,3 +8,20 @@
 Edge/Cloud Benchmarks: 
 *****************************************************************************
 
+YOLO Benchmarks:
+*****************************************************************************
+
+YOLO Benchmark Run 1:
+
+Transfer both pipeline edge application results to edge device: completed in 1.187189200 secs
+
+
+YOLO Benchmark Run 2:
+
+Transfer both pipeline edge application results to edge device: completed in 1.320431500 secs
+
+
+YOLO Benchmark Run 3:
+
+Transfer both pipeline edge application results to edge device: completed in 1.313931500 secs
+
