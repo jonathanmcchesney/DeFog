@@ -38,6 +38,26 @@ function run_docker_ipokemon {
 	echo -n DONE
 }
 
+function run_docker_psphinx_both_edge {
+	cd bothedgepshinxbuild/Experiments/PocketSphinx/bothedgedocker
+	
+	echo -n Running bothedgedocker container...
+
+	. runedge.sh
+	
+	echo -n DONE
+}
+
+function run_docker_psphinx_both_cloud {
+	cd bothcloudpsphinxbuild/Experiments/PocketSphinx/bothclouddocker
+	
+	echo -n Running bothclouddocker container...
+
+	. run.sh
+	
+	echo -n DONE
+}
+
 function run_docker_psphinx {
 	cd psphinxbuild/Experiments/PocketSphinx/docker
 
@@ -89,6 +109,27 @@ function run_docker_yolo {
 	echo -n DONE
 }
 
+
+function run_docker_aeneas_both_edge {
+	cd bothedgeaeneasbuild/Experiments/Aeneas/bothedgedocker
+	
+	echo -n Running bothedgedocker container...
+
+	. runedge.sh
+	
+	echo -n DONE
+}
+
+function run_docker_aeneas_both_cloud {
+	cd bothcloudaeneasbuild/Experiments/Aeneas/bothclouddocker
+	
+	echo -n Running bothclouddocker container...
+
+	. run.sh
+	
+	echo -n DONE
+}
+
 function run_docker_aeneas { 
 	cd aeneasbuild/Experiments/Aeneas/docker
 
@@ -103,6 +144,10 @@ function run_docker_aeneas {
 		. runedge.sh
 	fi	
 	echo -n DONE
+}
+
+function seperator {
+echo -e "*****************************************************************************" | tee -a $filename.txt
 }
 
 function HELP {
@@ -120,32 +165,40 @@ HELP
 }
 
 function bothcloudbench {
-echo "Cloud/Edge - Cloud applications benchmarks: " | tee $filename.txt
+	echo "Cloud/Edge - Cloud applications benchmarks: " | tee $filename.txt
 	seperator
 	
 	test $run_yolo && run_docker_yolo_both_cloud
+	test $run_psphinx && run_docker_psphinx_both_cloud
+	test $run_aeneas && run_docker_aeneas_both_cloud
 	
 }
 
 function bothedgebench {
-echo "Cloud/Edge - Edge applications benchmarks: " | tee $filename.txt
+	echo "Cloud/Edge - Edge applications benchmarks: " | tee $filename.txt
 	seperator
 	
 	test $run_yolo && run_docker_yolo_both_edge
+	test $run_psphinx && run_docker_psphinx_both_edge
+	test $run_aeneas && run_docker_aeneas_both_edge
 	
 }
 
 function edgebench {
-	
+	echo "Edge applications benchmarks: " | tee $filename.txt
+	seperator
 	
 	test $run_yolo && run_docker_yolo
 	test $run_psphinx && run_docker_psphinx
 	test $run_aeneas && run_docker_aeneas
+	test $run_ipokemon && run_docker_ipokemon
 
 }
 
 function cloudbench {
-
+	echo "Cloud applications benchmarks: " | tee $filename.txt
+	seperator
+	
 	test $run_yolo && run_docker_yolo
 	test $run_psphinx && run_docker_psphinx
 	test $run_aeneas && run_docker_aeneas
@@ -165,7 +218,7 @@ function main {
     test $run_both_edge && bothedgebench
 }
 
-while getopts :cebz:adfsxuhngs:yipjmk opt; do
+while getopts :cebz:adfsxulhngs:yipjmk opt; do
     case "$opt" in
         a)
             run_downloads=true
@@ -209,6 +262,9 @@ while getopts :cebz:adfsxuhngs:yipjmk opt; do
 			build_ipokemon=true
 			run_ipokemon=true
 			;;
+		l)	
+			run_foglamp=true
+			;;		
 		j)	
 			run_aeneas=true
 			;;	

@@ -226,58 +226,135 @@ function build_docker_psphinx {
 	
 }
 
+function build_docker_psphinx_both_edge {
+	local DIRECTORY=bothedgepsphinxbuild
+
+	if [ ! -d "$DIRECTORY" ]; then
+		echo Entering bothedgepsphinxbuild...
+		mkdir bothedgepsphinxbuild
+		cd bothedgepsphinxbuild
+
+		echo Pulling down bothedgepsphinx docker file...
+		sudo git init 
+		sudo git remote add -f csc4006-EdgeBenchmarking https://gitlab.eeecs.qub.ac.uk/40126401/csc4006-EdgeBenchmarking.git
+		sudo git config core.sparsecheckout true
+		echo Experiments/PocketSphinx/bothedgedocker/ >> .git/info/sparse-checkout
+		sudo git pull https://gitlab.eeecs.qub.ac.uk/40126401/csc4006-EdgeBenchmarking.git master
+		
+		echo Experiments/PocketSphinx/bothedgedocker...
+		cd Experiments/PocketSphinx/bothedgedocker
+
+		echo Building bothedgepsphinx docker image - console logs suppressed...
+		echo Please wait as this may take a few minutes...
+		chmod 777 execute.sh
+		time . build.sh
+		echo DONE	
+	fi
+
+}
+
+function build_docker_pshinx_both_cloud {
+	local DIRECTORY=bothcloudpsphinxbuild
+
+	if [ ! -d "$DIRECTORY" ]; then
+		echo Entering bothcloudpsphinxbuild...
+		mkdir bothcloudpsphinxbuild
+		cd bothcloudpsphinxbuild
+
+		echo Pulling down bothcloudpsphinx docker file...
+		sudo git init 
+		sudo git remote add -f csc4006-EdgeBenchmarking https://gitlab.eeecs.qub.ac.uk/40126401/csc4006-EdgeBenchmarking.git
+		sudo git config core.sparsecheckout true
+		echo Experiments/PocketSphinx/bothclouddocker/ >> .git/info/sparse-checkout
+		sudo git pull https://gitlab.eeecs.qub.ac.uk/40126401/csc4006-EdgeBenchmarking.git master
+		
+		echo Experiments/PocketSphinx/bothclouddocker...
+		cd Experiments/PocketSphinx/bothclouddocker
+
+		echo Building bothcloudpsphinx docker image - console logs suppressed...
+		echo Please wait as this may take a few minutes...
+		chmod 777 execute.sh
+		time . build.sh
+		echo DONE	
+	fi
+
+}
+
+function build_docker_foglamp {
+	local DIRECTORY=foglampbuild
+
+	if [ ! -d "$DIRECTORY" ]; then
+		echo Entering foglampbuild...
+		mkdir foglampbuild
+		cd foglampbuild
+
+		echo Pulling down FogLAMP docker file...
+		sudo git init 
+		sudo git remote add -f csc4006-EdgeBenchmarking https://gitlab.eeecs.qub.ac.uk/40126401/csc4006-EdgeBenchmarking.git
+		sudo git config core.sparsecheckout true
+		echo Experiments/FogLAMP/docker/ >> .git/info/sparse-checkout
+		sudo git pull https://gitlab.eeecs.qub.ac.uk/40126401/csc4006-EdgeBenchmarking.git master
+		
+		echo Experiments/FogLAMP/docker...
+		cd Experiments/FogLAMP/docker
+
+		echo Building FogLAMP docker image - console logs suppressed...
+		echo Please wait as this may take a few minutes...
+		chmod 777 execute.sh
+		time . build.sh
+		echo DONE	
+	fi
+}
+
 function build_docker_yolo {
 	local DIRECTORY=yolobuild
 
 	if [ ! -d "$DIRECTORY" ]; then
-	echo Entering yolobuild...
-	mkdir yolobuild
-	cd yolobuild
+		echo Entering yolobuild...
+		mkdir yolobuild
+		cd yolobuild
 
-	echo Pulling down yolo docker file...
-	sudo git init 
-	sudo git remote add -f csc4006-EdgeBenchmarking https://gitlab.eeecs.qub.ac.uk/40126401/csc4006-EdgeBenchmarking.git
-	sudo git config core.sparsecheckout true
-	echo Experiments/YOLO/docker/ >> .git/info/sparse-checkout
-	sudo git pull https://gitlab.eeecs.qub.ac.uk/40126401/csc4006-EdgeBenchmarking.git master
-	
-	echo Experiments/YOLO/docker...
-	cd Experiments/YOLO/docker
+		echo Pulling down yolo docker file...
+		sudo git init 
+		sudo git remote add -f csc4006-EdgeBenchmarking https://gitlab.eeecs.qub.ac.uk/40126401/csc4006-EdgeBenchmarking.git
+		sudo git config core.sparsecheckout true
+		echo Experiments/YOLO/docker/ >> .git/info/sparse-checkout
+		sudo git pull https://gitlab.eeecs.qub.ac.uk/40126401/csc4006-EdgeBenchmarking.git master
+		
+		echo Experiments/YOLO/docker...
+		cd Experiments/YOLO/docker
 
-	echo Building yolo docker image - console logs suppressed...
-	echo Please wait as this may take a few minutes...
-	chmod 777 execute.sh
-	time . build.sh
-	echo DONE	
+		echo Building yolo docker image - console logs suppressed...
+		echo Please wait as this may take a few minutes...
+		chmod 777 execute.sh
+		time . build.sh
+		echo DONE	
 	fi
-
-    
-	
 }
 
 function build_docker_yolo_both_edge {
 	local DIRECTORY=bothedgeyolobuild
 
 	if [ ! -d "$DIRECTORY" ]; then
-	echo Entering bothedgeyolobuild...
-	mkdir bothedgeyolobuild
-	cd bothedgeyolobuild
+		echo Entering bothedgeyolobuild...
+		mkdir bothedgeyolobuild
+		cd bothedgeyolobuild
 
-	echo Pulling down bothedgeyolo docker file...
-	sudo git init 
-	sudo git remote add -f csc4006-EdgeBenchmarking https://gitlab.eeecs.qub.ac.uk/40126401/csc4006-EdgeBenchmarking.git
-	sudo git config core.sparsecheckout true
-	echo Experiments/YOLO/bothedgedocker/ >> .git/info/sparse-checkout
-	sudo git pull https://gitlab.eeecs.qub.ac.uk/40126401/csc4006-EdgeBenchmarking.git master
-	
-	echo Experiments/YOLO/bothedgedocker...
-	cd Experiments/YOLO/bothedgedocker
+		echo Pulling down bothedgeyolo docker file...
+		sudo git init 
+		sudo git remote add -f csc4006-EdgeBenchmarking https://gitlab.eeecs.qub.ac.uk/40126401/csc4006-EdgeBenchmarking.git
+		sudo git config core.sparsecheckout true
+		echo Experiments/YOLO/bothedgedocker/ >> .git/info/sparse-checkout
+		sudo git pull https://gitlab.eeecs.qub.ac.uk/40126401/csc4006-EdgeBenchmarking.git master
+		
+		echo Experiments/YOLO/bothedgedocker...
+		cd Experiments/YOLO/bothedgedocker
 
-	echo Building bothedgeyolo docker image - console logs suppressed...
-	echo Please wait as this may take a few minutes...
-	chmod 777 execute.sh
-	time . build.sh
-	echo DONE	
+		echo Building bothedgeyolo docker image - console logs suppressed...
+		echo Please wait as this may take a few minutes...
+		chmod 777 execute.sh
+		time . build.sh
+		echo DONE	
 	fi
 
 }
@@ -286,25 +363,25 @@ function build_docker_yolo_both_cloud {
 	local DIRECTORY=bothcloudyolobuild
 
 	if [ ! -d "$DIRECTORY" ]; then
-	echo Entering bothcloudyolobuild...
-	mkdir bothcloudyolobuild
-	cd bothcloudyolobuild
+		echo Entering bothcloudyolobuild...
+		mkdir bothcloudyolobuild
+		cd bothcloudyolobuild
 
-	echo Pulling down bothcloudyolo docker file...
-	sudo git init 
-	sudo git remote add -f csc4006-EdgeBenchmarking https://gitlab.eeecs.qub.ac.uk/40126401/csc4006-EdgeBenchmarking.git
-	sudo git config core.sparsecheckout true
-	echo Experiments/YOLO/bothclouddocker/ >> .git/info/sparse-checkout
-	sudo git pull https://gitlab.eeecs.qub.ac.uk/40126401/csc4006-EdgeBenchmarking.git master
-	
-	echo Experiments/YOLO/bothclouddocker...
-	cd Experiments/YOLO/bothclouddocker
+		echo Pulling down bothcloudyolo docker file...
+		sudo git init 
+		sudo git remote add -f csc4006-EdgeBenchmarking https://gitlab.eeecs.qub.ac.uk/40126401/csc4006-EdgeBenchmarking.git
+		sudo git config core.sparsecheckout true
+		echo Experiments/YOLO/bothclouddocker/ >> .git/info/sparse-checkout
+		sudo git pull https://gitlab.eeecs.qub.ac.uk/40126401/csc4006-EdgeBenchmarking.git master
+		
+		echo Experiments/YOLO/bothclouddocker...
+		cd Experiments/YOLO/bothclouddocker
 
-	echo Building bothcloudyolo docker image - console logs suppressed...
-	echo Please wait as this may take a few minutes...
-	chmod 777 execute.sh
-	time . build.sh
-	echo DONE	
+		echo Building bothcloudyolo docker image - console logs suppressed...
+		echo Please wait as this may take a few minutes...
+		chmod 777 execute.sh
+		time . build.sh
+		echo DONE	
 	fi
 
 }
@@ -313,27 +390,81 @@ function build_docker_aeneas {
 	local DIRECTORY=aeneasbuild
 
 	if [ ! -d "$DIRECTORY" ]; then
-	echo Entering aeneasbuild...
-	mkdir aeneasbuild
-	cd aeneasbuild
+		echo Entering aeneasbuild...
+		mkdir aeneasbuild
+		cd aeneasbuild
 
-	echo Pulling down aeneas docker file...
-	sudo git init 
-	sudo git remote add -f csc4006-EdgeBenchmarking https://gitlab.eeecs.qub.ac.uk/40126401/csc4006-EdgeBenchmarking.git
-	sudo git config core.sparsecheckout true
-	echo Experiments/Aeneas/docker/ >> .git/info/sparse-checkout
-	sudo git pull https://gitlab.eeecs.qub.ac.uk/40126401/csc4006-EdgeBenchmarking.git master
-	
-	echo Experiments/Aeneas/docker...
-	cd Experiments/Aeneas/docker
+		echo Pulling down aeneas docker file...
+		sudo git init 
+		sudo git remote add -f csc4006-EdgeBenchmarking https://gitlab.eeecs.qub.ac.uk/40126401/csc4006-EdgeBenchmarking.git
+		sudo git config core.sparsecheckout true
+		echo Experiments/Aeneas/docker/ >> .git/info/sparse-checkout
+		sudo git pull https://gitlab.eeecs.qub.ac.uk/40126401/csc4006-EdgeBenchmarking.git master
+		
+		echo Experiments/Aeneas/docker...
+		cd Experiments/Aeneas/docker
 
-	echo Building aeneas docker image - console logs suppressed...
-	echo Please wait as this may take a few minutes...
-	chmod 777 execute.sh
-	time . build.sh
-	echo DONE	
+		echo Building aeneas docker image - console logs suppressed...
+		echo Please wait as this may take a few minutes...
+		chmod 777 execute.sh
+		time . build.sh
+		echo DONE	
 	fi
 	
+}
+
+function build_docker_aeneas_both_edge {
+	local DIRECTORY=bothedgeaeneasbuild
+
+	if [ ! -d "$DIRECTORY" ]; then
+		echo Entering bothedgeaeneasbuild...
+		mkdir bothedgeaeneasbuild
+		cd bothedgeaeneasbuild
+
+		echo Pulling down bothedgeaeneas docker file...
+		sudo git init 
+		sudo git remote add -f csc4006-EdgeBenchmarking https://gitlab.eeecs.qub.ac.uk/40126401/csc4006-EdgeBenchmarking.git
+		sudo git config core.sparsecheckout true
+		echo Experiments/Aeneas/bothedgedocker/ >> .git/info/sparse-checkout
+		sudo git pull https://gitlab.eeecs.qub.ac.uk/40126401/csc4006-EdgeBenchmarking.git master
+		
+		echo Experiments/Aeneas/bothedgedocker...
+		cd Experiments/Aeneas/bothedgedocker
+
+		echo Building bothedgeaeneas docker image - console logs suppressed...
+		echo Please wait as this may take a few minutes...
+		chmod 777 execute.sh
+		time . build.sh
+		echo DONE	
+	fi
+
+}
+
+function build_docker_aeneas_both_cloud {
+	local DIRECTORY=bothcloudaeneasbuild
+
+	if [ ! -d "$DIRECTORY" ]; then
+		echo Entering bothcloudaeneasbuild...
+		mkdir bothcloudaeneasbuild
+		cd bothcloudaeneasbuild
+
+		echo Pulling down bothcloudaeneas docker file...
+		sudo git init 
+		sudo git remote add -f csc4006-EdgeBenchmarking https://gitlab.eeecs.qub.ac.uk/40126401/csc4006-EdgeBenchmarking.git
+		sudo git config core.sparsecheckout true
+		echo Experiments/Aeneas/bothclouddocker/ >> .git/info/sparse-checkout
+		sudo git pull https://gitlab.eeecs.qub.ac.uk/40126401/csc4006-EdgeBenchmarking.git master
+		
+		echo Experiments/Aeneas/bothclouddocker...
+		cd Experiments/Aeneas/bothclouddocker
+
+		echo Building bothcloudaeneas docker image - console logs suppressed...
+		echo Please wait as this may take a few minutes...
+		chmod 777 execute.sh
+		time . build.sh
+		echo DONE	
+	fi
+
 }
 
 function HELP {
@@ -359,6 +490,8 @@ echo "Cloud/Edge - Cloud actions and system benchmarks: " | tee $filename.txt
 	seperator
 	
 	test $run_yolo && build_docker_yolo_both_cloud
+	test $run_psphinx && build_docker_pshinx_both_cloud
+	test $run_aeneas && build_docker_aeneas_both_cloud
 	
 }
 
@@ -367,6 +500,8 @@ echo "Cloud/Edge - Edge actions and system benchmarks: " | tee $filename.txt
 	seperator
 	
 	test $run_yolo && build_docker_yolo_both_edge
+	test $run_psphinx && build_docker_psphinx_both_edge
+	test $run_aeneas && build_docker_aeneas_both_edge
 	
 }
 
@@ -384,7 +519,7 @@ echo "Edge actions and system benchmarks: " | tee $filename.txt
 	test $run_psphinx && build_docker_psphinx
 	test $run_aeneas && build_docker_aeneas
 	test $build_ipokemon && build_docker_ipokemon
-
+	test $run_foglamp && build_docker_foglamp
 	
 }
 
@@ -402,6 +537,7 @@ function cloudbench {
 	test $run_psphinx && build_docker_psphinx
 	test $run_aeneas && build_docker_aeneas
 	test $build_ipokemon && build_docker_ipokemon
+	test $run_foglamp && build_docker_foglamp
 
 }
 
@@ -424,7 +560,7 @@ function main {
 
 }
 
-while getopts :cebz:adfsxuhngs:yijpmk opt; do
+while getopts :cebz:adfsxluhngs:yijpmk opt; do
     case "$opt" in
         a)
             run_downloads=true
@@ -474,6 +610,9 @@ while getopts :cebz:adfsxuhngs:yijpmk opt; do
 		j)	
 			run_aeneas=true
 			;;	
+		l)	
+			run_foglamp=true
+			;;		
 		k)	
 			run_ipokemon=true
 			;;	

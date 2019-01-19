@@ -1,0 +1,35 @@
+		Demystifying Fog Systems Interaction via Container based benchmarking
+	Created by: Jonathan McChesney, student at Queen's University Belfast
+	CSC4006 Final Year Research and Development Project
+
+*****************************************************************************
+*****************************************************************************
+
+Cloud Only Benchmarks: 
+*****************************************************************************
+
+Transfer cloud action results to edge device: completed in 1.300792800 secs
+
+YOLO Benchmarks:
+*****************************************************************************
+
+YOLO Benchmark Run 1:
+
+Computation: completed in 1.598392718 secs
+Upload to S3 bucket: completed in .734967116 secs
+Transfer cloud application results to edge device: completed in 1.516402500 secs
+
+
+YOLO Benchmark Run 2:
+
+Computation: completed in 1.589953990 secs
+Upload to S3 bucket: completed in .601665556 secs
+Transfer cloud application results to edge device: completed in 1.578733200 secs
+
+
+YOLO Benchmark Run 3:
+
+Computation: completed in 1.417604320 secs
+Upload to S3 bucket: completed in .612871304 secs
+Transfer cloud application results to edge device: completed in 1.532765700 secs
+

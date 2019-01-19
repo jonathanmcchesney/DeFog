@@ -201,27 +201,17 @@ function calc_rtt {
 	local T1=${metricsValues[0]} 
 	local E=${metricsValues[1]} 
 	local T2=${metricsValues[2]} 
-	local rtt=$(bc <<< "$T1+$T2")
-
-	#echo yeet
-	#echo $rtt
+	local rtt=$(bc <<< "$T1+$T2+$E")
 
 	metricsValues[4]=$rtt
-	echo ${metricsValues[4]}
 }
 
 function calc_rtf {
 	local computation=${newarr[1]}
 	local length=${newarr[5]}
-	echo length
-	echo $length
-	echo comp
-	echo $computation
 	local rtf=$(bc <<< "scale=10;$computation/$length")
 
 	metricsValues[5]=$rtf
-	echo ${metricsValues[5]}
-
 }
 
 function set_returned_application_metrics {
@@ -238,8 +228,6 @@ function set_returned_application_metrics {
 		fi
 	done
 	
-	echo help
-	echo ${metricsValues[@]}
 }
 
 function benchmark_applications {
@@ -269,6 +257,11 @@ function benchmark_applications {
 			echo iPokeMon Benchmarks: | tee -a $verbose_filename.txt
 			seperator
 			benchmark_ipokemon	
+		elif [ "$applications" == "-l" ];
+		then	
+			echo FogLAMP Benchmarks: | tee -a $verbose_filename.txt
+			seperator
+			benchmark_foglamp	
 		fi	
 }
 
@@ -325,6 +318,35 @@ function benchmark_application {
 			calc_edge_cost
 		fi
 		echo ${metricsValues[@]} | tee -a $metrics_verbose_filename.txt
+}
+
+function benchmark_foglamp {
+	declare -a arrCurlCommands
+	newassetname=./assets/foglamp-assets/foglampcurlcommand.sh		
+	local count=1
+	
+	for file in ./assets/foglamp-assets/*.sh
+	do
+	
+		create_metric_array
+		
+		echo -e "" | tee -a $verbose_filename.txt
+		echo FogLAMP Benchmark Run $count: | tee -a $verbose_filename.txt
+		echo "" | tee -a $verbose_filename.txt
+		
+		arrCurlCommands=("${Curls[@]}" "$file")
+		asset=$arrCurlCommands
+		
+		echo "Sending asset at path: " $newassetname "to application..."
+		scp_asset
+		echo "DONE"
+		
+		benchmark_application
+		
+		((count++))
+
+	done
+	
 }
 
 function benchmark_yolo {
@@ -433,7 +455,7 @@ function benchmark_aeneas {
 }
 
 function create_metric_array {
-	declare -g metricsLabels=('T1' 'ET' 'T2' 'T3' 'RTT' 'RTF' 'Cost' 'MEM' 'CPU')
+	declare -g metricsLabels=('T1' 'ET' 'T2' 'T3' 'RTT' 'RTF' 'Cost' 'BytesUp' 'BytesDown')
 	declare -g metricsValues=('NA' 'NA' 'NA' 'NA' 'NA' 'NA' 'NA' 'NA' 'NA')
 		
 }
@@ -448,7 +470,10 @@ function scp_asset {
 	if [ "$environment" == "-c" ];
 	then
 		local transfer_cloud=$(scp -v -i $awskey $newassetname $clouduser@$cloudaddress:~/fogbench/assets 2>&1 | grep "Transferred") 		
-		echo ${transfer_cloud//[!0-9\\ \\.]/}
+		local newboy=${transfer_cloud//[!0-9\\ \\.]/}
+		newarr1=(`echo ${newboy}`);
+		echo ${newarr1[@]}
+
 		
 	fi	
 	if [ "$environment" == "-e" ] || [ "$environment" == "-b" ];
@@ -459,13 +484,17 @@ function scp_asset {
 		echo $edgeaddress
 		#scp -v $newassetname $edgeuser@$edgeaddress:~/fogbench/assets 2>&1
 		local transfer_edge=$(scp -v $newassetname $edgeuser@$edgeaddress:~/fogbench/assets 2>&1 | grep "Transferred") 		
-		echo ${transfer_edge//[!0-9\\ \\.]/}
+		local newboy=${transfer_cloud//[!0-9\\ \\.]/}
+		newarr1=(`echo ${newboy}`);
+		echo ${newarr1[@]}
+
 	fi
 
 	local end=$(date +%s.%N)
 	local runtime=$( echo "$end - $start" | bc -l )
 	
 	metricsValues[0]=$runtime
+	metricsValues[7]=${newarr1[0]}
 
 	rm $newassetname
 
@@ -566,9 +595,10 @@ while true; do
 		echo "2. Aeneas"
 		echo "3. iPokeMon (build and run)"
 		echo "4. iPokeMon (run benchmarks only)"
-		echo "5. None"
+		echo "5. FogLAMP"
+		echo "6. None"
 		echo ""
-  read -p "What Applications would you like to benchmark: [0,1,2,3,4]" ANS
+  read -p "What Applications would you like to benchmark: [0,1,2,3,4,5,6]" ANS
   case $ANS in 
     '0') 
        applications="-y"
@@ -586,6 +616,9 @@ while true; do
        applications="-k"
        break;;   
 	'5') 
+       applications="-l"
+       break;;
+	'6') 
        applications="-m"
        break;; 	   
     *) 
@@ -695,8 +728,11 @@ function main {
 	echo metrics to be saved:
 	echo ${metricsValues[@]}
 	
+	cat $metrics_verbose_filename.txt | tr -s '[:blank:]' ',' > $metrics_verbose_filename.csv
+	
 	mv $verbose_filename.txt results/
 	mv $metrics_verbose_filename.txt results/
+	mv $metrics_verbose_filename.csv results/
 
 }
 
