@@ -1,1 +1,1 @@
-curl -s http://localhost:8081/foglamp/statistics | jq
+curl -s http://localhost:8081/foglamp/statistics

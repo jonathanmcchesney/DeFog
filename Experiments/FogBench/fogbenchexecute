@@ -222,7 +222,7 @@ function set_returned_application_metrics {
 	do 
 		((count++))
 		
-		if [ ${metricsValues[$i]} == "NA" ] && [ ${newarr[$i]} != "NA" ];
+		if [ "${metricsValues[$i]}" == "NA" ] && [ "${newarr[$i]}" != "NA" ];
 		then
 			metricsValues[$i]=${newarr[$i]}
 		fi

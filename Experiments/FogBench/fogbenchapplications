@@ -39,7 +39,7 @@ function run_docker_ipokemon {
 }
 
 function run_docker_psphinx_both_edge {
-	cd bothedgepshinxbuild/Experiments/PocketSphinx/bothedgedocker
+	cd bothedgepsphinxbuild/Experiments/PocketSphinx/bothedgedocker
 	
 	echo -n Running bothedgedocker container...
 
@@ -146,6 +146,21 @@ function run_docker_aeneas {
 	echo -n DONE
 }
 
+function run_docker_foglamp { 
+	cd foglampbuild/Experiments/FogLAMP/docker
+
+	echo -n Running fogLAMP docker container...
+	if [ "$run_cloud" ];
+	then
+		. run.sh
+	fi	
+	if [ "$run_edge" ];
+	then
+		. runedge.sh
+	fi
+	echo -n DONE
+}
+
 function seperator {
 echo -e "*****************************************************************************" | tee -a $filename.txt
 }
@@ -192,6 +207,7 @@ function edgebench {
 	test $run_psphinx && run_docker_psphinx
 	test $run_aeneas && run_docker_aeneas
 	test $run_ipokemon && run_docker_ipokemon
+	test $run_foglamp && run_docker_foglamp
 
 }
 
@@ -203,6 +219,7 @@ function cloudbench {
 	test $run_psphinx && run_docker_psphinx
 	test $run_aeneas && run_docker_aeneas
 	test $run_ipokemon && run_docker_ipokemon
+	test $run_foglamp && run_docker_foglamp
 
 }
 

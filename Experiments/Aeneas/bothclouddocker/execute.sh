@@ -2,7 +2,7 @@
 
 rm -rf /mnt/assets/aeneas-assets/
 
-cd ~/Experiments/YOLO/bothcloudyolo
+cd ~/Experiments/Aeneas/bothcloudaeneas
 
 #echo "Starting connection to edge..."
 #python sender.py ./yolov3-tiny.weights
