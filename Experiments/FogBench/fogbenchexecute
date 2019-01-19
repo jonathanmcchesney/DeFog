@@ -69,7 +69,7 @@ function benchmark_both_applications {
 		local end=$(date +%s.%N)
 		local runtime=$( echo "$end - $start" | bc -l )
 		metricsValues[3]=$runtime
-
+		
 		cat edgeresult.txt >> $verbose_filename.txt
 		rm edgeresult.txt
 		
@@ -150,10 +150,16 @@ function benchmark_cloud_applications {
 		echo "Done ssh"
 		
 		local start=$(date +%s.%N)
-			scp -i $awskey $clouduser@$cloudaddress:~/fogbench/results/* ./
+			#scp -i $awskey $clouduser@$cloudaddress:~/fogbench/results/* ./
+			local transfer_cloud=$(scp -v -i $awskey $clouduser@$cloudaddress:~/fogbench/results/* ./ 2>&1 | grep "Transferred") 		
+			local newboy=${transfer_cloud//[!0-9\\ \\.]/}
+			newarr1=(`echo ${newboy}`);
+			echo ${newarr1[@]}
 		local end=$(date +%s.%N)
 		local runtime=$( echo "$end - $start" | bc -l )
 		metricsValues[3]=$runtime
+			metricsValues[8]=${newarr1[0]}
+
 
 		cat cloudresult.txt >> $verbose_filename.txt
 		rm cloudresult.txt
@@ -228,6 +234,13 @@ function set_returned_application_metrics {
 		fi
 	done
 	
+	echo this1
+		echo ${metricsValues[@]}
+
+	echo this2
+		echo ${newarr[@]}
+
+	
 }
 
 function benchmark_applications {
@@ -291,7 +304,7 @@ function benchmark_application {
 		then
 			benchmark_cloud_applications
 			calc_rtt
-			if [ ${metricsValues[5]} != "NA" ];
+			if [ "${metricsValues[5]}" != "NA" ];
 			then
 				calc_rtf
 			fi
@@ -301,7 +314,7 @@ function benchmark_application {
 		then
 			benchmark_edge_applications
 			calc_rtt
-			if [ ${metricsValues[5]} != "NA" ];
+			if [ "${metricsValues[5]}" != "NA" ];
 			then
 				calc_rtf
 			fi
@@ -311,7 +324,7 @@ function benchmark_application {
 		then
 			benchmark_both_applications
 			calc_rtt
-			if [ ${metricsValues[5]} != "NA" ];
+			if [ "${metricsValues[5]}" != "NA" ];
 			then
 				calc_rtf
 			fi
@@ -385,6 +398,9 @@ function benchmark_pocket_sphinx {
 	
 	for file in ./assets/psphinx-assets/*.wav
 	do
+		
+		create_metric_array
+
 		echo -e "" | tee -a $verbose_filename.txt
 		echo Pocket Sphinx Benchmark Run $count: | tee -a $verbose_filename.txt
 		echo "" | tee -a $verbose_filename.txt
@@ -428,6 +444,9 @@ function benchmark_aeneas {
 	
 	for (( i=0; i<=$(( $total -1 )); i++ ))
 	do 
+	
+		create_metric_array
+
 		echo -e "" | tee -a $verbose_filename.txt
 		echo Aeneas Benchmark Run $count: | tee -a $verbose_filename.txt
 		echo "" | tee -a $verbose_filename.txt
@@ -441,10 +460,26 @@ function benchmark_aeneas {
 		
 		asset=${arrTexts[$i]}
 		newassetname=./assets/aeneas-assets/aeneastext.xhtml
+		
+		if [ "$environment" != "-b" ];
+		then
+			echo "Sending asset at path: " $asset "to application..."
+			scp_asset
+			echo "DONE"		
+		fi	
+		
+		if [ "$environment" == "-b" ];
+		then
+			local shortasset="${asset##*/}"
+			echo $shortasset > ./aeneas.txt
+			
+			asset=./aeneas.txt
+			newassetname=./aeneas.txt
 
-		echo "Sending asset at path: " $asset "to application..."
-		scp_asset
-		echo "DONE"
+			echo "Sending asset at path: " $asset "to application..."
+			scp_asset
+			echo "DONE"			
+		fi	
 		
 		benchmark_application
 		
@@ -455,8 +490,8 @@ function benchmark_aeneas {
 }
 
 function create_metric_array {
-	declare -g metricsLabels=('T1' 'ET' 'T2' 'T3' 'RTT' 'RTF' 'Cost' 'BytesUp' 'BytesDown')
-	declare -g metricsValues=('NA' 'NA' 'NA' 'NA' 'NA' 'NA' 'NA' 'NA' 'NA')
+	declare -g metricsLabels=('T1' 'ET' 'T2' 'T3' 'RTT' 'RTF' 'Cost' 'BytesUp1' 'BytesDown1' 'BytesUp2' 'BytesDown2')
+	declare -g metricsValues=('NA' 'NA' 'NA' 'NA' 'NA' 'NA' 'NA' 'NA' 'NA' 'NA' 'NA')
 		
 }
 
@@ -478,16 +513,10 @@ function scp_asset {
 	fi	
 	if [ "$environment" == "-e" ] || [ "$environment" == "-b" ];
 	then
-		echo in here
-		echo $newassetname
-		echo $edgeuser
-		echo $edgeaddress
-		#scp -v $newassetname $edgeuser@$edgeaddress:~/fogbench/assets 2>&1
 		local transfer_edge=$(scp -v $newassetname $edgeuser@$edgeaddress:~/fogbench/assets 2>&1 | grep "Transferred") 		
 		local newboy=${transfer_cloud//[!0-9\\ \\.]/}
 		newarr1=(`echo ${newboy}`);
 		echo ${newarr1[@]}
-
 	fi
 
 	local end=$(date +%s.%N)

@@ -18,7 +18,7 @@ cd ~/Experiments/Aeneas/aeneas
 chmod 400 /mnt/configs/csc4006awskey.pem
 export PYTHONIOENCODING=UTF-8
 
-metricsValues=("NA" "NA" "NA" "NA" "NA" "NA" "NA" "NA" "NA")
+metricsValues=("NA" "NA" "NA" "NA" "NA" "NA" "NA" "NA" "NA" "NA" "NA")
 
 start=$(date +%s.%N)
 	# python receiver.py yolov3-tiny.weights
@@ -51,6 +51,9 @@ metricsValues[2]=$runtime
 
 cat results.txt >> /mnt/results/cloudresult.txt
 echo ${metricsValues[@]} >> /mnt/results/arrresult.txt
+
+cp ./map.smil ./returnedasset.smil
+mv ./returnedasset.smil /mnt/results/
 
 exit
 

@@ -7,7 +7,7 @@ cd ~/Experiments/Aeneas/aeneas
 
 export PYTHONIOENCODING=UTF-8
 
-metricsValues=("NA" "NA" "NA" "NA" "NA" "NA" "NA" "NA" "NA")
+metricsValues=("NA" "NA" "NA" "NA" "NA" "NA" "NA" "NA" "NA" "NA" "NA")
 
 start=$(date +%s.%N)
 python -m aeneas.tools.execute_task     /mnt/assets/aeneasaudio.mp3     /mnt/assets/aeneastext.xhtml     "task_language=eng|os_task_file_format=smil|os_task_file_smil_audio_ref=audio.mp3|os_task_file_smil_page_ref=page.xhtml|is_text_type=unparsed|is_text_unparsed_id_regex=f[0-9]+|is_text_unparsed_id_sort=numeric"     map.smil
@@ -30,6 +30,9 @@ metricsValues[2]=$runtime
 
 cat results.txt >> /mnt/results/cloudresult.txt
 echo ${metricsValues[@]} >> /mnt/results/arrresult.txt
+
+cp ./map.smil ./returnedasset.smil
+mv ./returnedasset.smil /mnt/results/
 
 exit
 

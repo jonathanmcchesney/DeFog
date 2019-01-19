@@ -8,7 +8,7 @@ cd ~/Experiments/PocketSphinx/sphinxbase/
 export LD_LIBRARY_PATH=/usr/local/lib
 cd pocketsphinx/
 
-metricsValues=("NA" "NA" "NA" "NA" "NA" "NA" "NA" "NA" "NA")
+metricsValues=("NA" "NA" "NA" "NA" "NA" "NA" "NA" "NA" "NA" "NA" "NA")
 
 start=$(date +%s.%N)
 pocketsphinx_continuous -infile /mnt/assets/psphinx.wav -logfn /dev/null
@@ -35,6 +35,9 @@ metricsValues[5]=$length
 
 cat results.txt >> /mnt/results/cloudresult.txt
 echo ${metricsValues[@]} >> /mnt/results/arrresult.txt
+
+cp ./result.txt ./returnedasset.txt
+mv ./returnedasset.txt /mnt/results/
 
 exit
 

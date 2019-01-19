@@ -17,7 +17,7 @@ cd ~/Experiments/YOLO/yolo
 chmod 777 darknet
 chmod 400 /mnt/configs/csc4006awskey.pem
 
-metricsValues=("NA" "NA" "NA" "NA" "NA" "NA" "NA" "NA" "NA")
+metricsValues=("NA" "NA" "NA" "NA" "NA" "NA" "NA" "NA" "NA" "NA" "NA")
 
 start=$(date +%s.%N)
 	# python receiver.py yolov3-tiny.weights
@@ -47,5 +47,8 @@ metricsValues[2]=$runtime
 
 cat results.txt >> /mnt/results/cloudresult.txt
 echo ${metricsValues[@]} >> /mnt/results/arrresult.txt
+
+cp ./predictions.png ./returnedasset.png
+mv ./returnedasset.png /mnt/results/
 
 exit

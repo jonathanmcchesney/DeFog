@@ -166,9 +166,15 @@ function delete_temps {
 	rm -rf UnixBench*
 	rm -rf yolobuild
 	rm -rf bothcloudyolobuild
+	rm -rf bothedgeyolobuild
+	rm -rf bothcloudpsphinxbuild
+	rm -rf bothedgepsphinxbuild
+	rm -rf bothcloudaeneasbuild
+	rm -rf bothedgeaeneasbuild
 	rm -rf psphinxbuild
 	rm -rf ipokemonbuild
 	rm -rf aeneasbuild
+	rm -rf foglampbuild
 	rm -rf assets
     echo OK
 	

@@ -18,11 +18,11 @@ chmod 400 /mnt/configs/csc4006awskey.pem
 export LD_LIBRARY_PATH=/usr/local/lib
 cd pocketsphinx/
 
-metricsValues=("NA" "NA" "NA" "NA" "NA" "NA" "NA" "NA" "NA")
+metricsValues=("NA" "NA" "NA" "NA" "NA" "NA" "NA" "NA" "NA" "NA" "NA")
 
 start=$(date +%s.%N)
 	# python receiver.py en-us/
-	scp -o StrictHostKeyChecking=no -i $edgeawskey2 $clouduser2@$cloudaddress2:/home/ubuntu/fogbench/assets/en-us ./model/en-us/
+	scp -o StrictHostKeyChecking=no -i $edgeawskey2 $clouduser2@$cloudaddress2:/home/ubuntu/fogbench/assets/en-us/* ./model/en-us/
 end=$(date +%s.%N)
 runtime=$( echo "$end - $start" | bc -l )
 echo "Cloud Transfer: completed in $runtime secs" | tee -a results.txt
@@ -52,6 +52,9 @@ metricsValues[5]=$length
 
 cat results.txt >> /mnt/results/cloudresult.txt
 echo ${metricsValues[@]} >> /mnt/results/arrresult.txt
+
+cp ./result.txt ./returnedasset.txt
+mv ./returnedasset.txt /mnt/results/
 
 exit
 

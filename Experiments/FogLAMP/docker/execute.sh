@@ -3,7 +3,7 @@
 rm /mnt/results/cloudresult.txt
 rm /mnt/results/arrresult.txt
 
-metricsValues=("NA" "NA" "NA" "NA" "NA" "NA" "NA" "NA" "NA")
+metricsValues=("NA" "NA" "NA" "NA" "NA" "NA" "NA" "NA" "NA" "NA" "NA")
 
 cd ~/FogLAMP
 export FOGLAMP_ROOT=/root/FogLAMP
@@ -37,5 +37,8 @@ metricsValues[2]=$runtime
 
 cat results.txt >> /mnt/results/cloudresult.txt
 echo ${metricsValues[@]} >> /mnt/results/arrresult.txt
+
+cp ./foglampoutput.txt ./returnedasset.txt
+mv ./returnedasset.txt /mnt/results/
 
 exit

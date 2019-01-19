@@ -6,7 +6,7 @@ rm /mnt/results/arrresult.txt
 cd ~/Experiments/YOLO/yolo
 chmod 777 darknet
 
-metricsValues=("NA" "NA" "NA" "NA" "NA" "NA" "NA" "NA" "NA")
+metricsValues=("NA" "NA" "NA" "NA" "NA" "NA" "NA" "NA" "NA" "NA" "NA")
 
 start=$(date +%s.%N)
 ./darknet detect cfg/yolov3-tiny.cfg yolov3-tiny.weights /mnt/assets/yoloimage.jpg
@@ -29,5 +29,8 @@ metricsValues[2]=$runtime
 
 cat results.txt >> /mnt/results/cloudresult.txt
 echo ${metricsValues[@]} >> /mnt/results/arrresult.txt
+
+cp ./predictions.png ./returnedasset.png
+mv ./returnedasset.png /mnt/results/
 
 exit
