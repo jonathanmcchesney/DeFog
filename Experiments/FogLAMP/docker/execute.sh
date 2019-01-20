@@ -1,5 +1,9 @@
 #!/bin/bash
 
+source /mnt/configs/config.sh
+foglampaddress1="${foglampaddress/$'\r'/}"
+foglampaddress2="${foglampaddress1/$'\n'/}"
+
 rm /mnt/results/cloudresult.txt
 rm /mnt/results/arrresult.txt
 
@@ -14,7 +18,7 @@ scripts/foglamp start
 
 start=$(date +%s.%N)
 # curl -s http://localhost:8081/foglamp/ping >> foglampoutput.txt
-. foglampcurlcommand.sh >> foglampoutput.txt
+. foglampcurlcommand.sh $foglampaddress2 >> foglampoutput.txt
 
 end=$(date +%s.%N)
 runtime=$( echo "$end - $start" | bc -l )

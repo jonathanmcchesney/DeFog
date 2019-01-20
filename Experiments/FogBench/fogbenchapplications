@@ -225,6 +225,7 @@ function cloudbench {
 
 function main {
 	cd fogbench 
+	chmod 400 configs
 	
 	echo $run_both_cloud
 	echo $run_both_edge

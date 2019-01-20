@@ -536,13 +536,13 @@ function scp_asset {
 
 function send_config_cloud {
 	echo sending config to cloud
-	scp -i $awskey $configfilelocation $clouduser@$cloudaddress:~/fogbench/configs > /dev/null 2>&1
+		scp -i $awskey $configslocation $clouduser@$cloudaddress:~/fogbench/configs 2>&1
 	echo done
 }
 
 function send_config_edge {
 	echo sending config to edge
-	scp $configslocation $edgeuser@$edgeaddress:~/fogbench/configs > /dev/null 2>&1
+		scp $configslocation $edgeuser@$edgeaddress:~/fogbench/configs > /dev/null 2>&1
 	echo done
 
 }

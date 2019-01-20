@@ -1,0 +1,49 @@
+		Demystifying Fog Systems Interaction via Container based benchmarking
+	Created by: Jonathan McChesney, student at Queen's University Belfast
+	CSC4006 Final Year Research and Development Project
+
+*****************************************************************************
+*****************************************************************************
+
+Cloud Only Benchmarks: 
+*****************************************************************************
+
+Transfer cloud action results to edge device: completed in 1.356763600 secs
+
+FogLAMP Benchmarks:
+*****************************************************************************
+
+FogLAMP Benchmark Run 1:
+
+Computation: completed in .009301969 secs
+Upload to S3 bucket: completed in .347211715 secs
+Transfer cloud application results to edge device: completed in 1.846545500 secs
+
+
+FogLAMP Benchmark Run 2:
+
+Computation: completed in .009083884 secs
+Upload to S3 bucket: completed in .300272404 secs
+Transfer cloud application results to edge device: completed in 1.840901000 secs
+
+
+FogLAMP Benchmark Run 3:
+
+Computation: completed in .008939336 secs
+Upload to S3 bucket: completed in .299098462 secs
+Transfer cloud application results to edge device: completed in 1.814814900 secs
+
+
+FogLAMP Benchmark Run 4:
+
+Computation: completed in .012781666 secs
+Upload to S3 bucket: completed in .298475735 secs
+Transfer cloud application results to edge device: completed in 1.858927500 secs
+
+
+FogLAMP Benchmark Run 5:
+
+Computation: completed in .013914805 secs
+Upload to S3 bucket: completed in .347505733 secs
+Transfer cloud application results to edge device: completed in 1.765346000 secs
+
