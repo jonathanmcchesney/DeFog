@@ -1,2 +1,2 @@
-Cloud actions and system benchmarks: 
+Cloud/Edge - Edge actions and system benchmarks: 
 *****************************************************************************

@@ -20,7 +20,7 @@ export PYTHONIOENCODING=UTF-8
 
 metricsValues=("NA" "NA" "NA" "NA" "NA" "NA" "NA" "NA" "NA" "NA" "NA")
 
-file=/mnt/assets/p*.txt
+file=$( cat /mnt/assets/aeneas.txt )
 new_file="${file%%.*}"
 
 start=$(date +%s.%N)

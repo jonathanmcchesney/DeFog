@@ -583,7 +583,7 @@ function scp_asset {
 	local end=$(date +%s.%N)
 	local runtime=$( echo "$end - $start" | bc -l )
 	
-	if [ "$multiassets" == "true" ] && ["$metricsValues[0]" != "NA" ];
+	if [ "$multiassets" == "true" ] && [ "$metricsValues[0]" != "NA" ];
 	then
 		metricsValues[0]+=$runtime
 		metricsValues[7]+=${newarr1[0]}
