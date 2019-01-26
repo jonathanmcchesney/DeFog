@@ -65,20 +65,29 @@ function benchmark_both_applications {
 		echo "Done ssh"	
 		
 		local start=$(date +%s.%N)
-			scp $edgeuser@$edgeaddress:~/fogbench/results/* ./
+			#scp $edgeuser@$edgeaddress:~/fogbench/results/* ./
+			local transfer_cloud=$(scp -v $edgeuser@$edgeaddress:~/fogbench/results/* ./ 2>&1 | grep "Transferred") 		
+			local newboy=${transfer_cloud//[!0-9\\ \\.]/}
+			newarr1=(`echo ${newboy}`);
+			echo ${newarr1[@]}
 		local end=$(date +%s.%N)
 		local runtime=$( echo "$end - $start" | bc -l )
 		metricsValues[3]=$runtime
+		metricsValues[8]=${newarr1[1]}
+		metricsValues[11]=$(bc <<< "scale=10;${metricsValues[8]}/${metricsValues[3]}")
 		
-		cat edgeresult.txt >> $verbose_filename.txt
-		rm edgeresult.txt
+		cat cloudresult.txt >> $verbose_filename.txt
+		rm cloudresult.txt
 		
 		read -a newarr < arrresult.txt 
 		rm arrresult.txt
 		
+		echo Total bytes transferred from the edge: ${metricsValues[8]} bytes | tee -a $verbose_filename.txt
+		echo Transfer both pipeline edge application results to edge device: completed in $runtime secs | tee -a $verbose_filename.txt
+		echo Transfer rate from the edge: metricsValues[11] bytes per second | tee -a $verbose_filename.txt
+		
 		set_returned_application_metrics	
 		
-		echo Transfer both pipeline edge application results to edge device: completed in $runtime secs | tee -a $verbose_filename.txt
 		echo "" | tee -a $verbose_filename.txt
 }
 
@@ -107,20 +116,32 @@ function benchmark_edge_applications {
 		echo "Done ssh"
 		
 		local start=$(date +%s.%N)
-			scp $edgeuser@$edgeaddress:~/fogbench/results/* ./
+			#scp $edgeuser@$edgeaddress:~/fogbench/results/* ./
+			local transfer_cloud=$(scp -v $edgeuser@$edgeaddress:~/fogbench/results/* ./ 2>&1 | grep "Transferred") 		
+			local newboy=${transfer_cloud//[!0-9\\ \\.]/}
+			newarr1=(`echo ${newboy}`);
+			echo meep
+			echo ${newarr1[@]}
+			echo ${newarr1[0]}
+			echo ${newarr1[1]}
 		local end=$(date +%s.%N)
 		local runtime=$( echo "$end - $start" | bc -l )
 		metricsValues[3]=$runtime
+		metricsValues[8]=${newarr1[1]}
+		metricsValues[11]=$(bc <<< "scale=10;${metricsValues[8]}/${metricsValues[3]}")
 
-		cat edgeresult.txt >> $verbose_filename.txt
-		rm edgeresult.txt
+		cat cloudresult.txt >> $verbose_filename.txt
+		rm cloudresult.txt
 		
 		read -a newarr < arrresult.txt 
 		rm arrresult.txt
 		
+		echo Total bytes transferred from the edge: ${metricsValues[8]} bytes | tee -a $verbose_filename.txt
+		echo Transfer edge application results to edge device: completed in $runtime secs | tee -a $verbose_filename.txt
+		echo Transfer rate from the edge: metricsValues[11] bytes per second | tee -a $verbose_filename.txt
+		
 		set_returned_application_metrics	
 		
-		echo Transfer edge application results to edge device: completed in $runtime secs | tee -a $verbose_filename.txt
 		echo "" | tee -a $verbose_filename.txt
 	
 }
@@ -159,7 +180,8 @@ function benchmark_cloud_applications {
 		local runtime=$( echo "$end - $start" | bc -l )
 		metricsValues[3]=$runtime
 		metricsValues[8]=${newarr1[1]}
-
+		metricsValues[11]=$(bc <<< "scale=10;${metricsValues[8]}/${metricsValues[3]}")
+	
 		rm returnedasset.*
 
 		cat cloudresult.txt >> $verbose_filename.txt
@@ -168,9 +190,12 @@ function benchmark_cloud_applications {
 		read -a newarr < arrresult.txt 
 		rm arrresult.txt
 		
-		set_returned_application_metrics		
-			
+		echo Total bytes transferred from the cloud: ${metricsValues[8]} bytes | tee -a $verbose_filename.txt
 		echo Transfer cloud application results to edge device: completed in $runtime secs | tee -a $verbose_filename.txt
+		echo Transfer rate from the cloud: metricsValues[11] bytes per second | tee -a $verbose_filename.txt
+		
+		set_returned_application_metrics		
+					
 		echo "" | tee -a $verbose_filename.txt
 		
 }
@@ -189,6 +214,8 @@ function calc_cloud_cost {
 	
 	metricsValues[6]=$cost
 	
+	echo "Cloud cost for application computation (£0.016 per hour)": £$cost | tee -a $verbose_filename.txt
+	
 }
 
 function calc_edge_cost {
@@ -203,6 +230,9 @@ function calc_edge_cost {
 	totalcost=$newCost
 		
 	metricsValues[6]=$cost
+	
+	echo "Edge cost for application computation (estimated £0.008 per hour)": £$cost | tee -a $verbose_filename.txt
+
 }
 
 function calc_rtt {
@@ -213,6 +243,9 @@ function calc_rtt {
 	local rtt=$(bc <<< "$T1+$T3+$E")
 
 	metricsValues[4]=$rtt
+	
+	echo Round Trip Time: $rtt secs | tee -a $verbose_filename.txt
+
 }
 
 function calc_rtf {
@@ -221,17 +254,21 @@ function calc_rtf {
 	local rtf=$(bc <<< "scale=10;$computation/$length")
 
 	metricsValues[5]=$rtf
+	
+	echo Real Time Factor: $rtf secs | tee -a $verbose_filename.txt
 }
 
 function set_returned_application_metrics {
 	local mets=${#metricsValues[@]}
+	echo this boi
+	echo ${metricsValues[@]}
 	local count=1
 	
 	for (( i=0; i<=$(( $mets -1 )); i++ ))
 	do 
 		((count++))
 		
-		if [ "${metricsValues[$i]}" == "NA" ] && [ "${newarr[$i]}" != "NA" ];
+		if [ "${metricsValues[$i]}" == "NA" ] && [ "${newarr[$i]}" != "NA" ] && [ "${newarr[$i]}" ];
 		then
 			metricsValues[$i]=${newarr[$i]}
 		fi
@@ -247,6 +284,12 @@ function set_returned_application_metrics {
 }
 
 function benchmark_applications {
+		pipeline="NA"
+		if [ "$environment" == "-c" ]; then pipeline="Cloud-Only"; 
+		elif [ "$environment" == "-e" ]; then pipeline="Edge-Only"; 
+		elif [ "$environment" == "-b" ]; then pipeline="Cloud/Edge"; 
+		fi
+
 		if [ "$applications" == "-y" ];
 		then
 			echo YOLO Benchmarks: | tee -a $verbose_filename.txt
@@ -285,9 +328,9 @@ function benchmark_ipokemon {
 	cd jmeter/bin
 
 	echo "Running JMETER!!!"
-		./jmeter -n -t iPokeMon.jmx -l testresults.csv
+		# ./jmeter -n -t iPokeMon.jmx -l testresults.csv
 	echo "Taurus..."
-		bzt iPokeMon.jmx
+		bzt iPokeMon.jmx reporting.yaml
 	cd ../../
 }
 
@@ -346,6 +389,9 @@ function benchmark_foglamp {
 	
 		create_metric_array
 		
+		metricsValues[13]=$pipeline
+		metricsValues[14]="FogLAMP"
+		
 		echo -e "" | tee -a $verbose_filename.txt
 		echo FogLAMP Benchmark Run $count: | tee -a $verbose_filename.txt
 		echo "" | tee -a $verbose_filename.txt
@@ -375,6 +421,9 @@ function benchmark_yolo {
 	
 		create_metric_array
 		
+		metricsValues[13]=$pipeline
+		metricsValues[14]="YOLO"
+		
 		echo -e "" | tee -a $verbose_filename.txt
 		echo YOLO Benchmark Run $count: | tee -a $verbose_filename.txt
 		echo "" | tee -a $verbose_filename.txt
@@ -403,6 +452,9 @@ function benchmark_pocket_sphinx {
 	do
 		
 		create_metric_array
+		
+		metricsValues[13]=$pipeline
+		metricsValues[14]="Pocket-Sphinx"
 
 		echo -e "" | tee -a $verbose_filename.txt
 		echo Pocket Sphinx Benchmark Run $count: | tee -a $verbose_filename.txt
@@ -449,6 +501,10 @@ function benchmark_aeneas {
 	do 
 	
 		create_metric_array
+		multiassets="true"
+		
+		metricsValues[13]=$pipeline
+		metricsValues[14]="Aeneas"
 
 		echo -e "" | tee -a $verbose_filename.txt
 		echo Aeneas Benchmark Run $count: | tee -a $verbose_filename.txt
@@ -474,6 +530,8 @@ function benchmark_aeneas {
 		if [ "$environment" == "-b" ];
 		then
 			local shortasset="${asset##*/}"
+			echo shortasset
+			echo $shortasset
 			echo $shortasset > ./aeneas.txt
 			
 			asset=./aeneas.txt
@@ -493,9 +551,8 @@ function benchmark_aeneas {
 }
 
 function create_metric_array {
-	declare -g metricsLabels=('T1' 'ET' 'T2' 'T3' 'RTT' 'RTF' 'Cost' 'BytesUp' 'BytesDown' 'BytesDownEdgeCloud' 'EdgeCloudT4')
-	declare -g metricsValues=('NA' 'NA' 'NA' 'NA' 'NA' 'NA' 'NA' 'NA' 'NA' 'NA' 'NA')
-		
+	declare -g metricsLabels=('T1' 'ET' 'T2' 'T3' 'RTT' 'RTF' 'Cost' 'BytesUp1' 'BytesDown1' 'BytesDown2' 'BytesPerSecUp1' 'BytesPerSecDown1' 'BytesPerSecDown2' 'Pipeline' 'Application')
+	declare -g metricsValues=('NA' 'NA' 'NA' 'NA' 'NA' 'NA' 'NA' 'NA' 'NA' 'NA' 'NA' 'NA' 'NA' 'NA' 'NA')	
 }
 
 function scp_asset {
@@ -503,8 +560,9 @@ function scp_asset {
 	cp $asset $newassetname
 	local start=$(date +%s.%N)
 	
-	echo also
-	
+	metricsValues[0]="NA"
+	metricsValues[7]="NA"
+		
 	if [ "$environment" == "-c" ];
 	then
 		local transfer_cloud=$(scp -v -i $awskey $newassetname $clouduser@$cloudaddress:~/fogbench/assets 2>&1 | grep "Transferred") 		
@@ -521,14 +579,21 @@ function scp_asset {
 		newarr1=(`echo ${newboy}`);
 		echo ${newarr1[@]}
 	fi
-
+	
 	local end=$(date +%s.%N)
 	local runtime=$( echo "$end - $start" | bc -l )
 	
-	metricsValues[0]=$runtime
-	echo this here
-	echo ${newarr1[0]}
-	metricsValues[7]=${newarr1[0]}
+	if [ "$multiassets" == "true" ] && ["$metricsValues[0]" != "NA" ];
+	then
+		metricsValues[0]+=$runtime
+		metricsValues[7]+=${newarr1[0]}
+		metricsValues[10]+=$(bc <<< "scale=10;${metricsValues[7]}/${metricsValues[0]}")
+	else
+		metricsValues[0]=$runtime
+		metricsValues[7]=${newarr1[0]}
+		metricsValues[10]=$(bc <<< "scale=10;${metricsValues[7]}/${metricsValues[0]}")
+
+	fi	
 
 	rm $newassetname
 

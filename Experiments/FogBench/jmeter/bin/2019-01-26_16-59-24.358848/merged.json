@@ -1,0 +1,22 @@
+{
+ "reporting": [
+  {
+   "module": "final-stats",
+   "summary": true,
+   "percentiles": true,
+   "summary-labels": true,
+   "failed-labels": true,
+   "test-duration": true,
+   "dump-xml": "rep-1.xml",
+   "dump-csv": "rep-1.csv"
+  }
+ ],
+ "execution": [
+  {
+   "executor": "jmeter",
+   "scenario": {
+    "script": "iPokeMon.jmx"
+   }
+  }
+ ]
+}

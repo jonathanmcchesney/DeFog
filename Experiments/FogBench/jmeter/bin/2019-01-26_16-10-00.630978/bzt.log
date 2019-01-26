@@ -1,0 +1,69 @@
+[2019-01-26 16:10:00,547 INFO root] Taurus CLI Tool v1.13.2
+[2019-01-26 16:10:00,547 DEBUG root] Command-line options: {'log': 'C:\\Users\\jmcch\\AppData\\Local\\Temp\\bzt_b8exmvpe.log', 'option': None, 'quiet': None, 'verbose': None, 'no_system_configs': None, 'aliases': []}
+[2019-01-26 16:10:00,548 DEBUG root] Python: CPython 3.6.5
+[2019-01-26 16:10:00,548 DEBUG root] Rev: 8c96479fb6a315f7ffb7c0afcaa7e841152c90a3; OS: uname_result(system='Windows', node='DESKTOP-JQOCQB2', release='10', version='10.0.17134', machine='AMD64', processor='Intel64 Family 6 Model 94 Stepping 3, GenuineIntel')
+[2019-01-26 16:10:00,549 DEBUG root] Adding JMX shorthand config for: ['iPokeMon.jmx']
+[2019-01-26 16:10:00,550 DEBUG root] Dumping JSON config into C:\Users\jmcch\AppData\Local\Temp\jmx_c4wbnegg.json
+[2019-01-26 16:10:00,551 INFO root] Starting with configs: ['C:\\Users\\jmcch\\AppData\\Local\\Temp\\jmx_c4wbnegg.json']
+[2019-01-26 16:10:00,551 DEBUG root] Using personal config: C:\Users\jmcch\.bzt-rc
+[2019-01-26 16:10:00,551 INFO Engine] Configuring...
+[2019-01-26 16:10:00,593 DEBUG Engine] Base configs list: ['C:\\Users\\jmcch\\AppData\\Local\\Taurus\\pkgs\\bzt\\resources/10-base-config.yml']
+[2019-01-26 16:10:00,594 DEBUG Engine.Configuration] Configs: ['C:\\Users\\jmcch\\AppData\\Local\\Taurus\\pkgs\\bzt\\resources/10-base-config.yml']
+[2019-01-26 16:10:00,594 DEBUG Engine.Configuration] Reading C:\Users\jmcch\AppData\Local\Taurus\pkgs\bzt\resources/10-base-config.yml as YAML
+[2019-01-26 16:10:00,619 DEBUG Engine] User configs list: ['C:\\Users\\jmcch\\.bzt-rc', 'C:\\Users\\jmcch\\AppData\\Local\\Temp\\jmx_c4wbnegg.json']
+[2019-01-26 16:10:00,619 DEBUG Engine.Configuration] Configs: ['C:\\Users\\jmcch\\.bzt-rc', 'C:\\Users\\jmcch\\AppData\\Local\\Temp\\jmx_c4wbnegg.json']
+[2019-01-26 16:10:00,620 DEBUG Engine.Configuration] Reading C:\Users\jmcch\.bzt-rc as YAML
+[2019-01-26 16:10:00,623 DEBUG Engine.Configuration] Reading C:\Users\jmcch\AppData\Local\Temp\jmx_c4wbnegg.json as YAML
+[2019-01-26 16:10:00,624 DEBUG Engine.Configuration] Configs: ['C:\\Users\\jmcch\\.bzt-rc', 'C:\\Users\\jmcch\\AppData\\Local\\Temp\\jmx_c4wbnegg.json']
+[2019-01-26 16:10:00,625 DEBUG Engine.Configuration] Reading C:\Users\jmcch\.bzt-rc as YAML
+[2019-01-26 16:10:00,629 DEBUG Engine.Configuration] Reading C:\Users\jmcch\AppData\Local\Temp\jmx_c4wbnegg.json as YAML
+[2019-01-26 16:10:00,630 DEBUG Engine] Requesting updates info: http://gettaurus.org/updates/?version=1.13.2&installID=windows-80fa5b330391
+[2019-01-26 16:10:00,630 INFO Engine] Artifacts dir: C:\Users\jmcch\Documents\csc4006Gitlab\csc4006-EdgeBenchmarking\Experiments\FogBench\jmeter\bin\2019-01-26_16-10-00.630978
+[2019-01-26 16:10:00,630 DEBUG HTTPClient] Making HTTP request GET http://gettaurus.org/updates/?version=1.13.2&installID=windows-80fa5b330391
+[2019-01-26 16:10:00,631 DEBUG Engine] New artifact filename: C:\Users\jmcch\Documents\csc4006Gitlab\csc4006-EdgeBenchmarking\Experiments\FogBench\jmeter\bin\2019-01-26_16-10-00.630978\effective
+[2019-01-26 16:10:00,634 DEBUG Engine.Configuration] Dumping YAML config into C:\Users\jmcch\Documents\csc4006Gitlab\csc4006-EdgeBenchmarking\Experiments\FogBench\jmeter\bin\2019-01-26_16-10-00.630978\effective.yml
+[2019-01-26 16:10:00,635 DEBUG urllib3.connectionpool] Starting new HTTP connection (1): gettaurus.org:80
+[2019-01-26 16:10:00,652 DEBUG Engine.Configuration] Dumping JSON config into C:\Users\jmcch\Documents\csc4006Gitlab\csc4006-EdgeBenchmarking\Experiments\FogBench\jmeter\bin\2019-01-26_16-10-00.630978\effective.json
+[2019-01-26 16:10:00,652 DEBUG Engine] New artifact filename: C:\Users\jmcch\Documents\csc4006Gitlab\csc4006-EdgeBenchmarking\Experiments\FogBench\jmeter\bin\2019-01-26_16-10-00.630978\merged.yml
+[2019-01-26 16:10:00,653 DEBUG Engine.Configuration] Dumping YAML config into C:\Users\jmcch\Documents\csc4006Gitlab\csc4006-EdgeBenchmarking\Experiments\FogBench\jmeter\bin\2019-01-26_16-10-00.630978\merged.yml
+[2019-01-26 16:10:00,654 DEBUG Engine] New artifact filename: C:\Users\jmcch\Documents\csc4006Gitlab\csc4006-EdgeBenchmarking\Experiments\FogBench\jmeter\bin\2019-01-26_16-10-00.630978\merged.json
+[2019-01-26 16:10:00,654 DEBUG Engine.Configuration] Dumping JSON config into C:\Users\jmcch\Documents\csc4006Gitlab\csc4006-EdgeBenchmarking\Experiments\FogBench\jmeter\bin\2019-01-26_16-10-00.630978\merged.json
+[2019-01-26 16:10:00,655 DEBUG Engine] Add existing artifact (move=False): C:\Users\jmcch\AppData\Local\Temp\jmx_c4wbnegg.json
+[2019-01-26 16:10:00,655 DEBUG Engine] Copying C:\Users\jmcch\AppData\Local\Temp\jmx_c4wbnegg.json to C:\Users\jmcch\Documents\csc4006Gitlab\csc4006-EdgeBenchmarking\Experiments\FogBench\jmeter\bin\2019-01-26_16-10-00.630978\jmx_c4wbnegg.json
+[2019-01-26 16:10:00,657 DEBUG Engine.Environment] Replace 'TAURUS_ARTIFACTS_DIR' in environment
+[2019-01-26 16:10:00,657 DEBUG root] Closing log handler: C:\Users\jmcch\AppData\Local\Temp\bzt_b8exmvpe.log
+[2019-01-26 16:10:00,660 DEBUG root] Switched writing logs to C:\Users\jmcch\Documents\csc4006Gitlab\csc4006-EdgeBenchmarking\Experiments\FogBench\jmeter\bin\2019-01-26_16-10-00.630978\bzt.log
+[2019-01-26 16:10:00,660 DEBUG root] Linting config
+[2019-01-26 16:10:00,663 INFO Engine] Preparing...
+[2019-01-26 16:10:00,664 DEBUG Engine] Module config: consolidator {'class': 'bzt.modules.aggregator.ConsolidatingAggregator'}
+[2019-01-26 16:10:00,664 DEBUG root] Importing module: bzt.modules.aggregator
+[2019-01-26 16:10:00,852 DEBUG urllib3.connectionpool] http://gettaurus.org:80 "GET /updates/?version=1.13.2&installID=windows-80fa5b330391 HTTP/1.1" 200 60
+[2019-01-26 16:10:00,854 DEBUG Engine] Taurus updates info: {'latest': '1.13.2', 'needsUpgrade': False}
+[2019-01-26 16:10:00,854 DEBUG Engine] Installation is up-to-date
+[2019-01-26 16:10:02,134 DEBUG root] Loading class: 'ConsolidatingAggregator' from <module 'bzt.modules.aggregator' from 'C:\\Users\\jmcch\\AppData\\Local\\Taurus\\pkgs\\bzt\\modules\\aggregator.py'>
+[2019-01-26 16:10:02,134 DEBUG Engine.consolidator] Buffer scaling setup: percentile 95.0 from [0.0, 50.0, 90.0, 95.0, 99.0, 99.9, 100.0] selected
+[2019-01-26 16:10:02,134 DEBUG Engine] Module config: monitoring {'class': 'bzt.modules.monitoring.Monitoring'}
+[2019-01-26 16:10:02,134 DEBUG root] Importing module: bzt.modules.monitoring
+[2019-01-26 16:10:02,180 DEBUG root] Loading class: 'Monitoring' from <module 'bzt.modules.monitoring' from 'C:\\Users\\jmcch\\AppData\\Local\\Taurus\\pkgs\\bzt\\modules\\monitoring.py'>
+[2019-01-26 16:10:02,181 DEBUG Engine] Module config: local {'class': 'bzt.modules.provisioning.Local'}
+[2019-01-26 16:10:02,181 DEBUG root] Importing module: bzt.modules.provisioning
+[2019-01-26 16:10:02,181 DEBUG root] Loading class: 'Local' from <module 'bzt.modules.provisioning' from 'C:\\Users\\jmcch\\AppData\\Local\\Taurus\\pkgs\\bzt\\modules\\provisioning.py'>
+[2019-01-26 16:10:02,181 DEBUG Engine] Module config: jmeter {'class': 'bzt.modules.jmeter.JMeterExecutor', 'protocol-handlers': {'http': 'bzt.jmx.http.HTTPProtocolHandler'}, 'plugins': ['jpgc-casutg', 'jpgc-dummy', 'jpgc-ffw', 'jpgc-fifo', 'jpgc-functions', 'jpgc-json', 'jpgc-perfmon', 'jpgc-prmctl', 'jpgc-tst'], 'properties': {'jmeter.save.saveservice.autoflush': 'true', 'jmeter.save.saveservice.connect_time': 'true', 'jmeterengine.force.system.exit': 'true', 'summariser.name': ''}}
+[2019-01-26 16:10:02,181 DEBUG root] Importing module: bzt.modules.jmeter
+[2019-01-26 16:10:02,400 DEBUG root] Loading class: 'JMeterExecutor' from <module 'bzt.modules.jmeter' from 'C:\\Users\\jmcch\\AppData\\Local\\Taurus\\pkgs\\bzt\\modules\\jmeter.py'>
+[2019-01-26 16:10:02,400 DEBUG Engine.local] Preparing executor: jmeter/1728571807896
+[2019-01-26 16:10:02,401 DEBUG Engine.jmeter] Extract {'script': 'iPokeMon.jmx'} into scenarios
+[2019-01-26 16:10:02,423 DEBUG Engine] New artifact filename: C:\Users\jmcch\Documents\csc4006Gitlab\csc4006-EdgeBenchmarking\Experiments\FogBench\jmeter\bin\2019-01-26_16-10-00.630978\jmeter.log
+[2019-01-26 16:10:02,423 DEBUG Engine.jmeter] Checking if port 4445 is free
+[2019-01-26 16:10:02,424 DEBUG Engine.jmeter] Port 4445 is free
+[2019-01-26 16:10:02,424 DEBUG Engine.jmeter] Using port 4445 for management
+[2019-01-26 16:10:02,425 DEBUG Engine.jmeter] Additional properties: {'jmeter.save.saveservice.autoflush': 'true', 'jmeter.save.saveservice.connect_time': 'true', 'jmeterengine.force.system.exit': 'true', 'summariser.name': '', 'jmeterengine.nongui.port': 4445, 'jmeterengine.nongui.maxport': 4445, 'jmeter.save.saveservice.timestamp_format': 'ms', 'sampleresult.default.encoding': 'UTF-8', 'user.classpath': 'C:/Users/jmcch/Documents/csc4006Gitlab/csc4006-EdgeBenchmarking/Experiments/FogBench/jmeter/bin/2019-01-26_16-10-00.630978;C:/Users/jmcch/Documents/csc4006Gitlab/csc4006-EdgeBenchmarking/Experiments/FogBench/jmeter/bin'}
+[2019-01-26 16:10:02,425 DEBUG Engine] New artifact filename: C:\Users\jmcch\Documents\csc4006Gitlab\csc4006-EdgeBenchmarking\Experiments\FogBench\jmeter\bin\2019-01-26_16-10-00.630978\jmeter-bzt.properties
+[2019-01-26 16:10:02,426 DEBUG Engine.jmeter.JavaVM] Trying JavaVM: ['java', '-version']
+[2019-01-26 16:10:02,923 DEBUG Engine.jmeter.JavaVM] JavaVM output: java version "10.0.2" 2018-07-17
+Java(TM) SE Runtime Environment 18.3 (build 10.0.2+13)
+Java HotSpot(TM) 64-Bit Server VM 18.3 (build 10.0.2+13, mixed mode)
+[2019-01-26 16:10:02,923 DEBUG Engine.jmeter.TclLibrary] Checking if TCL_LIBRARY variable is present in environment
+[2019-01-26 16:10:02,923 DEBUG Engine.jmeter.TclLibrary] TCL_LIBRARY environment variable is present
+[2019-01-26 16:10:02,924 DEBUG Engine.jmeter.JMeter] Trying jmeter: C:\Users\jmcch\.bzt\jmeter-taurus\5.0\bin\jmeter.bat
+[2019-01-26 16:10:02,924 DEBUG bzt.utils] Executing shell: ['C:\\Users\\jmcch\\.bzt\\jmeter-taurus\\5.0\\bin\\jmeter.bat', '-j', 'C:\\Users\\jmcch\\AppData\\Local\\Temp\\jmeterne5ips7nlog', '--version'] at .

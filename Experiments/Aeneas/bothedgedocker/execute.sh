@@ -20,18 +20,21 @@ export PYTHONIOENCODING=UTF-8
 
 metricsValues=("NA" "NA" "NA" "NA" "NA" "NA" "NA" "NA" "NA" "NA" "NA")
 
+file=/mnt/assets/p*.txt
+new_file="${file%%.*}"
+
 start=$(date +%s.%N)
 	# python receiver.py yolov3-tiny.weights
-	scp -o StrictHostKeyChecking=no -i $edgeawskey2 $clouduser2@$cloudaddress2:/home/ubuntu/fogbench/assets/aeneas-assets/text/ ./
+	scp -o StrictHostKeyChecking=no -i $edgeawskey2 $clouduser2@$cloudaddress2:/home/ubuntu/fogbench/assets/aeneas-assets/text/$new_file.xhtml ./
 end=$(date +%s.%N)
 runtime=$( echo "$end - $start" | bc -l )
 echo "Cloud Transfer: completed in $runtime secs" | tee -a results.txt
 
-cp ./text/p001.xhtml ./text/aeneastext.xhtml
-mv ./text/aeneastext.xhtml /mnt/assets/
+#cp ./p*.xhtml ./aeneastext.xhtml
+#mv ./aeneastext.xhtml /mnt/assets/
 
 start=$(date +%s.%N)
-python -m aeneas.tools.execute_task     /mnt/assets/aeneasaudio.mp3     /mnt/assets/aeneastext.xhtml     "task_language=eng|os_task_file_format=smil|os_task_file_smil_audio_ref=audio.mp3|os_task_file_smil_page_ref=page.xhtml|is_text_type=unparsed|is_text_unparsed_id_regex=f[0-9]+|is_text_unparsed_id_sort=numeric"     map.smil
+python -m aeneas.tools.execute_task     /mnt/assets/aeneasaudio.mp3     ./$new_file.xhtml     "task_language=eng|os_task_file_format=smil|os_task_file_smil_audio_ref=audio.mp3|os_task_file_smil_page_ref=page.xhtml|is_text_type=unparsed|is_text_unparsed_id_regex=f[0-9]+|is_text_unparsed_id_sort=numeric"     map.smil
 end=$(date +%s.%N)
 runtime=$( echo "$end - $start" | bc -l )
 echo "Computation: completed in $runtime secs" | tee -a results.txt

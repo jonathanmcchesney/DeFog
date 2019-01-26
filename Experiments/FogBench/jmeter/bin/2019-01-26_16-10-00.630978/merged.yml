@@ -1,0 +1,6 @@
+---
+execution:
+- executor: jmeter
+  scenario:
+    script: iPokeMon.jmx
+
