@@ -1,0 +1,24 @@
+		Demystifying Fog Systems Interaction via Container based benchmarking
+	Created by: Jonathan McChesney, student at Queen's University Belfast
+	CSC4006 Final Year Research and Development Project
+
+*****************************************************************************
+*****************************************************************************
+
+Edge/Cloud Benchmarks: 
+*****************************************************************************
+
+Aeneas Benchmarks:
+*****************************************************************************
+
+Aeneas Benchmark Run 1:
+
+Cloud Transfer: completed in 1.116378337 secs
+Computation: completed in 2.586752445 secs
+Upload to S3 bucket: completed in 1.078646385 secs
+Total bytes transferred from the edge: 6272 bytes
+Transfer both pipeline edge application results to edge device: completed in 1.074592000 secs
+Transfer rate from the edge: metricsValues[11] bytes per second
+
+Round Trip Time: 4.608514245 secs
+Edge cost for application computation (estimated £0.008 per hour): £.0000057482

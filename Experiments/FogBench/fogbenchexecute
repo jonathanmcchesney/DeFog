@@ -489,19 +489,21 @@ function benchmark_aeneas {
 	
 	for file2 in ./assets/aeneas-assets/text/*.xhtml
 	do
-	
 		local arrTexts=("${arrTexts[@]}" "$file2")	
 	done	
 		
 		
 	total=${#arrAudios[@]}
+	
+	echo audios
+	echo $total
 	local count=1
 	
-	for (( i=0; i<=$(( $total -1 )); i++ ))
+	for (( j=0; j<=$(( $total -1 )); j++ ))
 	do 
-	
-		create_metric_array
+		
 		multiassets="true"
+		create_metric_array
 		
 		metricsValues[13]=$pipeline
 		metricsValues[14]="Aeneas"
@@ -510,14 +512,27 @@ function benchmark_aeneas {
 		echo Aeneas Benchmark Run $count: | tee -a $verbose_filename.txt
 		echo "" | tee -a $verbose_filename.txt
 		
-		asset=${arrAudios[$i]}
+		asset=${arrAudios[$j]}
 		newassetname=./assets/aeneas-assets/aeneasaudio.mp3
 
 		echo "Sending asset at path: " $asset "to application..."
 		scp_asset
 		echo "DONE"
 		
-		asset=${arrTexts[$i]}
+		local oldT1=${metricsValues[0]}
+		local oldbu1=${metricsValues[7]}
+		
+		echo memes
+		echo $oldT1
+		echo $oldbu1
+		
+		metricsValues[0]=$oldT1
+		metricsValues[7]=$oldbu1
+		
+		echo this here
+		echo	${metricsValues[0]}
+		echo 	${metricsValues[7]}	
+		asset=${arrTexts[$j]}
 		newassetname=./assets/aeneas-assets/aeneastext.xhtml
 		
 		if [ "$environment" != "-b" ];
@@ -536,16 +551,19 @@ function benchmark_aeneas {
 			
 			asset=./aeneas.txt
 			newassetname=./aeneas.txt
-
+			
 			echo "Sending asset at path: " $asset "to application..."
 			scp_asset
-			echo "DONE"			
+			echo "DONE"		
 		fi	
-		
+				
 		benchmark_application
 		
+		echo increment
+		echo $i
+		
 		((count++))
-
+	
 	done
 
 }
@@ -560,8 +578,8 @@ function scp_asset {
 	cp $asset $newassetname
 	local start=$(date +%s.%N)
 	
-	metricsValues[0]="NA"
-	metricsValues[7]="NA"
+	# metricsValues[0]="NA"
+	# metricsValues[7]="NA"
 		
 	if [ "$environment" == "-c" ];
 	then
@@ -569,9 +587,8 @@ function scp_asset {
 		local newboy=${transfer_cloud//[!0-9\\ \\.]/}
 		newarr1=(`echo ${newboy}`);
 		echo ${newarr1[@]}
-
-		
 	fi	
+	
 	if [ "$environment" == "-e" ] || [ "$environment" == "-b" ];
 	then
 		local transfer_edge=$(scp -v $newassetname $edgeuser@$edgeaddress:~/fogbench/assets 2>&1 | grep "Transferred") 		
@@ -582,18 +599,33 @@ function scp_asset {
 	
 	local end=$(date +%s.%N)
 	local runtime=$( echo "$end - $start" | bc -l )
+
+		echo before
+		echo ${metricsValues[0]}
+		echo $multiassets
 	
-	if [ "$multiassets" == "true" ] && [ "$metricsValues[0]" != "NA" ];
+	if [ "$multiassets" == "true" ] && [ "${metricsValues[0]}" != "NA" ];
 	then
-		metricsValues[0]+=$runtime
-		metricsValues[7]+=${newarr1[0]}
-		metricsValues[10]+=$(bc <<< "scale=10;${metricsValues[7]}/${metricsValues[0]}")
+		metricsValues[0]=$(bc <<< "${metricsValues[0]}+$runtime")
+		metricsValues[7]=$(bc <<< "${metricsValues[7]}+${newarr1[0]}")
+		local bytesUpVar=$(bc <<< "scale=10;${metricsValues[7]}/${metricsValues[0]}")
+		metricsValues[10]=$(bc <<< "${metricsValues[10]}+$bytesUpVar")
+		
+		echo after1
+		echo ${metricsValues[0]}
+		echo ${metricsValues[7]}
+		echo ${metricsValues[10]}
 	else
 		metricsValues[0]=$runtime
 		metricsValues[7]=${newarr1[0]}
 		metricsValues[10]=$(bc <<< "scale=10;${metricsValues[7]}/${metricsValues[0]}")
-
+		
+		echo after2
+		echo ${metricsValues[0]}
+		echo ${metricsValues[7]}
+		echo ${metricsValues[10]}
 	fi	
+	
 
 	rm $newassetname
 

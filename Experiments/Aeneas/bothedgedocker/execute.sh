@@ -25,10 +25,17 @@ new_file="${file%%.*}"
 
 start=$(date +%s.%N)
 	# python receiver.py yolov3-tiny.weights
-	scp -o StrictHostKeyChecking=no -i $edgeawskey2 $clouduser2@$cloudaddress2:/home/ubuntu/fogbench/assets/aeneas-assets/text/$new_file.xhtml ./
+	# scp -o StrictHostKeyChecking=no -i $edgeawskey2 $clouduser2@$cloudaddress2:/home/ubuntu/fogbench/assets/aeneas-assets/text/$new_file.xhtml ./
+	transfer_cloud=$(scp -v -o StrictHostKeyChecking=no -i $edgeawskey2 $clouduser2@$cloudaddress2:/home/ubuntu/fogbench/assets/aeneas-assets/text/$new_file.xhtml ./ 2>&1 | grep "Transferred") 		
+	nocarriagereturns=${transfer_cloud//[!0-9\\ \\.]/}
+	newarr1=(`echo ${nocarriagereturns}`);
+	echo cloud to edge transfer size etc
+	echo ${newarr1[@]}
 end=$(date +%s.%N)
 runtime=$( echo "$end - $start" | bc -l )
 echo "Cloud Transfer: completed in $runtime secs" | tee -a results.txt
+metricsValues[9]=${newarr1[1]}
+metricsValues[10]=$runtime
 
 #cp ./p*.xhtml ./aeneastext.xhtml
 #mv ./aeneastext.xhtml /mnt/assets/
