@@ -8,22 +8,40 @@
 Edge Only Benchmarks: 
 *****************************************************************************
 
-Transfer edge action results to edge device: completed in 1.360897800 secs
+Transfer edge action results to edge device: completed in .670472200 secs
 
-Pocket Sphinx Benchmarks:
+Aeneas Benchmarks:
 *****************************************************************************
 
-Pocket Sphinx Benchmark Run 1:
+Aeneas Benchmark Run 1:
 
-Transfer edge application results to edge device: completed in 1.084851700 secs
+Computation: completed in 8.182292633 secs
+Upload to S3 bucket: completed in 2.671047011 secs
+Total bytes transferred from the edge: 5800 bytes
+Transfer edge application results to edge device: completed in .801876400 secs
+Transfer rate from the edge: metricsValues[11] bytes per second
 
+Round Trip Time: 10.560653933 secs
+Edge cost for application computation (estimated £0.008 per hour): £.0000181826
 
-Pocket Sphinx Benchmark Run 2:
+Aeneas Benchmark Run 2:
 
-Transfer edge application results to edge device: completed in 1.096804700 secs
+Computation: completed in 5.060234030 secs
+Upload to S3 bucket: completed in 1.945357996 secs
+Total bytes transferred from the edge: 5800 bytes
+Transfer edge application results to edge device: completed in .737374600 secs
+Transfer rate from the edge: metricsValues[11] bytes per second
 
+Round Trip Time: 7.383058330 secs
+Edge cost for application computation (estimated £0.008 per hour): £.0000112448
 
-Pocket Sphinx Benchmark Run 3:
+Aeneas Benchmark Run 3:
 
-Transfer edge application results to edge device: completed in 1.189774400 secs
+Computation: completed in 5.064290554 secs
+Upload to S3 bucket: completed in 2.012625931 secs
+Total bytes transferred from the edge: 5800 bytes
+Transfer edge application results to edge device: completed in .777755000 secs
+Transfer rate from the edge: metricsValues[11] bytes per second
 
+Round Trip Time: 7.439506454 secs
+Edge cost for application computation (estimated £0.008 per hour): £.0000112538

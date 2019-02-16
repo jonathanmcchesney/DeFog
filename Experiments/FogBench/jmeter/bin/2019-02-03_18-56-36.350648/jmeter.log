@@ -1,0 +1,58 @@
+2019-02-03 18:56:43,239 INFO o.a.j.u.JMeterUtils: Setting Locale to en_EN
+2019-02-03 18:56:43,263 INFO o.a.j.JMeter: Loading user properties from: user.properties
+2019-02-03 18:56:43,265 INFO o.a.j.JMeter: Loading system properties from: system.properties
+2019-02-03 18:56:43,265 INFO o.a.j.JMeter: Loading additional properties from: C:\Users\jmcch\Documents\csc4006Gitlab\csc4006-EdgeBenchmarking\Experiments\FogBench\jmeter\bin\2019-02-03_18-56-36.350648\jmeter-bzt.properties
+2019-02-03 18:56:43,272 INFO o.a.j.JMeter: Copyright (c) 1998-2018 The Apache Software Foundation
+2019-02-03 18:56:43,272 INFO o.a.j.JMeter: Version 5.0 r1840935
+2019-02-03 18:56:43,272 INFO o.a.j.JMeter: java.version=10.0.2
+2019-02-03 18:56:43,272 INFO o.a.j.JMeter: java.vm.name=Java HotSpot(TM) 64-Bit Server VM
+2019-02-03 18:56:43,314 INFO o.a.j.JMeter: os.name=Windows 10
+2019-02-03 18:56:43,314 INFO o.a.j.JMeter: os.arch=amd64
+2019-02-03 18:56:43,314 INFO o.a.j.JMeter: os.version=10.0
+2019-02-03 18:56:43,314 INFO o.a.j.JMeter: file.encoding=Cp1252
+2019-02-03 18:56:43,314 INFO o.a.j.JMeter: Max memory     =1073741824
+2019-02-03 18:56:43,314 INFO o.a.j.JMeter: Available Processors =4
+2019-02-03 18:56:43,323 INFO o.a.j.JMeter: Default Locale=English (EN)
+2019-02-03 18:56:43,324 INFO o.a.j.JMeter: JMeter  Locale=English (EN)
+2019-02-03 18:56:43,324 INFO o.a.j.JMeter: JMeterHome=C:\Users\jmcch\Documents\csc4006Gitlab\csc4006-EdgeBenchmarking\Experiments\FogBench\jmeter
+2019-02-03 18:56:43,324 INFO o.a.j.JMeter: user.dir  =C:\Users\jmcch\Documents\csc4006Gitlab\csc4006-EdgeBenchmarking\Experiments\FogBench\jmeter\bin
+2019-02-03 18:56:43,325 INFO o.a.j.JMeter: PWD       =C:\Users\jmcch\Documents\csc4006Gitlab\csc4006-EdgeBenchmarking\Experiments\FogBench\jmeter\bin
+2019-02-03 18:56:43,327 INFO o.a.j.JMeter: IP: 192.168.56.1 Name: DESKTOP-JQOCQB2 FullName: DESKTOP-JQOCQB2
+2019-02-03 18:56:43,327 INFO o.a.j.JMeter: user.classpath=C:/Users/jmcch/Documents/csc4006Gitlab/csc4006-EdgeBenchmarking/Experiments/FogBench/jmeter/bin/2019-02-03_18-56-36.350648;C:/Users/jmcch/Documents/csc4006Gitlab/csc4006-EdgeBenchmarking/Experiments/FogBench/jmeter/bin
+2019-02-03 18:56:43,327 INFO o.a.j.JMeter: Adding to classpath and loader: C:/Users/jmcch/Documents/csc4006Gitlab/csc4006-EdgeBenchmarking/Experiments/FogBench/jmeter/bin/2019-02-03_18-56-36.350648
+2019-02-03 18:56:43,329 INFO o.a.j.JMeter: Adding to classpath and loader: C:/Users/jmcch/Documents/csc4006Gitlab/csc4006-EdgeBenchmarking/Experiments/FogBench/jmeter/bin
+2019-02-03 18:56:43,334 INFO o.a.j.s.FileServer: Default base='C:\Users\jmcch\Documents\csc4006Gitlab\csc4006-EdgeBenchmarking\Experiments\FogBench\jmeter\bin'
+2019-02-03 18:56:43,337 INFO o.a.j.s.FileServer: Set new base='C:\Users\jmcch\Documents\csc4006Gitlab\csc4006-EdgeBenchmarking\Experiments\FogBench\jmeter\bin'
+2019-02-03 18:56:43,483 INFO o.a.j.s.SaveService: Testplan (JMX) version: 2.2. Testlog (JTL) version: 2.2
+2019-02-03 18:56:43,504 INFO o.a.j.s.SaveService: Using SaveService properties version 5.0
+2019-02-03 18:56:43,508 INFO o.a.j.s.SaveService: Using SaveService properties file encoding UTF-8
+2019-02-03 18:56:43,511 INFO o.a.j.s.SaveService: Loading file: C:\Users\jmcch\Documents\csc4006Gitlab\csc4006-EdgeBenchmarking\Experiments\FogBench\jmeter\bin\modified_iPokeMon-7.jmx
+2019-02-03 18:56:43,593 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/html is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2019-02-03 18:56:43,593 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xhtml+xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2019-02-03 18:56:43,593 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2019-02-03 18:56:43,593 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2019-02-03 18:56:43,593 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/vnd.wap.wml is org.apache.jmeter.protocol.http.parser.RegexpHTMLParser
+2019-02-03 18:56:43,593 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/css is org.apache.jmeter.protocol.http.parser.CssParser
+2019-02-03 18:56:43,670 INFO o.a.j.e.StandardJMeterEngine: Running the test!
+2019-02-03 18:56:43,673 INFO o.a.j.s.SampleEvent: List of sample_variables: []
+2019-02-03 18:56:43,673 INFO o.a.j.s.SampleEvent: List of sample_variables: []
+2019-02-03 18:56:43,682 INFO o.a.j.e.u.CompoundVariable: Note: Function class names must contain the string: '.functions.'
+2019-02-03 18:56:43,682 INFO o.a.j.e.u.CompoundVariable: Note: Function class names must not contain the string: '.gui.'
+2019-02-03 18:56:44,057 INFO o.a.j.JMeter: Running test (1549220204057)
+2019-02-03 18:56:44,079 INFO o.a.j.e.StandardJMeterEngine: Starting ThreadGroup: 1 : ipokemon
+2019-02-03 18:56:44,079 INFO o.a.j.e.StandardJMeterEngine: Starting 5 threads for group ipokemon.
+2019-02-03 18:56:44,079 INFO o.a.j.e.StandardJMeterEngine: Thread will continue on error
+2019-02-03 18:56:44,079 INFO o.a.j.t.ThreadGroup: Starting thread group... number=1 threads=5 ramp-up=0 perThread=0.0 delayedStart=false
+2019-02-03 18:56:44,102 INFO o.a.j.t.ThreadGroup: Started thread group number 1
+2019-02-03 18:56:44,103 INFO o.a.j.e.StandardJMeterEngine: All thread groups have been started
+2019-02-03 18:56:44,103 INFO o.a.j.t.JMeterThread: Thread started: ipokemon 1-2
+2019-02-03 18:56:44,109 INFO o.a.j.t.JMeterThread: Thread started: ipokemon 1-3
+2019-02-03 18:56:44,106 INFO o.a.j.t.JMeterThread: Thread started: ipokemon 1-1
+2019-02-03 18:56:44,124 INFO o.a.j.t.JMeterThread: Thread started: ipokemon 1-5
+2019-02-03 18:56:44,126 INFO o.a.j.t.JMeterThread: Thread started: ipokemon 1-4
+2019-02-03 18:56:44,133 INFO o.a.j.p.h.s.HTTPHCAbstractImpl: Local host = DESKTOP-JQOCQB2
+2019-02-03 18:56:44,141 INFO o.a.j.p.h.s.HTTPHC4Impl: HTTP request retry count = 0
+2019-02-03 18:56:44,142 INFO o.a.j.s.SampleResult: Note: Sample TimeStamps are START times
+2019-02-03 18:56:44,143 INFO o.a.j.s.SampleResult: sampleresult.default.encoding is set to UTF-8
+2019-02-03 18:56:44,143 INFO o.a.j.s.SampleResult: sampleresult.useNanoTime=true
+2019-02-03 18:56:44,143 INFO o.a.j.s.SampleResult: sampleresult.nanoThreadSleep=5000

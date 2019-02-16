@@ -1,0 +1,50 @@
+		Demystifying Fog Systems Interaction via Container based benchmarking
+	Created by: Jonathan McChesney, student at Queen's University Belfast
+	CSC4006 Final Year Research and Development Project
+
+*****************************************************************************
+*****************************************************************************
+
+Cloud Only Benchmarks: 
+*****************************************************************************
+
+Transfer cloud action results to edge device: completed in 1.356712300 secs
+
+Pocket Sphinx Benchmarks:
+*****************************************************************************
+
+Pocket Sphinx Benchmark Run 1:
+
+Computation: completed in 2.640384031 secs
+Upload to S3 bucket: completed in 1.540430905 secs
+Total bytes transferred from the cloud: 3028 bytes
+Transfer cloud application results to edge device: completed in 1.713498400 secs
+Transfer rate from the cloud: metricsValues[11] bytes per second
+
+Round Trip Time: 5.935030531 secs
+Real Time Factor: .5793729838 secs
+Cloud cost for application computation (£0.016 per hour): £.0000117349
+
+Pocket Sphinx Benchmark Run 2:
+
+Computation: completed in 3.529748958 secs
+Upload to S3 bucket: completed in .481063762 secs
+Total bytes transferred from the cloud: 3036 bytes
+Transfer cloud application results to edge device: completed in 1.588506700 secs
+Transfer rate from the cloud: metricsValues[11] bytes per second
+
+Round Trip Time: 6.826758558 secs
+Real Time Factor: .5315386666 secs
+Cloud cost for application computation (£0.016 per hour): £.0000156876
+
+Pocket Sphinx Benchmark Run 3:
+
+Computation: completed in 3.911438541 secs
+Upload to S3 bucket: completed in .472598360 secs
+Total bytes transferred from the cloud: 3036 bytes
+Transfer cloud application results to edge device: completed in 1.600595500 secs
+Transfer rate from the cloud: metricsValues[11] bytes per second
+
+Round Trip Time: 7.134436841 secs
+Real Time Factor: .5890166273 secs
+Cloud cost for application computation (£0.016 per hour): £.0000173839

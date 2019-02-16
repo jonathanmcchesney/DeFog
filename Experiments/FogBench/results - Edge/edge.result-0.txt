@@ -1,0 +1,50 @@
+		Demystifying Fog Systems Interaction via Container based benchmarking
+	Created by: Jonathan McChesney, student at Queen's University Belfast
+	CSC4006 Final Year Research and Development Project
+
+*****************************************************************************
+*****************************************************************************
+
+Edge Only Benchmarks: 
+*****************************************************************************
+
+Transfer edge action results to edge device: completed in .816277800 secs
+
+Pocket Sphinx Benchmarks:
+*****************************************************************************
+
+Pocket Sphinx Benchmark Run 1:
+
+Computation: completed in 9.426263207 secs
+Upload to S3 bucket: completed in 2.085876138 secs
+Total bytes transferred from the edge: 3680 bytes
+Transfer edge application results to edge device: completed in 1.040717800 secs
+Transfer rate from the edge: metricsValues[11] bytes per second
+
+Round Trip Time: 11.524164607 secs
+Real Time Factor: 2.0683817870 secs
+Edge cost for application computation (estimated £0.008 per hour): £.0000209470
+
+Pocket Sphinx Benchmark Run 2:
+
+Computation: completed in 12.621597106 secs
+Upload to S3 bucket: completed in 1.262516585 secs
+Total bytes transferred from the edge: 3616 bytes
+Transfer edge application results to edge device: completed in 1.176221700 secs
+Transfer rate from the edge: metricsValues[11] bytes per second
+
+Round Trip Time: 14.873199406 secs
+Real Time Factor: 1.9006640347 secs
+Edge cost for application computation (estimated £0.008 per hour): £.0000280477
+
+Pocket Sphinx Benchmark Run 3:
+
+Computation: completed in 14.456731171 secs
+Upload to S3 bucket: completed in 1.366335479 secs
+Total bytes transferred from the edge: 3624 bytes
+Transfer edge application results to edge device: completed in 1.041910800 secs
+Transfer rate from the edge: metricsValues[11] bytes per second
+
+Round Trip Time: 16.696026471 secs
+Real Time Factor: 2.1770136351 secs
+Edge cost for application computation (estimated £0.008 per hour): £.0000321257

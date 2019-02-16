@@ -1,0 +1,950 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testResults version="1.2">
+<httpSample t="1125" lt="0" ts="1549220364343" s="false" lb="r/XX" rc="Non HTTP response code: org.apache.http.conn.HttpHostConnectException" rm="Non HTTP response message: Connect to 34.245.45.194:8000 [/34.245.45.194] failed: Connection refused: connect" tn="ipokemon 1-1" dt="text" de="" by="2803" ng="5" na="5">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Accept: application/json
+Accept-Encoding: gzip, deflate
+Accept-Language: en;q=1
+Connection: keep-alive
+key: iPokeMonClientIdentifier
+provider: 0
+User-Agent: Master/50 (iPhone; iOS 10.0; Scale/2.00)
+identity: 4bb0469d181f71294d545c1f5ab0194e
+Host: 34.245.45.194:8000
+</requestHeader>
+  <responseData class="java.lang.String">org.apache.http.conn.HttpHostConnectException: Connect to 34.245.45.194:8000 [/34.245.45.194] failed: Connection refused: connect&#xd;
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:159)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl$JMeterDefaultHttpClientConnectionOperator.connect(HTTPHC4Impl.java:331)&#xd;
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:373)&#xd;
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:394)&#xd;
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:237)&#xd;
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)&#xd;
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)&#xd;
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)&#xd;
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)&#xd;
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.executeRequest(HTTPHC4Impl.java:832)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.sample(HTTPHC4Impl.java:570)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy.sample(HTTPSamplerProxy.java:67)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1231)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1220)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:622)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:546)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:486)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:253)&#xd;
+	at java.base/java.lang.Thread.run(Unknown Source)&#xd;
+Caused by: java.net.ConnectException: Connection refused: connect&#xd;
+	at java.base/java.net.DualStackPlainSocketImpl.connect0(Native Method)&#xd;
+	at java.base/java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source)&#xd;
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(Unknown Source)&#xd;
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source)&#xd;
+	at java.base/java.net.AbstractPlainSocketImpl.connect(Unknown Source)&#xd;
+	at java.base/java.net.PlainSocketImpl.connect(Unknown Source)&#xd;
+	at java.base/java.net.SocksSocketImpl.connect(Unknown Source)&#xd;
+	at java.base/java.net.Socket.connect(Unknown Source)&#xd;
+	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:75)&#xd;
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)&#xd;
+	... 19 more&#xd;
+</responseData>
+  <cookies class="java.lang.String"></cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>http://34.245.45.194:8000/r/XX</java.net.URL>
+</httpSample>
+<httpSample t="1125" lt="0" ts="1549220364343" s="false" lb="uu" rc="Non HTTP response code: org.apache.http.conn.HttpHostConnectException" rm="Non HTTP response message: Connect to 34.245.45.194:8000 [/34.245.45.194] failed: Connection refused: connect" tn="ipokemon 1-2" dt="text" de="" by="2803" ng="5" na="5">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Accept: application/json
+Accept-Encoding: gzip, deflate
+Accept-Language: en;q=1
+Connection: keep-alive
+key: iPokeMonClientIdentifier
+provider: 0
+User-Agent: Master/50 (iPhone; iOS 10.0; Scale/2.00)
+identity: 4bb0469d181f71294d545c1f5ab0194e
+Content-Length: 302
+Content-Type: multipart/form-data; boundary=nxSlzBb5jVVhdU5ftT8hVe6hHkp_j3hKpu
+Host: 34.245.45.194:8000
+</requestHeader>
+  <responseData class="java.lang.String">org.apache.http.conn.HttpHostConnectException: Connect to 34.245.45.194:8000 [/34.245.45.194] failed: Connection refused: connect&#xd;
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:159)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl$JMeterDefaultHttpClientConnectionOperator.connect(HTTPHC4Impl.java:331)&#xd;
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:373)&#xd;
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:394)&#xd;
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:237)&#xd;
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)&#xd;
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)&#xd;
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)&#xd;
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)&#xd;
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.executeRequest(HTTPHC4Impl.java:832)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.sample(HTTPHC4Impl.java:570)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy.sample(HTTPSamplerProxy.java:67)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1231)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1220)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:622)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:546)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:486)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:253)&#xd;
+	at java.base/java.lang.Thread.run(Unknown Source)&#xd;
+Caused by: java.net.ConnectException: Connection refused: connect&#xd;
+	at java.base/java.net.DualStackPlainSocketImpl.connect0(Native Method)&#xd;
+	at java.base/java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source)&#xd;
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(Unknown Source)&#xd;
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source)&#xd;
+	at java.base/java.net.AbstractPlainSocketImpl.connect(Unknown Source)&#xd;
+	at java.base/java.net.PlainSocketImpl.connect(Unknown Source)&#xd;
+	at java.base/java.net.SocksSocketImpl.connect(Unknown Source)&#xd;
+	at java.base/java.net.Socket.connect(Unknown Source)&#xd;
+	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:75)&#xd;
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)&#xd;
+	... 19 more&#xd;
+</responseData>
+  <cookies class="java.lang.String"></cookies>
+  <method class="java.lang.String">POST</method>
+  <queryString class="java.lang.String">--nxSlzBb5jVVhdU5ftT8hVe6hHkp_j3hKpu&#xd;
+Content-Disposition: form-data; name=&quot;bag&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+0:1,300,2,300,3,300,9,300,13,300,19,300,22,300:23,300,6,300,15,300:4,300,7,300,16,300:1,295:0:0:0:0&#xd;
+--nxSlzBb5jVVhdU5ftT8hVe6hHkp_j3hKpu--&#xd;
+</queryString>
+  <java.net.URL>http://34.245.45.194:8000/uu</java.net.URL>
+</httpSample>
+<httpSample t="1125" lt="0" ts="1549220364343" s="false" lb="uu" rc="Non HTTP response code: org.apache.http.conn.HttpHostConnectException" rm="Non HTTP response message: Connect to 34.245.45.194:8000 [/34.245.45.194] failed: Connection refused: connect" tn="ipokemon 1-4" dt="text" de="" by="2803" ng="5" na="5">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Accept: application/json
+Accept-Encoding: gzip, deflate
+Accept-Language: en;q=1
+Connection: keep-alive
+key: iPokeMonClientIdentifier
+provider: 0
+User-Agent: Master/50 (iPhone; iOS 10.0; Scale/2.00)
+identity: 4bb0469d181f71294d545c1f5ab0194e
+Content-Length: 306
+Content-Type: multipart/form-data; boundary=sQK90G55qVuWKcucs83n98EynoXqVwQoiYm2
+Host: 34.245.45.194:8000
+</requestHeader>
+  <responseData class="java.lang.String">org.apache.http.conn.HttpHostConnectException: Connect to 34.245.45.194:8000 [/34.245.45.194] failed: Connection refused: connect&#xd;
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:159)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl$JMeterDefaultHttpClientConnectionOperator.connect(HTTPHC4Impl.java:331)&#xd;
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:373)&#xd;
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:394)&#xd;
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:237)&#xd;
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)&#xd;
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)&#xd;
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)&#xd;
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)&#xd;
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.executeRequest(HTTPHC4Impl.java:832)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.sample(HTTPHC4Impl.java:570)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy.sample(HTTPSamplerProxy.java:67)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1231)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1220)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:622)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:546)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:486)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:253)&#xd;
+	at java.base/java.lang.Thread.run(Unknown Source)&#xd;
+Caused by: java.net.ConnectException: Connection refused: connect&#xd;
+	at java.base/java.net.DualStackPlainSocketImpl.connect0(Native Method)&#xd;
+	at java.base/java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source)&#xd;
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(Unknown Source)&#xd;
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source)&#xd;
+	at java.base/java.net.AbstractPlainSocketImpl.connect(Unknown Source)&#xd;
+	at java.base/java.net.PlainSocketImpl.connect(Unknown Source)&#xd;
+	at java.base/java.net.SocksSocketImpl.connect(Unknown Source)&#xd;
+	at java.base/java.net.Socket.connect(Unknown Source)&#xd;
+	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:75)&#xd;
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)&#xd;
+	... 19 more&#xd;
+</responseData>
+  <cookies class="java.lang.String"></cookies>
+  <method class="java.lang.String">POST</method>
+  <queryString class="java.lang.String">--sQK90G55qVuWKcucs83n98EynoXqVwQoiYm2&#xd;
+Content-Disposition: form-data; name=&quot;bag&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+0:1,300,2,300,3,300,9,300,13,300,19,300,22,300:23,300,6,300,15,300:4,300,7,300,16,300:1,296:0:0:0:0&#xd;
+--sQK90G55qVuWKcucs83n98EynoXqVwQoiYm2--&#xd;
+</queryString>
+  <java.net.URL>http://34.245.45.194:8000/uu</java.net.URL>
+</httpSample>
+<httpSample t="1091" lt="0" ts="1549220365481" s="false" lb="u" rc="Non HTTP response code: org.apache.http.conn.HttpHostConnectException" rm="Non HTTP response message: Connect to 34.245.45.194:8000 [/34.245.45.194] failed: Connection refused: connect" tn="ipokemon 1-4" dt="text" de="" by="2803" ng="5" na="5">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Accept: application/json
+Accept-Encoding: gzip, deflate
+Accept-Language: en;q=1
+Connection: keep-alive
+key: iPokeMonClientIdentifier
+provider: 0
+User-Agent: Master/50 (iPhone; iOS 10.0; Scale/2.00)
+identity: 4bb0469d181f71294d545c1f5ab0194e
+Host: 34.245.45.194:8000
+</requestHeader>
+  <responseData class="java.lang.String">org.apache.http.conn.HttpHostConnectException: Connect to 34.245.45.194:8000 [/34.245.45.194] failed: Connection refused: connect&#xd;
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:159)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl$JMeterDefaultHttpClientConnectionOperator.connect(HTTPHC4Impl.java:331)&#xd;
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:373)&#xd;
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:394)&#xd;
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:237)&#xd;
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)&#xd;
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)&#xd;
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)&#xd;
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)&#xd;
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.executeRequest(HTTPHC4Impl.java:832)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.sample(HTTPHC4Impl.java:570)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy.sample(HTTPSamplerProxy.java:67)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1231)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1220)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:622)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:546)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:486)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:253)&#xd;
+	at java.base/java.lang.Thread.run(Unknown Source)&#xd;
+Caused by: java.net.ConnectException: Connection refused: connect&#xd;
+	at java.base/java.net.DualStackPlainSocketImpl.connect0(Native Method)&#xd;
+	at java.base/java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source)&#xd;
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(Unknown Source)&#xd;
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source)&#xd;
+	at java.base/java.net.AbstractPlainSocketImpl.connect(Unknown Source)&#xd;
+	at java.base/java.net.PlainSocketImpl.connect(Unknown Source)&#xd;
+	at java.base/java.net.SocksSocketImpl.connect(Unknown Source)&#xd;
+	at java.base/java.net.Socket.connect(Unknown Source)&#xd;
+	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:75)&#xd;
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)&#xd;
+	... 19 more&#xd;
+</responseData>
+  <cookies class="java.lang.String"></cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>http://34.245.45.194:8000/u</java.net.URL>
+</httpSample>
+<httpSample t="1098" lt="0" ts="1549220365479" s="false" lb="uu" rc="Non HTTP response code: org.apache.http.conn.HttpHostConnectException" rm="Non HTTP response message: Connect to 34.245.45.194:8000 [/34.245.45.194] failed: Connection refused: connect" tn="ipokemon 1-1" dt="text" de="" by="2803" ng="5" na="5">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Accept: application/json
+Accept-Encoding: gzip, deflate
+Accept-Language: en;q=1
+Connection: keep-alive
+key: iPokeMonClientIdentifier
+provider: 0
+User-Agent: Master/50 (iPhone; iOS 10.0; Scale/2.00)
+identity: 4bb0469d181f71294d545c1f5ab0194e
+Content-Length: 304
+Content-Type: multipart/form-data; boundary=Hk0QA38Rlb55H7w55vv7S_5HvI9uTzdKCvR
+Host: 34.245.45.194:8000
+</requestHeader>
+  <responseData class="java.lang.String">org.apache.http.conn.HttpHostConnectException: Connect to 34.245.45.194:8000 [/34.245.45.194] failed: Connection refused: connect&#xd;
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:159)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl$JMeterDefaultHttpClientConnectionOperator.connect(HTTPHC4Impl.java:331)&#xd;
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:373)&#xd;
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:394)&#xd;
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:237)&#xd;
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)&#xd;
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)&#xd;
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)&#xd;
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)&#xd;
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.executeRequest(HTTPHC4Impl.java:832)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.sample(HTTPHC4Impl.java:570)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy.sample(HTTPSamplerProxy.java:67)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1231)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1220)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:622)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:546)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:486)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:253)&#xd;
+	at java.base/java.lang.Thread.run(Unknown Source)&#xd;
+Caused by: java.net.ConnectException: Connection refused: connect&#xd;
+	at java.base/java.net.DualStackPlainSocketImpl.connect0(Native Method)&#xd;
+	at java.base/java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source)&#xd;
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(Unknown Source)&#xd;
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source)&#xd;
+	at java.base/java.net.AbstractPlainSocketImpl.connect(Unknown Source)&#xd;
+	at java.base/java.net.PlainSocketImpl.connect(Unknown Source)&#xd;
+	at java.base/java.net.SocksSocketImpl.connect(Unknown Source)&#xd;
+	at java.base/java.net.Socket.connect(Unknown Source)&#xd;
+	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:75)&#xd;
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)&#xd;
+	... 19 more&#xd;
+</responseData>
+  <cookies class="java.lang.String"></cookies>
+  <method class="java.lang.String">POST</method>
+  <queryString class="java.lang.String">--Hk0QA38Rlb55H7w55vv7S_5HvI9uTzdKCvR&#xd;
+Content-Disposition: form-data; name=&quot;bag&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+0:1,300,2,300,3,300,9,300,13,300,19,300,22,300:23,300,6,299,15,300:4,300,7,300,16,300:1,291:0:0:0:0&#xd;
+--Hk0QA38Rlb55H7w55vv7S_5HvI9uTzdKCvR--&#xd;
+</queryString>
+  <java.net.URL>http://34.245.45.194:8000/uu</java.net.URL>
+</httpSample>
+<httpSample t="1098" lt="0" ts="1549220366579" s="false" lb="uu" rc="Non HTTP response code: org.apache.http.conn.HttpHostConnectException" rm="Non HTTP response message: Connect to 34.245.45.194:8000 [/34.245.45.194] failed: Connection refused: connect" tn="ipokemon 1-1" dt="text" de="" by="2803" ng="5" na="5">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Accept: application/json
+Accept-Encoding: gzip, deflate
+Accept-Language: en;q=1
+Connection: keep-alive
+key: iPokeMonClientIdentifier
+provider: 0
+User-Agent: Master/50 (iPhone; iOS 10.0; Scale/2.00)
+identity: 4bb0469d181f71294d545c1f5ab0194e
+Content-Length: 294
+Content-Type: multipart/form-data; boundary=vunRRvl3HLMug5BM0MKe6a0q7h5UM7
+Host: 34.245.45.194:8000
+</requestHeader>
+  <responseData class="java.lang.String">org.apache.http.conn.HttpHostConnectException: Connect to 34.245.45.194:8000 [/34.245.45.194] failed: Connection refused: connect&#xd;
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:159)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl$JMeterDefaultHttpClientConnectionOperator.connect(HTTPHC4Impl.java:331)&#xd;
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:373)&#xd;
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:394)&#xd;
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:237)&#xd;
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)&#xd;
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)&#xd;
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)&#xd;
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)&#xd;
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.executeRequest(HTTPHC4Impl.java:832)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.sample(HTTPHC4Impl.java:570)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy.sample(HTTPSamplerProxy.java:67)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1231)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1220)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:622)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:546)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:486)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:253)&#xd;
+	at java.base/java.lang.Thread.run(Unknown Source)&#xd;
+Caused by: java.net.ConnectException: Connection refused: connect&#xd;
+	at java.base/java.net.DualStackPlainSocketImpl.connect0(Native Method)&#xd;
+	at java.base/java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source)&#xd;
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(Unknown Source)&#xd;
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source)&#xd;
+	at java.base/java.net.AbstractPlainSocketImpl.connect(Unknown Source)&#xd;
+	at java.base/java.net.PlainSocketImpl.connect(Unknown Source)&#xd;
+	at java.base/java.net.SocksSocketImpl.connect(Unknown Source)&#xd;
+	at java.base/java.net.Socket.connect(Unknown Source)&#xd;
+	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:75)&#xd;
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)&#xd;
+	... 19 more&#xd;
+</responseData>
+  <cookies class="java.lang.String"></cookies>
+  <method class="java.lang.String">POST</method>
+  <queryString class="java.lang.String">--vunRRvl3HLMug5BM0MKe6a0q7h5UM7&#xd;
+Content-Disposition: form-data; name=&quot;bag&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+0:1,300,2,300,3,300,9,300,13,300,19,300,22,300:23,300,6,300,15,300:4,300,7,300,16,300:1,296:0:0:0:0&#xd;
+--vunRRvl3HLMug5BM0MKe6a0q7h5UM7--&#xd;
+</queryString>
+  <java.net.URL>http://34.245.45.194:8000/uu</java.net.URL>
+</httpSample>
+<httpSample t="1094" lt="0" ts="1549220370701" s="false" lb="uu" rc="Non HTTP response code: org.apache.http.conn.HttpHostConnectException" rm="Non HTTP response message: Connect to 34.245.45.194:8000 [/34.245.45.194] failed: Connection refused: connect" tn="ipokemon 1-4" dt="text" de="" by="2803" ng="5" na="5">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Accept: application/json
+Accept-Encoding: gzip, deflate
+Accept-Language: en;q=1
+Connection: keep-alive
+key: iPokeMonClientIdentifier
+provider: 0
+User-Agent: Master/50 (iPhone; iOS 10.0; Scale/2.00)
+identity: 4bb0469d181f71294d545c1f5ab0194e
+Content-Length: 492
+Content-Type: multipart/form-data; boundary=R0nk9pM3iMnb59WqWERjCPLDmok0CHe0kaaGlST
+Host: 34.245.45.194:8000
+</requestHeader>
+  <responseData class="java.lang.String">org.apache.http.conn.HttpHostConnectException: Connect to 34.245.45.194:8000 [/34.245.45.194] failed: Connection refused: connect&#xd;
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:159)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl$JMeterDefaultHttpClientConnectionOperator.connect(HTTPHC4Impl.java:331)&#xd;
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:373)&#xd;
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:394)&#xd;
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:237)&#xd;
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)&#xd;
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)&#xd;
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)&#xd;
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)&#xd;
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.executeRequest(HTTPHC4Impl.java:832)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.sample(HTTPHC4Impl.java:570)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy.sample(HTTPSamplerProxy.java:67)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1231)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1220)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:622)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:546)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:486)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:253)&#xd;
+	at java.base/java.lang.Thread.run(Unknown Source)&#xd;
+Caused by: java.net.ConnectException: Connection refused: connect&#xd;
+	at java.base/java.net.DualStackPlainSocketImpl.connect0(Native Method)&#xd;
+	at java.base/java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source)&#xd;
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(Unknown Source)&#xd;
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source)&#xd;
+	at java.base/java.net.AbstractPlainSocketImpl.connect(Unknown Source)&#xd;
+	at java.base/java.net.PlainSocketImpl.connect(Unknown Source)&#xd;
+	at java.base/java.net.SocksSocketImpl.connect(Unknown Source)&#xd;
+	at java.base/java.net.Socket.connect(Unknown Source)&#xd;
+	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:75)&#xd;
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)&#xd;
+	... 19 more&#xd;
+</responseData>
+  <cookies class="java.lang.String"></cookies>
+  <method class="java.lang.String">POST</method>
+  <queryString class="java.lang.String">--R0nk9pM3iMnb59WqWERjCPLDmok0CHe0kaaGlST&#xd;
+Content-Disposition: form-data; name=&quot;pokedex&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+10400040&#xd;
+--R0nk9pM3iMnb59WqWERjCPLDmok0CHe0kaaGlST&#xd;
+Content-Disposition: form-data; name=&quot;bag&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+0:1,300,2,300,3,300,9,300,13,300,19,300,22,300:23,300,6,300,15,300:4,300,7,300,16,300:1,299:0:0:0:0&#xd;
+--R0nk9pM3iMnb59WqWERjCPLDmok0CHe0kaaGlST--&#xd;
+</queryString>
+  <java.net.URL>http://34.245.45.194:8000/uu</java.net.URL>
+</httpSample>
+<httpSample t="1089" lt="0" ts="1549220371797" s="false" lb="pma/23" rc="Non HTTP response code: org.apache.http.conn.HttpHostConnectException" rm="Non HTTP response message: Connect to 34.245.45.194:8000 [/34.245.45.194] failed: Connection refused: connect" tn="ipokemon 1-4" dt="text" de="" by="2803" ng="5" na="5">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Accept: application/json
+Accept-Encoding: gzip, deflate
+Accept-Language: en;q=1
+Connection: keep-alive
+key: iPokeMonClientIdentifier
+provider: 0
+User-Agent: Master/50 (iPhone; iOS 10.0; Scale/2.00)
+identity: 4bb0469d181f71294d545c1f5ab0194e
+Host: 34.245.45.194:8000
+</requestHeader>
+  <responseData class="java.lang.String">org.apache.http.conn.HttpHostConnectException: Connect to 34.245.45.194:8000 [/34.245.45.194] failed: Connection refused: connect&#xd;
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:159)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl$JMeterDefaultHttpClientConnectionOperator.connect(HTTPHC4Impl.java:331)&#xd;
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:373)&#xd;
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:394)&#xd;
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:237)&#xd;
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)&#xd;
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)&#xd;
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)&#xd;
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)&#xd;
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.executeRequest(HTTPHC4Impl.java:832)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.sample(HTTPHC4Impl.java:570)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy.sample(HTTPSamplerProxy.java:67)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1231)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1220)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:622)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:546)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:486)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:253)&#xd;
+	at java.base/java.lang.Thread.run(Unknown Source)&#xd;
+Caused by: java.net.ConnectException: Connection refused: connect&#xd;
+	at java.base/java.net.DualStackPlainSocketImpl.connect0(Native Method)&#xd;
+	at java.base/java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source)&#xd;
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(Unknown Source)&#xd;
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source)&#xd;
+	at java.base/java.net.AbstractPlainSocketImpl.connect(Unknown Source)&#xd;
+	at java.base/java.net.PlainSocketImpl.connect(Unknown Source)&#xd;
+	at java.base/java.net.SocksSocketImpl.connect(Unknown Source)&#xd;
+	at java.base/java.net.Socket.connect(Unknown Source)&#xd;
+	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:75)&#xd;
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)&#xd;
+	... 19 more&#xd;
+</responseData>
+  <cookies class="java.lang.String"></cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>http://34.245.45.194:8000/pma/23</java.net.URL>
+</httpSample>
+<httpSample t="1097" lt="0" ts="1549220372888" s="false" lb="uu" rc="Non HTTP response code: org.apache.http.conn.HttpHostConnectException" rm="Non HTTP response message: Connect to 34.245.45.194:8000 [/34.245.45.194] failed: Connection refused: connect" tn="ipokemon 1-4" dt="text" de="" by="2803" ng="5" na="5">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Accept: application/json
+Accept-Encoding: gzip, deflate
+Accept-Language: en;q=1
+Connection: keep-alive
+key: iPokeMonClientIdentifier
+provider: 0
+User-Agent: Master/50 (iPhone; iOS 10.0; Scale/2.00)
+identity: 4bb0469d181f71294d545c1f5ab0194e
+Content-Length: 296
+Content-Type: multipart/form-data; boundary=M5xcpfwB3K4TZRj3drot1e9O8ZPOz3m
+Host: 34.245.45.194:8000
+</requestHeader>
+  <responseData class="java.lang.String">org.apache.http.conn.HttpHostConnectException: Connect to 34.245.45.194:8000 [/34.245.45.194] failed: Connection refused: connect&#xd;
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:159)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl$JMeterDefaultHttpClientConnectionOperator.connect(HTTPHC4Impl.java:331)&#xd;
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:373)&#xd;
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:394)&#xd;
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:237)&#xd;
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)&#xd;
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)&#xd;
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)&#xd;
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)&#xd;
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.executeRequest(HTTPHC4Impl.java:832)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.sample(HTTPHC4Impl.java:570)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy.sample(HTTPSamplerProxy.java:67)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1231)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1220)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:622)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:546)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:486)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:253)&#xd;
+	at java.base/java.lang.Thread.run(Unknown Source)&#xd;
+Caused by: java.net.ConnectException: Connection refused: connect&#xd;
+	at java.base/java.net.DualStackPlainSocketImpl.connect0(Native Method)&#xd;
+	at java.base/java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source)&#xd;
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(Unknown Source)&#xd;
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source)&#xd;
+	at java.base/java.net.AbstractPlainSocketImpl.connect(Unknown Source)&#xd;
+	at java.base/java.net.PlainSocketImpl.connect(Unknown Source)&#xd;
+	at java.base/java.net.SocksSocketImpl.connect(Unknown Source)&#xd;
+	at java.base/java.net.Socket.connect(Unknown Source)&#xd;
+	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:75)&#xd;
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)&#xd;
+	... 19 more&#xd;
+</responseData>
+  <cookies class="java.lang.String"></cookies>
+  <method class="java.lang.String">POST</method>
+  <queryString class="java.lang.String">--M5xcpfwB3K4TZRj3drot1e9O8ZPOz3m&#xd;
+Content-Disposition: form-data; name=&quot;bag&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+0:1,300,2,300,3,300,9,300,13,300,19,300,22,300:23,300,6,299,15,300:4,300,7,300,16,300:1,293:0:0:0:0&#xd;
+--M5xcpfwB3K4TZRj3drot1e9O8ZPOz3m--&#xd;
+</queryString>
+  <java.net.URL>http://34.245.45.194:8000/uu</java.net.URL>
+</httpSample>
+<httpSample t="1096" lt="0" ts="1549220381264" s="false" lb="cu" rc="Non HTTP response code: org.apache.http.conn.HttpHostConnectException" rm="Non HTTP response message: Connect to 34.245.45.194:8000 [/34.245.45.194] failed: Connection refused: connect" tn="ipokemon 1-2" dt="text" de="" by="2803" ng="5" na="5">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Accept: application/json
+Accept-Encoding: gzip, deflate
+Accept-Language: en;q=1
+Connection: keep-alive
+key: iPokeMonClientIdentifier
+provider: 0
+User-Agent: Master/50 (iPhone; iOS 10.0; Scale/2.00)
+identity: 4bb0469d181f71294d545c1f5ab0194e
+Content-Length: 201
+Content-Type: multipart/form-data; boundary=Ms3sHujcBgTc4vKoz9QgasRwWBlR3Xy
+Host: 34.245.45.194:8000
+</requestHeader>
+  <responseData class="java.lang.String">org.apache.http.conn.HttpHostConnectException: Connect to 34.245.45.194:8000 [/34.245.45.194] failed: Connection refused: connect&#xd;
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:159)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl$JMeterDefaultHttpClientConnectionOperator.connect(HTTPHC4Impl.java:331)&#xd;
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:373)&#xd;
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:394)&#xd;
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:237)&#xd;
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)&#xd;
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)&#xd;
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)&#xd;
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)&#xd;
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.executeRequest(HTTPHC4Impl.java:832)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.sample(HTTPHC4Impl.java:570)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy.sample(HTTPSamplerProxy.java:67)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1231)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1220)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:622)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:546)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:486)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:253)&#xd;
+	at java.base/java.lang.Thread.run(Unknown Source)&#xd;
+Caused by: java.net.ConnectException: Connection refused: connect&#xd;
+	at java.base/java.net.DualStackPlainSocketImpl.connect0(Native Method)&#xd;
+	at java.base/java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source)&#xd;
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(Unknown Source)&#xd;
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source)&#xd;
+	at java.base/java.net.AbstractPlainSocketImpl.connect(Unknown Source)&#xd;
+	at java.base/java.net.PlainSocketImpl.connect(Unknown Source)&#xd;
+	at java.base/java.net.SocksSocketImpl.connect(Unknown Source)&#xd;
+	at java.base/java.net.Socket.connect(Unknown Source)&#xd;
+	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:75)&#xd;
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)&#xd;
+	... 19 more&#xd;
+</responseData>
+  <cookies class="java.lang.String"></cookies>
+  <method class="java.lang.String">POST</method>
+  <queryString class="java.lang.String">--Ms3sHujcBgTc4vKoz9QgasRwWBlR3Xy&#xd;
+Content-Disposition: form-data; name=&quot;name&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+Nan&#xd;
+--Ms3sHujcBgTc4vKoz9QgasRwWBlR3Xy--&#xd;
+</queryString>
+  <java.net.URL>http://34.245.45.194:8000/cu</java.net.URL>
+</httpSample>
+<httpSample t="1110" lt="0" ts="1549220382361" s="false" lb="uu" rc="Non HTTP response code: org.apache.http.conn.HttpHostConnectException" rm="Non HTTP response message: Connect to 34.245.45.194:8000 [/34.245.45.194] failed: Connection refused: connect" tn="ipokemon 1-2" dt="text" de="" by="2803" ng="5" na="5">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Accept: application/json
+Accept-Encoding: gzip, deflate
+Accept-Language: en;q=1
+Connection: keep-alive
+key: iPokeMonClientIdentifier
+provider: 0
+User-Agent: Master/50 (iPhone; iOS 10.0; Scale/2.00)
+identity: 4bb0469d181f71294d545c1f5ab0194e
+Content-Length: 314
+Content-Type: multipart/form-data; boundary=vwXsEyFnSaHYMjj4jNmloUzGA2XAkNDCUOt48Mqu
+Host: 34.245.45.194:8000
+</requestHeader>
+  <responseData class="java.lang.String">org.apache.http.conn.HttpHostConnectException: Connect to 34.245.45.194:8000 [/34.245.45.194] failed: Connection refused: connect&#xd;
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:159)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl$JMeterDefaultHttpClientConnectionOperator.connect(HTTPHC4Impl.java:331)&#xd;
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:373)&#xd;
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:394)&#xd;
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:237)&#xd;
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)&#xd;
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)&#xd;
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)&#xd;
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)&#xd;
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.executeRequest(HTTPHC4Impl.java:832)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.sample(HTTPHC4Impl.java:570)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy.sample(HTTPSamplerProxy.java:67)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1231)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1220)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:622)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:546)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:486)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:253)&#xd;
+	at java.base/java.lang.Thread.run(Unknown Source)&#xd;
+Caused by: java.net.ConnectException: Connection refused: connect&#xd;
+	at java.base/java.net.DualStackPlainSocketImpl.connect0(Native Method)&#xd;
+	at java.base/java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source)&#xd;
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(Unknown Source)&#xd;
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source)&#xd;
+	at java.base/java.net.AbstractPlainSocketImpl.connect(Unknown Source)&#xd;
+	at java.base/java.net.PlainSocketImpl.connect(Unknown Source)&#xd;
+	at java.base/java.net.SocksSocketImpl.connect(Unknown Source)&#xd;
+	at java.base/java.net.Socket.connect(Unknown Source)&#xd;
+	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:75)&#xd;
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)&#xd;
+	... 19 more&#xd;
+</responseData>
+  <cookies class="java.lang.String"></cookies>
+  <method class="java.lang.String">POST</method>
+  <queryString class="java.lang.String">--vwXsEyFnSaHYMjj4jNmloUzGA2XAkNDCUOt48Mqu&#xd;
+Content-Disposition: form-data; name=&quot;bag&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+0:1,300,2,300,3,300,9,300,13,300,19,300,22,300:23,300,6,299,15,300:4,300,7,300,16,300:1,294:0:0:0:0&#xd;
+--vwXsEyFnSaHYMjj4jNmloUzGA2XAkNDCUOt48Mqu--&#xd;
+</queryString>
+  <java.net.URL>http://34.245.45.194:8000/uu</java.net.URL>
+</httpSample>
+<httpSample t="1095" lt="0" ts="1549220383473" s="false" lb="uu" rc="Non HTTP response code: org.apache.http.conn.HttpHostConnectException" rm="Non HTTP response message: Connect to 34.245.45.194:8000 [/34.245.45.194] failed: Connection refused: connect" tn="ipokemon 1-2" dt="text" de="" by="2803" ng="5" na="5">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Accept: application/json
+Accept-Encoding: gzip, deflate
+Accept-Language: en;q=1
+Connection: keep-alive
+key: iPokeMonClientIdentifier
+provider: 0
+User-Agent: Master/50 (iPhone; iOS 10.0; Scale/2.00)
+identity: 4bb0469d181f71294d545c1f5ab0194e
+Content-Length: 214
+Content-Type: multipart/form-data; boundary=D5cbc9UIPaCyAm_6oGLVI9wFW_T-MQO915AdE
+Host: 34.245.45.194:8000
+</requestHeader>
+  <responseData class="java.lang.String">org.apache.http.conn.HttpHostConnectException: Connect to 34.245.45.194:8000 [/34.245.45.194] failed: Connection refused: connect&#xd;
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:159)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl$JMeterDefaultHttpClientConnectionOperator.connect(HTTPHC4Impl.java:331)&#xd;
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:373)&#xd;
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:394)&#xd;
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:237)&#xd;
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)&#xd;
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)&#xd;
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)&#xd;
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)&#xd;
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.executeRequest(HTTPHC4Impl.java:832)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.sample(HTTPHC4Impl.java:570)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy.sample(HTTPSamplerProxy.java:67)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1231)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1220)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:622)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:546)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:486)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:253)&#xd;
+	at java.base/java.lang.Thread.run(Unknown Source)&#xd;
+Caused by: java.net.ConnectException: Connection refused: connect&#xd;
+	at java.base/java.net.DualStackPlainSocketImpl.connect0(Native Method)&#xd;
+	at java.base/java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source)&#xd;
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(Unknown Source)&#xd;
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source)&#xd;
+	at java.base/java.net.AbstractPlainSocketImpl.connect(Unknown Source)&#xd;
+	at java.base/java.net.PlainSocketImpl.connect(Unknown Source)&#xd;
+	at java.base/java.net.SocksSocketImpl.connect(Unknown Source)&#xd;
+	at java.base/java.net.Socket.connect(Unknown Source)&#xd;
+	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:75)&#xd;
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)&#xd;
+	... 19 more&#xd;
+</responseData>
+  <cookies class="java.lang.String"></cookies>
+  <method class="java.lang.String">POST</method>
+  <queryString class="java.lang.String">--D5cbc9UIPaCyAm_6oGLVI9wFW_T-MQO915AdE&#xd;
+Content-Disposition: form-data; name=&quot;money&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+800&#xd;
+--D5cbc9UIPaCyAm_6oGLVI9wFW_T-MQO915AdE--&#xd;
+</queryString>
+  <java.net.URL>http://34.245.45.194:8000/uu</java.net.URL>
+</httpSample>
+<httpSample t="1108" lt="0" ts="1549220383595" s="false" lb="pma/1" rc="Non HTTP response code: org.apache.http.conn.HttpHostConnectException" rm="Non HTTP response message: Connect to 34.245.45.194:8000 [/34.245.45.194] failed: Connection refused: connect" tn="ipokemon 1-1" dt="text" de="" by="2803" ng="5" na="5">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Accept: application/json
+Accept-Encoding: gzip, deflate
+Accept-Language: en;q=1
+Connection: keep-alive
+key: iPokeMonClientIdentifier
+provider: 0
+User-Agent: Master/50 (iPhone; iOS 10.0; Scale/2.00)
+identity: 4bb0469d181f71294d545c1f5ab0194e
+Host: 34.245.45.194:8000
+</requestHeader>
+  <responseData class="java.lang.String">org.apache.http.conn.HttpHostConnectException: Connect to 34.245.45.194:8000 [/34.245.45.194] failed: Connection refused: connect&#xd;
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:159)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl$JMeterDefaultHttpClientConnectionOperator.connect(HTTPHC4Impl.java:331)&#xd;
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:373)&#xd;
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:394)&#xd;
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:237)&#xd;
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)&#xd;
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)&#xd;
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)&#xd;
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)&#xd;
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.executeRequest(HTTPHC4Impl.java:832)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.sample(HTTPHC4Impl.java:570)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy.sample(HTTPSamplerProxy.java:67)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1231)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1220)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:622)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:546)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:486)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:253)&#xd;
+	at java.base/java.lang.Thread.run(Unknown Source)&#xd;
+Caused by: java.net.ConnectException: Connection refused: connect&#xd;
+	at java.base/java.net.DualStackPlainSocketImpl.connect0(Native Method)&#xd;
+	at java.base/java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source)&#xd;
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(Unknown Source)&#xd;
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source)&#xd;
+	at java.base/java.net.AbstractPlainSocketImpl.connect(Unknown Source)&#xd;
+	at java.base/java.net.PlainSocketImpl.connect(Unknown Source)&#xd;
+	at java.base/java.net.SocksSocketImpl.connect(Unknown Source)&#xd;
+	at java.base/java.net.Socket.connect(Unknown Source)&#xd;
+	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:75)&#xd;
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)&#xd;
+	... 19 more&#xd;
+</responseData>
+  <cookies class="java.lang.String"></cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>http://34.245.45.194:8000/pma/1</java.net.URL>
+</httpSample>
+<httpSample t="1104" lt="0" ts="1549220384568" s="false" lb="upm" rc="Non HTTP response code: org.apache.http.conn.HttpHostConnectException" rm="Non HTTP response message: Connect to 34.245.45.194:8000 [/34.245.45.194] failed: Connection refused: connect" tn="ipokemon 1-2" dt="text" de="" by="2803" ng="5" na="5">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Accept: application/json
+Accept-Encoding: gzip, deflate
+Accept-Language: en;q=1
+Connection: keep-alive
+key: iPokeMonClientIdentifier
+provider: 0
+User-Agent: Master/50 (iPhone; iOS 10.0; Scale/2.00)
+identity: 4bb0469d181f71294d545c1f5ab0194e
+Content-Length: 2320
+Content-Type: multipart/form-data; boundary=J7iLG7EsPz1-glJmzHp9Y8Hsapia6AlAxAHMPn
+Host: 34.245.45.194:8000
+</requestHeader>
+  <responseData class="java.lang.String">org.apache.http.conn.HttpHostConnectException: Connect to 34.245.45.194:8000 [/34.245.45.194] failed: Connection refused: connect&#xd;
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:159)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl$JMeterDefaultHttpClientConnectionOperator.connect(HTTPHC4Impl.java:331)&#xd;
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:373)&#xd;
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:394)&#xd;
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:237)&#xd;
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)&#xd;
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)&#xd;
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)&#xd;
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)&#xd;
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.executeRequest(HTTPHC4Impl.java:832)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.sample(HTTPHC4Impl.java:570)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy.sample(HTTPSamplerProxy.java:67)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1231)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1220)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:622)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:546)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:486)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:253)&#xd;
+	at java.base/java.lang.Thread.run(Unknown Source)&#xd;
+Caused by: java.net.ConnectException: Connection refused: connect&#xd;
+	at java.base/java.net.DualStackPlainSocketImpl.connect0(Native Method)&#xd;
+	at java.base/java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source)&#xd;
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(Unknown Source)&#xd;
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source)&#xd;
+	at java.base/java.net.AbstractPlainSocketImpl.connect(Unknown Source)&#xd;
+	at java.base/java.net.PlainSocketImpl.connect(Unknown Source)&#xd;
+	at java.base/java.net.SocksSocketImpl.connect(Unknown Source)&#xd;
+	at java.base/java.net.Socket.connect(Unknown Source)&#xd;
+	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:75)&#xd;
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)&#xd;
+	... 19 more&#xd;
+</responseData>
+  <cookies class="java.lang.String"></cookies>
+  <method class="java.lang.String">POST</method>
+  <queryString class="java.lang.String">--J7iLG7EsPz1-glJmzHp9Y8Hsapia6AlAxAHMPn&#xd;
+Content-Disposition: form-data; name=&quot;box&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+0&#xd;
+--J7iLG7EsPz1-glJmzHp9Y8Hsapia6AlAxAHMPn&#xd;
+Content-Disposition: form-data; name=&quot;exp&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+560&#xd;
+--J7iLG7EsPz1-glJmzHp9Y8Hsapia6AlAxAHMPn&#xd;
+Content-Disposition: form-data; name=&quot;fourMoves&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+16,30,30,144,35,35,145,30,30&#xd;
+--J7iLG7EsPz1-glJmzHp9Y8Hsapia6AlAxAHMPn&#xd;
+Content-Disposition: form-data; name=&quot;gender&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+1&#xd;
+--J7iLG7EsPz1-glJmzHp9Y8Hsapia6AlAxAHMPn&#xd;
+Content-Disposition: form-data; name=&quot;happiness&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+70&#xd;
+--J7iLG7EsPz1-glJmzHp9Y8Hsapia6AlAxAHMPn&#xd;
+Content-Disposition: form-data; name=&quot;hp&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+28&#xd;
+--J7iLG7EsPz1-glJmzHp9Y8Hsapia6AlAxAHMPn&#xd;
+Content-Disposition: form-data; name=&quot;level&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+10&#xd;
+--J7iLG7EsPz1-glJmzHp9Y8Hsapia6AlAxAHMPn&#xd;
+Content-Disposition: form-data; name=&quot;maxStats&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+28,15,18,15,18,14&#xd;
+--J7iLG7EsPz1-glJmzHp9Y8Hsapia6AlAxAHMPn&#xd;
+Content-Disposition: form-data; name=&quot;memo&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+PMSMemo001&#xd;
+--J7iLG7EsPz1-glJmzHp9Y8Hsapia6AlAxAHMPn&#xd;
+Content-Disposition: form-data; name=&quot;sid&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+7&#xd;
+--J7iLG7EsPz1-glJmzHp9Y8Hsapia6AlAxAHMPn&#xd;
+Content-Disposition: form-data; name=&quot;status&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+0&#xd;
+--J7iLG7EsPz1-glJmzHp9Y8Hsapia6AlAxAHMPn&#xd;
+Content-Disposition: form-data; name=&quot;toNextLevel&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+182&#xd;
+--J7iLG7EsPz1-glJmzHp9Y8Hsapia6AlAxAHMPn&#xd;
+Content-Disposition: form-data; name=&quot;uid&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+4&#xd;
+--J7iLG7EsPz1-glJmzHp9Y8Hsapia6AlAxAHMPn--&#xd;
+</queryString>
+  <java.net.URL>http://34.245.45.194:8000/upm</java.net.URL>
+</httpSample>
+<httpSample t="1105" lt="0" ts="1549220384704" s="false" lb="wpm" rc="Non HTTP response code: org.apache.http.conn.HttpHostConnectException" rm="Non HTTP response message: Connect to 34.245.45.194:8000 [/34.245.45.194] failed: Connection refused: connect" tn="ipokemon 1-1" dt="text" de="" by="2803" ng="5" na="5">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Accept: application/json
+Accept-Encoding: gzip, deflate
+Accept-Language: en;q=1
+Connection: keep-alive
+key: iPokeMonClientIdentifier
+provider: 0
+User-Agent: Master/50 (iPhone; iOS 10.0; Scale/2.00)
+identity: 4bb0469d181f71294d545c1f5ab0194e
+Host: 34.245.45.194:8000
+</requestHeader>
+  <responseData class="java.lang.String">org.apache.http.conn.HttpHostConnectException: Connect to 34.245.45.194:8000 [/34.245.45.194] failed: Connection refused: connect&#xd;
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:159)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl$JMeterDefaultHttpClientConnectionOperator.connect(HTTPHC4Impl.java:331)&#xd;
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:373)&#xd;
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:394)&#xd;
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:237)&#xd;
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)&#xd;
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)&#xd;
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)&#xd;
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)&#xd;
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.executeRequest(HTTPHC4Impl.java:832)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.sample(HTTPHC4Impl.java:570)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy.sample(HTTPSamplerProxy.java:67)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1231)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1220)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:622)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:546)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:486)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:253)&#xd;
+	at java.base/java.lang.Thread.run(Unknown Source)&#xd;
+Caused by: java.net.ConnectException: Connection refused: connect&#xd;
+	at java.base/java.net.DualStackPlainSocketImpl.connect0(Native Method)&#xd;
+	at java.base/java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source)&#xd;
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(Unknown Source)&#xd;
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source)&#xd;
+	at java.base/java.net.AbstractPlainSocketImpl.connect(Unknown Source)&#xd;
+	at java.base/java.net.PlainSocketImpl.connect(Unknown Source)&#xd;
+	at java.base/java.net.SocksSocketImpl.connect(Unknown Source)&#xd;
+	at java.base/java.net.Socket.connect(Unknown Source)&#xd;
+	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:75)&#xd;
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)&#xd;
+	... 19 more&#xd;
+</responseData>
+  <cookies class="java.lang.String"></cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>http://34.245.45.194:8000/wpm?code=CN</java.net.URL>
+</httpSample>

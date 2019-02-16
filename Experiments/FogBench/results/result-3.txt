@@ -1,27 +1,14 @@
-Computation: completed in 2.833083105 secs
-Upload to S3 bucket: completed in .871579037 secs
-Transfer cloud action results to edge device: completed in 2.401205400 secs
+		Demystifying Fog Systems Interaction via Container based benchmarking
+	Created by: Jonathan McChesney, student at Queen's University Belfast
+	CSC4006 Final Year Research and Development Project
 
-Pocket Sphinx Benchmarks:
+*****************************************************************************
 *****************************************************************************
 
-Pocket Sphinx Benchmark Run 1:
+Edge Only Benchmarks: 
+*****************************************************************************
 
-Computation: completed in 2.435205425 secs
-Upload to S3 bucket: completed in .621062713 secs
-Transfer cloud application results to edge device: completed in 2.111490900 secs
+Transfer edge action results to edge device: completed in .593120900 secs
 
-
-Pocket Sphinx Benchmark Run 2:
-
-Computation: completed in 3.645540066 secs
-Upload to S3 bucket: completed in .305914445 secs
-Transfer cloud application results to edge device: completed in 2.204406900 secs
-
-
-Pocket Sphinx Benchmark Run 3:
-
-Computation: completed in 3.825053485 secs
-Upload to S3 bucket: completed in .297234206 secs
-Transfer cloud application results to edge device: completed in 2.101849100 secs
-
+iPokeMon Benchmarks:
+*****************************************************************************

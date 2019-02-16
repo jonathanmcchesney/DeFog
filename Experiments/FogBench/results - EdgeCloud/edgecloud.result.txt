@@ -1,0 +1,48 @@
+		Demystifying Fog Systems Interaction via Container based benchmarking
+	Created by: Jonathan McChesney, student at Queen's University Belfast
+	CSC4006 Final Year Research and Development Project
+
+*****************************************************************************
+*****************************************************************************
+
+Edge/Cloud Benchmarks: 
+*****************************************************************************
+
+YOLO Benchmarks:
+*****************************************************************************
+
+YOLO Benchmark Run 1:
+
+Cloud Transfer: completed in 23.523770399 secs
+Computation: completed in 13.673076806 secs
+Upload to S3 bucket: completed in 2.809195205 secs
+Total bytes transferred from the edge: 879776 bytes
+Transfer both pipeline edge application results to edge device: completed in 1.582627500 secs
+Transfer rate from the edge: metricsValues[11] bytes per second
+
+Round Trip Time: 16.329440806 secs
+Edge cost for application computation (estimated £0.008 per hour): £.0000303843
+
+YOLO Benchmark Run 2:
+
+Cloud Transfer: completed in 23.555203961 secs
+Computation: completed in 11.762594188 secs
+Upload to S3 bucket: completed in 2.333295407 secs
+Total bytes transferred from the edge: 838304 bytes
+Transfer both pipeline edge application results to edge device: completed in 1.385032500 secs
+Transfer rate from the edge: metricsValues[11] bytes per second
+
+Round Trip Time: 14.191534888 secs
+Edge cost for application computation (estimated £0.008 per hour): £.0000261388
+
+YOLO Benchmark Run 3:
+
+Cloud Transfer: completed in 25.090247520 secs
+Computation: completed in 11.707677782 secs
+Upload to S3 bucket: completed in 2.082452991 secs
+Total bytes transferred from the edge: 766108 bytes
+Transfer both pipeline edge application results to edge device: completed in 1.332524300 secs
+Transfer rate from the edge: metricsValues[11] bytes per second
+
+Round Trip Time: 14.195203282 secs
+Edge cost for application computation (estimated £0.008 per hour): £.0000260168

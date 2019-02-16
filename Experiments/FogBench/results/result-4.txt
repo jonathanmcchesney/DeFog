@@ -5,25 +5,43 @@
 *****************************************************************************
 *****************************************************************************
 
-Edge Only Benchmarks: 
+Cloud Only Benchmarks: 
 *****************************************************************************
 
-Transfer edge action results to edge device: completed in 1.207863400 secs
+Transfer cloud action results to edge device: completed in 1.529358400 secs
 
-Pocket Sphinx Benchmarks:
+YOLO Benchmarks:
 *****************************************************************************
 
-Pocket Sphinx Benchmark Run 1:
+YOLO Benchmark Run 1:
 
-Transfer edge application results to edge device: completed in 1.118068200 secs
+Computation: completed in 1.488622378 secs
+Upload to S3 bucket: completed in .893876374 secs
+Total bytes transferred from the cloud: 879104 bytes
+Transfer cloud application results to edge device: completed in 2.437220400 secs
+Transfer rate from the cloud: metricsValues[11] bytes per second
 
+Round Trip Time: 5.872977578 secs
+Cloud cost for application computation (£0.016 per hour): £.0000066160
 
-Pocket Sphinx Benchmark Run 2:
+YOLO Benchmark Run 2:
 
-Transfer edge application results to edge device: completed in 1.264625300 secs
+Computation: completed in 1.499273861 secs
+Upload to S3 bucket: completed in .610112902 secs
+Total bytes transferred from the cloud: 837652 bytes
+Transfer cloud application results to edge device: completed in 2.258944400 secs
+Transfer rate from the cloud: metricsValues[11] bytes per second
 
+Round Trip Time: 5.593518161 secs
+Cloud cost for application computation (£0.016 per hour): £.0000066633
 
-Pocket Sphinx Benchmark Run 3:
+YOLO Benchmark Run 3:
 
-Transfer edge application results to edge device: completed in 1.094384200 secs
+Computation: completed in 1.434743946 secs
+Upload to S3 bucket: completed in .569948882 secs
+Total bytes transferred from the cloud: 765396 bytes
+Transfer cloud application results to edge device: completed in 2.320412200 secs
+Transfer rate from the cloud: metricsValues[11] bytes per second
 
+Round Trip Time: 6.514616246 secs
+Cloud cost for application computation (£0.016 per hour): £.0000063765
