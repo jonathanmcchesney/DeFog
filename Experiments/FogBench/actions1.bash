@@ -213,9 +213,9 @@ function build_docker_app_always {
 
 function build_docker_app {
 
-	eval buildpath="$1"
-	eval buildname="$2"
-	eval applicationname="$3"
+	eval buildpath = "$1"
+	eval buildname = "$2"
+	eval applicationname = "$3"
 
 	local DIRECTORY=${buildname}
 
@@ -306,8 +306,8 @@ function bench {
 }
 
 function run_setup {
-	mkdir -p fogbench && cd fogbench 
-	#mkdir -p defog && cd defog 		
+	#mkdir -p fogbench && cd fogbench 
+	mkdir -p defog && cd defog 		
 	test $run_delete && delete_utility
 	
 	rm results.txt

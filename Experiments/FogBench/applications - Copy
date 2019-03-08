@@ -41,19 +41,136 @@ function run_docker_ipokemon {
 	echo -n DONE
 }
 
-function run_docker_app {
-
-	eval path="$1"
-	eval applicationname="$2"
-	eval runscript="$3"
-
-	cd ${path}
+# run pocketsphinx container on cloud/edge pipeline - edge instance
+function run_docker_psphinx_both_edge {
+	cd bothedgepsphinxbuild/Experiments/PocketSphinx/bothedgedocker
 	
-	echo -n Running ${applicationname} container...
+	echo -n Running bothedgedocker container...
 
-	. ${runscript}
+	. runedge.sh
 	
-	echo done running ${applicationname}
+	echo -n DONE
+}
+
+# run pocketsphinx container on cloud/edge pipeline - cloud instance
+function run_docker_psphinx_both_cloud {
+	cd bothcloudpsphinxbuild/Experiments/PocketSphinx/bothclouddocker
+	
+	echo -n Running bothclouddocker container...
+
+	. run.sh
+	
+	echo -n DONE
+}
+
+# run pocketsphinx container on cloud only/ edge only pipeline
+function run_docker_psphinx {
+	cd psphinxbuild/Experiments/PocketSphinx/docker
+
+	echo -n Running psphinx docker container...
+	if [ "$run_cloud" ];
+	then
+		echo in here
+		. run.sh
+	fi	
+	if [ "$run_edge" ];
+	then
+		. runedge.sh
+	fi	
+	echo -n DONE
+}
+
+# run yolo container on cloud/edge pipeline - edge instance
+function run_docker_yolo_both_edge {
+	cd bothedgeyolobuild/Experiments/YOLO/bothedgedocker
+	
+	echo -n Running bothedgedocker container...
+
+	. runedge.sh
+	
+	echo -n DONE
+}
+
+# run yolo container on cloud/edge pipeline - cloud instance
+function run_docker_yolo_both_cloud {
+	cd bothcloudyolobuild/Experiments/YOLO/bothclouddocker
+	
+	echo -n Running bothclouddocker container...
+
+	. run.sh
+	
+	echo -n DONE
+}
+
+# run yolo container on cloud only/ edge only pipeline
+function run_docker_yolo { 
+	cd yolobuild/Experiments/YOLO/docker
+
+	echo -n Running yolo docker container...
+	if [ "$run_cloud" ];
+	then
+		. run.sh
+	fi	
+	if [ "$run_edge" ];
+	then
+		. runedge.sh
+	fi
+	echo -n DONE
+}
+
+# run yolo container on cloud/edge pipeline - edge instance
+function run_docker_aeneas_both_edge {
+	cd bothedgeaeneasbuild/Experiments/Aeneas/bothedgedocker
+	
+	echo -n Running bothedgedocker container...
+
+	. runedge.sh
+	
+	echo -n DONE
+}
+
+# run yolo container on cloud/edge pipeline - cloud instance
+function run_docker_aeneas_both_cloud {
+	cd bothcloudaeneasbuild/Experiments/Aeneas/bothclouddocker
+	
+	echo -n Running bothclouddocker container...
+
+	. run.sh
+	
+	echo -n DONE
+}
+
+# run aeneas container on cloud only/ edge only pipeline
+function run_docker_aeneas { 
+	cd aeneasbuild/Experiments/Aeneas/docker
+
+	echo -n Running aeneas docker container...
+	if [ "$run_cloud" ];
+	then
+		echo in here
+		. run.sh
+	fi	
+	if [ "$run_edge" ];
+	then
+		. runedge.sh
+	fi	
+	echo -n DONE
+}
+
+# run foglamp container on cloud only/ edge only pipeline
+function run_docker_foglamp { 
+	cd foglampbuild/Experiments/FogLAMP/docker
+
+	echo -n Running fogLAMP docker container...
+	if [ "$run_cloud" ];
+	then
+		. run.sh
+	fi	
+	if [ "$run_edge" ];
+	then
+		. runedge.sh
+	fi
+	echo -n DONE
 }
 
 # utility function to print sepeartor/formatter line
@@ -66,9 +183,9 @@ function bothcloudbench {
 	echo "Cloud/Edge - Cloud applications benchmarks: " | tee $filename.txt
 	seperator
 	
-	test $run_yolo && run_docker_app "bothcloudyolobuild/Experiments/YOLO/bothclouddocker" "YOLO-Edge/Cloud-Cloud-instance" "run.sh"
-	test $run_psphinx && run_docker_app "bothcloudpsphinxbuild/Experiments/PocketSphinx/bothclouddocker" "PocketSphinx-Edge/Cloud-Cloud-instance" "run.sh"
-	test $run_aeneas && run_docker_app "bothcloudaeneasbuild/Experiments/Aeneas/bothclouddocker" "Aeneas-Edge/Cloud-Cloud-instance" "run.sh"
+	test $run_yolo && run_docker_yolo_both_cloud
+	test $run_psphinx && run_docker_psphinx_both_cloud
+	test $run_aeneas && run_docker_aeneas_both_cloud
 	
 }
 
@@ -77,9 +194,9 @@ function bothedgebench {
 	echo "Cloud/Edge - Edge applications benchmarks: " | tee $filename.txt
 	seperator
 	
-	test $run_yolo && run_docker_app "bothedgeyolobuild/Experiments/YOLO/bothedgedocker" "YOLO-Edge/Cloud-Edge-instance" "runedge.sh"
-	test $run_psphinx && run_docker_app "bothedgepsphinxbuild/Experiments/PocketSphinx/bothedgedocker" "PocketSphinx-Edge/Cloud-Edge-instance" "runedge.sh"
-	test $run_aeneas && run_docker_app "bothedgeaeneasbuild/Experiments/Aeneas/bothedgedocker" "Aeneas-Edge/Cloud-Edge-instance" "runedge.sh"
+	test $run_yolo && run_docker_yolo_both_edge
+	test $run_psphinx && run_docker_psphinx_both_edge
+	test $run_aeneas && run_docker_aeneas_both_edge
 	
 }
 
@@ -88,11 +205,11 @@ function edgebench {
 	echo "Edge applications benchmarks: " | tee $filename.txt
 	seperator
 	
-	test $run_yolo && run_docker_app "yolobuild/Experiments/YOLO/docker" "YOLO" "runedge.sh"
-	test $run_psphinx && run_docker_app "psphinxbuild/Experiments/PocketSphinx/docker" "PocketSphinx" "runedge.sh"
-	test $run_aeneas && run_docker_app "aeneasbuild/Experiments/Aeneas/docker" "Aeneas" "runedge.sh"
+	test $run_yolo && run_docker_yolo
+	test $run_psphinx && run_docker_psphinx
+	test $run_aeneas && run_docker_aeneas
 	test $run_ipokemon && run_docker_ipokemon
-	test $run_foglamp && run_docker_app "foglampbuild/Experiments/FogLAMP/docker" "FogLAMP" "runedge.sh"
+	test $run_foglamp && run_docker_foglamp
 
 }
 
@@ -101,18 +218,17 @@ function cloudbench {
 	echo "Cloud applications benchmarks: " | tee $filename.txt
 	seperator
 	
-	test $run_yolo && run_docker_app "yolobuild/Experiments/YOLO/docker" "YOLO" "run.sh"
-	test $run_psphinx && run_docker_app "psphinxbuild/Experiments/PocketSphinx/docker" "PocketSphinx" "run.sh"
-	test $run_aeneas && run_docker_app "aeneasbuild/Experiments/Aeneas/docker" "Aeneas" "run.sh"
+	test $run_yolo && run_docker_yolo
+	test $run_psphinx && run_docker_psphinx
+	test $run_aeneas && run_docker_aeneas
 	test $run_ipokemon && run_docker_ipokemon
-	test $run_foglamp && run_docker_app "foglampbuild/Experiments/FogLAMP/docker" "FogLAMP" "run.sh"
+	test $run_foglamp && run_docker_foglamp
 
 }
 
 # applications main function
 function main {
 	cd fogbench  # navigate to the fogbench folder (for defog benchmarks)
-	#cd defog  # navigate to the fogbench folder (for defog benchmarks)
 	chmod 400 configs
 	
 	# determine what function to call based on user input

@@ -1,0 +1,51 @@
+		Demystifying Fog Systems Interaction via Container based benchmarking
+	Created by: Jonathan McChesney, student at Queen's University Belfast
+	CSC4006 Final Year Research and Development Project
+
+*****************************************************************************
+*****************************************************************************
+
+Edge/Cloud Benchmarks: 
+*****************************************************************************
+
+Pocket Sphinx Benchmarks:
+*****************************************************************************
+
+Pocket Sphinx Benchmark Run 1:
+
+Cloud Transfer: completed in 8.077787676 secs
+Computation: completed in 15.775668918 secs
+Upload to S3 bucket: completed in 2.553016243 secs
+Total bytes transferred from the edge: 3076 bytes
+Transfer both pipeline edge application results to edge device: completed in .824508000 secs
+Transfer rate from the edge: 3730.7097080925 bytes per second
+
+Round Trip Time: 17.411885718 secs
+Real Time Factor: 3.4616162896 secs
+Edge cost for application computation (estimated £0.008 per hour): £.0000350566
+
+Pocket Sphinx Benchmark Run 2:
+
+Cloud Transfer: completed in 5.612370481 secs
+Computation: completed in 23.945449716 secs
+Upload to S3 bucket: completed in 2.077890252 secs
+Total bytes transferred from the edge: 3084 bytes
+Transfer both pipeline edge application results to edge device: completed in .762571800 secs
+Transfer rate from the edge: 4044.2093452708 bytes per second
+
+Round Trip Time: 25.589640116 secs
+Real Time Factor: 3.6059030160 secs
+Edge cost for application computation (estimated £0.008 per hour): £.0000532115
+
+Pocket Sphinx Benchmark Run 3:
+
+Cloud Transfer: completed in 6.647518597 secs
+Computation: completed in 26.618190118 secs
+Upload to S3 bucket: completed in 1.991661360 secs
+Total bytes transferred from the edge: 3092 bytes
+Transfer both pipeline edge application results to edge device: completed in .770115800 secs
+Transfer rate from the edge: 4014.9806042156 bytes per second
+
+Round Trip Time: 28.301876518 secs
+Real Time Factor: 4.0083862765 secs
+Edge cost for application computation (estimated £0.008 per hour): £.0000591509
