@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testResults version="1.2">
+<httpSample t="69" lt="0" ts="1552830572198" s="false" lb="upm" rc="Non HTTP response code: java.net.SocketException" rm="Non HTTP response message: Connection reset" tn="ipokemon 1-4" dt="text" de="" by="2471" ng="50" na="50">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Accept: application/json
+Accept-Encoding: gzip, deflate
+Accept-Language: en;q=1
+Connection: keep-alive
+key: iPokeMonClientIdentifier
+provider: 0
+User-Agent: Master/50 (iPhone; iOS 10.0; Scale/2.00)
+identity: 4bb0469d181f71294d545c1f5ab0194e
+Content-Length: 1653
+Content-Type: multipart/form-data; boundary=Qu_ErcsGOf0GAcmUBshSag1CcaXl8WRNFYnmaf2y
+Host: 192.168.0.39:8000
+</requestHeader>
+  <responseData class="java.lang.String">java.net.SocketException: Connection reset&#xd;
+	at java.base/java.net.SocketInputStream.read(Unknown Source)&#xd;
+	at java.base/java.net.SocketInputStream.read(Unknown Source)&#xd;
+	at org.apache.http.impl.io.SessionInputBufferImpl.streamRead(SessionInputBufferImpl.java:137)&#xd;
+	at org.apache.http.impl.io.SessionInputBufferImpl.fillBuffer(SessionInputBufferImpl.java:153)&#xd;
+	at org.apache.http.impl.io.SessionInputBufferImpl.readLine(SessionInputBufferImpl.java:282)&#xd;
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:138)&#xd;
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:56)&#xd;
+	at org.apache.http.impl.io.AbstractMessageParser.parse(AbstractMessageParser.java:259)&#xd;
+	at org.apache.http.impl.DefaultBHttpClientConnection.receiveResponseHeader(DefaultBHttpClientConnection.java:163)&#xd;
+	at org.apache.http.impl.conn.CPoolProxy.receiveResponseHeader(CPoolProxy.java:165)&#xd;
+	at org.apache.http.protocol.HttpRequestExecutor.doReceiveResponse(HttpRequestExecutor.java:273)&#xd;
+	at org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:125)&#xd;
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:272)&#xd;
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)&#xd;
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)&#xd;
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)&#xd;
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)&#xd;
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.executeRequest(HTTPHC4Impl.java:832)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.sample(HTTPHC4Impl.java:570)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy.sample(HTTPSamplerProxy.java:67)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1231)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1220)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:622)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:546)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:486)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:253)&#xd;
+	at java.base/java.lang.Thread.run(Unknown Source)&#xd;
+</responseData>
+  <cookies class="java.lang.String"></cookies>
+  <method class="java.lang.String">POST</method>
+  <queryString class="java.lang.String">--Qu_ErcsGOf0GAcmUBshSag1CcaXl8WRNFYnmaf2y&#xd;
+Content-Disposition: form-data; name=&quot;exp&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+650&#xd;
+--Qu_ErcsGOf0GAcmUBshSag1CcaXl8WRNFYnmaf2y&#xd;
+Content-Disposition: form-data; name=&quot;fourMoves&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+16,28,30,144,31,35,145,28,30&#xd;
+--Qu_ErcsGOf0GAcmUBshSag1CcaXl8WRNFYnmaf2y&#xd;
+Content-Disposition: form-data; name=&quot;happiness&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+70&#xd;
+--Qu_ErcsGOf0GAcmUBshSag1CcaXl8WRNFYnmaf2y&#xd;
+Content-Disposition: form-data; name=&quot;hp&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+0&#xd;
+--Qu_ErcsGOf0GAcmUBshSag1CcaXl8WRNFYnmaf2y&#xd;
+Content-Disposition: form-data; name=&quot;level&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+10&#xd;
+--Qu_ErcsGOf0GAcmUBshSag1CcaXl8WRNFYnmaf2y&#xd;
+Content-Disposition: form-data; name=&quot;maxStats&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+28,15,18,15,18,14&#xd;
+--Qu_ErcsGOf0GAcmUBshSag1CcaXl8WRNFYnmaf2y&#xd;
+Content-Disposition: form-data; name=&quot;status&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+0&#xd;
+--Qu_ErcsGOf0GAcmUBshSag1CcaXl8WRNFYnmaf2y&#xd;
+Content-Disposition: form-data; name=&quot;toNextLevel&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+92&#xd;
+--Qu_ErcsGOf0GAcmUBshSag1CcaXl8WRNFYnmaf2y&#xd;
+Content-Disposition: form-data; name=&quot;uid&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+4&#xd;
+--Qu_ErcsGOf0GAcmUBshSag1CcaXl8WRNFYnmaf2y--&#xd;
+</queryString>
+  <java.net.URL>http://192.168.0.39:8000/upm</java.net.URL>
+</httpSample>
+<httpSample t="68" lt="0" ts="1552830572199" s="false" lb="upm" rc="Non HTTP response code: java.net.SocketException" rm="Non HTTP response message: Connection reset" tn="ipokemon 1-33" dt="text" de="" by="2471" ng="50" na="50">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Accept: application/json
+Accept-Encoding: gzip, deflate
+Accept-Language: en;q=1
+Connection: keep-alive
+key: iPokeMonClientIdentifier
+provider: 0
+User-Agent: Master/50 (iPhone; iOS 10.0; Scale/2.00)
+identity: 4bb0469d181f71294d545c1f5ab0194e
+Content-Length: 2087
+Content-Type: multipart/form-data; boundary=TMtjnTILviumk-8ybJj-eCBVvmstxrQJP
+Host: 192.168.0.39:8000
+</requestHeader>
+  <responseData class="java.lang.String">java.net.SocketException: Connection reset&#xd;
+	at java.base/java.net.SocketInputStream.read(Unknown Source)&#xd;
+	at java.base/java.net.SocketInputStream.read(Unknown Source)&#xd;
+	at org.apache.http.impl.io.SessionInputBufferImpl.streamRead(SessionInputBufferImpl.java:137)&#xd;
+	at org.apache.http.impl.io.SessionInputBufferImpl.fillBuffer(SessionInputBufferImpl.java:153)&#xd;
+	at org.apache.http.impl.io.SessionInputBufferImpl.readLine(SessionInputBufferImpl.java:282)&#xd;
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:138)&#xd;
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:56)&#xd;
+	at org.apache.http.impl.io.AbstractMessageParser.parse(AbstractMessageParser.java:259)&#xd;
+	at org.apache.http.impl.DefaultBHttpClientConnection.receiveResponseHeader(DefaultBHttpClientConnection.java:163)&#xd;
+	at org.apache.http.impl.conn.CPoolProxy.receiveResponseHeader(CPoolProxy.java:165)&#xd;
+	at org.apache.http.protocol.HttpRequestExecutor.doReceiveResponse(HttpRequestExecutor.java:273)&#xd;
+	at org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:125)&#xd;
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:272)&#xd;
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)&#xd;
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)&#xd;
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)&#xd;
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)&#xd;
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.executeRequest(HTTPHC4Impl.java:832)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.sample(HTTPHC4Impl.java:570)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy.sample(HTTPSamplerProxy.java:67)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1231)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1220)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:622)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:546)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:486)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:253)&#xd;
+	at java.base/java.lang.Thread.run(Unknown Source)&#xd;
+</responseData>
+  <cookies class="java.lang.String"></cookies>
+  <method class="java.lang.String">POST</method>
+  <queryString class="java.lang.String">--TMtjnTILviumk-8ybJj-eCBVvmstxrQJP&#xd;
+Content-Disposition: form-data; name=&quot;exp&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+650&#xd;
+--TMtjnTILviumk-8ybJj-eCBVvmstxrQJP&#xd;
+Content-Disposition: form-data; name=&quot;fourMoves&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+16,29,30,144,32,35,145,29,30&#xd;
+--TMtjnTILviumk-8ybJj-eCBVvmstxrQJP&#xd;
+Content-Disposition: form-data; name=&quot;gender&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+1&#xd;
+--TMtjnTILviumk-8ybJj-eCBVvmstxrQJP&#xd;
+Content-Disposition: form-data; name=&quot;happiness&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+70&#xd;
+--TMtjnTILviumk-8ybJj-eCBVvmstxrQJP&#xd;
+Content-Disposition: form-data; name=&quot;hp&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+28&#xd;
+--TMtjnTILviumk-8ybJj-eCBVvmstxrQJP&#xd;
+Content-Disposition: form-data; name=&quot;level&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+10&#xd;
+--TMtjnTILviumk-8ybJj-eCBVvmstxrQJP&#xd;
+Content-Disposition: form-data; name=&quot;maxStats&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+28,15,18,15,18,14&#xd;
+--TMtjnTILviumk-8ybJj-eCBVvmstxrQJP&#xd;
+Content-Disposition: form-data; name=&quot;memo&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+PMSMemo001&#xd;
+--TMtjnTILviumk-8ybJj-eCBVvmstxrQJP&#xd;
+Content-Disposition: form-data; name=&quot;sid&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+7&#xd;
+--TMtjnTILviumk-8ybJj-eCBVvmstxrQJP&#xd;
+Content-Disposition: form-data; name=&quot;status&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+0&#xd;
+--TMtjnTILviumk-8ybJj-eCBVvmstxrQJP&#xd;
+Content-Disposition: form-data; name=&quot;toNextLevel&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+182&#xd;
+--TMtjnTILviumk-8ybJj-eCBVvmstxrQJP&#xd;
+Content-Disposition: form-data; name=&quot;uid&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+4&#xd;
+--TMtjnTILviumk-8ybJj-eCBVvmstxrQJP--&#xd;
+</queryString>
+  <java.net.URL>http://192.168.0.39:8000/upm</java.net.URL>
+</httpSample>
+<httpSample t="68" lt="0" ts="1552830572199" s="false" lb="upm" rc="Non HTTP response code: java.net.SocketException" rm="Non HTTP response message: Connection reset" tn="ipokemon 1-10" dt="text" de="" by="2471" ng="50" na="50">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Accept: application/json
+Accept-Encoding: gzip, deflate
+Accept-Language: en;q=1
+Connection: keep-alive
+key: iPokeMonClientIdentifier
+provider: 0
+User-Agent: Master/50 (iPhone; iOS 10.0; Scale/2.00)
+identity: 4bb0469d181f71294d545c1f5ab0194e
+Content-Length: 2308
+Content-Type: multipart/form-data; boundary=qynGy6lMBSAjGr1ur2iGh_PTQCNY0jm3Q3Gw1
+Host: 192.168.0.39:8000
+</requestHeader>
+  <responseData class="java.lang.String">java.net.SocketException: Connection reset&#xd;
+	at java.base/java.net.SocketInputStream.read(Unknown Source)&#xd;
+	at java.base/java.net.SocketInputStream.read(Unknown Source)&#xd;
+	at org.apache.http.impl.io.SessionInputBufferImpl.streamRead(SessionInputBufferImpl.java:137)&#xd;
+	at org.apache.http.impl.io.SessionInputBufferImpl.fillBuffer(SessionInputBufferImpl.java:153)&#xd;
+	at org.apache.http.impl.io.SessionInputBufferImpl.readLine(SessionInputBufferImpl.java:282)&#xd;
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:138)&#xd;
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:56)&#xd;
+	at org.apache.http.impl.io.AbstractMessageParser.parse(AbstractMessageParser.java:259)&#xd;
+	at org.apache.http.impl.DefaultBHttpClientConnection.receiveResponseHeader(DefaultBHttpClientConnection.java:163)&#xd;
+	at org.apache.http.impl.conn.CPoolProxy.receiveResponseHeader(CPoolProxy.java:165)&#xd;
+	at org.apache.http.protocol.HttpRequestExecutor.doReceiveResponse(HttpRequestExecutor.java:273)&#xd;
+	at org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:125)&#xd;
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:272)&#xd;
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)&#xd;
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)&#xd;
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)&#xd;
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)&#xd;
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.executeRequest(HTTPHC4Impl.java:832)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.sample(HTTPHC4Impl.java:570)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy.sample(HTTPSamplerProxy.java:67)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1231)&#xd;
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1220)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:622)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:546)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:486)&#xd;
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:253)&#xd;
+	at java.base/java.lang.Thread.run(Unknown Source)&#xd;
+</responseData>
+  <cookies class="java.lang.String"></cookies>
+  <method class="java.lang.String">POST</method>
+  <queryString class="java.lang.String">--qynGy6lMBSAjGr1ur2iGh_PTQCNY0jm3Q3Gw1&#xd;
+Content-Disposition: form-data; name=&quot;exp&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+560&#xd;
+--qynGy6lMBSAjGr1ur2iGh_PTQCNY0jm3Q3Gw1&#xd;
+Content-Disposition: form-data; name=&quot;fourMoves&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+53,40,40,112,35,35,144,35,35&#xd;
+--qynGy6lMBSAjGr1ur2iGh_PTQCNY0jm3Q3Gw1&#xd;
+Content-Disposition: form-data; name=&quot;happiness&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+70&#xd;
+--qynGy6lMBSAjGr1ur2iGh_PTQCNY0jm3Q3Gw1&#xd;
+Content-Disposition: form-data; name=&quot;hp&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+31&#xd;
+--qynGy6lMBSAjGr1ur2iGh_PTQCNY0jm3Q3Gw1&#xd;
+Content-Disposition: form-data; name=&quot;level&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+10&#xd;
+--qynGy6lMBSAjGr1ur2iGh_PTQCNY0jm3Q3Gw1&#xd;
+Content-Disposition: form-data; name=&quot;maxStats&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+31,14,15,13,13,13&#xd;
+--qynGy6lMBSAjGr1ur2iGh_PTQCNY0jm3Q3Gw1&#xd;
+Content-Disposition: form-data; name=&quot;status&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+0&#xd;
+--qynGy6lMBSAjGr1ur2iGh_PTQCNY0jm3Q3Gw1&#xd;
+Content-Disposition: form-data; name=&quot;toNextLevel&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+182&#xd;
+--qynGy6lMBSAjGr1ur2iGh_PTQCNY0jm3Q3Gw1&#xd;
+Content-Disposition: form-data; name=&quot;uid&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+5&#xd;
+--qynGy6lMBSAjGr1ur2iGh_PTQCNY0jm3Q3Gw1&#xd;
+Content-Disposition: form-data; name=&quot;box&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+0&#xd;
+--qynGy6lMBSAjGr1ur2iGh_PTQCNY0jm3Q3Gw1&#xd;
+Content-Disposition: form-data; name=&quot;gender&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+0&#xd;
+--qynGy6lMBSAjGr1ur2iGh_PTQCNY0jm3Q3Gw1&#xd;
+Content-Disposition: form-data; name=&quot;memo&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+PMSMemoTest&#xd;
+--qynGy6lMBSAjGr1ur2iGh_PTQCNY0jm3Q3Gw1&#xd;
+Content-Disposition: form-data; name=&quot;sid&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+29&#xd;
+--qynGy6lMBSAjGr1ur2iGh_PTQCNY0jm3Q3Gw1--&#xd;
+</queryString>
+  <java.net.URL>http://192.168.0.39:8000/upm</java.net.URL>
+</httpSample>
+
+</testResults>

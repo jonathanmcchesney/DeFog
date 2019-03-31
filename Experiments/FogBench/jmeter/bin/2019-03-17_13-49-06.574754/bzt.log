@@ -1,0 +1,460 @@
+[2019-03-17 13:49:06,472 INFO root] Taurus CLI Tool v1.13.2
+[2019-03-17 13:49:06,472 DEBUG root] Command-line options: {'log': 'C:\\Users\\jmcch\\AppData\\Local\\Temp\\bzt_a1gz11vz.log', 'option': ['modules.jmeter.properties.HOST=192.168.0.39', 'modules.jmeter.properties.Duration=300', 'modules.jmeter.properties.Threads=50', 'modules.jmeter.properties.Ramp=0'], 'quiet': None, 'verbose': None, 'no_system_configs': None, 'aliases': []}
+[2019-03-17 13:49:06,472 DEBUG root] Python: CPython 3.6.5
+[2019-03-17 13:49:06,472 DEBUG root] Rev: 8c96479fb6a315f7ffb7c0afcaa7e841152c90a3; OS: uname_result(system='Windows', node='DESKTOP-JQOCQB2', release='10', version='10.0.17134', machine='AMD64', processor='Intel64 Family 6 Model 94 Stepping 3, GenuineIntel')
+[2019-03-17 13:49:06,472 DEBUG root] Adding JMX shorthand config for: ['iPokeMon1.jmx']
+[2019-03-17 13:49:06,472 DEBUG root] Dumping JSON config into C:\Users\jmcch\AppData\Local\Temp\jmx_zgqhb3ze.json
+[2019-03-17 13:49:06,488 INFO root] Starting with configs: ['reporting.yaml', 'C:\\Users\\jmcch\\AppData\\Local\\Temp\\jmx_zgqhb3ze.json']
+[2019-03-17 13:49:06,488 DEBUG root] Using personal config: C:\Users\jmcch\.bzt-rc
+[2019-03-17 13:49:06,488 INFO Engine] Configuring...
+[2019-03-17 13:49:06,517 DEBUG Engine] Base configs list: ['C:\\Users\\jmcch\\AppData\\Local\\Taurus\\pkgs\\bzt\\resources/10-base-config.yml']
+[2019-03-17 13:49:06,517 DEBUG Engine.Configuration] Configs: ['C:\\Users\\jmcch\\AppData\\Local\\Taurus\\pkgs\\bzt\\resources/10-base-config.yml']
+[2019-03-17 13:49:06,532 DEBUG Engine.Configuration] Reading C:\Users\jmcch\AppData\Local\Taurus\pkgs\bzt\resources/10-base-config.yml as YAML
+[2019-03-17 13:49:06,548 DEBUG Engine] User configs list: ['C:\\Users\\jmcch\\.bzt-rc', 'reporting.yaml', 'C:\\Users\\jmcch\\AppData\\Local\\Temp\\jmx_zgqhb3ze.json']
+[2019-03-17 13:49:06,548 DEBUG Engine.Configuration] Configs: ['C:\\Users\\jmcch\\.bzt-rc', 'reporting.yaml', 'C:\\Users\\jmcch\\AppData\\Local\\Temp\\jmx_zgqhb3ze.json']
+[2019-03-17 13:49:06,548 DEBUG Engine.Configuration] Reading C:\Users\jmcch\.bzt-rc as YAML
+[2019-03-17 13:49:06,548 DEBUG Engine.Configuration] Reading reporting.yaml as YAML
+[2019-03-17 13:49:06,548 DEBUG Engine.Configuration] Reading C:\Users\jmcch\AppData\Local\Temp\jmx_zgqhb3ze.json as YAML
+[2019-03-17 13:49:06,548 DEBUG Engine.Configuration] Configs: ['C:\\Users\\jmcch\\.bzt-rc', 'reporting.yaml', 'C:\\Users\\jmcch\\AppData\\Local\\Temp\\jmx_zgqhb3ze.json']
+[2019-03-17 13:49:06,548 DEBUG Engine.Configuration] Reading C:\Users\jmcch\.bzt-rc as YAML
+[2019-03-17 13:49:06,567 DEBUG Engine.Configuration] Reading reporting.yaml as YAML
+[2019-03-17 13:49:06,569 DEBUG Engine.Configuration] Reading C:\Users\jmcch\AppData\Local\Temp\jmx_zgqhb3ze.json as YAML
+[2019-03-17 13:49:06,570 DEBUG Engine] Requesting updates info: http://gettaurus.org/updates/?version=1.13.2&installID=windows-80fa5b330391
+[2019-03-17 13:49:06,571 DEBUG ConfigOverrider] Applying modules.jmeter.properties.HOST=192.168.0.39
+[2019-03-17 13:49:06,571 DEBUG HTTPClient] Making HTTP request GET http://gettaurus.org/updates/?version=1.13.2&installID=windows-80fa5b330391
+[2019-03-17 13:49:06,571 DEBUG ConfigOverrider] Applying: [HOST]=192.168.0.39
+[2019-03-17 13:49:06,572 DEBUG ConfigOverrider] Parsed override value: '192.168.0.39' -> '192.168.0.39' (<class 'str'>)
+[2019-03-17 13:49:06,572 DEBUG ConfigOverrider] Applying modules.jmeter.properties.Duration=300
+[2019-03-17 13:49:06,572 DEBUG ConfigOverrider] Applying: [Duration]=300
+[2019-03-17 13:49:06,572 DEBUG ConfigOverrider] Parsed override value: '300' -> 300 (<class 'int'>)
+[2019-03-17 13:49:06,573 DEBUG ConfigOverrider] Applying modules.jmeter.properties.Threads=50
+[2019-03-17 13:49:06,573 DEBUG ConfigOverrider] Applying: [Threads]=50
+[2019-03-17 13:49:06,573 DEBUG ConfigOverrider] Parsed override value: '50' -> 50 (<class 'int'>)
+[2019-03-17 13:49:06,574 DEBUG ConfigOverrider] Applying modules.jmeter.properties.Ramp=0
+[2019-03-17 13:49:06,574 DEBUG ConfigOverrider] Applying: [Ramp]=0
+[2019-03-17 13:49:06,574 DEBUG ConfigOverrider] Parsed override value: '0' -> 0 (<class 'int'>)
+[2019-03-17 13:49:06,575 INFO Engine] Artifacts dir: C:\Users\jmcch\Documents\csc4006Gitlab\csc4006-EdgeBenchmarking\Experiments\FogBench\jmeter\bin\2019-03-17_13-49-06.574754
+[2019-03-17 13:49:06,577 DEBUG urllib3.connectionpool] Starting new HTTP connection (1): gettaurus.org:80
+[2019-03-17 13:49:06,578 DEBUG Engine] New artifact filename: C:\Users\jmcch\Documents\csc4006Gitlab\csc4006-EdgeBenchmarking\Experiments\FogBench\jmeter\bin\2019-03-17_13-49-06.574754\effective
+[2019-03-17 13:49:06,580 DEBUG Engine.Configuration] Dumping YAML config into C:\Users\jmcch\Documents\csc4006Gitlab\csc4006-EdgeBenchmarking\Experiments\FogBench\jmeter\bin\2019-03-17_13-49-06.574754\effective.yml
+[2019-03-17 13:49:06,596 DEBUG Engine.Configuration] Dumping JSON config into C:\Users\jmcch\Documents\csc4006Gitlab\csc4006-EdgeBenchmarking\Experiments\FogBench\jmeter\bin\2019-03-17_13-49-06.574754\effective.json
+[2019-03-17 13:49:06,596 DEBUG Engine] New artifact filename: C:\Users\jmcch\Documents\csc4006Gitlab\csc4006-EdgeBenchmarking\Experiments\FogBench\jmeter\bin\2019-03-17_13-49-06.574754\merged.yml
+[2019-03-17 13:49:06,596 DEBUG Engine.Configuration] Dumping YAML config into C:\Users\jmcch\Documents\csc4006Gitlab\csc4006-EdgeBenchmarking\Experiments\FogBench\jmeter\bin\2019-03-17_13-49-06.574754\merged.yml
+[2019-03-17 13:49:06,596 DEBUG Engine] New artifact filename: C:\Users\jmcch\Documents\csc4006Gitlab\csc4006-EdgeBenchmarking\Experiments\FogBench\jmeter\bin\2019-03-17_13-49-06.574754\merged.json
+[2019-03-17 13:49:06,596 DEBUG Engine.Configuration] Dumping JSON config into C:\Users\jmcch\Documents\csc4006Gitlab\csc4006-EdgeBenchmarking\Experiments\FogBench\jmeter\bin\2019-03-17_13-49-06.574754\merged.json
+[2019-03-17 13:49:06,596 DEBUG Engine] Add existing artifact (move=False): reporting.yaml
+[2019-03-17 13:49:06,596 DEBUG Engine] Copying reporting.yaml to C:\Users\jmcch\Documents\csc4006Gitlab\csc4006-EdgeBenchmarking\Experiments\FogBench\jmeter\bin\2019-03-17_13-49-06.574754\reporting.yaml
+[2019-03-17 13:49:06,596 DEBUG Engine] Add existing artifact (move=False): C:\Users\jmcch\AppData\Local\Temp\jmx_zgqhb3ze.json
+[2019-03-17 13:49:06,596 DEBUG Engine] Copying C:\Users\jmcch\AppData\Local\Temp\jmx_zgqhb3ze.json to C:\Users\jmcch\Documents\csc4006Gitlab\csc4006-EdgeBenchmarking\Experiments\FogBench\jmeter\bin\2019-03-17_13-49-06.574754\jmx_zgqhb3ze.json
+[2019-03-17 13:49:06,596 DEBUG Engine.Environment] Replace 'TAURUS_ARTIFACTS_DIR' in environment
+[2019-03-17 13:49:06,596 DEBUG root] Closing log handler: C:\Users\jmcch\AppData\Local\Temp\bzt_a1gz11vz.log
+[2019-03-17 13:49:06,596 DEBUG root] Switched writing logs to C:\Users\jmcch\Documents\csc4006Gitlab\csc4006-EdgeBenchmarking\Experiments\FogBench\jmeter\bin\2019-03-17_13-49-06.574754\bzt.log
+[2019-03-17 13:49:06,596 DEBUG root] Linting config
+[2019-03-17 13:49:06,596 INFO Engine] Preparing...
+[2019-03-17 13:49:06,596 DEBUG Engine] Module config: consolidator {'class': 'bzt.modules.aggregator.ConsolidatingAggregator'}
+[2019-03-17 13:49:06,596 DEBUG root] Importing module: bzt.modules.aggregator
+[2019-03-17 13:49:06,730 DEBUG root] Loading class: 'ConsolidatingAggregator' from <module 'bzt.modules.aggregator' from 'C:\\Users\\jmcch\\AppData\\Local\\Taurus\\pkgs\\bzt\\modules\\aggregator.py'>
+[2019-03-17 13:49:06,730 DEBUG Engine.consolidator] Buffer scaling setup: percentile 95.0 from [0.0, 50.0, 90.0, 95.0, 99.0, 99.9, 100.0] selected
+[2019-03-17 13:49:06,730 DEBUG Engine] Module config: monitoring {'class': 'bzt.modules.monitoring.Monitoring'}
+[2019-03-17 13:49:06,730 DEBUG root] Importing module: bzt.modules.monitoring
+[2019-03-17 13:49:06,745 DEBUG root] Loading class: 'Monitoring' from <module 'bzt.modules.monitoring' from 'C:\\Users\\jmcch\\AppData\\Local\\Taurus\\pkgs\\bzt\\modules\\monitoring.py'>
+[2019-03-17 13:49:06,745 DEBUG Engine] Module config: local {'class': 'bzt.modules.provisioning.Local'}
+[2019-03-17 13:49:06,745 DEBUG root] Importing module: bzt.modules.provisioning
+[2019-03-17 13:49:06,745 DEBUG root] Loading class: 'Local' from <module 'bzt.modules.provisioning' from 'C:\\Users\\jmcch\\AppData\\Local\\Taurus\\pkgs\\bzt\\modules\\provisioning.py'>
+[2019-03-17 13:49:06,745 DEBUG Engine] Module config: jmeter {'class': 'bzt.modules.jmeter.JMeterExecutor', 'protocol-handlers': {'http': 'bzt.jmx.http.HTTPProtocolHandler'}, 'plugins': ['jpgc-casutg', 'jpgc-dummy', 'jpgc-ffw', 'jpgc-fifo', 'jpgc-functions', 'jpgc-json', 'jpgc-perfmon', 'jpgc-prmctl', 'jpgc-tst'], 'properties': {'jmeter.save.saveservice.autoflush': 'true', 'jmeter.save.saveservice.connect_time': 'true', 'jmeterengine.force.system.exit': 'true', 'summariser.name': '', 'HOST': '192.168.0.39', 'Duration': 300, 'Threads': 50, 'Ramp': 0}}
+[2019-03-17 13:49:06,745 DEBUG root] Importing module: bzt.modules.jmeter
+[2019-03-17 13:49:06,761 DEBUG root] Loading class: 'JMeterExecutor' from <module 'bzt.modules.jmeter' from 'C:\\Users\\jmcch\\AppData\\Local\\Taurus\\pkgs\\bzt\\modules\\jmeter.py'>
+[2019-03-17 13:49:06,761 DEBUG Engine.local] Preparing executor: jmeter/1239515706368
+[2019-03-17 13:49:06,761 DEBUG Engine.jmeter] Extract {'script': 'iPokeMon1.jmx'} into scenarios
+[2019-03-17 13:49:06,761 DEBUG Engine] New artifact filename: C:\Users\jmcch\Documents\csc4006Gitlab\csc4006-EdgeBenchmarking\Experiments\FogBench\jmeter\bin\2019-03-17_13-49-06.574754\jmeter.log
+[2019-03-17 13:49:06,761 DEBUG Engine.jmeter] Checking if port 4445 is free
+[2019-03-17 13:49:06,761 DEBUG Engine.jmeter] Port 4445 is free
+[2019-03-17 13:49:06,761 DEBUG Engine.jmeter] Using port 4445 for management
+[2019-03-17 13:49:06,761 DEBUG Engine.jmeter] Additional properties: {'jmeter.save.saveservice.autoflush': 'true', 'jmeter.save.saveservice.connect_time': 'true', 'jmeterengine.force.system.exit': 'true', 'summariser.name': '', 'HOST': '192.168.0.39', 'Duration': 300, 'Threads': 50, 'Ramp': 0, 'jmeterengine.nongui.port': 4445, 'jmeterengine.nongui.maxport': 4445, 'jmeter.save.saveservice.timestamp_format': 'ms', 'sampleresult.default.encoding': 'UTF-8', 'user.classpath': 'C:/Users/jmcch/Documents/csc4006Gitlab/csc4006-EdgeBenchmarking/Experiments/FogBench/jmeter/bin/2019-03-17_13-49-06.574754;C:/Users/jmcch/Documents/csc4006Gitlab/csc4006-EdgeBenchmarking/Experiments/FogBench/jmeter/bin'}
+[2019-03-17 13:49:06,761 DEBUG Engine] New artifact filename: C:\Users\jmcch\Documents\csc4006Gitlab\csc4006-EdgeBenchmarking\Experiments\FogBench\jmeter\bin\2019-03-17_13-49-06.574754\jmeter-bzt.properties
+[2019-03-17 13:49:06,792 DEBUG Engine.jmeter.JavaVM] Trying JavaVM: ['java', '-version']
+[2019-03-17 13:49:06,921 DEBUG urllib3.connectionpool] http://gettaurus.org:80 "GET /updates/?version=1.13.2&installID=windows-80fa5b330391 HTTP/1.1" 200 39
+[2019-03-17 13:49:06,921 DEBUG Engine] Taurus updates info: {'latest': '1.13.3', 'needsUpgrade': True}
+[2019-03-17 13:49:06,921 WARNING Engine] There is newer version of Taurus 1.13.3 available, consider upgrading. What's new: http://gettaurus.org/docs/Changelog/
+[2019-03-17 13:49:06,952 DEBUG Engine.jmeter.JavaVM] JavaVM output: java version "10.0.2" 2018-07-17
+Java(TM) SE Runtime Environment 18.3 (build 10.0.2+13)
+Java HotSpot(TM) 64-Bit Server VM 18.3 (build 10.0.2+13, mixed mode)
+[2019-03-17 13:49:06,952 DEBUG Engine.jmeter.TclLibrary] Checking if TCL_LIBRARY variable is present in environment
+[2019-03-17 13:49:06,952 DEBUG Engine.jmeter.TclLibrary] TCL_LIBRARY environment variable is present
+[2019-03-17 13:49:06,952 DEBUG Engine.jmeter.JMeter] Trying jmeter: C:\Users\jmcch\.bzt\jmeter-taurus\5.0\bin\jmeter.bat
+[2019-03-17 13:49:06,952 DEBUG bzt.utils] Executing shell: ['C:\\Users\\jmcch\\.bzt\\jmeter-taurus\\5.0\\bin\\jmeter.bat', '-j', 'C:\\Users\\jmcch\\AppData\\Local\\Temp\\jmeterv4t1s0fdlog', '--version'] at .
+[2019-03-17 13:49:17,502 DEBUG Engine.jmeter.JMeter] JMeter check:     _    ____   _    ____ _   _ _____       _ __  __ _____ _____ _____ ____     
+   / \  |  _ \ / \  / ___| | | | ____|     | |  \/  | ____|_   _| ____|  _ \   
+  / _ \ | |_) / _ \| |   | |_| |  _|    _  | | |\/| |  _|   | | |  _| | |_) | 
+ / ___ \|  __/ ___ \ |___|  _  | |___  | |_| | |  | | |___  | | | |___|  _ <  
+/_/   \_\_| /_/   \_\____|_| |_|_____|  \___/|_|  |_|_____| |_| |_____|_| \_\ 5.0 r1840935  
+
+Copyright (c) 1999-2018 The Apache Software Foundation
+
+ / None
+[2019-03-17 13:49:17,503 DEBUG Engine.jmeter] Load: LoadSpec(concurrency=None, throughput=None, ramp_up=None, hold=0, iterations=None, duration=None, steps=None)
+[2019-03-17 13:49:17,509 DEBUG Engine] New artifact filename: C:\Users\jmcch\Documents\csc4006Gitlab\csc4006-EdgeBenchmarking\Experiments\FogBench\jmeter\bin\2019-03-17_13-49-06.574754\kpi.jtl
+[2019-03-17 13:49:17,510 DEBUG Engine] New artifact filename: C:\Users\jmcch\Documents\csc4006Gitlab\csc4006-EdgeBenchmarking\Experiments\FogBench\jmeter\bin\2019-03-17_13-49-06.574754\error.jtl
+[2019-03-17 13:49:17,512 DEBUG Engine.jmeter.LoadSettingsProcessor] Thread group detection: duration not found, regular ThreadGroup will be used
+[2019-03-17 13:49:17,512 DEBUG Engine.jmeter.LoadSettingsProcessor] No iterations/concurrency/duration found, thread group modification is skipped
+[2019-03-17 13:49:17,512 DEBUG JMX] Saving JMX to: C:\Users\jmcch\Documents\csc4006Gitlab\csc4006-EdgeBenchmarking\Experiments\FogBench\jmeter\bin\modified_iPokeMon1-1.jmx
+[2019-03-17 13:49:17,512 DEBUG bzt.utils] Executing shell: ['C:\\Users\\jmcch\\.bzt\\jmeter-taurus\\5.0\\bin\\PluginsManagerCMD.bat', 'install-for-jmx', 'C:\\Users\\jmcch\\Documents\\csc4006Gitlab\\csc4006-EdgeBenchmarking\\Experiments\\FogBench\\jmeter\\bin\\modified_iPokeMon1-1.jmx'] at .
+[2019-03-17 13:49:20,760 DEBUG Engine.jmeter.JMeter] Try to detect plugins for C:\Users\jmcch\Documents\csc4006Gitlab\csc4006-EdgeBenchmarking\Experiments\FogBench\jmeter\bin\modified_iPokeMon1-1.jmx
+2019-03-17 13:49:18,529 INFO o.j.r.PluginManagerCMD: Command is: install-for-jmx
+2019-03-17 13:49:18,884 INFO o.j.r.JARSourceHTTP: Found cached repo
+2019-03-17 13:49:19,107 INFO o.j.r.PluginManager: Plugins Status: [jpgc-functions=2.1, jpgc-casutg=2.6, jpgc-dummy=0.2, jpgc-ffw=2.0, jpgc-fifo=0.2, jpgc-json=2.7, jpgc-prmctl=0.4, jpgc-perfmon=2.1, jpgc-plugins-manager=1.3, jpgc-tst=2.5, jmeter-core=5.0, jmeter-ftp=5.0, jmeter-http=5.0, jmeter-jdbc=5.0, jmeter-jms=5.0, jmeter-junit=5.0, jmeter-java=5.0, jmeter-ldap=5.0, jmeter-mail=5.0, jmeter-mongodb=5.0, jmeter-native=5.0, jmeter-tcp=5.0, jmeter-components=5.0]
+2019-03-17 13:49:19,110 INFO o.j.r.PluginManagerCMD: Params line is: C:\Users\jmcch\Documents\csc4006Gitlab\csc4006-EdgeBenchmarking\Experiments\FogBench\jmeter\bin\modified_iPokeMon1-1.jmx
+2019-03-17 13:49:19,475 INFO o.a.j.s.SaveService: Testplan (JMX) version: 2.2. Testlog (JTL) version: 2.2
+2019-03-17 13:49:19,490 INFO o.a.j.s.SaveService: Using SaveService properties version 5.0
+2019-03-17 13:49:19,490 INFO o.a.j.s.SaveService: Using SaveService properties file encoding UTF-8
+2019-03-17 13:49:19,678 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/html is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2019-03-17 13:49:19,679 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xhtml+xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2019-03-17 13:49:19,679 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2019-03-17 13:49:19,679 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2019-03-17 13:49:19,679 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/vnd.wap.wml is org.apache.jmeter.protocol.http.parser.RegexpHTMLParser
+2019-03-17 13:49:19,679 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/css is org.apache.jmeter.protocol.http.parser.CssParser
+2019-03-17 13:49:19,681 WARN o.a.j.u.JMeterUtils: ERROR! Resource string not found: [test_action_target]
+2019-03-17 13:49:19,681 WARN o.a.j.u.JMeterUtils: ERROR! Resource string not found: [test_action_target_thread]
+2019-03-17 13:49:19,681 WARN o.a.j.u.JMeterUtils: ERROR! Resource string not found: [test_action_target_test]
+2019-03-17 13:49:19,681 WARN o.a.j.u.JMeterUtils: ERROR! Resource string not found: [test_action_action_thread]
+2019-03-17 13:49:19,682 WARN o.a.j.u.JMeterUtils: ERROR! Resource string not found: [test_action_action_test_thread]
+2019-03-17 13:49:19,682 WARN o.a.j.u.JMeterUtils: ERROR! Resource string not found: [test_action_pause]
+2019-03-17 13:49:19,682 WARN o.a.j.u.JMeterUtils: ERROR! Resource string not found: [test_action_stop]
+2019-03-17 13:49:19,682 WARN o.a.j.u.JMeterUtils: ERROR! Resource string not found: [test_action_stop_now]
+2019-03-17 13:49:19,682 WARN o.a.j.u.JMeterUtils: ERROR! Resource string not found: [test_action_restart_next_loop]
+2019-03-17 13:49:19,682 WARN o.a.j.u.JMeterUtils: ERROR! Resource string not found: [test_action_continue_current_loop]
+2019-03-17 13:49:19,683 WARN o.a.j.u.JMeterUtils: ERROR! Resource string not found: [test_action_break_current_loop]
+2019-03-17 13:49:19,683 WARN o.a.j.u.JMeterUtils: ERROR! Resource string not found: [test_action_duration]
+2019-03-17 13:49:19,693 WARN o.a.j.u.JMeterUtils: ERROR! Resource string not found: [aggregate_report_total_label]
+2019-03-17 13:49:19,726 INFO o.j.r.PluginManager: Finishing without changes
+
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by com.thoughtworks.xstream.core.util.Fields (file:/C:/Users/jmcch/.bzt/jmeter-taurus/5.0/lib/xstream-1.4.10.jar) to field java.util.TreeMap.comparator
+WARNING: Please consider reporting this to the maintainers of com.thoughtworks.xstream.core.util.Fields
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+
+[2019-03-17 13:49:20,760 DEBUG Engine] New artifact filename: C:\Users\jmcch\Documents\csc4006Gitlab\csc4006-EdgeBenchmarking\Experiments\FogBench\jmeter\bin\2019-03-17_13-49-06.574754\jmeter.out
+[2019-03-17 13:49:20,761 DEBUG Engine] New artifact filename: C:\Users\jmcch\Documents\csc4006Gitlab\csc4006-EdgeBenchmarking\Experiments\FogBench\jmeter\bin\2019-03-17_13-49-06.574754\jmeter.err
+[2019-03-17 13:49:20,763 DEBUG Engine] Module config: final-stats {'class': 'bzt.modules.reporting.FinalStatus'}
+[2019-03-17 13:49:20,763 DEBUG root] Importing module: bzt.modules.reporting
+[2019-03-17 13:49:20,773 DEBUG root] Loading class: 'FinalStatus' from <module 'bzt.modules.reporting' from 'C:\\Users\\jmcch\\AppData\\Local\\Taurus\\pkgs\\bzt\\modules\\reporting.py'>
+[2019-03-17 13:49:20,773 DEBUG Engine] Module config: console {'class': 'bzt.modules.console.ConsoleStatusReporter'}
+[2019-03-17 13:49:20,773 DEBUG root] Importing module: bzt.modules.console
+[2019-03-17 13:49:20,773 DEBUG root] Loading class: 'ConsoleStatusReporter' from <module 'bzt.modules.console' from 'C:\\Users\\jmcch\\AppData\\Local\\Taurus\\pkgs\\bzt\\modules\\console.py'>
+[2019-03-17 13:49:20,773 DEBUG Engine.Configuration] Dumping YAML config into C:\Users\jmcch\Documents\csc4006Gitlab\csc4006-EdgeBenchmarking\Experiments\FogBench\jmeter\bin\2019-03-17_13-49-06.574754\effective.yml
+[2019-03-17 13:49:20,789 DEBUG Engine.Configuration] Dumping JSON config into C:\Users\jmcch\Documents\csc4006Gitlab\csc4006-EdgeBenchmarking\Experiments\FogBench\jmeter\bin\2019-03-17_13-49-06.574754\effective.json
+[2019-03-17 13:49:20,789 INFO Engine] Starting...
+[2019-03-17 13:49:20,789 DEBUG Engine] Startup <bzt.modules.monitoring.Monitoring object at 0x0000012098DAFB00>
+[2019-03-17 13:49:20,789 DEBUG Engine] Startup <bzt.modules.aggregator.ConsolidatingAggregator object at 0x00000120920FE7B8>
+[2019-03-17 13:49:20,789 DEBUG Engine] Startup <bzt.modules.reporting.FinalStatus object at 0x0000012098EE0550>
+[2019-03-17 13:49:20,789 DEBUG Engine] Startup <bzt.modules.console.ConsoleStatusReporter object at 0x0000012098EE0940>
+[2019-03-17 13:49:20,789 INFO Engine.console] Waiting for results...
+[2019-03-17 13:49:20,789 DEBUG Engine] Startup <bzt.modules.reporting.FinalStatus object at 0x0000012098EEFBE0>
+[2019-03-17 13:49:20,789 DEBUG Engine] Startup <bzt.modules.provisioning.Local object at 0x00000120983FA940>
+[2019-03-17 13:49:20,789 DEBUG Engine.local] Delay setup for jmeter/iPokeMon1.jmx: 0(start-at) + 0(delay) = 0
+[2019-03-17 13:49:20,804 DEBUG Engine.Configuration] Dumping YAML config into C:\Users\jmcch\Documents\csc4006Gitlab\csc4006-EdgeBenchmarking\Experiments\FogBench\jmeter\bin\2019-03-17_13-49-06.574754\effective.yml
+[2019-03-17 13:49:20,804 DEBUG Engine.Configuration] Dumping JSON config into C:\Users\jmcch\Documents\csc4006Gitlab\csc4006-EdgeBenchmarking\Experiments\FogBench\jmeter\bin\2019-03-17_13-49-06.574754\effective.json
+[2019-03-17 13:49:20,820 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2019-03-17 13:49:20,820 DEBUG root] Leveled up log file verbosity
+[2019-03-17 13:49:20,820 DEBUG bzt.utils] Executing shell: ['C:\\Users\\jmcch\\.bzt\\jmeter-taurus\\5.0\\bin\\jmeter.bat', '-n', '-t', 'C:\\Users\\jmcch\\Documents\\csc4006Gitlab\\csc4006-EdgeBenchmarking\\Experiments\\FogBench\\jmeter\\bin\\modified_iPokeMon1-1.jmx', '-j', 'C:\\Users\\jmcch\\Documents\\csc4006Gitlab\\csc4006-EdgeBenchmarking\\Experiments\\FogBench\\jmeter\\bin\\2019-03-17_13-49-06.574754\\jmeter.log', '-q', 'C:\\Users\\jmcch\\Documents\\csc4006Gitlab\\csc4006-EdgeBenchmarking\\Experiments\\FogBench\\jmeter\\bin\\2019-03-17_13-49-06.574754\\jmeter-bzt.properties'] at C:\Users\jmcch\Documents\csc4006Gitlab\csc4006-EdgeBenchmarking\Experiments\FogBench\jmeter\bin
+[2019-03-17 13:49:20,820 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2019-03-17 13:49:39,963 INFO Engine.console] Current: 50 vu	6 succ	0 fail	0.037 avg rt	/	Cumulative: 0.172 avg rt, 5% failures
+[2019-03-17 13:49:44,960 INFO Engine.console] Current: 50 vu	13 succ	0 fail	0.029 avg rt	/	Cumulative: 0.136 avg rt, 4% failures
+[2019-03-17 13:49:46,958 INFO Engine.console] Current: 50 vu	11 succ	0 fail	0.035 avg rt	/	Cumulative: 0.114 avg rt, 3% failures
+[2019-03-17 13:49:49,964 INFO Engine.console] Current: 50 vu	3 succ	0 fail	0.028 avg rt	/	Cumulative: 0.109 avg rt, 3% failures
+[2019-03-17 13:49:51,982 INFO Engine.console] Current: 50 vu	2 succ	0 fail	0.038 avg rt	/	Cumulative: 0.105 avg rt, 2% failures
+[2019-03-17 13:49:52,983 INFO Engine.console] Current: 50 vu	2 succ	0 fail	0.031 avg rt	/	Cumulative: 0.104 avg rt, 2% failures
+[2019-03-17 13:49:53,986 INFO Engine.console] Current: 50 vu	4 succ	0 fail	0.027 avg rt	/	Cumulative: 0.101 avg rt, 2% failures
+[2019-03-17 13:49:54,925 INFO Engine.console] Current: 50 vu	3 succ	0 fail	0.025 avg rt	/	Cumulative: 0.099 avg rt, 2% failures
+[2019-03-17 13:49:55,974 INFO Engine.console] Current: 50 vu	2 succ	0 fail	0.028 avg rt	/	Cumulative: 0.098 avg rt, 2% failures
+[2019-03-17 13:49:57,976 INFO Engine.console] Current: 50 vu	3 succ	0 fail	0.031 avg rt	/	Cumulative: 0.095 avg rt, 2% failures
+[2019-03-17 13:49:59,987 INFO Engine.console] Current: 50 vu	8 succ	0 fail	0.030 avg rt	/	Cumulative: 0.086 avg rt, 2% failures
+[2019-03-17 13:50:01,973 INFO Engine.console] Current: 50 vu	5 succ	0 fail	0.026 avg rt	/	Cumulative: 0.084 avg rt, 2% failures
+[2019-03-17 13:50:03,991 INFO Engine.console] Current: 50 vu	13 succ	0 fail	0.033 avg rt	/	Cumulative: 0.079 avg rt, 1% failures
+[2019-03-17 13:50:05,987 INFO Engine.console] Current: 50 vu	6 succ	0 fail	0.025 avg rt	/	Cumulative: 0.074 avg rt, 1% failures
+[2019-03-17 13:50:08,997 INFO Engine.console] Current: 50 vu	6 succ	0 fail	0.030 avg rt	/	Cumulative: 0.072 avg rt, 1% failures
+[2019-03-17 13:50:09,990 INFO Engine.console] Current: 50 vu	3 succ	0 fail	0.030 avg rt	/	Cumulative: 0.071 avg rt, 1% failures
+[2019-03-17 13:50:10,990 INFO Engine.console] Current: 50 vu	4 succ	0 fail	0.033 avg rt	/	Cumulative: 0.071 avg rt, 1% failures
+[2019-03-17 13:50:11,993 INFO Engine.console] Current: 50 vu	2 succ	0 fail	0.049 avg rt	/	Cumulative: 0.070 avg rt, 1% failures
+[2019-03-17 13:50:13,994 INFO Engine.console] Current: 50 vu	6 succ	0 fail	0.035 avg rt	/	Cumulative: 0.069 avg rt, 1% failures
+[2019-03-17 13:50:16,005 INFO Engine.console] Current: 50 vu	5 succ	0 fail	0.028 avg rt	/	Cumulative: 0.067 avg rt, 1% failures
+[2019-03-17 13:50:18,002 INFO Engine.console] Current: 50 vu	1 succ	0 fail	0.025 avg rt	/	Cumulative: 0.067 avg rt, 1% failures
+[2019-03-17 13:50:19,003 INFO Engine.console] Current: 50 vu	6 succ	0 fail	0.029 avg rt	/	Cumulative: 0.066 avg rt, 1% failures
+[2019-03-17 13:50:20,005 INFO Engine.console] Current: 50 vu	2 succ	0 fail	0.037 avg rt	/	Cumulative: 0.065 avg rt, 1% failures
+[2019-03-17 13:50:22,008 INFO Engine.console] Current: 50 vu	2 succ	0 fail	0.037 avg rt	/	Cumulative: 0.065 avg rt, 1% failures
+[2019-03-17 13:50:26,010 INFO Engine.console] Current: 50 vu	5 succ	0 fail	0.025 avg rt	/	Cumulative: 0.062 avg rt, 1% failures
+[2019-03-17 13:50:28,011 INFO Engine.console] Current: 50 vu	2 succ	0 fail	0.028 avg rt	/	Cumulative: 0.061 avg rt, 1% failures
+[2019-03-17 13:50:31,023 INFO Engine.console] Current: 50 vu	1 succ	0 fail	0.033 avg rt	/	Cumulative: 0.061 avg rt, 1% failures
+[2019-03-17 13:50:33,016 INFO Engine.console] Current: 50 vu	1 succ	0 fail	0.048 avg rt	/	Cumulative: 0.060 avg rt, 1% failures
+[2019-03-17 13:50:34,970 INFO Engine.console] Current: 50 vu	8 succ	0 fail	0.028 avg rt	/	Cumulative: 0.059 avg rt, 1% failures
+[2019-03-17 13:50:37,030 INFO Engine.console] Current: 50 vu	2 succ	0 fail	0.034 avg rt	/	Cumulative: 0.059 avg rt, 1% failures
+[2019-03-17 13:50:38,032 INFO Engine.console] Current: 50 vu	4 succ	0 fail	0.032 avg rt	/	Cumulative: 0.058 avg rt, 1% failures
+[2019-03-17 13:50:39,039 INFO Engine.console] Current: 50 vu	2 succ	0 fail	0.025 avg rt	/	Cumulative: 0.058 avg rt, 1% failures
+[2019-03-17 13:50:39,986 INFO Engine.console] Current: 50 vu	8 succ	0 fail	0.031 avg rt	/	Cumulative: 0.057 avg rt, 1% failures
+[2019-03-17 13:50:42,033 INFO Engine.console] Current: 50 vu	10 succ	0 fail	0.026 avg rt	/	Cumulative: 0.055 avg rt, 0% failures
+[2019-03-17 13:50:44,036 INFO Engine.console] Current: 50 vu	10 succ	0 fail	0.030 avg rt	/	Cumulative: 0.054 avg rt, 0% failures
+[2019-03-17 13:50:46,041 INFO Engine.console] Current: 50 vu	2 succ	0 fail	0.020 avg rt	/	Cumulative: 0.054 avg rt, 0% failures
+[2019-03-17 13:50:47,041 INFO Engine.console] Current: 50 vu	11 succ	0 fail	0.026 avg rt	/	Cumulative: 0.053 avg rt, 0% failures
+[2019-03-17 13:50:48,044 INFO Engine.console] Current: 50 vu	1 succ	0 fail	0.023 avg rt	/	Cumulative: 0.053 avg rt, 0% failures
+[2019-03-17 13:50:49,044 INFO Engine.console] Current: 50 vu	3 succ	0 fail	0.059 avg rt	/	Cumulative: 0.053 avg rt, 0% failures
+[2019-03-17 13:50:50,046 INFO Engine.console] Current: 50 vu	2 succ	0 fail	0.045 avg rt	/	Cumulative: 0.053 avg rt, 0% failures
+[2019-03-17 13:50:51,047 INFO Engine.console] Current: 50 vu	12 succ	0 fail	0.029 avg rt	/	Cumulative: 0.052 avg rt, 0% failures
+[2019-03-17 13:50:52,051 INFO Engine.console] Current: 50 vu	3 succ	0 fail	0.029 avg rt	/	Cumulative: 0.052 avg rt, 0% failures
+[2019-03-17 13:50:53,053 INFO Engine.console] Current: 50 vu	2 succ	0 fail	0.026 avg rt	/	Cumulative: 0.052 avg rt, 0% failures
+[2019-03-17 13:50:54,003 INFO Engine.console] Current: 50 vu	4 succ	0 fail	0.034 avg rt	/	Cumulative: 0.051 avg rt, 0% failures
+[2019-03-17 13:50:55,061 INFO Engine.console] Current: 50 vu	23 succ	0 fail	0.028 avg rt	/	Cumulative: 0.050 avg rt, 0% failures
+[2019-03-17 13:50:56,006 INFO Engine.console] Current: 50 vu	2 succ	0 fail	0.030 avg rt	/	Cumulative: 0.050 avg rt, 0% failures
+[2019-03-17 13:50:57,056 INFO Engine.console] Current: 50 vu	2 succ	0 fail	0.032 avg rt	/	Cumulative: 0.050 avg rt, 0% failures
+[2019-03-17 13:50:58,058 INFO Engine.console] Current: 50 vu	3 succ	0 fail	0.034 avg rt	/	Cumulative: 0.050 avg rt, 0% failures
+[2019-03-17 13:50:59,010 INFO Engine.console] Current: 50 vu	2 succ	0 fail	0.025 avg rt	/	Cumulative: 0.050 avg rt, 0% failures
+[2019-03-17 13:51:00,066 INFO Engine.console] Current: 50 vu	10 succ	0 fail	0.028 avg rt	/	Cumulative: 0.049 avg rt, 0% failures
+[2019-03-17 13:51:01,014 INFO Engine.console] Current: 50 vu	3 succ	0 fail	0.028 avg rt	/	Cumulative: 0.049 avg rt, 0% failures
+[2019-03-17 13:51:02,062 INFO Engine.console] Current: 50 vu	7 succ	0 fail	0.032 avg rt	/	Cumulative: 0.049 avg rt, 0% failures
+[2019-03-17 13:51:03,064 INFO Engine.console] Current: 50 vu	6 succ	0 fail	0.028 avg rt	/	Cumulative: 0.048 avg rt, 0% failures
+[2019-03-17 13:51:04,073 INFO Engine.console] Current: 50 vu	1 succ	0 fail	0.033 avg rt	/	Cumulative: 0.048 avg rt, 0% failures
+[2019-03-17 13:51:05,067 INFO Engine.console] Current: 50 vu	7 succ	0 fail	0.035 avg rt	/	Cumulative: 0.048 avg rt, 0% failures
+[2019-03-17 13:51:06,080 INFO Engine.console] Current: 50 vu	4 succ	0 fail	0.030 avg rt	/	Cumulative: 0.048 avg rt, 0% failures
+[2019-03-17 13:51:07,023 INFO Engine.console] Current: 50 vu	4 succ	0 fail	0.038 avg rt	/	Cumulative: 0.048 avg rt, 0% failures
+[2019-03-17 13:51:08,073 INFO Engine.console] Current: 50 vu	15 succ	0 fail	0.030 avg rt	/	Cumulative: 0.047 avg rt, 0% failures
+[2019-03-17 13:51:09,025 INFO Engine.console] Current: 50 vu	7 succ	0 fail	0.031 avg rt	/	Cumulative: 0.047 avg rt, 0% failures
+[2019-03-17 13:51:10,072 INFO Engine.console] Current: 50 vu	2 succ	0 fail	0.030 avg rt	/	Cumulative: 0.047 avg rt, 0% failures
+[2019-03-17 13:51:11,080 INFO Engine.console] Current: 50 vu	2 succ	0 fail	0.035 avg rt	/	Cumulative: 0.047 avg rt, 0% failures
+[2019-03-17 13:51:12,078 INFO Engine.console] Current: 50 vu	11 succ	0 fail	0.036 avg rt	/	Cumulative: 0.047 avg rt, 0% failures
+[2019-03-17 13:51:13,076 INFO Engine.console] Current: 50 vu	7 succ	0 fail	0.030 avg rt	/	Cumulative: 0.046 avg rt, 0% failures
+[2019-03-17 13:51:14,082 INFO Engine.console] Current: 50 vu	2 succ	0 fail	0.021 avg rt	/	Cumulative: 0.046 avg rt, 0% failures
+[2019-03-17 13:51:15,079 INFO Engine.console] Current: 50 vu	1 succ	0 fail	0.021 avg rt	/	Cumulative: 0.046 avg rt, 0% failures
+[2019-03-17 13:51:17,081 INFO Engine.console] Current: 50 vu	12 succ	0 fail	0.031 avg rt	/	Cumulative: 0.046 avg rt, 0% failures
+[2019-03-17 13:51:19,077 INFO Engine.console] Current: 50 vu	2 succ	0 fail	0.022 avg rt	/	Cumulative: 0.045 avg rt, 0% failures
+[2019-03-17 13:51:21,098 INFO Engine.console] Current: 50 vu	2 succ	0 fail	0.028 avg rt	/	Cumulative: 0.045 avg rt, 0% failures
+[2019-03-17 13:51:22,042 INFO Engine.console] Current: 50 vu	7 succ	0 fail	0.039 avg rt	/	Cumulative: 0.045 avg rt, 0% failures
+[2019-03-17 13:51:23,093 INFO Engine.console] Current: 50 vu	1 succ	0 fail	0.023 avg rt	/	Cumulative: 0.045 avg rt, 0% failures
+[2019-03-17 13:51:24,097 INFO Engine.console] Current: 50 vu	4 succ	0 fail	0.032 avg rt	/	Cumulative: 0.045 avg rt, 0% failures
+[2019-03-17 13:51:25,046 INFO Engine.console] Current: 50 vu	3 succ	0 fail	0.046 avg rt	/	Cumulative: 0.045 avg rt, 0% failures
+[2019-03-17 13:51:26,095 INFO Engine.console] Current: 50 vu	18 succ	0 fail	0.029 avg rt	/	Cumulative: 0.045 avg rt, 0% failures
+[2019-03-17 13:51:27,101 INFO Engine.console] Current: 50 vu	2 succ	0 fail	0.034 avg rt	/	Cumulative: 0.045 avg rt, 0% failures
+[2019-03-17 13:51:29,101 INFO Engine.console] Current: 50 vu	8 succ	0 fail	0.027 avg rt	/	Cumulative: 0.044 avg rt, 0% failures
+[2019-03-17 13:51:31,102 INFO Engine.console] Current: 50 vu	2 succ	0 fail	0.027 avg rt	/	Cumulative: 0.044 avg rt, 0% failures
+[2019-03-17 13:51:33,115 INFO Engine.console] Current: 50 vu	3 succ	0 fail	0.041 avg rt	/	Cumulative: 0.044 avg rt, 0% failures
+[2019-03-17 13:51:34,062 INFO Engine.console] Current: 50 vu	1 succ	0 fail	0.029 avg rt	/	Cumulative: 0.044 avg rt, 0% failures
+[2019-03-17 13:51:35,116 INFO Engine.console] Current: 50 vu	9 succ	0 fail	0.026 avg rt	/	Cumulative: 0.044 avg rt, 0% failures
+[2019-03-17 13:51:36,114 INFO Engine.console] Current: 50 vu	5 succ	0 fail	0.032 avg rt	/	Cumulative: 0.044 avg rt, 0% failures
+[2019-03-17 13:51:37,062 INFO Engine.console] Current: 50 vu	4 succ	0 fail	0.030 avg rt	/	Cumulative: 0.044 avg rt, 0% failures
+[2019-03-17 13:51:38,112 INFO Engine.console] Current: 50 vu	1 succ	0 fail	0.032 avg rt	/	Cumulative: 0.044 avg rt, 0% failures
+[2019-03-17 13:51:39,117 INFO Engine.console] Current: 50 vu	1 succ	0 fail	0.034 avg rt	/	Cumulative: 0.044 avg rt, 0% failures
+[2019-03-17 13:51:40,118 INFO Engine.console] Current: 50 vu	7 succ	0 fail	0.037 avg rt	/	Cumulative: 0.043 avg rt, 0% failures
+[2019-03-17 13:51:42,114 INFO Engine.console] Current: 50 vu	2 succ	0 fail	0.035 avg rt	/	Cumulative: 0.043 avg rt, 0% failures
+[2019-03-17 13:51:44,116 INFO Engine.console] Current: 50 vu	2 succ	0 fail	0.035 avg rt	/	Cumulative: 0.043 avg rt, 0% failures
+[2019-03-17 13:51:46,129 INFO Engine.console] Current: 50 vu	5 succ	0 fail	0.029 avg rt	/	Cumulative: 0.043 avg rt, 0% failures
+[2019-03-17 13:51:48,123 INFO Engine.console] Current: 50 vu	4 succ	0 fail	0.072 avg rt	/	Cumulative: 0.043 avg rt, 0% failures
+[2019-03-17 13:51:49,129 INFO Engine.console] Current: 50 vu	8 succ	0 fail	0.045 avg rt	/	Cumulative: 0.043 avg rt, 0% failures
+[2019-03-17 13:51:51,120 INFO Engine.console] Current: 50 vu	3 succ	0 fail	0.028 avg rt	/	Cumulative: 0.043 avg rt, 0% failures
+[2019-03-17 13:51:53,132 INFO Engine.console] Current: 50 vu	8 succ	0 fail	0.113 avg rt	/	Cumulative: 0.044 avg rt, 0% failures
+[2019-03-17 13:51:54,140 INFO Engine.console] Current: 50 vu	2 succ	0 fail	0.147 avg rt	/	Cumulative: 0.046 avg rt, 0% failures
+[2019-03-17 13:51:57,147 INFO Engine.console] Current: 50 vu	8 succ	0 fail	0.032 avg rt	/	Cumulative: 0.045 avg rt, 0% failures
+[2019-03-17 13:51:59,136 INFO Engine.console] Current: 50 vu	11 succ	0 fail	0.031 avg rt	/	Cumulative: 0.045 avg rt, 0% failures
+[2019-03-17 13:52:00,145 INFO Engine.console] Current: 50 vu	16 succ	0 fail	0.034 avg rt	/	Cumulative: 0.045 avg rt, 0% failures
+[2019-03-17 13:52:02,149 INFO Engine.console] Current: 50 vu	6 succ	0 fail	0.030 avg rt	/	Cumulative: 0.045 avg rt, 0% failures
+[2019-03-17 13:52:04,143 INFO Engine.console] Current: 50 vu	6 succ	0 fail	0.030 avg rt	/	Cumulative: 0.045 avg rt, 0% failures
+[2019-03-17 13:52:06,151 INFO Engine.console] Current: 50 vu	4 succ	0 fail	0.035 avg rt	/	Cumulative: 0.044 avg rt, 0% failures
+[2019-03-17 13:52:07,154 INFO Engine.console] Current: 50 vu	5 succ	0 fail	0.020 avg rt	/	Cumulative: 0.044 avg rt, 0% failures
+[2019-03-17 13:52:09,164 INFO Engine.console] Current: 50 vu	1 succ	0 fail	0.035 avg rt	/	Cumulative: 0.044 avg rt, 0% failures
+[2019-03-17 13:52:11,153 INFO Engine.console] Current: 50 vu	6 succ	0 fail	0.026 avg rt	/	Cumulative: 0.044 avg rt, 0% failures
+[2019-03-17 13:52:12,162 INFO Engine.console] Current: 50 vu	10 succ	0 fail	0.027 avg rt	/	Cumulative: 0.044 avg rt, 0% failures
+[2019-03-17 13:52:14,156 INFO Engine.console] Current: 50 vu	3 succ	0 fail	0.022 avg rt	/	Cumulative: 0.044 avg rt, 0% failures
+[2019-03-17 13:52:15,166 INFO Engine.console] Current: 50 vu	1 succ	0 fail	0.023 avg rt	/	Cumulative: 0.044 avg rt, 0% failures
+[2019-03-17 13:52:16,169 INFO Engine.console] Current: 50 vu	2 succ	0 fail	0.030 avg rt	/	Cumulative: 0.044 avg rt, 0% failures
+[2019-03-17 13:52:18,165 INFO Engine.console] Current: 50 vu	6 succ	0 fail	0.030 avg rt	/	Cumulative: 0.043 avg rt, 0% failures
+[2019-03-17 13:52:21,168 INFO Engine.console] Current: 50 vu	6 succ	0 fail	0.032 avg rt	/	Cumulative: 0.043 avg rt, 0% failures
+[2019-03-17 13:52:23,113 INFO Engine.console] Current: 50 vu	2 succ	0 fail	0.025 avg rt	/	Cumulative: 0.043 avg rt, 0% failures
+[2019-03-17 13:52:25,174 INFO Engine.console] Current: 50 vu	2 succ	0 fail	0.033 avg rt	/	Cumulative: 0.043 avg rt, 0% failures
+[2019-03-17 13:52:26,185 INFO Engine.console] Current: 50 vu	6 succ	0 fail	0.032 avg rt	/	Cumulative: 0.043 avg rt, 0% failures
+[2019-03-17 13:52:28,168 INFO Engine.console] Current: 50 vu	7 succ	0 fail	0.028 avg rt	/	Cumulative: 0.043 avg rt, 0% failures
+[2019-03-17 13:52:29,176 INFO Engine.console] Current: 50 vu	1 succ	0 fail	0.028 avg rt	/	Cumulative: 0.043 avg rt, 0% failures
+[2019-03-17 13:52:30,192 INFO Engine.console] Current: 50 vu	7 succ	0 fail	0.028 avg rt	/	Cumulative: 0.043 avg rt, 0% failures
+[2019-03-17 13:52:32,174 INFO Engine.console] Current: 50 vu	5 succ	0 fail	0.030 avg rt	/	Cumulative: 0.043 avg rt, 0% failures
+[2019-03-17 13:52:33,185 INFO Engine.console] Current: 50 vu	2 succ	0 fail	0.048 avg rt	/	Cumulative: 0.043 avg rt, 0% failures
+[2019-03-17 13:52:34,191 INFO Engine.console] Current: 50 vu	11 succ	0 fail	0.029 avg rt	/	Cumulative: 0.042 avg rt, 0% failures
+[2019-03-17 13:52:36,182 INFO Engine.console] Current: 50 vu	4 succ	0 fail	0.026 avg rt	/	Cumulative: 0.042 avg rt, 0% failures
+[2019-03-17 13:52:37,191 INFO Engine.console] Current: 50 vu	2 succ	0 fail	0.022 avg rt	/	Cumulative: 0.042 avg rt, 0% failures
+[2019-03-17 13:52:38,189 INFO Engine.console] Current: 50 vu	3 succ	0 fail	0.033 avg rt	/	Cumulative: 0.042 avg rt, 0% failures
+[2019-03-17 13:52:39,195 INFO Engine.console] Current: 50 vu	1 succ	0 fail	0.069 avg rt	/	Cumulative: 0.042 avg rt, 0% failures
+[2019-03-17 13:52:40,198 INFO Engine.console] Current: 50 vu	1 succ	0 fail	0.031 avg rt	/	Cumulative: 0.042 avg rt, 0% failures
+[2019-03-17 13:52:42,187 INFO Engine.console] Current: 50 vu	6 succ	0 fail	0.037 avg rt	/	Cumulative: 0.042 avg rt, 0% failures
+[2019-03-17 13:52:43,196 INFO Engine.console] Current: 50 vu	4 succ	0 fail	0.026 avg rt	/	Cumulative: 0.042 avg rt, 0% failures
+[2019-03-17 13:52:44,213 INFO Engine.console] Current: 50 vu	7 succ	0 fail	0.032 avg rt	/	Cumulative: 0.042 avg rt, 0% failures
+[2019-03-17 13:52:46,190 INFO Engine.console] Current: 50 vu	1 succ	0 fail	0.025 avg rt	/	Cumulative: 0.042 avg rt, 0% failures
+[2019-03-17 13:52:47,210 INFO Engine.console] Current: 50 vu	7 succ	0 fail	0.032 avg rt	/	Cumulative: 0.042 avg rt, 0% failures
+[2019-03-17 13:52:48,156 INFO Engine.console] Current: 50 vu	5 succ	0 fail	0.033 avg rt	/	Cumulative: 0.042 avg rt, 0% failures
+[2019-03-17 13:52:49,203 INFO Engine.console] Current: 50 vu	9 succ	0 fail	0.046 avg rt	/	Cumulative: 0.042 avg rt, 0% failures
+[2019-03-17 13:52:50,206 INFO Engine.console] Current: 50 vu	5 succ	0 fail	0.067 avg rt	/	Cumulative: 0.042 avg rt, 0% failures
+[2019-03-17 13:52:51,209 INFO Engine.console] Current: 50 vu	2 succ	0 fail	0.047 avg rt	/	Cumulative: 0.042 avg rt, 0% failures
+[2019-03-17 13:52:52,213 INFO Engine.console] Current: 50 vu	3 succ	0 fail	0.035 avg rt	/	Cumulative: 0.042 avg rt, 0% failures
+[2019-03-17 13:52:54,201 INFO Engine.console] Current: 50 vu	1 succ	0 fail	0.032 avg rt	/	Cumulative: 0.042 avg rt, 0% failures
+[2019-03-17 13:52:55,210 INFO Engine.console] Current: 50 vu	4 succ	0 fail	0.028 avg rt	/	Cumulative: 0.042 avg rt, 0% failures
+[2019-03-17 13:52:57,216 INFO Engine.console] Current: 50 vu	5 succ	0 fail	0.024 avg rt	/	Cumulative: 0.042 avg rt, 0% failures
+[2019-03-17 13:52:59,211 INFO Engine.console] Current: 50 vu	1 succ	0 fail	0.027 avg rt	/	Cumulative: 0.041 avg rt, 0% failures
+[2019-03-17 13:53:01,221 INFO Engine.console] Current: 50 vu	9 succ	0 fail	0.038 avg rt	/	Cumulative: 0.041 avg rt, 0% failures
+[2019-03-17 13:53:02,219 INFO Engine.console] Current: 50 vu	4 succ	0 fail	0.032 avg rt	/	Cumulative: 0.041 avg rt, 0% failures
+[2019-03-17 13:53:03,226 INFO Engine.console] Current: 50 vu	4 succ	0 fail	0.020 avg rt	/	Cumulative: 0.041 avg rt, 0% failures
+[2019-03-17 13:53:04,175 INFO Engine.console] Current: 50 vu	3 succ	0 fail	0.034 avg rt	/	Cumulative: 0.041 avg rt, 0% failures
+[2019-03-17 13:53:05,229 INFO Engine.console] Current: 50 vu	1 succ	0 fail	0.030 avg rt	/	Cumulative: 0.041 avg rt, 0% failures
+[2019-03-17 13:53:07,225 INFO Engine.console] Current: 50 vu	10 succ	0 fail	0.028 avg rt	/	Cumulative: 0.041 avg rt, 0% failures
+[2019-03-17 13:53:08,238 INFO Engine.console] Current: 50 vu	19 succ	0 fail	0.025 avg rt	/	Cumulative: 0.041 avg rt, 0% failures
+[2019-03-17 13:53:10,228 INFO Engine.console] Current: 50 vu	10 succ	0 fail	0.029 avg rt	/	Cumulative: 0.040 avg rt, 0% failures
+[2019-03-17 13:53:12,232 INFO Engine.console] Current: 50 vu	6 succ	0 fail	0.028 avg rt	/	Cumulative: 0.040 avg rt, 0% failures
+[2019-03-17 13:53:14,233 INFO Engine.console] Current: 50 vu	5 succ	0 fail	0.024 avg rt	/	Cumulative: 0.040 avg rt, 0% failures
+[2019-03-17 13:53:17,240 INFO Engine.console] Current: 50 vu	8 succ	0 fail	0.037 avg rt	/	Cumulative: 0.040 avg rt, 0% failures
+[2019-03-17 13:53:18,243 INFO Engine.console] Current: 50 vu	5 succ	0 fail	0.031 avg rt	/	Cumulative: 0.040 avg rt, 0% failures
+[2019-03-17 13:53:19,247 INFO Engine.console] Current: 50 vu	5 succ	0 fail	0.032 avg rt	/	Cumulative: 0.040 avg rt, 0% failures
+[2019-03-17 13:53:20,196 INFO Engine.console] Current: 50 vu	3 succ	0 fail	0.025 avg rt	/	Cumulative: 0.040 avg rt, 0% failures
+[2019-03-17 13:53:21,247 INFO Engine.console] Current: 50 vu	12 succ	0 fail	0.033 avg rt	/	Cumulative: 0.040 avg rt, 0% failures
+[2019-03-17 13:53:22,248 INFO Engine.console] Current: 50 vu	2 succ	0 fail	0.027 avg rt	/	Cumulative: 0.040 avg rt, 0% failures
+[2019-03-17 13:53:23,247 INFO Engine.console] Current: 50 vu	6 succ	0 fail	0.025 avg rt	/	Cumulative: 0.040 avg rt, 0% failures
+[2019-03-17 13:53:24,248 INFO Engine.console] Current: 50 vu	1 succ	0 fail	0.022 avg rt	/	Cumulative: 0.040 avg rt, 0% failures
+[2019-03-17 13:53:25,251 INFO Engine.console] Current: 50 vu	6 succ	0 fail	0.031 avg rt	/	Cumulative: 0.040 avg rt, 0% failures
+[2019-03-17 13:53:26,250 INFO Engine.console] Current: 50 vu	2 succ	0 fail	0.027 avg rt	/	Cumulative: 0.040 avg rt, 0% failures
+[2019-03-17 13:53:27,254 INFO Engine.console] Current: 50 vu	3 succ	0 fail	0.033 avg rt	/	Cumulative: 0.040 avg rt, 0% failures
+[2019-03-17 13:53:28,252 INFO Engine.console] Current: 50 vu	1 succ	0 fail	0.030 avg rt	/	Cumulative: 0.040 avg rt, 0% failures
+[2019-03-17 13:53:29,259 INFO Engine.console] Current: 50 vu	5 succ	0 fail	0.032 avg rt	/	Cumulative: 0.040 avg rt, 0% failures
+[2019-03-17 13:53:31,255 INFO Engine.console] Current: 50 vu	1 succ	0 fail	0.039 avg rt	/	Cumulative: 0.040 avg rt, 0% failures
+[2019-03-17 13:53:33,254 INFO Engine.console] Current: 50 vu	3 succ	0 fail	0.027 avg rt	/	Cumulative: 0.040 avg rt, 0% failures
+[2019-03-17 13:53:34,269 INFO Engine.console] Current: 50 vu	11 succ	0 fail	0.028 avg rt	/	Cumulative: 0.039 avg rt, 0% failures
+[2019-03-17 13:53:35,217 INFO Engine.console] Current: 50 vu	2 succ	0 fail	0.028 avg rt	/	Cumulative: 0.039 avg rt, 0% failures
+[2019-03-17 13:53:37,264 INFO Engine.console] Current: 50 vu	3 succ	0 fail	0.027 avg rt	/	Cumulative: 0.039 avg rt, 0% failures
+[2019-03-17 13:53:39,263 INFO Engine.console] Current: 50 vu	9 succ	0 fail	0.028 avg rt	/	Cumulative: 0.039 avg rt, 0% failures
+[2019-03-17 13:53:40,277 INFO Engine.console] Current: 50 vu	9 succ	0 fail	0.033 avg rt	/	Cumulative: 0.039 avg rt, 0% failures
+[2019-03-17 13:53:44,273 INFO Engine.console] Current: 50 vu	15 succ	0 fail	0.034 avg rt	/	Cumulative: 0.039 avg rt, 0% failures
+[2019-03-17 13:53:46,272 INFO Engine.console] Current: 50 vu	1 succ	0 fail	0.028 avg rt	/	Cumulative: 0.039 avg rt, 0% failures
+[2019-03-17 13:53:48,223 INFO Engine.console] Current: 50 vu	2 succ	0 fail	0.028 avg rt	/	Cumulative: 0.039 avg rt, 0% failures
+[2019-03-17 13:53:51,284 INFO Engine.console] Current: 50 vu	1 succ	0 fail	0.042 avg rt	/	Cumulative: 0.039 avg rt, 0% failures
+[2019-03-17 13:53:54,284 INFO Engine.console] Current: 50 vu	4 succ	0 fail	0.027 avg rt	/	Cumulative: 0.039 avg rt, 0% failures
+[2019-03-17 13:53:56,234 INFO Engine.console] Current: 50 vu	3 succ	0 fail	0.029 avg rt	/	Cumulative: 0.039 avg rt, 0% failures
+[2019-03-17 13:53:58,299 INFO Engine.console] Current: 50 vu	5 succ	0 fail	0.027 avg rt	/	Cumulative: 0.039 avg rt, 0% failures
+[2019-03-17 13:54:00,293 INFO Engine.console] Current: 50 vu	4 succ	0 fail	0.034 avg rt	/	Cumulative: 0.039 avg rt, 0% failures
+[2019-03-17 13:54:01,302 INFO Engine.console] Current: 50 vu	6 succ	0 fail	0.030 avg rt	/	Cumulative: 0.039 avg rt, 0% failures
+[2019-03-17 13:54:03,298 INFO Engine.console] Current: 50 vu	1 succ	0 fail	0.024 avg rt	/	Cumulative: 0.039 avg rt, 0% failures
+[2019-03-17 13:54:05,298 INFO Engine.console] Current: 50 vu	4 succ	0 fail	0.030 avg rt	/	Cumulative: 0.039 avg rt, 0% failures
+[2019-03-17 13:54:07,303 INFO Engine.console] Current: 50 vu	4 succ	0 fail	0.057 avg rt	/	Cumulative: 0.039 avg rt, 0% failures
+[2019-03-17 13:54:09,301 INFO Engine.console] Current: 50 vu	2 succ	0 fail	0.030 avg rt	/	Cumulative: 0.039 avg rt, 0% failures
+[2019-03-17 13:54:11,253 INFO Engine.console] Current: 50 vu	2 succ	0 fail	0.038 avg rt	/	Cumulative: 0.039 avg rt, 0% failures
+[2019-03-17 13:54:13,309 INFO Engine.console] Current: 50 vu	3 succ	0 fail	0.040 avg rt	/	Cumulative: 0.039 avg rt, 0% failures
+[2019-03-17 13:54:16,313 INFO Engine.console] Current: 50 vu	4 succ	0 fail	0.027 avg rt	/	Cumulative: 0.038 avg rt, 0% failures
+[2019-03-17 13:54:17,323 INFO Engine.console] Current: 50 vu	1 succ	0 fail	0.027 avg rt	/	Cumulative: 0.038 avg rt, 0% failures
+[2019-03-17 13:54:20,324 INFO Engine.console] Current: 50 vu	1 succ	0 fail	0.025 avg rt	/	Cumulative: 0.038 avg rt, 0% failures
+[2019-03-17 13:54:21,331 INFO Engine.console] Current: 50 vu	4 succ	0 fail	0.026 avg rt	/	Cumulative: 0.038 avg rt, 0% failures
+[2019-03-17 13:54:22,326 INFO Engine.console] Current: 50 vu	6 succ	0 fail	0.043 avg rt	/	Cumulative: 0.038 avg rt, 0% failures
+[2019-03-17 13:54:23,339 INFO Engine.console] Current: 50 vu	6 succ	0 fail	0.039 avg rt	/	Cumulative: 0.038 avg rt, 0% failures
+[2019-03-17 13:54:24,282 INFO Engine.console] Current: 50 vu	1 succ	0 fail	0.028 avg rt	/	Cumulative: 0.038 avg rt, 0% failures
+[2019-03-17 13:54:25,329 INFO Engine.console] Current: 50 vu	7 succ	0 fail	0.032 avg rt	/	Cumulative: 0.038 avg rt, 0% failures
+[2019-03-17 13:54:28,332 INFO Engine.console] Current: 50 vu	11 succ	0 fail	0.031 avg rt	/	Cumulative: 0.038 avg rt, 0% failures
+[2019-03-17 13:54:29,339 INFO Engine.console] Current: 50 vu	7 succ	0 fail	0.039 avg rt	/	Cumulative: 0.038 avg rt, 0% failures
+[2019-03-17 13:54:31,337 INFO Engine.console] Current: 50 vu	4 succ	0 fail	0.037 avg rt	/	Cumulative: 0.038 avg rt, 0% failures
+[2019-03-17 13:54:33,383 WARNING Engine] Please wait for graceful shutdown...
+[2019-03-17 13:54:33,383 DEBUG root] Leveled up log file verbosity
+[2019-03-17 13:54:33,383 INFO Engine] Shutting down...
+[2019-03-17 13:54:33,383 DEBUG Engine] Current stop reason: None
+[2019-03-17 13:54:33,384 DEBUG Engine.local] Shutdown jmeter/iPokeMon1.jmx
+[2019-03-17 13:54:33,402 DEBUG Engine.Configuration] Dumping YAML config into C:\Users\jmcch\Documents\csc4006Gitlab\csc4006-EdgeBenchmarking\Experiments\FogBench\jmeter\bin\2019-03-17_13-49-06.574754\effective.yml
+[2019-03-17 13:54:33,417 DEBUG Engine.Configuration] Dumping JSON config into C:\Users\jmcch\Documents\csc4006Gitlab\csc4006-EdgeBenchmarking\Experiments\FogBench\jmeter\bin\2019-03-17_13-49-06.574754\effective.json
+[2019-03-17 13:54:33,417 INFO Engine] Post-processing...
+[2019-03-17 13:54:33,417 DEBUG Engine.local] Post-process jmeter/iPokeMon1.jmx
+[2019-03-17 13:54:33,417 DEBUG Engine] Add existing artifact (move=True): C:\Users\jmcch\Documents\csc4006Gitlab\csc4006-EdgeBenchmarking\Experiments\FogBench\jmeter\bin\modified_iPokeMon1-1.jmx
+[2019-03-17 13:54:33,417 DEBUG Engine] Moving C:\Users\jmcch\Documents\csc4006Gitlab\csc4006-EdgeBenchmarking\Experiments\FogBench\jmeter\bin\modified_iPokeMon1-1.jmx to C:\Users\jmcch\Documents\csc4006Gitlab\csc4006-EdgeBenchmarking\Experiments\FogBench\jmeter\bin\2019-03-17_13-49-06.574754\modified_iPokeMon1-1.jmx
+[2019-03-17 13:54:33,417 DEBUG Engine.jmeter.JTLErrorsReader.FileReader] Reading: C:\Users\jmcch\Documents\csc4006Gitlab\csc4006-EdgeBenchmarking\Experiments\FogBench\jmeter\bin\2019-03-17_13-49-06.574754\error.jtl
+[2019-03-17 13:54:33,417 DEBUG Engine.jmeter.JTLReader.IncrementalCSVReader.FileReader] Reading: C:\Users\jmcch\Documents\csc4006Gitlab\csc4006-EdgeBenchmarking\Experiments\FogBench\jmeter\bin\2019-03-17_13-49-06.574754\kpi.jtl
+[2019-03-17 13:54:33,417 DEBUG Engine.jmeter.JTLReader] Buffer len: 2; Known errors count: 1
+[2019-03-17 13:54:33,417 DEBUG Engine.jmeter.JTLReader] Aggregating: 1552830870
+[2019-03-17 13:54:33,433 DEBUG Engine.jmeter.JTLReader] Aggregating: 1552830871
+[2019-03-17 13:54:33,433 DEBUG Engine.consolidator] Consolidator buffer[4]: dict_keys([1552830868, 1552830869, 1552830870, 1552830871])
+[2019-03-17 13:54:33,433 DEBUG Engine.consolidator] Merging into 1552830868
+[2019-03-17 13:54:33,433 DEBUG Engine.consolidator] Bypassing consolidation because of single result
+[2019-03-17 13:54:33,433 DEBUG Engine.consolidator] Processed datapoint: 1552830868/1239516318464
+[2019-03-17 13:54:33,433 DEBUG Engine.consolidator] Merging into 1552830869
+[2019-03-17 13:54:33,433 DEBUG Engine.consolidator] Bypassing consolidation because of single result
+[2019-03-17 13:54:33,433 DEBUG Engine.consolidator] Processed datapoint: 1552830869/1239516318464
+[2019-03-17 13:54:33,433 DEBUG Engine.consolidator] Merging into 1552830870
+[2019-03-17 13:54:33,433 DEBUG Engine.consolidator] Bypassing consolidation because of single result
+[2019-03-17 13:54:33,433 DEBUG Engine.consolidator] Processed datapoint: 1552830870/1239516318464
+[2019-03-17 13:54:33,433 DEBUG Engine.consolidator] Merging into 1552830871
+[2019-03-17 13:54:33,433 DEBUG Engine.consolidator] Bypassing consolidation because of single result
+[2019-03-17 13:54:33,449 DEBUG Engine.consolidator] Processed datapoint: 1552830871/1239516318464
+[2019-03-17 13:54:33,449 INFO Engine.final-stats] Test duration: 0:05:13
+[2019-03-17 13:54:33,449 INFO Engine.final-stats] Samples count: 1384, 0.22% failures
+[2019-03-17 13:54:33,449 INFO Engine.final-stats] Average times: total 0.038, latency 0.038, connect 0.008
+[2019-03-17 13:54:33,449 INFO Engine.final-stats] Percentiles:
++---------------+---------------+
+| Percentile, % | Resp. Time, s |
++---------------+---------------+
+|           0.0 |         0.014 |
+|          50.0 |          0.03 |
+|          90.0 |         0.049 |
+|          95.0 |         0.065 |
+|          99.0 |         0.306 |
+|          99.9 |         0.983 |
+|         100.0 |         0.997 |
++---------------+---------------+
+[2019-03-17 13:54:33,449 INFO Engine.final-stats] Request label stats:
++--------+--------+---------+--------+---------------------------------------------+
+| label  | status |    succ | avg_rt | error                                       |
++--------+--------+---------+--------+---------------------------------------------+
+| cc     |   OK   | 100.00% |  0.030 |                                             |
+| cu     |   OK   | 100.00% |  0.035 |                                             |
+| id     |   OK   | 100.00% |  0.033 |                                             |
+| mas/CN |   OK   | 100.00% |  0.033 |                                             |
+| pd     |   OK   | 100.00% |  0.039 |                                             |
+| pma/1  |   OK   | 100.00% |  0.024 |                                             |
+| pma/23 |   OK   | 100.00% |  0.038 |                                             |
+| pma/4  |   OK   | 100.00% |  0.024 |                                             |
+| pma/7  |   OK   | 100.00% |  0.029 |                                             |
+| r/XX   |   OK   | 100.00% |  0.027 |                                             |
+| u      |   OK   | 100.00% |  0.064 |                                             |
+| upm    |  FAIL  |  99.03% |  0.041 | Non HTTP response message: Connection reset |
+| ur     |   OK   | 100.00% |  0.037 |                                             |
+| uu     |   OK   | 100.00% |  0.041 |                                             |
+| wpm    |   OK   | 100.00% |  0.029 |                                             |
++--------+--------+---------+--------+---------------------------------------------+
+[2019-03-17 13:54:33,449 DEBUG Engine.console] No logger_handler or orig_stream was detected
+[2019-03-17 13:54:33,449 INFO Engine.final-stats] Test duration: 0:05:13
+[2019-03-17 13:54:33,449 INFO Engine.final-stats] Samples count: 1384, 0.22% failures
+[2019-03-17 13:54:33,449 INFO Engine.final-stats] Average times: total 0.038, latency 0.038, connect 0.008
+[2019-03-17 13:54:33,449 INFO Engine.final-stats] Percentiles:
++---------------+---------------+
+| Percentile, % | Resp. Time, s |
++---------------+---------------+
+|           0.0 |         0.014 |
+|          50.0 |          0.03 |
+|          90.0 |         0.049 |
+|          95.0 |         0.065 |
+|          99.0 |         0.306 |
+|          99.9 |         0.983 |
+|         100.0 |         0.997 |
++---------------+---------------+
+[2019-03-17 13:54:33,449 INFO Engine.final-stats] Request label stats:
++--------+--------+---------+--------+---------------------------------------------+
+| label  | status |    succ | avg_rt | error                                       |
++--------+--------+---------+--------+---------------------------------------------+
+| cc     |   OK   | 100.00% |  0.030 |                                             |
+| cu     |   OK   | 100.00% |  0.035 |                                             |
+| id     |   OK   | 100.00% |  0.033 |                                             |
+| mas/CN |   OK   | 100.00% |  0.033 |                                             |
+| pd     |   OK   | 100.00% |  0.039 |                                             |
+| pma/1  |   OK   | 100.00% |  0.024 |                                             |
+| pma/23 |   OK   | 100.00% |  0.038 |                                             |
+| pma/4  |   OK   | 100.00% |  0.024 |                                             |
+| pma/7  |   OK   | 100.00% |  0.029 |                                             |
+| r/XX   |   OK   | 100.00% |  0.027 |                                             |
+| u      |   OK   | 100.00% |  0.064 |                                             |
+| upm    |  FAIL  |  99.03% |  0.041 | Non HTTP response message: Connection reset |
+| ur     |   OK   | 100.00% |  0.037 |                                             |
+| uu     |   OK   | 100.00% |  0.041 |                                             |
+| wpm    |   OK   | 100.00% |  0.029 |                                             |
++--------+--------+---------+--------+---------------------------------------------+
+[2019-03-17 13:54:33,449 INFO Engine.final-stats] 3 failed samples: upm
+[2019-03-17 13:54:33,449 INFO Engine.final-stats] Dumping final status as XML: taurusreport.xml
+[2019-03-17 13:54:33,496 INFO Engine.final-stats] Dumping final status as CSV: taurusreport.csv
+[2019-03-17 13:54:33,508 DEBUG Engine.Configuration] Dumping YAML config into C:\Users\jmcch\Documents\csc4006Gitlab\csc4006-EdgeBenchmarking\Experiments\FogBench\jmeter\bin\2019-03-17_13-49-06.574754\effective.yml
+[2019-03-17 13:54:33,524 DEBUG Engine.Configuration] Dumping JSON config into C:\Users\jmcch\Documents\csc4006Gitlab\csc4006-EdgeBenchmarking\Experiments\FogBench\jmeter\bin\2019-03-17_13-49-06.574754\effective.json
+[2019-03-17 13:54:33,524 INFO root] Artifacts dir: C:\Users\jmcch\Documents\csc4006Gitlab\csc4006-EdgeBenchmarking\Experiments\FogBench\jmeter\bin\2019-03-17_13-49-06.574754
+[2019-03-17 13:54:33,524 INFO root] Done performing with code: 0
+[2019-03-17 13:54:33,524 DEBUG root] Closing log handler: C:\Users\jmcch\Documents\csc4006Gitlab\csc4006-EdgeBenchmarking\Experiments\FogBench\jmeter\bin\2019-03-17_13-49-06.574754\bzt.log

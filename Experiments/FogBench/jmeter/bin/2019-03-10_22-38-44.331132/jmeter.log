@@ -1,0 +1,130 @@
+2019-03-10 22:39:02,473 INFO o.a.j.u.JMeterUtils: Setting Locale to en_EN
+2019-03-10 22:39:02,514 INFO o.a.j.JMeter: Loading user properties from: user.properties
+2019-03-10 22:39:02,515 INFO o.a.j.JMeter: Loading system properties from: system.properties
+2019-03-10 22:39:02,515 INFO o.a.j.JMeter: Loading additional properties from: C:\Users\jmcch\Documents\csc4006Gitlab\csc4006-EdgeBenchmarking\Experiments\FogBench\jmeter\bin\2019-03-10_22-38-44.331132\jmeter-bzt.properties
+2019-03-10 22:39:02,531 INFO o.a.j.JMeter: Copyright (c) 1998-2018 The Apache Software Foundation
+2019-03-10 22:39:02,532 INFO o.a.j.JMeter: Version 5.0 r1840935
+2019-03-10 22:39:02,532 INFO o.a.j.JMeter: java.version=10.0.2
+2019-03-10 22:39:02,532 INFO o.a.j.JMeter: java.vm.name=Java HotSpot(TM) 64-Bit Server VM
+2019-03-10 22:39:02,533 INFO o.a.j.JMeter: os.name=Windows 10
+2019-03-10 22:39:02,533 INFO o.a.j.JMeter: os.arch=amd64
+2019-03-10 22:39:02,533 INFO o.a.j.JMeter: os.version=10.0
+2019-03-10 22:39:02,533 INFO o.a.j.JMeter: file.encoding=Cp1252
+2019-03-10 22:39:02,533 INFO o.a.j.JMeter: Max memory     =1073741824
+2019-03-10 22:39:02,533 INFO o.a.j.JMeter: Available Processors =4
+2019-03-10 22:39:02,544 INFO o.a.j.JMeter: Default Locale=English (EN)
+2019-03-10 22:39:02,544 INFO o.a.j.JMeter: JMeter  Locale=English (EN)
+2019-03-10 22:39:02,545 INFO o.a.j.JMeter: JMeterHome=C:\Users\jmcch\Documents\csc4006Gitlab\csc4006-EdgeBenchmarking\Experiments\FogBench\jmeter
+2019-03-10 22:39:02,545 INFO o.a.j.JMeter: user.dir  =C:\Users\jmcch\Documents\csc4006Gitlab\csc4006-EdgeBenchmarking\Experiments\FogBench\jmeter\bin
+2019-03-10 22:39:02,546 INFO o.a.j.JMeter: PWD       =C:\Users\jmcch\Documents\csc4006Gitlab\csc4006-EdgeBenchmarking\Experiments\FogBench\jmeter\bin
+2019-03-10 22:39:11,563 INFO o.a.j.JMeter: IP: 192.168.56.1 Name: DESKTOP-JQOCQB2 FullName: DESKTOP-JQOCQB2
+2019-03-10 22:39:11,563 INFO o.a.j.JMeter: user.classpath=C:/Users/jmcch/Documents/csc4006Gitlab/csc4006-EdgeBenchmarking/Experiments/FogBench/jmeter/bin/2019-03-10_22-38-44.331132;C:/Users/jmcch/Documents/csc4006Gitlab/csc4006-EdgeBenchmarking/Experiments/FogBench/jmeter/bin
+2019-03-10 22:39:11,564 INFO o.a.j.JMeter: Adding to classpath and loader: C:/Users/jmcch/Documents/csc4006Gitlab/csc4006-EdgeBenchmarking/Experiments/FogBench/jmeter/bin/2019-03-10_22-38-44.331132
+2019-03-10 22:39:11,565 INFO o.a.j.JMeter: Adding to classpath and loader: C:/Users/jmcch/Documents/csc4006Gitlab/csc4006-EdgeBenchmarking/Experiments/FogBench/jmeter/bin
+2019-03-10 22:39:11,575 INFO o.a.j.s.FileServer: Default base='C:\Users\jmcch\Documents\csc4006Gitlab\csc4006-EdgeBenchmarking\Experiments\FogBench\jmeter\bin'
+2019-03-10 22:39:11,578 INFO o.a.j.s.FileServer: Set new base='C:\Users\jmcch\Documents\csc4006Gitlab\csc4006-EdgeBenchmarking\Experiments\FogBench\jmeter\bin'
+2019-03-10 22:39:11,790 INFO o.a.j.s.SaveService: Testplan (JMX) version: 2.2. Testlog (JTL) version: 2.2
+2019-03-10 22:39:11,820 INFO o.a.j.s.SaveService: Using SaveService properties version 5.0
+2019-03-10 22:39:11,829 INFO o.a.j.s.SaveService: Using SaveService properties file encoding UTF-8
+2019-03-10 22:39:11,842 INFO o.a.j.s.SaveService: Loading file: C:\Users\jmcch\Documents\csc4006Gitlab\csc4006-EdgeBenchmarking\Experiments\FogBench\jmeter\bin\modified_iPokeMon1-1.jmx
+2019-03-10 22:39:11,948 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/html is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2019-03-10 22:39:11,948 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xhtml+xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2019-03-10 22:39:11,948 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2019-03-10 22:39:11,948 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2019-03-10 22:39:11,948 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/vnd.wap.wml is org.apache.jmeter.protocol.http.parser.RegexpHTMLParser
+2019-03-10 22:39:11,948 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/css is org.apache.jmeter.protocol.http.parser.CssParser
+2019-03-10 22:39:12,061 INFO o.a.j.e.StandardJMeterEngine: Running the test!
+2019-03-10 22:39:12,062 INFO o.a.j.s.SampleEvent: List of sample_variables: []
+2019-03-10 22:39:12,062 INFO o.a.j.s.SampleEvent: List of sample_variables: []
+2019-03-10 22:39:12,071 INFO o.a.j.e.u.CompoundVariable: Note: Function class names must contain the string: '.functions.'
+2019-03-10 22:39:12,072 INFO o.a.j.e.u.CompoundVariable: Note: Function class names must not contain the string: '.gui.'
+2019-03-10 22:39:12,659 INFO o.a.j.JMeter: Running test (1552257552659)
+2019-03-10 22:39:12,685 INFO o.a.j.e.StandardJMeterEngine: Starting ThreadGroup: 1 : ipokemon
+2019-03-10 22:39:12,686 INFO o.a.j.e.StandardJMeterEngine: Starting 25 threads for group ipokemon.
+2019-03-10 22:39:12,686 INFO o.a.j.e.StandardJMeterEngine: Thread will continue on error
+2019-03-10 22:39:12,686 INFO o.a.j.t.ThreadGroup: Starting thread group... number=1 threads=25 ramp-up=10 perThread=400.0 delayedStart=false
+2019-03-10 22:39:12,745 INFO o.a.j.t.JMeterThread: Thread started: ipokemon 1-1
+2019-03-10 22:39:12,811 INFO o.a.j.p.h.s.HTTPHCAbstractImpl: Local host = DESKTOP-JQOCQB2
+2019-03-10 22:39:12,814 INFO o.a.j.t.ThreadGroup: Started thread group number 1
+2019-03-10 22:39:12,815 INFO o.a.j.e.StandardJMeterEngine: All thread groups have been started
+2019-03-10 22:39:12,839 INFO o.a.j.p.h.s.HTTPHC4Impl: HTTP request retry count = 0
+2019-03-10 22:39:12,841 INFO o.a.j.s.SampleResult: Note: Sample TimeStamps are START times
+2019-03-10 22:39:12,842 INFO o.a.j.s.SampleResult: sampleresult.default.encoding is set to UTF-8
+2019-03-10 22:39:12,842 INFO o.a.j.s.SampleResult: sampleresult.useNanoTime=true
+2019-03-10 22:39:12,842 INFO o.a.j.s.SampleResult: sampleresult.nanoThreadSleep=5000
+2019-03-10 22:39:13,170 INFO o.a.j.t.JMeterThread: Thread started: ipokemon 1-2
+2019-03-10 22:39:13,576 INFO o.a.j.t.JMeterThread: Thread started: ipokemon 1-3
+2019-03-10 22:39:13,986 INFO o.a.j.t.JMeterThread: Thread started: ipokemon 1-4
+2019-03-10 22:39:14,396 INFO o.a.j.t.JMeterThread: Thread started: ipokemon 1-5
+2019-03-10 22:39:14,786 INFO o.a.j.t.JMeterThread: Thread started: ipokemon 1-6
+2019-03-10 22:39:15,181 INFO o.a.j.t.JMeterThread: Thread started: ipokemon 1-7
+2019-03-10 22:39:15,587 INFO o.a.j.t.JMeterThread: Thread started: ipokemon 1-8
+2019-03-10 22:39:15,984 INFO o.a.j.t.JMeterThread: Thread started: ipokemon 1-9
+2019-03-10 22:39:16,357 INFO o.a.j.t.JMeterThread: Thread started: ipokemon 1-10
+2019-03-10 22:39:16,793 INFO o.a.j.t.JMeterThread: Thread started: ipokemon 1-11
+2019-03-10 22:39:17,161 INFO o.a.j.t.JMeterThread: Thread started: ipokemon 1-12
+2019-03-10 22:39:17,598 INFO o.a.j.t.JMeterThread: Thread started: ipokemon 1-13
+2019-03-10 22:39:18,000 INFO o.a.j.t.JMeterThread: Thread started: ipokemon 1-14
+2019-03-10 22:39:18,428 INFO o.a.j.t.JMeterThread: Thread started: ipokemon 1-15
+2019-03-10 22:39:18,830 INFO o.a.j.t.JMeterThread: Thread started: ipokemon 1-16
+2019-03-10 22:39:19,232 INFO o.a.j.t.JMeterThread: Thread started: ipokemon 1-17
+2019-03-10 22:39:19,638 INFO o.a.j.t.JMeterThread: Thread started: ipokemon 1-18
+2019-03-10 22:39:20,034 INFO o.a.j.t.JMeterThread: Thread started: ipokemon 1-19
+2019-03-10 22:39:20,442 INFO o.a.j.t.JMeterThread: Thread started: ipokemon 1-20
+2019-03-10 22:39:20,861 INFO o.a.j.t.JMeterThread: Thread started: ipokemon 1-21
+2019-03-10 22:39:21,261 INFO o.a.j.t.JMeterThread: Thread started: ipokemon 1-22
+2019-03-10 22:39:21,664 INFO o.a.j.t.JMeterThread: Thread started: ipokemon 1-23
+2019-03-10 22:39:22,063 INFO o.a.j.t.JMeterThread: Thread started: ipokemon 1-24
+2019-03-10 22:39:22,465 INFO o.a.j.t.JMeterThread: Thread started: ipokemon 1-25
+2019-03-10 22:40:12,686 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: ipokemon 1-2
+2019-03-10 22:40:12,686 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: ipokemon 1-10
+2019-03-10 22:40:12,686 INFO o.a.j.t.JMeterThread: Thread finished: ipokemon 1-2
+2019-03-10 22:40:12,687 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: ipokemon 1-18
+2019-03-10 22:40:12,689 INFO o.a.j.t.JMeterThread: Thread finished: ipokemon 1-18
+2019-03-10 22:40:12,686 INFO o.a.j.t.JMeterThread: Thread finished: ipokemon 1-10
+2019-03-10 22:40:12,688 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: ipokemon 1-14
+2019-03-10 22:40:12,691 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: ipokemon 1-22
+2019-03-10 22:40:12,691 INFO o.a.j.t.JMeterThread: Thread finished: ipokemon 1-14
+2019-03-10 22:40:12,692 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: ipokemon 1-24
+2019-03-10 22:40:12,688 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: ipokemon 1-15
+2019-03-10 22:40:12,692 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: ipokemon 1-20
+2019-03-10 22:40:12,692 INFO o.a.j.t.JMeterThread: Thread finished: ipokemon 1-15
+2019-03-10 22:40:12,692 INFO o.a.j.t.JMeterThread: Thread finished: ipokemon 1-20
+2019-03-10 22:40:12,692 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: ipokemon 1-16
+2019-03-10 22:40:12,688 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: ipokemon 1-7
+2019-03-10 22:40:12,688 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: ipokemon 1-13
+2019-03-10 22:40:12,688 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: ipokemon 1-11
+2019-03-10 22:40:12,688 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: ipokemon 1-23
+2019-03-10 22:40:12,693 INFO o.a.j.t.JMeterThread: Thread finished: ipokemon 1-11
+2019-03-10 22:40:12,693 INFO o.a.j.t.JMeterThread: Thread finished: ipokemon 1-23
+2019-03-10 22:40:12,688 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: ipokemon 1-5
+2019-03-10 22:40:12,688 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: ipokemon 1-19
+2019-03-10 22:40:12,694 INFO o.a.j.t.JMeterThread: Thread finished: ipokemon 1-5
+2019-03-10 22:40:12,686 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: ipokemon 1-21
+2019-03-10 22:40:12,686 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: ipokemon 1-12
+2019-03-10 22:40:12,687 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: ipokemon 1-4
+2019-03-10 22:40:12,694 INFO o.a.j.t.JMeterThread: Thread finished: ipokemon 1-21
+2019-03-10 22:40:12,694 INFO o.a.j.t.JMeterThread: Thread finished: ipokemon 1-4
+2019-03-10 22:40:12,687 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: ipokemon 1-9
+2019-03-10 22:40:12,695 INFO o.a.j.t.JMeterThread: Thread finished: ipokemon 1-9
+2019-03-10 22:40:12,695 INFO o.a.j.t.JMeterThread: Thread finished: ipokemon 1-12
+2019-03-10 22:40:12,694 INFO o.a.j.t.JMeterThread: Thread finished: ipokemon 1-19
+2019-03-10 22:40:12,693 INFO o.a.j.t.JMeterThread: Thread finished: ipokemon 1-13
+2019-03-10 22:40:12,693 INFO o.a.j.t.JMeterThread: Thread finished: ipokemon 1-16
+2019-03-10 22:40:12,692 INFO o.a.j.t.JMeterThread: Thread finished: ipokemon 1-24
+2019-03-10 22:40:12,696 INFO o.a.j.t.JMeterThread: Thread finished: ipokemon 1-7
+2019-03-10 22:40:12,692 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: ipokemon 1-8
+2019-03-10 22:40:12,692 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: ipokemon 1-25
+2019-03-10 22:40:12,692 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: ipokemon 1-17
+2019-03-10 22:40:12,692 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: ipokemon 1-1
+2019-03-10 22:40:12,698 INFO o.a.j.t.JMeterThread: Thread finished: ipokemon 1-1
+2019-03-10 22:40:12,692 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: ipokemon 1-3
+2019-03-10 22:40:12,699 INFO o.a.j.t.JMeterThread: Thread finished: ipokemon 1-25
+2019-03-10 22:40:12,691 INFO o.a.j.t.JMeterThread: Thread finished: ipokemon 1-22
+2019-03-10 22:40:12,699 INFO o.a.j.t.JMeterThread: Thread finished: ipokemon 1-3
+2019-03-10 22:40:12,697 INFO o.a.j.t.JMeterThread: Thread finished: ipokemon 1-8
+2019-03-10 22:40:12,700 INFO o.a.j.t.JMeterThread: Thread finished: ipokemon 1-17
+2019-03-10 22:40:12,707 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: ipokemon 1-6
+2019-03-10 22:40:12,707 INFO o.a.j.t.JMeterThread: Thread finished: ipokemon 1-6
+2019-03-10 22:40:12,708 INFO o.a.j.e.StandardJMeterEngine: Notifying test listeners of end of test
+2019-03-10 22:40:12,710 INFO o.a.j.e.StandardJMeterEngine: Forced JVM shutdown requested at end of test

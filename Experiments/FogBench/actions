@@ -24,7 +24,7 @@ cat <<INFO
 	*********************************
 	CPU Model Name: $cpuNume
 	Number of Cores: $cpuCores
-	CPU Frequency: $cpuFrequency MHz
+	CPU Frequency (if available on platform): $cpuFrequency MHz
 	System Uptime: $sysUptime
 	Small Weights dl speed: $smallWeights
 	Large Weights dl rate: $downloadTest
@@ -283,7 +283,7 @@ function benchedgeinstance {
 }
 
 function bench {
-	if [ "$run_cloud" ]
+	if [ "$run_cloud" ];
 	then
 		echo "Cloud actions and system benchmarks: " | tee $filename.txt
 	else

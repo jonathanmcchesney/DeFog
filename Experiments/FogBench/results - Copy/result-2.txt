@@ -1,0 +1,69 @@
+		Demystifying Fog Systems Interaction via Container based benchmarking
+	Created by: Jonathan McChesney, student at Queen's University Belfast
+	CSC4006 Final Year Research and Development Project
+
+*****************************************************************************
+*****************************************************************************
+
+Edge Only Benchmarks: 
+*****************************************************************************
+
+Transfer edge action results to edge device: completed in .578918700 secs
+
+FogLAMP Benchmarks:
+*****************************************************************************
+
+FogLAMP Benchmark Run 1:
+
+Computation: completed in .124097848 secs
+Upload to S3 bucket: completed in 2.979315214 secs
+Total bytes transferred from the edge: 3456 bytes
+Transfer edge application results to edge device: completed in .833863600 secs
+Transfer rate from the edge: metricsValues[11] bytes per second
+
+Round Trip Time: 1.683127448 secs
+Edge cost for application computation (estimated £0.008 per hour): £.0000002757
+
+FogLAMP Benchmark Run 2:
+
+Computation: completed in .057740447 secs
+Upload to S3 bucket: completed in 2.298694267 secs
+Total bytes transferred from the edge: 3888 bytes
+Transfer edge application results to edge device: completed in .663701000 secs
+Transfer rate from the edge: metricsValues[11] bytes per second
+
+Round Trip Time: 1.365686047 secs
+Edge cost for application computation (estimated £0.008 per hour): £.0000001283
+
+FogLAMP Benchmark Run 3:
+
+Computation: completed in .126206969 secs
+Upload to S3 bucket: completed in 2.238136609 secs
+Total bytes transferred from the edge: 7336 bytes
+Transfer edge application results to edge device: completed in .799419600 secs
+Transfer rate from the edge: metricsValues[11] bytes per second
+
+Round Trip Time: 1.639425069 secs
+Edge cost for application computation (estimated £0.008 per hour): £.0000002804
+
+FogLAMP Benchmark Run 4:
+
+Computation: completed in .062478172 secs
+Upload to S3 bucket: completed in 1.979477176 secs
+Total bytes transferred from the edge: 3832 bytes
+Transfer edge application results to edge device: completed in .740891800 secs
+Transfer rate from the edge: metricsValues[11] bytes per second
+
+Round Trip Time: 1.537790272 secs
+Edge cost for application computation (estimated £0.008 per hour): £.0000001388
+
+FogLAMP Benchmark Run 5:
+
+Computation: completed in .071856589 secs
+Upload to S3 bucket: completed in 1.935109814 secs
+Total bytes transferred from the edge: 3248 bytes
+Transfer edge application results to edge device: completed in .788338200 secs
+Transfer rate from the edge: metricsValues[11] bytes per second
+
+Round Trip Time: 1.500073489 secs
+Edge cost for application computation (estimated £0.008 per hour): £.0000001596
