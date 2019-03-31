@@ -8,40 +8,40 @@
 Edge Only Benchmarks: 
 *****************************************************************************
 
-Transfer edge action results to edge device: completed in .897337900 secs
+Transfer edge action results to edge device: completed in .741610200 secs
 
 YOLO Benchmarks:
 *****************************************************************************
 
 YOLO Benchmark Run 1:
 
-Computation: completed in 37.394297849 secs
-Upload to S3 bucket: completed in 4.448353516 secs
+Computation: completed in 37.677815441 secs
+Upload to S3 bucket: completed in 5.290631846 secs
 Total bytes transferred from the edge: 879364 bytes
-Transfer edge application results to edge device: completed in 1.997207900 secs
+Transfer edge application results to edge device: completed in 2.113135800 secs
 Transfer rate from the edge: metricsValues[11] bytes per second
 
-Round Trip Time: 40.493869049 secs
-Edge cost for application computation (estimated £0.008 per hour): £.0000830976
+Round Trip Time: 40.746608241 secs
+Edge cost for application computation (estimated £0.008 per hour): £.0000837276
 
 YOLO Benchmark Run 2:
 
-Computation: completed in 37.040605061 secs
-Upload to S3 bucket: completed in 4.284555789 secs
+Computation: completed in 37.435436265 secs
+Upload to S3 bucket: completed in 4.777437629 secs
 Total bytes transferred from the edge: 837912 bytes
-Transfer edge application results to edge device: completed in 2.223903300 secs
+Transfer edge application results to edge device: completed in 2.065801300 secs
 Transfer rate from the edge: metricsValues[11] bytes per second
 
-Round Trip Time: 40.406719361 secs
-Edge cost for application computation (estimated £0.008 per hour): £.0000823116
+Round Trip Time: 40.430141665 secs
+Edge cost for application computation (estimated £0.008 per hour): £.0000831890
 
 YOLO Benchmark Run 3:
 
-Computation: completed in 36.842481356 secs
-Upload to S3 bucket: completed in 4.236243306 secs
+Computation: completed in 36.743048311 secs
+Upload to S3 bucket: completed in 4.880022147 secs
 Total bytes transferred from the edge: 765656 bytes
-Transfer edge application results to edge device: completed in 1.973371600 secs
+Transfer edge application results to edge device: completed in 2.187078100 secs
 Transfer rate from the edge: metricsValues[11] bytes per second
 
-Round Trip Time: 40.146001856 secs
-Edge cost for application computation (estimated £0.008 per hour): £.0000818713
+Round Trip Time: 40.062577311 secs
+Edge cost for application computation (estimated £0.008 per hour): £.0000816504

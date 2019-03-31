@@ -368,7 +368,8 @@ function calc_rtt {
 	local E=${metricsValues[1]} 
 	local T3=${metricsValues[3]} 
 	
-	if  "${metricsValues[13]}" == "NA" ];
+	if  [ "${metricsValues[13]}" == "NA" ];
+	then
 		local T4=0
 	else 
 		local T4=${metricsValues[13]}
@@ -826,9 +827,9 @@ function main {
 	
 	cat $metrics_verbose_filename.txt | tr -s '[:blank:]' ',' > $metrics_verbose_filename.csv
 	
-	#mv $verbose_filename.txt results/
-	#mv $metrics_verbose_filename.txt results/
-	#mv $metrics_verbose_filename.csv results/
+	mv $verbose_filename.txt results/
+	mv $metrics_verbose_filename.txt results/
+	mv $metrics_verbose_filename.csv results/
 
 }
 
