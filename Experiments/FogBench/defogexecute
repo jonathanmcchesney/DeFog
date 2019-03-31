@@ -76,14 +76,14 @@ function benchmark_actions {
 		local runtime=$( echo "$end - $start" | bc -l )
 		
 		if [ "$environment" == "-c" ]; then
-			cat cloudresult.txt >> $verbose_filename.txt
-			rm cloudresult.txt
+			cat cloudresult.txt >> $verbose_filename.txt 2>/dev/null
+			rm cloudresult.txt 2>/dev/null
 			echo Transfer cloud action results to edge device: completed in $runtime secs | tee -a $verbose_filename.txt
 			echo "" | tee -a $verbose_filename.txt
 
 		elif [ "$environment" == "-e" ]; then
-			cat edgeresult.txt >> $verbose_filename.txt
-			rm edgeresult.txt
+			cat edgeresult.txt >> $verbose_filename.txt 2>/dev/null
+			rm edgeresult.txt 2>/dev/null
 			echo Transfer edge action results to edge device: completed in $runtime secs | tee -a $verbose_filename.txt
 			echo "" | tee -a $verbose_filename.txt
 		fi
@@ -134,11 +134,11 @@ function benchmark_applications {
 		metricsValues[8]=${newarr1[1]}
 		metricsValues[11]=$(bc <<< "scale=10;${metricsValues[8]}/${metricsValues[3]}")
 
-		cat cloudresult.txt >> $verbose_filename.txt
-		rm cloudresult.txt
+		cat cloudresult.txt >> $verbose_filename.txt 2>/dev/null
+		rm cloudresult.txt 2>/dev/null
 		
 		read -a newarr < arrresult.txt 
-		rm arrresult.txt
+		rm arrresult.txt 2>/dev/null
 		
 		if [ "$environment" == "-c" ]; then
 		
@@ -208,12 +208,12 @@ function benchmark_both_applications {
 		metricsValues[11]=$(bc <<< "scale=10;${metricsValues[8]}/${metricsValues[3]}")
 		
 		# rename verbose results file, remove old file
-		cat cloudresult.txt >> $verbose_filename.txt
-		rm cloudresult.txt
+		cat cloudresult.txt >> $verbose_filename.txt 2>/dev/null
+		rm cloudresult.txt 2>/dev/null
 		
 		# read in results data file, save to array, remove old file
 		read -a newarr < arrresult.txt 
-		rm arrresult.txt
+		rm arrresult.txt 2>/dev/null
 		
 		# print and save data to file
 		echo Total bytes transferred from the edge: ${metricsValues[8]} bytes | tee -a $verbose_filename.txt
@@ -238,8 +238,8 @@ function benchmark_edge_actions {
 		local end=$(date +%s.%N)
 		local runtime=$( echo "$end - $start" | bc -l )
 		
-		cat edgeresult.txt >> $verbose_filename.txt
-		rm edgeresult.txt
+		cat edgeresult.txt >> $verbose_filename.txt 2>/dev/null
+		rm edgeresult.txt 2>/dev/null
 		
 		echo Transfer edge action results to edge device: completed in $runtime secs | tee -a $verbose_filename.txt
 		echo "" | tee -a $verbose_filename.txt
@@ -262,11 +262,11 @@ function benchmark_edge_applications {
 		metricsValues[8]=${newarr1[1]}
 		metricsValues[11]=$(bc <<< "scale=10;${metricsValues[8]}/${metricsValues[3]}")
 
-		cat cloudresult.txt >> $verbose_filename.txt
-		rm cloudresult.txt
+		cat cloudresult.txt >> $verbose_filename.txt 2>/dev/null
+		rm cloudresult.txt 2>/dev/null
 		
 		read -a newarr < arrresult.txt 
-		rm arrresult.txt
+		rm arrresult.txt 2>/dev/null
 		
 		echo Total bytes transferred from the edge: ${metricsValues[8]} bytes | tee -a $verbose_filename.txt
 		echo Transfer edge application results to edge device: completed in $runtime secs | tee -a $verbose_filename.txt
@@ -288,8 +288,8 @@ function benchmark_cloud_actions {
 		local end=$(date +%s.%N)
 		local runtime=$( echo "$end - $start" | bc -l )
 		
-		cat cloudresult.txt >> $verbose_filename.txt
-		rm cloudresult.txt
+		cat cloudresult.txt >> $verbose_filename.txt 2>/dev/null
+		rm cloudresult.txt 2>/dev/null
 		
 		echo Transfer cloud action results to edge device: completed in $runtime secs | tee -a $verbose_filename.txt
 		echo "" | tee -a $verbose_filename.txt
@@ -312,13 +312,13 @@ function benchmark_cloud_applications {
 		metricsValues[8]=${newarr1[1]}
 		metricsValues[11]=$(bc <<< "scale=10;${metricsValues[8]}/${metricsValues[3]}")
 	
-		rm returnedasset.*
+		rm returnedasset.* 2>/dev/null
 
-		cat cloudresult.txt >> $verbose_filename.txt
-		rm cloudresult.txt
+		cat cloudresult.txt >> $verbose_filename.txt 2>/dev/null
+		rm cloudresult.txt 2>/dev/null
 		
 		read -a newarr < arrresult.txt 
-		rm arrresult.txt
+		rm arrresult.txt 2>/dev/null
 		
 		echo Total bytes transferred from the cloud: ${metricsValues[8]} bytes | tee -a $verbose_filename.txt
 		echo Transfer cloud application results to edge device: completed in $runtime secs | tee -a $verbose_filename.txt
@@ -423,8 +423,7 @@ function set_returned_application_metrics {
 	
 }
 
-# invoke the relevant application benchmark utility function
-function benchmark_applications {
+function set_pipeline {
 		pipeline="NA"
 		
 		# set pipeline variable name to the current pipeline/platform selected
@@ -432,6 +431,12 @@ function benchmark_applications {
 		elif [ "$environment" == "-e" ]; then pipeline="Edge-Only"; 
 		elif [ "$environment" == "-b" ]; then pipeline="Cloud/Edge"; 
 		fi
+}
+
+# invoke the relevant application benchmark utility function
+function benchmark_applications {
+		
+		set_pipeline
 		
 		# print application header to verbose file and invoke application benchmarks
 		if [ "$applications" == "-y" ];
@@ -490,9 +495,9 @@ function benchmark_ipokemon {
 	bzt iPokeMon1.jmx -o modules.jmeter.properties.HOST=$host -o modules.jmeter.properties.Duration=$test_duration -o modules.jmeter.properties.Threads=$users -o modules.jmeter.properties.Ramp=$ramp_up reporting.yaml
 	
 	# move and rename test data files to the results file
-	mv testresults.csv ../../results/$jmeter_filename.csv	
-	mv taurusreport.csv ../../results/$taurus_filename.csv	
-	mv taurusreport.xml ../../results/$taurus_filename.xml	
+	mv testresults.csv ../../results/$jmeter_filename.csv 2>/dev/null
+	mv taurusreport.csv ../../results/$taurus_filename.csv 2>/dev/null	
+	mv taurusreport.xml ../../results/$taurus_filename.xml 2>/dev/null	
 	
 	cd ../../ # navigate to defog folder
 }
@@ -652,15 +657,13 @@ function benchmark_aeneas {
 		arrAudios=("${arrAudios[@]}" "$file1")
 	done
 
-
 	declare -a arrTexts
 	
 	for file2 in ./assets/aeneas-assets/text/*.xhtml
 	do
 		local arrTexts=("${arrTexts[@]}" "$file2")	
 	done	
-		
-		
+			
 	total=${#arrAudios[@]}
 	
 	local count=1
@@ -691,9 +694,6 @@ function benchmark_aeneas {
 		metricsValues[0]=$oldT1
 		metricsValues[7]=$oldbu1
 		
-		echo this here
-		echo	${metricsValues[0]}
-		echo 	${metricsValues[7]}	
 		asset=${arrTexts[$j]}
 		newassetname=./assets/aeneas-assets/aeneastext.xhtml
 		
@@ -771,7 +771,7 @@ function scp_asset {
 	fi	
 	
 	# remove duplicate asset
-	rm $newassetname
+	rm $newassetname 2>/dev/null
 
 }
 
@@ -825,11 +825,11 @@ function main {
 		benchmark_applications
 	fi	
 	
-	cat $metrics_verbose_filename.txt | tr -s '[:blank:]' ',' > $metrics_verbose_filename.csv
+	cat $metrics_verbose_filename.txt | tr -s '[:blank:]' ',' > $metrics_verbose_filename.csv 2>/dev/null
 	
-	mv $verbose_filename.txt results/
-	mv $metrics_verbose_filename.txt results/
-	mv $metrics_verbose_filename.csv results/
+	mv $verbose_filename.txt results/ 2>/dev/null
+	mv $metrics_verbose_filename.txt results/ 2>/dev/null
+	mv $metrics_verbose_filename.csv results/ 2>/dev/null
 
 }
 
