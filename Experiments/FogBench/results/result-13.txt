@@ -1,0 +1,41 @@
+		Demystifying Fog Systems Interaction via Container based benchmarking
+	Created by: Jonathan McChesney, student at Queen's University Belfast
+	CSC4006 Final Year Research and Development Project
+
+*****************************************************************************
+*****************************************************************************
+
+Edge Only Benchmarks: 
+*****************************************************************************
+
+Transfer edge action results to edge device: completed in 1.188142800 secs
+
+Pocket Sphinx Benchmarks:
+*****************************************************************************
+
+Pocket Sphinx Benchmark Run 1:
+
+Total bytes transferred from the edge: 2484 bytes
+Transfer edge application results to edge device: completed in 1.032490200 secs
+Transfer rate from the edge: metricsValues[11] bytes per second
+
+Round Trip Time: 101.232516100 secs
+Edge cost for application computation (estimated £0.008 per hour): £.0002199978
+
+Pocket Sphinx Benchmark Run 2:
+
+Total bytes transferred from the edge: 2484 bytes
+Transfer edge application results to edge device: completed in .936873900 secs
+Transfer rate from the edge: metricsValues[11] bytes per second
+
+Round Trip Time: 101.090183100 secs
+Edge cost for application computation (estimated £0.008 per hour): £.0002199978
+
+Pocket Sphinx Benchmark Run 3:
+
+Total bytes transferred from the edge: 2484 bytes
+Transfer edge application results to edge device: completed in .939551600 secs
+Transfer rate from the edge: metricsValues[11] bytes per second
+
+Round Trip Time: 101.028046900 secs
+Edge cost for application computation (estimated £0.008 per hour): £.0002199978
