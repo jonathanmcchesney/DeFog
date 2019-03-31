@@ -1,1 +1,1 @@
-docker run --rm -it -v ~/fogbench/configs:/mnt/configs -v ~/fogbench/assets:/mnt/assets -v ~/fogbench/results:/mnt/results -v /root/.aws:/root/.aws --name bothedgepsphinx bothedgepsphinx bash
+docker run --rm -it -v ~/defog/configs:/mnt/configs -v ~/defog/assets:/mnt/assets -v ~/defog/results:/mnt/results -v /root/.aws:/root/.aws --name bothedgepsphinx bothedgepsphinx bash

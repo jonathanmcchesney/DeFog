@@ -306,8 +306,8 @@ function bench {
 }
 
 function run_setup {
-	mkdir -p fogbench && cd fogbench 
-	#mkdir -p defog && cd defog 		
+	#mkdir -p defog && cd defog 
+	mkdir -p defog && cd defog 		
 	test $run_delete && delete_utility
 	
 	rm results.txt

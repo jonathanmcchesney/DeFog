@@ -22,8 +22,8 @@ metricsValues=("NA" "NA" "NA" "NA" "NA" "NA" "NA" "NA" "NA" "NA" "NA")
 
 start=$(date +%s.%N)
 	# python receiver.py en-us/
-	# scp -o StrictHostKeyChecking=no -i $edgeawskey2 $clouduser2@$cloudaddress2:/home/ubuntu/fogbench/assets/en-us/* ./model/en-us/
-	transfer_cloud=$(scp -v -o StrictHostKeyChecking=no -i $edgeawskey2 $clouduser2@$cloudaddress2:/home/ubuntu/fogbench/assets/en-us/* ./model/en-us/ 2>&1 | grep "Transferred") 		
+	# scp -o StrictHostKeyChecking=no -i $edgeawskey2 $clouduser2@$cloudaddress2:/home/ubuntu/defog/assets/en-us/* ./model/en-us/
+	transfer_cloud=$(scp -v -o StrictHostKeyChecking=no -i $edgeawskey2 $clouduser2@$cloudaddress2:/home/ubuntu/defog/assets/en-us/* ./model/en-us/ 2>&1 | grep "Transferred") 		
 	nocarriagereturns=${transfer_cloud//[!0-9\\ \\.]/}
 	newarr1=(`echo ${nocarriagereturns}`);
 	echo cloud to edge transfer size etc

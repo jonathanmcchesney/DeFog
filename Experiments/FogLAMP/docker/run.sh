@@ -1,1 +1,1 @@
-docker run --rm -v /home/ubuntu/fogbench/configs:/mnt/configs -v /home/ubuntu/fogbench/assets:/mnt/assets -v /home/ubuntu/fogbench/results:/mnt/results -v /root/.aws:/root/.aws --name foglamp foglamp ../scripts/execute.sh $1
+docker run --rm -v /home/ubuntu/defog/configs:/mnt/configs -v /home/ubuntu/defog/assets:/mnt/assets -v /home/ubuntu/defog/results:/mnt/results -v /root/.aws:/root/.aws --name foglamp foglamp ../scripts/execute.sh $1

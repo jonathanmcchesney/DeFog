@@ -15,7 +15,7 @@ function navigate_to_application {
 
 function initiate_metric_array {
 	# instantiate metricsValues
-	metricsValues=('NA' 'NA' 'NA' 'NA' 'NA' 'NA' 'NA' 'NA' 'NA' 'NA' 'NA' 'NA' 'NA' 'NA' 'NA' 'NA')
+	metricsValues=('NA' 'NA' 'NA' 'NA' 'NA' 'NA' 'NA' 'NA' 'NA' 'NA' 'NA' 'NA' 'NA' 'NA' 'NA' 'NA' 'NA' 'NA')
 }
 
 function set_config {
@@ -79,7 +79,7 @@ function which_program_edge_split_pipeline {
 		access1=darknet
 		access2=s3Upload.py
 		
-		predictions=./predictions.png
+		predictions=predictions.png
 		returned_predictions=./returnedasset.png
 		
 		pathToApplication=~/Experiments/YOLO/yolo
@@ -91,7 +91,7 @@ function which_program_edge_split_pipeline {
 		access1=s3Download.py
 		access2=s3Upload.py
 	
-		predictions=./result.txt
+		predictions=result.txt
 		returned_predictions=./returnedasset.txt
 		
 		cd ~/Experiments/PocketSphinx/sphinxbase/
@@ -106,7 +106,7 @@ function which_program_edge_split_pipeline {
 		access1=s3Download.py
 		access2=s3Upload.py
 	
-		predictions=./map.smil
+		predictions=map.smil
 		returned_predictions=./returnedasset.smil
 		
 		cd ~/Experiments/Aeneas/aeneas
@@ -131,7 +131,7 @@ function which_program_only_pipelines {
 		access1=darknet
 		access2=s3Upload.py
 		
-		predictions=./predictions.png
+		predictions=predictions.png
 		returned_predictions=./returnedasset.png
 		
 		pathToApplication=~/Experiments/YOLO/yolo
@@ -143,7 +143,7 @@ function which_program_only_pipelines {
 		access1=s3Download.py
 		access2=s3Upload.py
 	
-		predictions=./result.txt
+		predictions=result.txt
 		returned_predictions=./returnedasset.txt
 		
 		cd ~/Experiments/PocketSphinx/sphinxbase/
@@ -158,7 +158,7 @@ function which_program_only_pipelines {
 		access1=s3Download.py
 		access2=s3Upload.py
 	
-		predictions=./map.smil
+		predictions=map.smil
 		returned_predictions=./returnedasset.smil
 		
 		cd ~/Experiments/Aeneas/aeneas
@@ -175,7 +175,7 @@ function which_program_only_pipelines {
 		access1=s3Download.py
 		access2=s3Upload.py
 	
-		predictions=./foglampoutput.txt
+		predictions=foglampoutput.txt
 		returned_predictions=./returnedasset.txt
 		
 		cd ~/FogLAMP
@@ -262,15 +262,11 @@ function save_to_files {
 }
 
 function set_application {
-	echo hello $1
 	application=$1
-	echo app $application
 }
 
 function set_pipeline {
-	echo hi $1
 	pipeline=$1
-	echo pipeline $pipeline
 }
 
 function execute_cloud_split_pipeline {	
@@ -329,8 +325,8 @@ function execute_only_pipelines {
 	save_to_files
 }
 
-set_application $1
-set_pipeline $2
+set_application $1 # 0 = Yolo, 1 = PocketSphinx, 2 = Aeneas, 3 = FogLamp
+set_pipeline $2 # 0 = Cloud or Edge Only, 1 = Cloud/Edge - Cloud, 2 = Cloud/Edge - Edge
 
 if [ "$pipeline" == 0 ]; # Cloud or Edge Only
 then

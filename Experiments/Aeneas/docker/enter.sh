@@ -1,1 +1,1 @@
-docker run --rm -it -v /home/ubuntu/fogbench/configs:/mnt/configs -v /home/ubuntu/fogbench/assets:/mnt/assets -v /home/ubuntu/fogbench/results:/mnt/results -v /root/.aws:/root/.aws --name aeneas aeneas bash
+docker run --rm -it -v /home/ubuntu/defog/configs:/mnt/configs -v /home/ubuntu/defog/assets:/mnt/assets -v /home/ubuntu/defog/results:/mnt/results -v /root/.aws:/root/.aws --name aeneas aeneas bash

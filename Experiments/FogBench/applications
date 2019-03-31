@@ -46,12 +46,14 @@ function run_docker_app {
 	eval path="$1"
 	eval applicationname="$2"
 	eval runscript="$3"
+	eval currentapp="$4"
+	eval currentplatform="$5"
 
 	cd ${path}
 	
 	echo -n Running ${applicationname} container...
 
-	. ${runscript}
+	. ${runscript} ${currentapp} ${currentplatform}
 	
 	echo done running ${applicationname}
 }
@@ -66,9 +68,9 @@ function bothcloudbench {
 	echo "Cloud/Edge - Cloud applications benchmarks: " | tee $filename.txt
 	seperator
 	
-	test $run_yolo && run_docker_app "bothcloudyolobuild/Experiments/YOLO/bothclouddocker" "YOLO-Edge/Cloud-Cloud-instance" "run.sh"
-	test $run_psphinx && run_docker_app "bothcloudpsphinxbuild/Experiments/PocketSphinx/bothclouddocker" "PocketSphinx-Edge/Cloud-Cloud-instance" "run.sh"
-	test $run_aeneas && run_docker_app "bothcloudaeneasbuild/Experiments/Aeneas/bothclouddocker" "Aeneas-Edge/Cloud-Cloud-instance" "run.sh"
+	test $run_yolo && run_docker_app "bothcloudyolobuild/Experiments/YOLO/bothclouddocker" "YOLO-Edge/Cloud-Cloud-instance" "run.sh" "0" "1"
+	test $run_psphinx && run_docker_app "bothcloudpsphinxbuild/Experiments/PocketSphinx/bothclouddocker" "PocketSphinx-Edge/Cloud-Cloud-instance" "run.sh" "1" "1"
+	test $run_aeneas && run_docker_app "bothcloudaeneasbuild/Experiments/Aeneas/bothclouddocker" "Aeneas-Edge/Cloud-Cloud-instance" "run.sh" "2" "1"
 	
 }
 
@@ -77,9 +79,9 @@ function bothedgebench {
 	echo "Cloud/Edge - Edge applications benchmarks: " | tee $filename.txt
 	seperator
 	
-	test $run_yolo && run_docker_app "bothedgeyolobuild/Experiments/YOLO/bothedgedocker" "YOLO-Edge/Cloud-Edge-instance" "runedge.sh"
-	test $run_psphinx && run_docker_app "bothedgepsphinxbuild/Experiments/PocketSphinx/bothedgedocker" "PocketSphinx-Edge/Cloud-Edge-instance" "runedge.sh"
-	test $run_aeneas && run_docker_app "bothedgeaeneasbuild/Experiments/Aeneas/bothedgedocker" "Aeneas-Edge/Cloud-Edge-instance" "runedge.sh"
+	test $run_yolo && run_docker_app "bothedgeyolobuild/Experiments/YOLO/bothedgedocker" "YOLO-Edge/Cloud-Edge-instance" "runedge.sh" "0" "2"
+	test $run_psphinx && run_docker_app "bothedgepsphinxbuild/Experiments/PocketSphinx/bothedgedocker" "PocketSphinx-Edge/Cloud-Edge-instance" "runedge.sh" "1" "2"
+	test $run_aeneas && run_docker_app "bothedgeaeneasbuild/Experiments/Aeneas/bothedgedocker" "Aeneas-Edge/Cloud-Edge-instance" "runedge.sh" "2" "2"
 	
 }
 
@@ -88,11 +90,11 @@ function edgebench {
 	echo "Edge applications benchmarks: " | tee $filename.txt
 	seperator
 	
-	test $run_yolo && run_docker_app "yolobuild/Experiments/YOLO/docker" "YOLO" "runedge.sh"
-	test $run_psphinx && run_docker_app "psphinxbuild/Experiments/PocketSphinx/docker" "PocketSphinx" "runedge.sh"
-	test $run_aeneas && run_docker_app "aeneasbuild/Experiments/Aeneas/docker" "Aeneas" "runedge.sh"
+	test $run_yolo && run_docker_app "yolobuild/Experiments/YOLO/docker" "YOLO" "runedge.sh" "0" "0"
+	test $run_psphinx && run_docker_app "psphinxbuild/Experiments/PocketSphinx/docker" "PocketSphinx" "runedge.sh" "1" "0"
+	test $run_aeneas && run_docker_app "aeneasbuild/Experiments/Aeneas/docker" "Aeneas" "runedge.sh" "2" "0"
 	test $run_ipokemon && run_docker_ipokemon
-	test $run_foglamp && run_docker_app "foglampbuild/Experiments/FogLAMP/docker" "FogLAMP" "runedge.sh"
+	test $run_foglamp && run_docker_app "foglampbuild/Experiments/FogLAMP/docker" "FogLAMP" "runedge.sh" "3" "0"
 
 }
 
@@ -101,18 +103,18 @@ function cloudbench {
 	echo "Cloud applications benchmarks: " | tee $filename.txt
 	seperator
 	
-	test $run_yolo && run_docker_app "yolobuild/Experiments/YOLO/docker" "YOLO" "run.sh"
-	test $run_psphinx && run_docker_app "psphinxbuild/Experiments/PocketSphinx/docker" "PocketSphinx" "run.sh"
-	test $run_aeneas && run_docker_app "aeneasbuild/Experiments/Aeneas/docker" "Aeneas" "run.sh"
+	test $run_yolo && run_docker_app "yolobuild/Experiments/YOLO/docker" "YOLO" "run.sh" "0" "0"
+	test $run_psphinx && run_docker_app "psphinxbuild/Experiments/PocketSphinx/docker" "PocketSphinx" "run.sh" "1" "0"
+	test $run_aeneas && run_docker_app "aeneasbuild/Experiments/Aeneas/docker" "Aeneas" "run.sh" "2" "0"
 	test $run_ipokemon && run_docker_ipokemon
-	test $run_foglamp && run_docker_app "foglampbuild/Experiments/FogLAMP/docker" "FogLAMP" "run.sh"
+	test $run_foglamp && run_docker_app "foglampbuild/Experiments/FogLAMP/docker" "FogLAMP" "run.sh" "3" "0"
 
 }
 
 # applications main function
 function main {
-	cd fogbench  # navigate to the fogbench folder (for defog benchmarks)
-	#cd defog  # navigate to the fogbench folder (for defog benchmarks)
+	cd defog  # navigate to the defog folder (for defog benchmarks)
+	#cd defog  # navigate to the defog folder (for defog benchmarks)
 	chmod 400 configs
 	
 	# determine what function to call based on user input
