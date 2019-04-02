@@ -9,9 +9,9 @@ function remove_docker_images_and_containers {
 
 # build ipokemon image on cloud only or edge only platform
 function build_docker_ipokemon {
-	echo Removing docker images and containers...
-	remove_docker_images_and_containers
-	echo DONE
+	# echo Removing docker images and containers...
+	# remove_docker_images_and_containers
+	# echo -n DONE removing d
 
 	echo Entering ipokemonbuild...
 	mkdir ipokemonbuild
@@ -30,7 +30,7 @@ function build_docker_ipokemon {
 	echo Building iPokeMon docker image...
 	chmod 777 execute.sh
 	time . build.sh 
-	echo DONE	
+	echo -n DONE building iPokeMon docker container
 }
 
 # run and enter ipokemon container on cloud only or edge only platform
@@ -38,7 +38,7 @@ function run_docker_ipokemon {
 	echo -n Running ipokemon docker container...
 	chmod 777 enter.sh
 	./enter.sh
-	echo -n DONE
+	echo -n DONE entering iPokeMon docker container
 }
 
 function run_docker_app {
@@ -55,7 +55,7 @@ function run_docker_app {
 
 	. ${runscript} ${currentapp} ${currentplatform}
 	
-	echo done running ${applicationname}
+	echo -n DONE running ${applicationname}
 }
 
 # utility function to print sepeartor/formatter line

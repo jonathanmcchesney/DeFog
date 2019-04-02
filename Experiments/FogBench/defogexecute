@@ -49,19 +49,19 @@ function benchmark_actions {
 		if [ "$environment" == "-c" ]; then
 			echo "ssh into edge instance for actions and system benchmarks.."
 			ssh $edgeuser@$edgeaddress ' sudo bash -s' -- < ./actions $environment $actions $applications
-			echo "Done edge ssh session"
+			echo "DONE edge ssh session"
 		elif [ "$environment" == "-e" ]; then
 			echo "ssh into cloud instance for actions and system benchmarks.."
 			ssh -i $awskey $clouduser@$cloudaddress ' sudo bash -s' -- < ./actions $environment $actions $applications
-			echo "Done cloud ssh session"
+			echo "DONE cloud ssh session"
 		elif [ "$environment" == "-b" ]; then
 			echo "ssh into edge/cloud - cloud instance for actions and system benchmarks.."
 			ssh -i $awskey $clouduser@$cloudaddress ' sudo bash -s' -- < ./actions -z $actions $applications # environment variable is set to a different value for remote invocation
-			echo "Done cloud ssh session"
+			echo "DONE cloud ssh session"
 			
 			echo "ssh into edge instance for actions and system benchmarks.."
 			ssh $edgeuser@$edgeaddress ' sudo bash -s' -- < ./actions $environment $actions $applications
-			echo "Done edge ssh session"
+			echo "DONE edge ssh session"
 		fi
 		
 		local start=$(date +%s.%N)
@@ -96,7 +96,7 @@ function benchmark_applications {
 			
 			echo "ssh into cloud instance for application benchmarks.."
 			ssh -i $awskey $clouduser@$cloudaddress ' sudo bash -s' -- < ./applications $environment $actions $applications
-			echo "Done ssh"
+			echo "DONE cloud ssh session"
 			
 			local start=$(date +%s.%N)
 			local transfer_cloud=$(scp -v -i $awskey $clouduser@$cloudaddress:~/defog/results/* ./ 2>&1 | grep "Transferred") 
@@ -105,7 +105,7 @@ function benchmark_applications {
 		
 			echo "ssh into edge instance for application benchmarks.."
 			ssh	$edgeuser@$edgeaddress ' sudo bash -s' -- < ./applications $environment $actions $applications
-			echo "Done edge ssh session"
+			echo "DONE edge ssh session"
 			
 			local start=$(date +%s.%N)
 			local transfer_cloud=$(scp -v $edgeuser@$edgeaddress:~/defog/results/* ./ 2>&1 | grep "Transferred") 
@@ -114,11 +114,11 @@ function benchmark_applications {
 		
 			echo "ssh into edge/cloud - cloud instance for applications benchmarks.."
 			ssh -i $awskey $clouduser@$cloudaddress ' sudo bash -s' -- < ./applications -z $actions $applications
-			echo "Done cloud ssh session"
+			echo "DONE cloud ssh session"
 			
 			echo "ssh into edge/cloud instance for applications benchmarks.."
 			ssh $edgeuser@$edgeaddress ' sudo bash -s' -- < ./applications $environment $actions $applications
-			echo "Done edge ssh session"
+			echo "DONE edge ssh session"
 			
 			local start=$(date +%s.%N)
 			local transfer_cloud=$(scp -v $edgeuser@$edgeaddress:~/defog/results/* ./ 2>&1 | grep "Transferred")
@@ -176,11 +176,11 @@ function benchmark_applications {
 function benchmark_both_actions {
 		echo "ssh into edge/cloud - cloud instance for actions and system benchmarks.."
 		ssh -i $awskey $clouduser@$cloudaddress ' sudo bash -s' -- < ./actions -z $actions $applications # environment variable is set to a different value for remote invocation
-		echo "Done cloud ssh session"
+		echo "DONE cloud ssh session"
 		
 		echo "ssh into edge instance for actions and system benchmarks.."
 		ssh $edgeuser@$edgeaddress ' sudo bash -s' -- < ./actions $environment $actions $applications
-		echo "Done edge ssh session"	
+		echo "DONE edge ssh session"	
 }
 
 # function to invoke the application bash file on the cloud-edge pipeline by sshing into both the cloud and edge and calling the actions bash script
@@ -188,11 +188,11 @@ function benchmark_both_actions {
 function benchmark_both_applications {
 		echo "ssh into edge/cloud - cloud instance for applications benchmarks.."
 		ssh -i $awskey $clouduser@$cloudaddress ' sudo bash -s' -- < ./applications -z $actions $applications
-		echo "Done cloud ssh session"
+		echo "DONE cloud ssh session"
 		
 		echo "ssh into edge/cloud instance for applications benchmarks.."
 		ssh $edgeuser@$edgeaddress ' sudo bash -s' -- < ./applications $environment $actions $applications
-		echo "Done edge ssh session"	
+		echo "DONE edge ssh session"	
 		
 		# calculate the time taken to transfer data (i.e. resutlts and data files from the edge to the local user device
 		local start=$(date +%s.%N)
@@ -231,7 +231,7 @@ function benchmark_both_applications {
 function benchmark_edge_actions {
 		echo "ssh into edge instance for actions and system benchmarks.."
 		ssh $edgeuser@$edgeaddress ' sudo bash -s' -- < ./actions $environment $actions $applications
-		echo "Done edge ssh session"
+		echo "DONE edge ssh session"
 		
 		local start=$(date +%s.%N)
 		scp $edgeuser@$edgeaddress:~/defog/results/* ./
@@ -250,7 +250,7 @@ function benchmark_edge_applications {
 		
 		echo "ssh into edge instance for application benchmarks.."
 		ssh	$edgeuser@$edgeaddress ' sudo bash -s' -- < ./applications $environment $actions $applications
-		echo "Done edge ssh session"
+		echo "DONE edge ssh session"
 		
 		local start=$(date +%s.%N)
 		local transfer_cloud=$(scp -v $edgeuser@$edgeaddress:~/defog/results/* ./ 2>&1 | grep "Transferred") 		
@@ -281,7 +281,7 @@ function benchmark_edge_applications {
 function benchmark_cloud_actions {
 		echo "ssh into cloud instance for actions and system benchmarks.."
 		ssh -i $awskey $clouduser@$cloudaddress ' sudo bash -s' -- < ./actions $environment $actions $applications
-		echo "Done cloud ssh session"
+		echo "DONE cloud ssh session"
 		
 		local start=$(date +%s.%N)
 		scp -i $awskey $clouduser@$cloudaddress:~/defog/results/* ./
@@ -300,7 +300,7 @@ function benchmark_cloud_applications {
 		
 		echo "ssh into cloud instance for application benchmarks.."
 		ssh -i $awskey $clouduser@$cloudaddress ' sudo bash -s' -- < ./applications $environment $actions $applications
-		echo "Done ssh"
+		echo "DONE cloud ssh"
 		
 		local start=$(date +%s.%N)
 		local transfer_cloud=$(scp -v -i $awskey $clouduser@$cloudaddress:~/defog/results/* ./ 2>&1 | grep "Transferred") 		

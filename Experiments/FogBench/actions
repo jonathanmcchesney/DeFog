@@ -47,7 +47,7 @@ function simple_CPU_benchmark {
 	echo -n "Unzipping small weights file ..."
     smallWeights=$( (/usr/bin/time -f "%es" tar cfj $zippedFile.bz2 $zippedFile) 2>&1 )
     rm -f zipFile*
-    echo DONE
+    echo -n DONE running CPU benchmarks
 		
 }
 
@@ -56,13 +56,13 @@ function simple_IO_benchmark {
 
 	echo -n "Benching System Input & Output ... "
     inputOutput=$( ( dd if=/dev/zero of=$benchmarkFile bs=64k count=16k conv=fdatasync && rm -f $benchmarkFile ) 2>&1 | awk -F, '{inputOutput=$NF} END { print inputOutput}' )
-    echo DONE
+    echo -n DONE  running IO benchmarks
 }
 
 function simple_network_benchmark {
 	echo -n "Benching network download speed, downloading large weights file... "
     downloadTest=$( _downloadTest https://pjreddie.com/media/files/yolov3.weights )
-    echo DONE
+    echo -n DONE network benchmark
 }
 
 function _downloadTest {
@@ -72,7 +72,7 @@ function _downloadTest {
 	local end=$(date +%s.%N)
 	local runtime=$( echo "$end - $start" | bc -l )
 		
-	echo Download test: completed in $runtime secs | tee -a $filename.txt
+	echo -n Download test: completed in $runtime secs | tee -a $filename.txt
 }
 
 
@@ -100,7 +100,7 @@ function instantiate_file {
 	local end=$(date +%s.%N)
 	local runtime=$( echo "$end - $start" | bc -l )
 		
-	echo Create large file speed: completed in $runtime secs | tee -a $filename.txt
+	echo -n Creating large file speed: completed in $runtime secs | tee -a $filename.txt
 	
 	remove_file
 }
@@ -113,7 +113,7 @@ function remove_file {
 	local end=$(date +%s.%N)
 	local runtime=$( echo "$end - $start" | bc -l )
 		
-	echo Remove large file speed: completed in $runtime secs | tee -a $filename.txt
+	echo -n Removing large file speed: completed in $runtime secs | tee -a $filename.txt
 }
 
 function install_unixbench {
@@ -121,7 +121,7 @@ function install_unixbench {
     apt-get install build-essential
 
     local file_ver=UnixBench5.1.3
-	echo "Getting UnixBench..."
+	echo -n "Getting UnixBench..."
  	wget -N https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/teddysun/UnixBench5.1.3.tgz
 	tar xvfz $file_ver.tgz
 }

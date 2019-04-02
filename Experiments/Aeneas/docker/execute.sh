@@ -181,7 +181,8 @@ function which_program_only_pipelines {
 		
 		cd ~/FogLAMP
 		export FOGLAMP_ROOT=/root/FogLAMP
-		
+		cp /mnt/assets/foglampcurlcommand.sh .
+
 		pathToApplication=~/FogLAMP
 		executeApplication=". foglampcurlcommand.sh $new_address2 >> foglampoutput.txt"
 
@@ -371,4 +372,4 @@ done
 
 #main
 
-#exit
+exit
