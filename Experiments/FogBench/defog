@@ -94,7 +94,6 @@ while true; do
        echo "Wrong input, try again";;
   esac
 done
-echo "Actions value:$actions"
 }
 
 # utility function to determine the platform pipeline based on user input
@@ -166,7 +165,6 @@ while true; do
        echo "Wrong input, try again";;
   esac
 done
-echo "Applications value:$applications"
 }
 
 # utility function to determine the platform applications to be benchmarked on the cloud/edge pipeline based on user input
@@ -198,7 +196,6 @@ while true; do
        echo "Wrong input, try again";;
   esac
 done
-echo "Applications value:$applications"
 }
 
 function test_users_user_input {
@@ -245,7 +242,6 @@ while true; do
        echo "Wrong input, try again";;
   esac
 done
-echo "Users value:$users"
 }
 
 function test_duration_user_input {
@@ -315,7 +311,6 @@ while true; do
        echo "Wrong input, try again";;
   esac
 done
-echo "Test ramp up value:$ramp_up"
 }
 
 # utility function to print sepeartor/formatter line
