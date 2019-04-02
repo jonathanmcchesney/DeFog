@@ -476,6 +476,7 @@ function benchmark_applications {
 # benchmark iPokemon server
 function benchmark_ipokemon {
 	cd jmeter/bin # navigate to jmeter bin folder
+	local ipokemon_jmx=../../assets/ipokemon-assets/iPokemon.jmx
 	
 	local host=''
 	
@@ -488,11 +489,11 @@ function benchmark_ipokemon {
 
 	# run jmeter using user defined variables (automation of jsx file - allows execution on the edge or cloud)
 	echo "Running JMeter..."
-	./jmeter -n -t iPokeMon1.jmx -JHOST=$host -JDuration=$test_duration -JThreads=$users -JRamp=$ramp_up -l testresults.csv
+	./jmeter -n -t $ipokemon_jmx -JHOST=$host -JDuration=$test_duration -JThreads=$users -JRamp=$ramp_up -l testresults.csv
 	
 	# run tautus using user defined variables (automation of jmeter jsx file) and using reporting.yaml as a parameter
 	echo "Running Taurus..."
-	bzt iPokeMon1.jmx -o modules.jmeter.properties.HOST=$host -o modules.jmeter.properties.Duration=$test_duration -o modules.jmeter.properties.Threads=$users -o modules.jmeter.properties.Ramp=$ramp_up reporting.yaml
+	bzt $ipokemon_jmx -o modules.jmeter.properties.HOST=$host -o modules.jmeter.properties.Duration=$test_duration -o modules.jmeter.properties.Threads=$users -o modules.jmeter.properties.Ramp=$ramp_up reporting.yaml
 	
 	# move and rename test data files to the results file
 	mv testresults.csv ../../results/$jmeter_filename.csv 2>/dev/null
