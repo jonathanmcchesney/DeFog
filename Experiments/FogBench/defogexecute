@@ -44,7 +44,7 @@ function executebenchmarkhelp {
 		./defogexecute -?
 }
 
-function benchmark_actions {
+function benchmark_all_actions {
 
 		if [ "$environment" == "-c" ]; then
 			echo "ssh into edge instance for actions and system benchmarks.."
@@ -90,7 +90,7 @@ function benchmark_actions {
 		
 }
 
-function benchmark_applications {
+function benchmark_all_applications {
 		
 		if [ "$environment" == "-c" ]; then
 			
@@ -520,7 +520,7 @@ function start_ipokemon_server {
 function benchmark_application {
 		if [ "$environment" == "-c" ]; # cloud only
 		then
-			benchmark_cloud_applications
+			benchmark_all_applications
 			calc_rtt
 			if [ "${metricsValues[5]}" != "NA" ];
 			then
@@ -806,7 +806,7 @@ function main {
 	if [ "$environment" == "-c" ]; # cloud only
 	then
 		
-		benchmark_cloud_actions
+		benchmark_all_actions
 		send_config_cloud
 		benchmark_applications
 	fi	

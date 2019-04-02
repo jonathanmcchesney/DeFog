@@ -10,7 +10,7 @@ clouduser2="${clouduser1/$'\n'/}"
 edgeawskey2="${edgeawskey1/$'\n'/}"
 
 new_address1="${foglampaddress/$'\r'/}"
-new_address2="${foglampaddress1/$'\n'/}"
+new_address2="${new_address1/$'\n'/}"
 
 chmod 400 /mnt/configs/csc4006awskey.pem
 
@@ -47,7 +47,7 @@ function stop_foglamp {
 
 # Execute the foglamp command to interact with FogLamps API, and save the output to the predictions file
 function execute_foglamp {
-	. foglampcurlcommand.sh $foglampaddress2 >> $predictions
+	. foglampcurlcommand.sh $new_address2 >> $predictions
 }
 
 # Start the FogLamp root application
@@ -239,7 +239,7 @@ function execute_program_only {
 	# capture the time taken for computation
 	start=$(date +%s.%N)
 
-	if [ "$application" == 3 ]; then $executeApplication=$(execute_foglamp) # if foglamp then execute and save to file
+	if [ "$application" == 3 ]; then execute_foglamp # if foglamp then execute and save to file
 	else $executeApplication # else execute the application as normal
 	fi
 	
