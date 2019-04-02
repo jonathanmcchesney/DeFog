@@ -117,8 +117,8 @@ function which_program_edge_split_pipeline {
 		file=$( cat /mnt/assets/aeneas.txt )
 		new_file="${file%%.*}"
 		
-		executeApplication='python -m aeneas.tools.execute_task     /mnt/assets/aeneasaudio.mp3     ./$new_file.xhtml     "task_language=eng|os_task_file_format=smil|os_task_file_smil_audio_ref=audio.mp3|os_task_file_smil_page_ref=page.xhtml|is_text_type=unparsed|is_text_unparsed_id_regex=f[0-9]+|is_text_unparsed_id_sort=numeric"     map.smil'
-
+		local conf="task_language=eng|os_task_file_format=smil|os_task_file_smil_audio_ref=audio.mp3|os_task_file_smil_page_ref=page.xhtml|is_text_type=unparsed|is_text_unparsed_id_regex=f[0-9]+|is_text_unparsed_id_sort=numeric"
+		executeApplication="python -m aeneas.tools.execute_task     /mnt/assets/aeneasaudio.mp3     /mnt/assets/aeneastext.xhtml     ${conf}     map.smil"
 	fi
 }
 
@@ -166,7 +166,8 @@ function which_program_only_pipelines {
 		
 		pathToApplication=~/Experiments/Aeneas/aeneas
 		
-		executeApplication='python -m aeneas.tools.execute_task     /mnt/assets/aeneasaudio.mp3     /mnt/assets/aeneastext.xhtml     "task_language=eng|os_task_file_format=smil|os_task_file_smil_audio_ref=audio.mp3|os_task_file_smil_page_ref=page.xhtml|is_text_type=unparsed|is_text_unparsed_id_regex=f[0-9]+|is_text_unparsed_id_sort=numeric"     map.smil'
+		local conf="task_language=eng|os_task_file_format=smil|os_task_file_smil_audio_ref=audio.mp3|os_task_file_smil_page_ref=page.xhtml|is_text_type=unparsed|is_text_unparsed_id_regex=f[0-9]+|is_text_unparsed_id_sort=numeric"
+		executeApplication="python -m aeneas.tools.execute_task     /mnt/assets/aeneasaudio.mp3     /mnt/assets/aeneastext.xhtml     ${conf}     map.smil"
 	
 	elif [ "$application" == 3 ] # FogLamp
 	then
@@ -370,4 +371,4 @@ done
 
 #main
 
-exit
+#exit
