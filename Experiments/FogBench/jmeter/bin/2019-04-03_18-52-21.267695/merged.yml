@@ -1,0 +1,15 @@
+---
+execution:
+- executor: jmeter
+  scenario:
+    script: ../../assets/ipokemon-assets/iPokemon.jmx
+reporting:
+- dump-csv: taurusreport.csv
+  dump-xml: taurusreport.xml
+  failed-labels: true
+  module: final-stats
+  percentiles: true
+  summary: true
+  summary-labels: true
+  test-duration: true
+

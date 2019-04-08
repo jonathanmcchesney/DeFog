@@ -25,12 +25,12 @@ function edgeaddress_selector {
 	then
 		while true; do
 			echo ""
-			echo "Please select your edge node device:"
+			echo -e "Please select your edge node device:"
 				echo ""
 				echo "0. Odroid XU4"
 				echo "1. Raspberry Pi"
 				echo ""
-		  read -p "What actions would you like to run:[0,1]" ANS
+		  read -p "What actions would you like to run:[0,1] " ANS
 		  case $ANS in 
 			'0') 
 			   edgeaddress=$edgeaddress1
@@ -44,48 +44,46 @@ function edgeaddress_selector {
 			   echo "Wrong input, try again";;
 		  esac
 		done
-		echo "edgeaddress value:$edgeaddress"
-		echo "edgeuser value:$edgeuser"
 	fi
 }
 
 # utility function to determine the platform actions to be perfomed based on user input
 function actions_user_input {
 while true; do
-	echo ""
 	echo "Actions:"
 		echo ""
-		echo "0. All"
-		echo "1. Small and large weight downloads"
-		echo "2. Test large file create/remove speed"
-		echo "3. Sysbench"
-		echo "4. UnixBench"
-		echo "5. Delete temporary files"
-		echo "6. Simple System Benchmarks"
+		echo "0. Run DeFog Platform Benchmarks"
+		echo "1. Run DeFog, Sysbench & UnixBench Platform Benchmarks"
+		echo "2. Run Network Benchmark"
+		echo "3. Run I/O Benchmark"
+		echo "4. Run Sysbench"
+		echo "5. Run UnixBench"
+		echo "6. Remove Docker Containers & DeFog Architecture"
 		echo "7. None"
 		echo ""
-  read -p "What actions would you like to run:[0,1,2,3,4,5,6,7]" ANS
+  read -p "What actions would you like to run:[0,1,2,3,4,5,6,7] " ANS
   case $ANS in 
-    '0') 
+  
+	'0') 
+       actions="-g"   
+	   break;;
+    '1') 
        actions="-a"
        break;;
-    '1') 
+    '2') 
        actions="-d"
        break;;
-	'2') 
+	'3') 
        actions="-f" 
        break;;  
-	'3') 
+	'4') 
        actions="-s"
        break;;
-    '4') 
+    '5') 
        actions="-u"
        break;;
-	'5') 
-       actions="-x"
-	   break;;
 	'6') 
-       actions="-g"   
+       actions="-x"
 	   break;;
 	'7') 
        actions="-n"  
@@ -99,14 +97,13 @@ done
 # utility function to determine the platform pipeline based on user input
 function env_user_input {
 while true; do
-	echo ""
 	echo "Environments:"
 		echo ""
 		echo "0. Cloud Only"
 		echo "1. Edge Only"
 		echo "2. Cloud & Edge"
 		echo ""
-  read -p "What environment would you like to benchmark: [0,1,2]" ANS
+  read -p "What environment would you like to benchmark: [0,1,2] " ANS
   case $ANS in 
     '0') 
        environment="-c"
@@ -121,14 +118,13 @@ while true; do
        echo "Wrong input, try again";;
   esac
 done
-echo "Enviroment value:$environment"
 }
 
 # utility function to determine the platform applications to be benchmarked based on user input
 function applications_user_input {
 while true; do
-	echo ""
-	echo "Applications:"
+	echo -e
+	echo -e "Fog Applications:"
 		echo ""
 		echo "0. Yolo"
 		echo "1. PocketSphinx"
@@ -138,7 +134,7 @@ while true; do
 		echo "5. FogLAMP"
 		echo "6. None"
 		echo ""
-  read -p "What Applications would you like to benchmark: [0,1,2,3,4,5,6]" ANS
+  read -p "What Applications would you like to benchmark: [0,1,2,3,4,5,6] " ANS
   case $ANS in 
     '0') 
        applications="-y"
@@ -170,15 +166,15 @@ done
 # utility function to determine the platform applications to be benchmarked on the cloud/edge pipeline based on user input
 function applications_cloud_edge_user_input {
 while true; do
-	echo ""
-	echo "Applications:"
+	echo -e
+	echo -e "Fog Applications:"
 		echo ""
 		echo "0. Yolo"
 		echo "1. PocketSphinx"
 		echo "2. Aeneas"
 		echo "3. None"
 		echo ""
-  read -p "What Applications would you like to benchmark: [0,1,2,3]" ANS
+  read -p "What Applications would you like to benchmark: [0,1,2,3] " ANS
   case $ANS in 
     '0') 
        applications="-y"
@@ -200,8 +196,8 @@ done
 
 function test_users_user_input {
 while true; do
-	echo ""
-	echo "Please select the number of users to simulate:"
+	echo -e
+	echo -e "Please select the number of users to simulate:"
 		echo ""
 		echo "0. 1"
 		echo "1. 2"
@@ -212,7 +208,7 @@ while true; do
 		echo "6. 100"
 		echo "7. 250"
 		echo ""
-  read -p "How many users/threads would you like to start: [0,1,2,3,4,5,6,7]" ANS
+  read -p "How many users/threads would you like to start: [0,1,2,3,4,5,6,7] " ANS
   case $ANS in 
     '0') 
        users=1
@@ -246,8 +242,8 @@ done
 
 function test_duration_user_input {
 while true; do
-	echo ""
-	echo "Please select the test duration in seconds:"
+	echo -e
+	echo -e "Please select the test duration in seconds:"
 		echo ""
 		echo "0. 60"
 		echo "1. 120"
@@ -255,7 +251,7 @@ while true; do
 		echo "3. 600"
 		echo "4. 900"
 		echo ""
-  read -p "How long would you like to run the test: [0,1,2,3,4]" ANS
+  read -p "How long would you like to run the test: [0,1,2,3,4] " ANS
   case $ANS in 
     '0') 
        test_duration=60
@@ -276,13 +272,12 @@ while true; do
        echo "Wrong input, try again";;
   esac
 done
-echo "Test duration value:$test_duration"
 }
 
 function test_ramp_up_user_input {
 while true; do
-	echo ""
-	echo "Please select the test ramp up period in seconds:"
+	echo -e
+	echo -e "Please select the test ramp up period in seconds:"
 		echo ""
 		echo "0. Default (0)"
 		echo "1. 10"
@@ -290,7 +285,7 @@ while true; do
 		echo "3. 60"
 		echo "4. 120"
 		echo ""
-  read -p "How long would you like to ramp up the threads/users for: [0,1,2,3,4]" ANS
+  read -p "How long would you like to ramp up the threads/users for: [0,1,2,3,4] " ANS
   case $ANS in 
     '0') 
        ramp_up=0
@@ -328,7 +323,7 @@ function display_ascii_header {
 	echo "                  |___/     ";
 	echo ""
 	echo -e "DeFog: " | tee $verbose_filename.txt
-	echo -e "		Demystifying Fog Systems Interaction via Container based benchmarking" | tee $verbose_filename.txt
+	echo -e "	Demystifying Fog Systems Interaction via Container based benchmarking." | tee $verbose_filename.txt
 	echo -e "	Created by: Jonathan McChesney, student at Queen's University Belfast" | tee -a $verbose_filename.txt
 	echo -e "	CSC4006 Final Year Research and Development Project" | tee -a $verbose_filename.txt
 	echo -e "" | tee -a $verbose_filename.txt
@@ -401,7 +396,8 @@ function main {
 		
 	if [ "$environment" == "-c" ]; # cloud only
 	then
-		echo "Cloud Only Benchmarks: " | tee -a $verbose_filename.txt
+		echo ""
+		echo -e "Cloud Only Benchmarks: " | tee -a $verbose_filename.txt
 		seperator
 		echo "" | tee -a $verbose_filename.txt
 		
@@ -413,7 +409,8 @@ function main {
 	
 	if [ "$environment" == "-e" ]; # edge only
 	then	
-		echo "Edge Only Benchmarks: " | tee -a $verbose_filename.txt
+		echo ""
+		echo -e "Edge Only Benchmarks: " | tee -a $verbose_filename.txt
 		seperator
 		echo "" | tee -a $verbose_filename.txt		
 		
@@ -426,7 +423,8 @@ function main {
 	
 	if [ "$environment" == "-b" ]; # cloud/edge
 	then	
-		echo "Edge/Cloud Benchmarks: " | tee -a $verbose_filename.txt
+		echo ""
+		echo -e "Edge/Cloud Benchmarks: " | tee -a $verbose_filename.txt
 		seperator
 		echo "" | tee -a $verbose_filename.txt
 				
@@ -434,6 +432,8 @@ function main {
 		applications_cloud_edge_user_input
 		
 	fi
+	
+	echo -e
 	
 	(
 		export actions

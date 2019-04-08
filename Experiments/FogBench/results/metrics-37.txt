@@ -1,0 +1,2 @@
+T1 ET T2 T3 RTT RTF Cost BytesUp1 BytesDown1 BytesDown2 BytesPerSecUp1 BytesPerSecDown1 BytesPerSecDown2 T4 CL FRTT FCL Pipeline Application
+T1 ET T2 T3 RTT RTF Cost BytesUp1 BytesDown1 BytesDown2 BytesPerSecUp1 BytesPerSecDown1 BytesPerSecDown2 T4 CL FRTT FCL Pipeline Application

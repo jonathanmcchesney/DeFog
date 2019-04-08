@@ -1,0 +1,310 @@
+[2019-04-02 12:11:41,554 INFO root] Taurus CLI Tool v1.13.2
+[2019-04-02 12:11:41,554 DEBUG root] Command-line options: {'log': 'C:\\Users\\jmcch\\AppData\\Local\\Temp\\bzt_ehwqpezg.log', 'option': ['modules.jmeter.properties.HOST=34.244.129.226', 'modules.jmeter.properties.Duration=300', 'modules.jmeter.properties.Threads=5', 'modules.jmeter.properties.Ramp=0'], 'quiet': None, 'verbose': None, 'no_system_configs': None, 'aliases': []}
+[2019-04-02 12:11:41,555 DEBUG root] Python: CPython 3.6.5
+[2019-04-02 12:11:41,555 DEBUG root] Rev: 8c96479fb6a315f7ffb7c0afcaa7e841152c90a3; OS: uname_result(system='Windows', node='DESKTOP-JQOCQB2', release='10', version='10.0.17134', machine='AMD64', processor='Intel64 Family 6 Model 94 Stepping 3, GenuineIntel')
+[2019-04-02 12:11:41,617 DEBUG root] Adding JMX shorthand config for: ['../../assets/ipokemon-assets/iPokemon.jmx']
+[2019-04-02 12:11:41,617 DEBUG root] Dumping JSON config into C:\Users\jmcch\AppData\Local\Temp\jmx_asebjbps.json
+[2019-04-02 12:11:41,617 INFO root] Starting with configs: ['reporting.yaml', 'C:\\Users\\jmcch\\AppData\\Local\\Temp\\jmx_asebjbps.json']
+[2019-04-02 12:11:41,728 DEBUG root] Using personal config: C:\Users\jmcch\.bzt-rc
+[2019-04-02 12:11:41,728 INFO Engine] Configuring...
+[2019-04-02 12:11:46,326 DEBUG Engine] Base configs list: ['C:\\Users\\jmcch\\AppData\\Local\\Taurus\\pkgs\\bzt\\resources/10-base-config.yml']
+[2019-04-02 12:11:46,326 DEBUG Engine.Configuration] Configs: ['C:\\Users\\jmcch\\AppData\\Local\\Taurus\\pkgs\\bzt\\resources/10-base-config.yml']
+[2019-04-02 12:11:46,483 DEBUG Engine.Configuration] Reading C:\Users\jmcch\AppData\Local\Taurus\pkgs\bzt\resources/10-base-config.yml as YAML
+[2019-04-02 12:11:46,507 DEBUG Engine] User configs list: ['C:\\Users\\jmcch\\.bzt-rc', 'reporting.yaml', 'C:\\Users\\jmcch\\AppData\\Local\\Temp\\jmx_asebjbps.json']
+[2019-04-02 12:11:46,508 DEBUG Engine.Configuration] Configs: ['C:\\Users\\jmcch\\.bzt-rc', 'reporting.yaml', 'C:\\Users\\jmcch\\AppData\\Local\\Temp\\jmx_asebjbps.json']
+[2019-04-02 12:11:46,566 DEBUG Engine.Configuration] Reading C:\Users\jmcch\.bzt-rc as YAML
+[2019-04-02 12:11:46,571 DEBUG Engine.Configuration] Reading reporting.yaml as YAML
+[2019-04-02 12:11:46,574 DEBUG Engine.Configuration] Reading C:\Users\jmcch\AppData\Local\Temp\jmx_asebjbps.json as YAML
+[2019-04-02 12:11:46,575 DEBUG Engine.Configuration] Configs: ['C:\\Users\\jmcch\\.bzt-rc', 'reporting.yaml', 'C:\\Users\\jmcch\\AppData\\Local\\Temp\\jmx_asebjbps.json']
+[2019-04-02 12:11:46,575 DEBUG Engine.Configuration] Reading C:\Users\jmcch\.bzt-rc as YAML
+[2019-04-02 12:11:46,579 DEBUG Engine.Configuration] Reading reporting.yaml as YAML
+[2019-04-02 12:11:46,581 DEBUG Engine.Configuration] Reading C:\Users\jmcch\AppData\Local\Temp\jmx_asebjbps.json as YAML
+[2019-04-02 12:11:46,694 DEBUG Engine] Requesting updates info: http://gettaurus.org/updates/?version=1.13.2&installID=windows-80fa5b330391
+[2019-04-02 12:11:46,695 DEBUG ConfigOverrider] Applying modules.jmeter.properties.HOST=34.244.129.226
+[2019-04-02 12:11:46,695 DEBUG HTTPClient] Making HTTP request GET http://gettaurus.org/updates/?version=1.13.2&installID=windows-80fa5b330391
+[2019-04-02 12:11:46,695 DEBUG ConfigOverrider] Applying: [HOST]=34.244.129.226
+[2019-04-02 12:11:46,696 DEBUG ConfigOverrider] Parsed override value: '34.244.129.226' -> '34.244.129.226' (<class 'str'>)
+[2019-04-02 12:11:46,696 DEBUG ConfigOverrider] Applying modules.jmeter.properties.Duration=300
+[2019-04-02 12:11:46,696 DEBUG ConfigOverrider] Applying: [Duration]=300
+[2019-04-02 12:11:46,739 DEBUG ConfigOverrider] Parsed override value: '300' -> 300 (<class 'int'>)
+[2019-04-02 12:11:46,739 DEBUG ConfigOverrider] Applying modules.jmeter.properties.Threads=5
+[2019-04-02 12:11:46,739 DEBUG ConfigOverrider] Applying: [Threads]=5
+[2019-04-02 12:11:46,739 DEBUG ConfigOverrider] Parsed override value: '5' -> 5 (<class 'int'>)
+[2019-04-02 12:11:46,739 DEBUG ConfigOverrider] Applying modules.jmeter.properties.Ramp=0
+[2019-04-02 12:11:46,739 DEBUG ConfigOverrider] Applying: [Ramp]=0
+[2019-04-02 12:11:46,740 DEBUG ConfigOverrider] Parsed override value: '0' -> 0 (<class 'int'>)
+[2019-04-02 12:11:46,740 INFO Engine] Artifacts dir: C:\Users\jmcch\Documents\csc4006Gitlab\csc4006-EdgeBenchmarking\Experiments\FogBench\jmeter\bin\2019-04-02_12-11-46.740295
+[2019-04-02 12:11:46,780 DEBUG Engine] New artifact filename: C:\Users\jmcch\Documents\csc4006Gitlab\csc4006-EdgeBenchmarking\Experiments\FogBench\jmeter\bin\2019-04-02_12-11-46.740295\effective
+[2019-04-02 12:11:46,875 DEBUG Engine.Configuration] Dumping YAML config into C:\Users\jmcch\Documents\csc4006Gitlab\csc4006-EdgeBenchmarking\Experiments\FogBench\jmeter\bin\2019-04-02_12-11-46.740295\effective.yml
+[2019-04-02 12:11:46,893 DEBUG urllib3.connectionpool] Starting new HTTP connection (1): gettaurus.org:80
+[2019-04-02 12:11:46,895 DEBUG Engine.Configuration] Dumping JSON config into C:\Users\jmcch\Documents\csc4006Gitlab\csc4006-EdgeBenchmarking\Experiments\FogBench\jmeter\bin\2019-04-02_12-11-46.740295\effective.json
+[2019-04-02 12:11:46,897 DEBUG Engine] New artifact filename: C:\Users\jmcch\Documents\csc4006Gitlab\csc4006-EdgeBenchmarking\Experiments\FogBench\jmeter\bin\2019-04-02_12-11-46.740295\merged.yml
+[2019-04-02 12:11:46,897 DEBUG Engine.Configuration] Dumping YAML config into C:\Users\jmcch\Documents\csc4006Gitlab\csc4006-EdgeBenchmarking\Experiments\FogBench\jmeter\bin\2019-04-02_12-11-46.740295\merged.yml
+[2019-04-02 12:11:46,899 DEBUG Engine] New artifact filename: C:\Users\jmcch\Documents\csc4006Gitlab\csc4006-EdgeBenchmarking\Experiments\FogBench\jmeter\bin\2019-04-02_12-11-46.740295\merged.json
+[2019-04-02 12:11:46,900 DEBUG Engine.Configuration] Dumping JSON config into C:\Users\jmcch\Documents\csc4006Gitlab\csc4006-EdgeBenchmarking\Experiments\FogBench\jmeter\bin\2019-04-02_12-11-46.740295\merged.json
+[2019-04-02 12:11:46,900 DEBUG Engine] Add existing artifact (move=False): reporting.yaml
+[2019-04-02 12:11:46,900 DEBUG Engine] Copying reporting.yaml to C:\Users\jmcch\Documents\csc4006Gitlab\csc4006-EdgeBenchmarking\Experiments\FogBench\jmeter\bin\2019-04-02_12-11-46.740295\reporting.yaml
+[2019-04-02 12:11:46,901 DEBUG Engine] Add existing artifact (move=False): C:\Users\jmcch\AppData\Local\Temp\jmx_asebjbps.json
+[2019-04-02 12:11:46,902 DEBUG Engine] Copying C:\Users\jmcch\AppData\Local\Temp\jmx_asebjbps.json to C:\Users\jmcch\Documents\csc4006Gitlab\csc4006-EdgeBenchmarking\Experiments\FogBench\jmeter\bin\2019-04-02_12-11-46.740295\jmx_asebjbps.json
+[2019-04-02 12:11:46,916 DEBUG Engine.Environment] Replace 'TAURUS_ARTIFACTS_DIR' in environment
+[2019-04-02 12:11:46,917 DEBUG root] Closing log handler: C:\Users\jmcch\AppData\Local\Temp\bzt_ehwqpezg.log
+[2019-04-02 12:11:46,920 DEBUG root] Switched writing logs to C:\Users\jmcch\Documents\csc4006Gitlab\csc4006-EdgeBenchmarking\Experiments\FogBench\jmeter\bin\2019-04-02_12-11-46.740295\bzt.log
+[2019-04-02 12:11:46,920 DEBUG root] Linting config
+[2019-04-02 12:11:46,923 INFO Engine] Preparing...
+[2019-04-02 12:11:46,923 DEBUG Engine] Module config: consolidator {'class': 'bzt.modules.aggregator.ConsolidatingAggregator'}
+[2019-04-02 12:11:46,923 DEBUG root] Importing module: bzt.modules.aggregator
+[2019-04-02 12:11:47,624 DEBUG urllib3.connectionpool] http://gettaurus.org:80 "GET /updates/?version=1.13.2&installID=windows-80fa5b330391 HTTP/1.1" 200 39
+[2019-04-02 12:11:47,624 DEBUG Engine] Taurus updates info: {'latest': '1.13.4', 'needsUpgrade': True}
+[2019-04-02 12:11:47,624 WARNING Engine] There is newer version of Taurus 1.13.4 available, consider upgrading. What's new: http://gettaurus.org/docs/Changelog/
+[2019-04-02 12:12:10,093 DEBUG root] Loading class: 'ConsolidatingAggregator' from <module 'bzt.modules.aggregator' from 'C:\\Users\\jmcch\\AppData\\Local\\Taurus\\pkgs\\bzt\\modules\\aggregator.py'>
+[2019-04-02 12:12:10,093 DEBUG Engine.consolidator] Buffer scaling setup: percentile 95.0 from [0.0, 50.0, 90.0, 95.0, 99.0, 99.9, 100.0] selected
+[2019-04-02 12:12:10,093 DEBUG Engine] Module config: monitoring {'class': 'bzt.modules.monitoring.Monitoring'}
+[2019-04-02 12:12:10,093 DEBUG root] Importing module: bzt.modules.monitoring
+[2019-04-02 12:12:10,303 DEBUG root] Loading class: 'Monitoring' from <module 'bzt.modules.monitoring' from 'C:\\Users\\jmcch\\AppData\\Local\\Taurus\\pkgs\\bzt\\modules\\monitoring.py'>
+[2019-04-02 12:12:10,304 DEBUG Engine] Module config: local {'class': 'bzt.modules.provisioning.Local'}
+[2019-04-02 12:12:10,304 DEBUG root] Importing module: bzt.modules.provisioning
+[2019-04-02 12:12:10,304 DEBUG root] Loading class: 'Local' from <module 'bzt.modules.provisioning' from 'C:\\Users\\jmcch\\AppData\\Local\\Taurus\\pkgs\\bzt\\modules\\provisioning.py'>
+[2019-04-02 12:12:10,304 DEBUG Engine] Module config: jmeter {'class': 'bzt.modules.jmeter.JMeterExecutor', 'protocol-handlers': {'http': 'bzt.jmx.http.HTTPProtocolHandler'}, 'plugins': ['jpgc-casutg', 'jpgc-dummy', 'jpgc-ffw', 'jpgc-fifo', 'jpgc-functions', 'jpgc-json', 'jpgc-perfmon', 'jpgc-prmctl', 'jpgc-tst'], 'properties': {'jmeter.save.saveservice.autoflush': 'true', 'jmeter.save.saveservice.connect_time': 'true', 'jmeterengine.force.system.exit': 'true', 'summariser.name': '', 'HOST': '34.244.129.226', 'Duration': 300, 'Threads': 5, 'Ramp': 0}}
+[2019-04-02 12:12:10,304 DEBUG root] Importing module: bzt.modules.jmeter
+[2019-04-02 12:12:11,562 DEBUG root] Loading class: 'JMeterExecutor' from <module 'bzt.modules.jmeter' from 'C:\\Users\\jmcch\\AppData\\Local\\Taurus\\pkgs\\bzt\\modules\\jmeter.py'>
+[2019-04-02 12:12:11,562 DEBUG Engine.local] Preparing executor: jmeter/2488167444776
+[2019-04-02 12:12:11,563 DEBUG Engine.jmeter] Extract {'script': '../../assets/ipokemon-assets/iPokemon.jmx'} into scenarios
+[2019-04-02 12:12:11,564 DEBUG Engine] New artifact filename: C:\Users\jmcch\Documents\csc4006Gitlab\csc4006-EdgeBenchmarking\Experiments\FogBench\jmeter\bin\2019-04-02_12-11-46.740295\jmeter.log
+[2019-04-02 12:12:11,564 DEBUG Engine.jmeter] Checking if port 4445 is free
+[2019-04-02 12:12:11,565 DEBUG Engine.jmeter] Port 4445 is free
+[2019-04-02 12:12:11,565 DEBUG Engine.jmeter] Using port 4445 for management
+[2019-04-02 12:12:11,566 DEBUG Engine.jmeter] Additional properties: {'jmeter.save.saveservice.autoflush': 'true', 'jmeter.save.saveservice.connect_time': 'true', 'jmeterengine.force.system.exit': 'true', 'summariser.name': '', 'HOST': '34.244.129.226', 'Duration': 300, 'Threads': 5, 'Ramp': 0, 'jmeterengine.nongui.port': 4445, 'jmeterengine.nongui.maxport': 4445, 'jmeter.save.saveservice.timestamp_format': 'ms', 'sampleresult.default.encoding': 'UTF-8', 'user.classpath': 'C:/Users/jmcch/Documents/csc4006Gitlab/csc4006-EdgeBenchmarking/Experiments/FogBench/jmeter/bin/2019-04-02_12-11-46.740295;C:/Users/jmcch/Documents/csc4006Gitlab/csc4006-EdgeBenchmarking/Experiments/FogBench/assets/ipokemon-assets'}
+[2019-04-02 12:12:11,566 DEBUG Engine] New artifact filename: C:\Users\jmcch\Documents\csc4006Gitlab\csc4006-EdgeBenchmarking\Experiments\FogBench\jmeter\bin\2019-04-02_12-11-46.740295\jmeter-bzt.properties
+[2019-04-02 12:12:11,568 DEBUG Engine.jmeter.JavaVM] Trying JavaVM: ['java', '-version']
+[2019-04-02 12:12:13,265 DEBUG Engine.jmeter.JavaVM] JavaVM output: java version "10.0.2" 2018-07-17
+Java(TM) SE Runtime Environment 18.3 (build 10.0.2+13)
+Java HotSpot(TM) 64-Bit Server VM 18.3 (build 10.0.2+13, mixed mode)
+[2019-04-02 12:12:13,265 DEBUG Engine.jmeter.TclLibrary] Checking if TCL_LIBRARY variable is present in environment
+[2019-04-02 12:12:13,265 DEBUG Engine.jmeter.TclLibrary] TCL_LIBRARY environment variable is present
+[2019-04-02 12:12:13,266 DEBUG Engine.jmeter.JMeter] Trying jmeter: C:\Users\jmcch\.bzt\jmeter-taurus\5.0\bin\jmeter.bat
+[2019-04-02 12:12:13,267 DEBUG bzt.utils] Executing shell: ['C:\\Users\\jmcch\\.bzt\\jmeter-taurus\\5.0\\bin\\jmeter.bat', '-j', 'C:\\Users\\jmcch\\AppData\\Local\\Temp\\jmeterrwcsdtv8log', '--version'] at .
+[2019-04-02 12:12:25,170 DEBUG Engine.jmeter.JMeter] JMeter check:     _    ____   _    ____ _   _ _____       _ __  __ _____ _____ _____ ____     
+   / \  |  _ \ / \  / ___| | | | ____|     | |  \/  | ____|_   _| ____|  _ \   
+  / _ \ | |_) / _ \| |   | |_| |  _|    _  | | |\/| |  _|   | | |  _| | |_) | 
+ / ___ \|  __/ ___ \ |___|  _  | |___  | |_| | |  | | |___  | | | |___|  _ <  
+/_/   \_\_| /_/   \_\____|_| |_|_____|  \___/|_|  |_|_____| |_| |_____|_| \_\ 5.0 r1840935  
+
+Copyright (c) 1999-2018 The Apache Software Foundation
+
+ / None
+[2019-04-02 12:12:25,171 DEBUG Engine.jmeter] Load: LoadSpec(concurrency=None, throughput=None, ramp_up=None, hold=0, iterations=None, duration=None, steps=None)
+[2019-04-02 12:12:25,476 DEBUG Engine] New artifact filename: C:\Users\jmcch\Documents\csc4006Gitlab\csc4006-EdgeBenchmarking\Experiments\FogBench\jmeter\bin\2019-04-02_12-11-46.740295\kpi.jtl
+[2019-04-02 12:12:25,477 DEBUG Engine] New artifact filename: C:\Users\jmcch\Documents\csc4006Gitlab\csc4006-EdgeBenchmarking\Experiments\FogBench\jmeter\bin\2019-04-02_12-11-46.740295\error.jtl
+[2019-04-02 12:12:25,482 DEBUG Engine.jmeter.LoadSettingsProcessor] Thread group detection: duration not found, regular ThreadGroup will be used
+[2019-04-02 12:12:25,482 DEBUG Engine.jmeter.LoadSettingsProcessor] No iterations/concurrency/duration found, thread group modification is skipped
+[2019-04-02 12:12:25,482 DEBUG JMX] Saving JMX to: C:\Users\jmcch\Documents\csc4006Gitlab\csc4006-EdgeBenchmarking\Experiments\FogBench\assets\ipokemon-assets\modified_iPokemon.jmx
+[2019-04-02 12:12:25,531 DEBUG bzt.utils] Executing shell: ['C:\\Users\\jmcch\\.bzt\\jmeter-taurus\\5.0\\bin\\PluginsManagerCMD.bat', 'install-for-jmx', 'C:\\Users\\jmcch\\Documents\\csc4006Gitlab\\csc4006-EdgeBenchmarking\\Experiments\\FogBench\\assets\\ipokemon-assets\\modified_iPokemon.jmx'] at .
+[2019-04-02 12:12:50,120 DEBUG Engine.jmeter.JMeter] Try to detect plugins for C:\Users\jmcch\Documents\csc4006Gitlab\csc4006-EdgeBenchmarking\Experiments\FogBench\assets\ipokemon-assets\modified_iPokemon.jmx
+2019-04-02 12:12:42,296 INFO o.j.r.PluginManagerCMD: Command is: install-for-jmx
+2019-04-02 12:12:42,946 INFO o.j.r.JARSourceHTTP: Requesting https://jmeter-plugins.org/repo/?installID=windows_10-75a1adca1401538edf6dc2964d5fad67-nongui
+2019-04-02 12:12:47,284 INFO o.j.r.PluginManager: Plugins Status: [jpgc-functions=2.1, jpgc-casutg=2.6, jpgc-dummy=0.2, jpgc-ffw=2.0, jpgc-fifo=0.2, jpgc-json=2.7, jpgc-prmctl=0.4, jpgc-perfmon=2.1, jpgc-plugins-manager=1.3, jpgc-tst=2.5, jmeter-core=5.0, jmeter-ftp=5.0, jmeter-http=5.0, jmeter-jdbc=5.0, jmeter-jms=5.0, jmeter-junit=5.0, jmeter-java=5.0, jmeter-ldap=5.0, jmeter-mail=5.0, jmeter-mongodb=5.0, jmeter-native=5.0, jmeter-tcp=5.0, jmeter-components=5.0]
+2019-04-02 12:12:47,287 INFO o.j.r.PluginManagerCMD: Params line is: C:\Users\jmcch\Documents\csc4006Gitlab\csc4006-EdgeBenchmarking\Experiments\FogBench\assets\ipokemon-assets\modified_iPokemon.jmx
+2019-04-02 12:12:48,173 INFO o.a.j.s.SaveService: Testplan (JMX) version: 2.2. Testlog (JTL) version: 2.2
+2019-04-02 12:12:48,215 INFO o.a.j.s.SaveService: Using SaveService properties version 5.0
+2019-04-02 12:12:48,219 INFO o.a.j.s.SaveService: Using SaveService properties file encoding UTF-8
+2019-04-02 12:12:49,666 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/html is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2019-04-02 12:12:49,666 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xhtml+xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2019-04-02 12:12:49,666 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2019-04-02 12:12:49,667 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2019-04-02 12:12:49,667 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/vnd.wap.wml is org.apache.jmeter.protocol.http.parser.RegexpHTMLParser
+2019-04-02 12:12:49,667 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/css is org.apache.jmeter.protocol.http.parser.CssParser
+2019-04-02 12:12:49,698 WARN o.a.j.u.JMeterUtils: ERROR! Resource string not found: [test_action_target]
+2019-04-02 12:12:49,699 WARN o.a.j.u.JMeterUtils: ERROR! Resource string not found: [test_action_target_thread]
+2019-04-02 12:12:49,699 WARN o.a.j.u.JMeterUtils: ERROR! Resource string not found: [test_action_target_test]
+2019-04-02 12:12:49,699 WARN o.a.j.u.JMeterUtils: ERROR! Resource string not found: [test_action_action_thread]
+2019-04-02 12:12:49,700 WARN o.a.j.u.JMeterUtils: ERROR! Resource string not found: [test_action_action_test_thread]
+2019-04-02 12:12:49,700 WARN o.a.j.u.JMeterUtils: ERROR! Resource string not found: [test_action_pause]
+2019-04-02 12:12:49,700 WARN o.a.j.u.JMeterUtils: ERROR! Resource string not found: [test_action_stop]
+2019-04-02 12:12:49,700 WARN o.a.j.u.JMeterUtils: ERROR! Resource string not found: [test_action_stop_now]
+2019-04-02 12:12:49,700 WARN o.a.j.u.JMeterUtils: ERROR! Resource string not found: [test_action_restart_next_loop]
+2019-04-02 12:12:49,700 WARN o.a.j.u.JMeterUtils: ERROR! Resource string not found: [test_action_continue_current_loop]
+2019-04-02 12:12:49,701 WARN o.a.j.u.JMeterUtils: ERROR! Resource string not found: [test_action_break_current_loop]
+2019-04-02 12:12:49,701 WARN o.a.j.u.JMeterUtils: ERROR! Resource string not found: [test_action_duration]
+2019-04-02 12:12:49,729 WARN o.a.j.u.JMeterUtils: ERROR! Resource string not found: [aggregate_report_total_label]
+2019-04-02 12:12:49,756 INFO o.j.r.PluginManager: Finishing without changes
+
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by com.thoughtworks.xstream.core.util.Fields (file:/C:/Users/jmcch/.bzt/jmeter-taurus/5.0/lib/xstream-1.4.10.jar) to field java.util.TreeMap.comparator
+WARNING: Please consider reporting this to the maintainers of com.thoughtworks.xstream.core.util.Fields
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+
+[2019-04-02 12:12:50,120 DEBUG Engine] New artifact filename: C:\Users\jmcch\Documents\csc4006Gitlab\csc4006-EdgeBenchmarking\Experiments\FogBench\jmeter\bin\2019-04-02_12-11-46.740295\jmeter.out
+[2019-04-02 12:12:50,120 DEBUG Engine] New artifact filename: C:\Users\jmcch\Documents\csc4006Gitlab\csc4006-EdgeBenchmarking\Experiments\FogBench\jmeter\bin\2019-04-02_12-11-46.740295\jmeter.err
+[2019-04-02 12:12:50,122 DEBUG Engine] Module config: final-stats {'class': 'bzt.modules.reporting.FinalStatus'}
+[2019-04-02 12:12:50,122 DEBUG root] Importing module: bzt.modules.reporting
+[2019-04-02 12:12:50,529 DEBUG root] Loading class: 'FinalStatus' from <module 'bzt.modules.reporting' from 'C:\\Users\\jmcch\\AppData\\Local\\Taurus\\pkgs\\bzt\\modules\\reporting.py'>
+[2019-04-02 12:12:50,529 DEBUG Engine] Module config: console {'class': 'bzt.modules.console.ConsoleStatusReporter'}
+[2019-04-02 12:12:50,529 DEBUG root] Importing module: bzt.modules.console
+[2019-04-02 12:12:50,529 DEBUG root] Loading class: 'ConsoleStatusReporter' from <module 'bzt.modules.console' from 'C:\\Users\\jmcch\\AppData\\Local\\Taurus\\pkgs\\bzt\\modules\\console.py'>
+[2019-04-02 12:12:50,532 DEBUG Engine.Configuration] Dumping YAML config into C:\Users\jmcch\Documents\csc4006Gitlab\csc4006-EdgeBenchmarking\Experiments\FogBench\jmeter\bin\2019-04-02_12-11-46.740295\effective.yml
+[2019-04-02 12:12:50,561 DEBUG Engine.Configuration] Dumping JSON config into C:\Users\jmcch\Documents\csc4006Gitlab\csc4006-EdgeBenchmarking\Experiments\FogBench\jmeter\bin\2019-04-02_12-11-46.740295\effective.json
+[2019-04-02 12:12:50,561 INFO Engine] Starting...
+[2019-04-02 12:12:50,562 DEBUG Engine] Startup <bzt.modules.monitoring.Monitoring object at 0x000002434B80EC88>
+[2019-04-02 12:12:50,562 DEBUG Engine] Startup <bzt.modules.aggregator.ConsolidatingAggregator object at 0x000002434B80EA58>
+[2019-04-02 12:12:50,562 DEBUG Engine] Startup <bzt.modules.reporting.FinalStatus object at 0x00000243525EA208>
+[2019-04-02 12:12:50,562 DEBUG Engine] Startup <bzt.modules.console.ConsoleStatusReporter object at 0x00000243525EAD68>
+[2019-04-02 12:12:50,562 INFO Engine.console] Waiting for results...
+[2019-04-02 12:12:50,563 DEBUG Engine] Startup <bzt.modules.reporting.FinalStatus object at 0x00000243525FFB70>
+[2019-04-02 12:12:50,563 DEBUG Engine] Startup <bzt.modules.provisioning.Local object at 0x0000024351B126A0>
+[2019-04-02 12:12:50,563 DEBUG Engine.local] Delay setup for jmeter/iPokemon.jmx: 0(start-at) + 0(delay) = 0
+[2019-04-02 12:12:50,565 DEBUG Engine.Configuration] Dumping YAML config into C:\Users\jmcch\Documents\csc4006Gitlab\csc4006-EdgeBenchmarking\Experiments\FogBench\jmeter\bin\2019-04-02_12-11-46.740295\effective.yml
+[2019-04-02 12:12:50,584 DEBUG Engine.Configuration] Dumping JSON config into C:\Users\jmcch\Documents\csc4006Gitlab\csc4006-EdgeBenchmarking\Experiments\FogBench\jmeter\bin\2019-04-02_12-11-46.740295\effective.json
+[2019-04-02 12:12:50,586 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2019-04-02 12:12:50,587 DEBUG root] Leveled up log file verbosity
+[2019-04-02 12:12:50,588 DEBUG bzt.utils] Executing shell: ['C:\\Users\\jmcch\\.bzt\\jmeter-taurus\\5.0\\bin\\jmeter.bat', '-n', '-t', 'C:\\Users\\jmcch\\Documents\\csc4006Gitlab\\csc4006-EdgeBenchmarking\\Experiments\\FogBench\\assets\\ipokemon-assets\\modified_iPokemon.jmx', '-j', 'C:\\Users\\jmcch\\Documents\\csc4006Gitlab\\csc4006-EdgeBenchmarking\\Experiments\\FogBench\\jmeter\\bin\\2019-04-02_12-11-46.740295\\jmeter.log', '-q', 'C:\\Users\\jmcch\\Documents\\csc4006Gitlab\\csc4006-EdgeBenchmarking\\Experiments\\FogBench\\jmeter\\bin\\2019-04-02_12-11-46.740295\\jmeter-bzt.properties'] at C:\Users\jmcch\Documents\csc4006Gitlab\csc4006-EdgeBenchmarking\Experiments\FogBench\jmeter\bin
+[2019-04-02 12:12:50,597 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2019-04-02 12:13:15,674 INFO Engine.console] Current: 5 vu	8 succ	0 fail	0.082 avg rt	/	Cumulative: 0.103 avg rt, 0% failures
+[2019-04-02 12:13:19,677 INFO Engine.console] Current: 5 vu	1 succ	0 fail	0.081 avg rt	/	Cumulative: 0.101 avg rt, 0% failures
+[2019-04-02 12:13:21,681 INFO Engine.console] Current: 5 vu	1 succ	0 fail	0.077 avg rt	/	Cumulative: 0.099 avg rt, 0% failures
+[2019-04-02 12:13:35,700 INFO Engine.console] Current: 5 vu	4 succ	0 fail	0.081 avg rt	/	Cumulative: 0.095 avg rt, 0% failures
+[2019-04-02 12:13:39,708 INFO Engine.console] Current: 5 vu	3 succ	0 fail	0.079 avg rt	/	Cumulative: 0.092 avg rt, 0% failures
+[2019-04-02 12:13:44,711 INFO Engine.console] Current: 5 vu	2 succ	0 fail	0.084 avg rt	/	Cumulative: 0.091 avg rt, 0% failures
+[2019-04-02 12:13:54,724 INFO Engine.console] Current: 5 vu	1 succ	0 fail	0.081 avg rt	/	Cumulative: 0.091 avg rt, 0% failures
+[2019-04-02 12:14:01,737 INFO Engine.console] Current: 5 vu	1 succ	0 fail	0.081 avg rt	/	Cumulative: 0.091 avg rt, 0% failures
+[2019-04-02 12:14:04,743 INFO Engine.console] Current: 5 vu	2 succ	0 fail	0.080 avg rt	/	Cumulative: 0.089 avg rt, 0% failures
+[2019-04-02 12:14:20,761 INFO Engine.console] Current: 5 vu	10 succ	0 fail	0.080 avg rt	/	Cumulative: 0.087 avg rt, 0% failures
+[2019-04-02 12:14:22,760 INFO Engine.console] Current: 5 vu	4 succ	0 fail	0.094 avg rt	/	Cumulative: 0.087 avg rt, 0% failures
+[2019-04-02 12:14:37,784 INFO Engine.console] Current: 5 vu	1 succ	0 fail	0.076 avg rt	/	Cumulative: 0.087 avg rt, 0% failures
+[2019-04-02 12:14:40,791 INFO Engine.console] Current: 5 vu	3 succ	0 fail	0.082 avg rt	/	Cumulative: 0.087 avg rt, 0% failures
+[2019-04-02 12:14:49,801 INFO Engine.console] Current: 5 vu	1 succ	0 fail	0.080 avg rt	/	Cumulative: 0.087 avg rt, 0% failures
+[2019-04-02 12:14:58,815 INFO Engine.console] Current: 5 vu	2 succ	0 fail	0.081 avg rt	/	Cumulative: 0.086 avg rt, 0% failures
+[2019-04-02 12:14:59,815 INFO Engine.console] Current: 5 vu	1 succ	0 fail	0.077 avg rt	/	Cumulative: 0.086 avg rt, 0% failures
+[2019-04-02 12:15:17,839 INFO Engine.console] Current: 5 vu	3 succ	0 fail	0.077 avg rt	/	Cumulative: 0.085 avg rt, 0% failures
+[2019-04-02 12:15:19,842 INFO Engine.console] Current: 5 vu	1 succ	0 fail	0.078 avg rt	/	Cumulative: 0.085 avg rt, 0% failures
+[2019-04-02 12:15:24,849 INFO Engine.console] Current: 5 vu	2 succ	0 fail	0.074 avg rt	/	Cumulative: 0.085 avg rt, 0% failures
+[2019-04-02 12:15:31,857 INFO Engine.console] Current: 5 vu	1 succ	0 fail	0.083 avg rt	/	Cumulative: 0.085 avg rt, 0% failures
+[2019-04-02 12:15:36,864 INFO Engine.console] Current: 5 vu	1 succ	0 fail	0.076 avg rt	/	Cumulative: 0.085 avg rt, 0% failures
+[2019-04-02 12:15:39,868 INFO Engine.console] Current: 5 vu	3 succ	0 fail	0.079 avg rt	/	Cumulative: 0.084 avg rt, 0% failures
+[2019-04-02 12:15:44,873 INFO Engine.console] Current: 5 vu	4 succ	0 fail	0.079 avg rt	/	Cumulative: 0.084 avg rt, 0% failures
+[2019-04-02 12:15:46,876 INFO Engine.console] Current: 5 vu	3 succ	0 fail	0.081 avg rt	/	Cumulative: 0.084 avg rt, 0% failures
+[2019-04-02 12:15:49,881 INFO Engine.console] Current: 5 vu	2 succ	0 fail	0.080 avg rt	/	Cumulative: 0.084 avg rt, 0% failures
+[2019-04-02 12:15:55,891 INFO Engine.console] Current: 5 vu	7 succ	0 fail	0.079 avg rt	/	Cumulative: 0.083 avg rt, 0% failures
+[2019-04-02 12:16:01,897 INFO Engine.console] Current: 5 vu	7 succ	0 fail	0.080 avg rt	/	Cumulative: 0.083 avg rt, 0% failures
+[2019-04-02 12:16:05,915 INFO Engine.console] Current: 5 vu	1 succ	0 fail	0.081 avg rt	/	Cumulative: 0.083 avg rt, 0% failures
+[2019-04-02 12:16:09,907 INFO Engine.console] Current: 5 vu	1 succ	0 fail	0.075 avg rt	/	Cumulative: 0.083 avg rt, 0% failures
+[2019-04-02 12:16:13,916 INFO Engine.console] Current: 5 vu	5 succ	0 fail	0.080 avg rt	/	Cumulative: 0.083 avg rt, 0% failures
+[2019-04-02 12:16:20,925 INFO Engine.console] Current: 5 vu	1 succ	0 fail	0.076 avg rt	/	Cumulative: 0.083 avg rt, 0% failures
+[2019-04-02 12:16:27,939 INFO Engine.console] Current: 5 vu	3 succ	0 fail	0.078 avg rt	/	Cumulative: 0.083 avg rt, 0% failures
+[2019-04-02 12:16:35,941 INFO Engine.console] Current: 5 vu	2 succ	0 fail	0.079 avg rt	/	Cumulative: 0.083 avg rt, 0% failures
+[2019-04-02 12:16:37,942 INFO Engine.console] Current: 5 vu	2 succ	0 fail	0.084 avg rt	/	Cumulative: 0.083 avg rt, 0% failures
+[2019-04-02 12:16:47,965 INFO Engine.console] Current: 5 vu	3 succ	0 fail	0.078 avg rt	/	Cumulative: 0.083 avg rt, 0% failures
+[2019-04-02 12:16:49,962 INFO Engine.console] Current: 5 vu	2 succ	0 fail	0.077 avg rt	/	Cumulative: 0.083 avg rt, 0% failures
+[2019-04-02 12:17:05,984 INFO Engine.console] Current: 5 vu	1 succ	0 fail	0.087 avg rt	/	Cumulative: 0.083 avg rt, 0% failures
+[2019-04-02 12:17:07,990 INFO Engine.console] Current: 5 vu	1 succ	0 fail	0.076 avg rt	/	Cumulative: 0.083 avg rt, 0% failures
+[2019-04-02 12:17:13,999 INFO Engine.console] Current: 5 vu	4 succ	0 fail	0.077 avg rt	/	Cumulative: 0.083 avg rt, 0% failures
+[2019-04-02 12:17:22,005 INFO Engine.console] Current: 5 vu	4 succ	0 fail	0.079 avg rt	/	Cumulative: 0.083 avg rt, 0% failures
+[2019-04-02 12:17:24,020 INFO Engine.console] Current: 5 vu	3 succ	0 fail	0.077 avg rt	/	Cumulative: 0.082 avg rt, 0% failures
+[2019-04-02 12:17:31,015 INFO Engine.console] Current: 5 vu	1 succ	0 fail	0.104 avg rt	/	Cumulative: 0.083 avg rt, 0% failures
+[2019-04-02 12:17:36,350 INFO Engine.console] Current: 5 vu	1 succ	0 fail	0.078 avg rt	/	Cumulative: 0.082 avg rt, 0% failures
+[2019-04-02 12:17:48,036 INFO Engine.console] Current: 5 vu	1 succ	0 fail	0.075 avg rt	/	Cumulative: 0.082 avg rt, 0% failures
+[2019-04-02 12:17:51,043 INFO Engine.console] Current: 5 vu	1 succ	0 fail	0.074 avg rt	/	Cumulative: 0.082 avg rt, 0% failures
+[2019-04-02 12:18:04,073 WARNING Engine] Please wait for graceful shutdown...
+[2019-04-02 12:18:04,073 DEBUG root] Leveled up log file verbosity
+[2019-04-02 12:18:04,073 INFO Engine] Shutting down...
+[2019-04-02 12:18:04,073 DEBUG Engine] Current stop reason: None
+[2019-04-02 12:18:04,074 DEBUG Engine.local] Shutdown jmeter/iPokemon.jmx
+[2019-04-02 12:18:04,075 DEBUG Engine.Configuration] Dumping YAML config into C:\Users\jmcch\Documents\csc4006Gitlab\csc4006-EdgeBenchmarking\Experiments\FogBench\jmeter\bin\2019-04-02_12-11-46.740295\effective.yml
+[2019-04-02 12:18:04,094 DEBUG Engine.Configuration] Dumping JSON config into C:\Users\jmcch\Documents\csc4006Gitlab\csc4006-EdgeBenchmarking\Experiments\FogBench\jmeter\bin\2019-04-02_12-11-46.740295\effective.json
+[2019-04-02 12:18:04,095 INFO Engine] Post-processing...
+[2019-04-02 12:18:04,095 DEBUG Engine.local] Post-process jmeter/iPokemon.jmx
+[2019-04-02 12:18:04,095 DEBUG Engine] Add existing artifact (move=True): C:\Users\jmcch\Documents\csc4006Gitlab\csc4006-EdgeBenchmarking\Experiments\FogBench\assets\ipokemon-assets\modified_iPokemon.jmx
+[2019-04-02 12:18:04,096 DEBUG Engine] Moving C:\Users\jmcch\Documents\csc4006Gitlab\csc4006-EdgeBenchmarking\Experiments\FogBench\assets\ipokemon-assets\modified_iPokemon.jmx to C:\Users\jmcch\Documents\csc4006Gitlab\csc4006-EdgeBenchmarking\Experiments\FogBench\jmeter\bin\2019-04-02_12-11-46.740295\modified_iPokemon.jmx
+[2019-04-02 12:18:04,098 DEBUG Engine.jmeter.JTLErrorsReader.FileReader] Reading: C:\Users\jmcch\Documents\csc4006Gitlab\csc4006-EdgeBenchmarking\Experiments\FogBench\jmeter\bin\2019-04-02_12-11-46.740295\error.jtl
+[2019-04-02 12:18:04,098 DEBUG Engine.jmeter.JTLReader.IncrementalCSVReader.FileReader] Reading: C:\Users\jmcch\Documents\csc4006Gitlab\csc4006-EdgeBenchmarking\Experiments\FogBench\jmeter\bin\2019-04-02_12-11-46.740295\kpi.jtl
+[2019-04-02 12:18:04,098 DEBUG Engine.jmeter.JTLReader] Buffer len: 2; Known errors count: 0
+[2019-04-02 12:18:04,098 DEBUG Engine.jmeter.JTLReader] Aggregating: 1554203870
+[2019-04-02 12:18:04,101 DEBUG Engine.jmeter.JTLReader] Aggregating: 1554203871
+[2019-04-02 12:18:04,104 DEBUG Engine.consolidator] Consolidator buffer[3]: dict_keys([1554203867, 1554203870, 1554203871])
+[2019-04-02 12:18:04,104 DEBUG Engine.consolidator] Merging into 1554203867
+[2019-04-02 12:18:04,104 DEBUG Engine.consolidator] Bypassing consolidation because of single result
+[2019-04-02 12:18:04,108 DEBUG Engine.consolidator] Processed datapoint: 1554203867/2488168001096
+[2019-04-02 12:18:04,108 DEBUG Engine.consolidator] Merging into 1554203870
+[2019-04-02 12:18:04,108 DEBUG Engine.consolidator] Bypassing consolidation because of single result
+[2019-04-02 12:18:04,111 DEBUG Engine.consolidator] Processed datapoint: 1554203870/2488168001096
+[2019-04-02 12:18:04,111 DEBUG Engine.consolidator] Merging into 1554203871
+[2019-04-02 12:18:04,111 DEBUG Engine.consolidator] Bypassing consolidation because of single result
+[2019-04-02 12:18:04,114 DEBUG Engine.consolidator] Processed datapoint: 1554203871/2488168001096
+[2019-04-02 12:18:04,114 INFO Engine.final-stats] Test duration: 0:05:14
+[2019-04-02 12:18:04,114 INFO Engine.final-stats] Samples count: 151, 0.00% failures
+[2019-04-02 12:18:04,114 INFO Engine.final-stats] Average times: total 0.082, latency 0.082, connect 0.038
+[2019-04-02 12:18:04,156 INFO Engine.final-stats] Percentiles:
++---------------+---------------+
+| Percentile, % | Resp. Time, s |
++---------------+---------------+
+|           0.0 |          0.07 |
+|          50.0 |         0.079 |
+|          90.0 |         0.086 |
+|          95.0 |         0.107 |
+|          99.0 |         0.159 |
+|          99.9 |         0.159 |
+|         100.0 |         0.159 |
++---------------+---------------+
+[2019-04-02 12:18:04,198 INFO Engine.final-stats] Request label stats:
++--------+--------+---------+--------+-------+
+| label  | status |    succ | avg_rt | error |
++--------+--------+---------+--------+-------+
+| cc     |   OK   | 100.00% |  0.078 |       |
+| cu     |   OK   | 100.00% |  0.076 |       |
+| id     |   OK   | 100.00% |  0.121 |       |
+| mas/CN |   OK   | 100.00% |  0.080 |       |
+| pd     |   OK   | 100.00% |  0.089 |       |
+| pma/1  |   OK   | 100.00% |  0.080 |       |
+| pma/23 |   OK   | 100.00% |  0.081 |       |
+| pma/4  |   OK   | 100.00% |  0.077 |       |
+| pma/7  |   OK   | 100.00% |  0.078 |       |
+| r/XX   |   OK   | 100.00% |  0.074 |       |
+| u      |   OK   | 100.00% |  0.095 |       |
+| upm    |   OK   | 100.00% |  0.081 |       |
+| ur     |   OK   | 100.00% |  0.078 |       |
+| uu     |   OK   | 100.00% |  0.082 |       |
+| wpm    |   OK   | 100.00% |  0.088 |       |
++--------+--------+---------+--------+-------+
+[2019-04-02 12:18:04,198 DEBUG Engine.console] No logger_handler or orig_stream was detected
+[2019-04-02 12:18:04,198 INFO Engine.final-stats] Test duration: 0:05:14
+[2019-04-02 12:18:04,199 INFO Engine.final-stats] Samples count: 151, 0.00% failures
+[2019-04-02 12:18:04,199 INFO Engine.final-stats] Average times: total 0.082, latency 0.082, connect 0.038
+[2019-04-02 12:18:04,199 INFO Engine.final-stats] Percentiles:
++---------------+---------------+
+| Percentile, % | Resp. Time, s |
++---------------+---------------+
+|           0.0 |          0.07 |
+|          50.0 |         0.079 |
+|          90.0 |         0.086 |
+|          95.0 |         0.107 |
+|          99.0 |         0.159 |
+|          99.9 |         0.159 |
+|         100.0 |         0.159 |
++---------------+---------------+
+[2019-04-02 12:18:04,201 INFO Engine.final-stats] Request label stats:
++--------+--------+---------+--------+-------+
+| label  | status |    succ | avg_rt | error |
++--------+--------+---------+--------+-------+
+| cc     |   OK   | 100.00% |  0.078 |       |
+| cu     |   OK   | 100.00% |  0.076 |       |
+| id     |   OK   | 100.00% |  0.121 |       |
+| mas/CN |   OK   | 100.00% |  0.080 |       |
+| pd     |   OK   | 100.00% |  0.089 |       |
+| pma/1  |   OK   | 100.00% |  0.080 |       |
+| pma/23 |   OK   | 100.00% |  0.081 |       |
+| pma/4  |   OK   | 100.00% |  0.077 |       |
+| pma/7  |   OK   | 100.00% |  0.078 |       |
+| r/XX   |   OK   | 100.00% |  0.074 |       |
+| u      |   OK   | 100.00% |  0.095 |       |
+| upm    |   OK   | 100.00% |  0.081 |       |
+| ur     |   OK   | 100.00% |  0.078 |       |
+| uu     |   OK   | 100.00% |  0.082 |       |
+| wpm    |   OK   | 100.00% |  0.088 |       |
++--------+--------+---------+--------+-------+
+[2019-04-02 12:18:04,201 INFO Engine.final-stats] Dumping final status as XML: taurusreport.xml
+[2019-04-02 12:18:04,221 INFO Engine.final-stats] Dumping final status as CSV: taurusreport.csv
+[2019-04-02 12:18:04,228 DEBUG Engine.Configuration] Dumping YAML config into C:\Users\jmcch\Documents\csc4006Gitlab\csc4006-EdgeBenchmarking\Experiments\FogBench\jmeter\bin\2019-04-02_12-11-46.740295\effective.yml
+[2019-04-02 12:18:04,246 DEBUG Engine.Configuration] Dumping JSON config into C:\Users\jmcch\Documents\csc4006Gitlab\csc4006-EdgeBenchmarking\Experiments\FogBench\jmeter\bin\2019-04-02_12-11-46.740295\effective.json
+[2019-04-02 12:18:04,247 INFO root] Artifacts dir: C:\Users\jmcch\Documents\csc4006Gitlab\csc4006-EdgeBenchmarking\Experiments\FogBench\jmeter\bin\2019-04-02_12-11-46.740295
+[2019-04-02 12:18:04,248 INFO root] Done performing with code: 0
+[2019-04-02 12:18:04,248 DEBUG root] Closing log handler: C:\Users\jmcch\Documents\csc4006Gitlab\csc4006-EdgeBenchmarking\Experiments\FogBench\jmeter\bin\2019-04-02_12-11-46.740295\bzt.log

@@ -1,0 +1,179 @@
+		Demystifying Fog Systems Interaction via Container based benchmarking
+	Created by: Jonathan McChesney, student at Queen's University Belfast
+	CSC4006 Final Year Research and Development Project
+
+*****************************************************************************
+*****************************************************************************
+
+Cloud Only Benchmarks: 
+*****************************************************************************
+
+Computation: completed in .013078949 secs
+Upload to S3 bucket: completed in .353196534 secs
+Computation: completed in .012932243 secs
+Upload to S3 bucket: completed in .397211304 secs
+Computation: completed in .012133065 secs
+Upload to S3 bucket: completed in .363151460 secs
+Computation: completed in .012472467 secs
+Upload to S3 bucket: completed in .394669573 secs
+Computation: completed in .012304917 secs
+Upload to S3 bucket: completed in .353894708 secs
+Computation: completed in .012371224 secs
+Upload to S3 bucket: completed in .394228217 secs
+Computation: completed in .012338873 secs
+Upload to S3 bucket: completed in .395047095 secs
+Computation: completed in .012463500 secs
+Upload to S3 bucket: completed in .347355156 secs
+Computation: completed in .012018275 secs
+Upload to S3 bucket: completed in .389351798 secs
+Computation: completed in .030501249 secs
+Upload to S3 bucket: completed in .342634967 secs
+Transfer cloud action results to edge device: completed in 1.524463300 secs
+
+FogLAMP Benchmarks:
+*****************************************************************************
+
+FogLAMP Benchmark Run 1:
+
+Computation: completed in .013078949 secs
+Upload to S3 bucket: completed in .353196534 secs
+Computation: completed in .012932243 secs
+Upload to S3 bucket: completed in .397211304 secs
+Computation: completed in .012133065 secs
+Upload to S3 bucket: completed in .363151460 secs
+Computation: completed in .012472467 secs
+Upload to S3 bucket: completed in .394669573 secs
+Computation: completed in .012304917 secs
+Upload to S3 bucket: completed in .353894708 secs
+Computation: completed in .012371224 secs
+Upload to S3 bucket: completed in .394228217 secs
+Computation: completed in .012338873 secs
+Upload to S3 bucket: completed in .395047095 secs
+Computation: completed in .012463500 secs
+Upload to S3 bucket: completed in .347355156 secs
+Computation: completed in .012018275 secs
+Upload to S3 bucket: completed in .389351798 secs
+Computation: completed in .030501249 secs
+Upload to S3 bucket: completed in .342634967 secs
+Total bytes transferred from the cloud: 3580 bytes
+Transfer cloud application results to edge device: completed in 1.627937400 secs
+Transfer rate from the cloud: metricsValues[11] bytes per second
+
+Round Trip Time: 3.167805049 secs
+Cloud cost for application computation (£0.016 per hour): £.0000001355
+
+FogLAMP Benchmark Run 2:
+
+Computation: completed in .013078949 secs
+Upload to S3 bucket: completed in .353196534 secs
+Computation: completed in .012932243 secs
+Upload to S3 bucket: completed in .397211304 secs
+Computation: completed in .012133065 secs
+Upload to S3 bucket: completed in .363151460 secs
+Computation: completed in .012472467 secs
+Upload to S3 bucket: completed in .394669573 secs
+Computation: completed in .012304917 secs
+Upload to S3 bucket: completed in .353894708 secs
+Computation: completed in .012371224 secs
+Upload to S3 bucket: completed in .394228217 secs
+Computation: completed in .012338873 secs
+Upload to S3 bucket: completed in .395047095 secs
+Computation: completed in .012463500 secs
+Upload to S3 bucket: completed in .347355156 secs
+Computation: completed in .012018275 secs
+Upload to S3 bucket: completed in .389351798 secs
+Computation: completed in .030501249 secs
+Upload to S3 bucket: completed in .342634967 secs
+Total bytes transferred from the cloud: 3580 bytes
+Transfer cloud application results to edge device: completed in 1.677783100 secs
+Transfer rate from the cloud: metricsValues[11] bytes per second
+
+Round Trip Time: 4.225492449 secs
+Cloud cost for application computation (£0.016 per hour): £.0000001355
+
+FogLAMP Benchmark Run 3:
+
+Computation: completed in .013078949 secs
+Upload to S3 bucket: completed in .353196534 secs
+Computation: completed in .012932243 secs
+Upload to S3 bucket: completed in .397211304 secs
+Computation: completed in .012133065 secs
+Upload to S3 bucket: completed in .363151460 secs
+Computation: completed in .012472467 secs
+Upload to S3 bucket: completed in .394669573 secs
+Computation: completed in .012304917 secs
+Upload to S3 bucket: completed in .353894708 secs
+Computation: completed in .012371224 secs
+Upload to S3 bucket: completed in .394228217 secs
+Computation: completed in .012338873 secs
+Upload to S3 bucket: completed in .395047095 secs
+Computation: completed in .012463500 secs
+Upload to S3 bucket: completed in .347355156 secs
+Computation: completed in .012018275 secs
+Upload to S3 bucket: completed in .389351798 secs
+Computation: completed in .030501249 secs
+Upload to S3 bucket: completed in .342634967 secs
+Total bytes transferred from the cloud: 3580 bytes
+Transfer cloud application results to edge device: completed in 1.611668600 secs
+Transfer rate from the cloud: metricsValues[11] bytes per second
+
+Round Trip Time: 3.185577449 secs
+Cloud cost for application computation (£0.016 per hour): £.0000001355
+
+FogLAMP Benchmark Run 4:
+
+Computation: completed in .013078949 secs
+Upload to S3 bucket: completed in .353196534 secs
+Computation: completed in .012932243 secs
+Upload to S3 bucket: completed in .397211304 secs
+Computation: completed in .012133065 secs
+Upload to S3 bucket: completed in .363151460 secs
+Computation: completed in .012472467 secs
+Upload to S3 bucket: completed in .394669573 secs
+Computation: completed in .012304917 secs
+Upload to S3 bucket: completed in .353894708 secs
+Computation: completed in .012371224 secs
+Upload to S3 bucket: completed in .394228217 secs
+Computation: completed in .012338873 secs
+Upload to S3 bucket: completed in .395047095 secs
+Computation: completed in .012463500 secs
+Upload to S3 bucket: completed in .347355156 secs
+Computation: completed in .012018275 secs
+Upload to S3 bucket: completed in .389351798 secs
+Computation: completed in .030501249 secs
+Upload to S3 bucket: completed in .342634967 secs
+Total bytes transferred from the cloud: 3580 bytes
+Transfer cloud application results to edge device: completed in 1.631979200 secs
+Transfer rate from the cloud: metricsValues[11] bytes per second
+
+Round Trip Time: 3.109020849 secs
+Cloud cost for application computation (£0.016 per hour): £.0000001355
+
+FogLAMP Benchmark Run 5:
+
+Computation: completed in .013078949 secs
+Upload to S3 bucket: completed in .353196534 secs
+Computation: completed in .012932243 secs
+Upload to S3 bucket: completed in .397211304 secs
+Computation: completed in .012133065 secs
+Upload to S3 bucket: completed in .363151460 secs
+Computation: completed in .012472467 secs
+Upload to S3 bucket: completed in .394669573 secs
+Computation: completed in .012304917 secs
+Upload to S3 bucket: completed in .353894708 secs
+Computation: completed in .012371224 secs
+Upload to S3 bucket: completed in .394228217 secs
+Computation: completed in .012338873 secs
+Upload to S3 bucket: completed in .395047095 secs
+Computation: completed in .012463500 secs
+Upload to S3 bucket: completed in .347355156 secs
+Computation: completed in .012018275 secs
+Upload to S3 bucket: completed in .389351798 secs
+Computation: completed in .030501249 secs
+Upload to S3 bucket: completed in .342634967 secs
+Total bytes transferred from the cloud: 3580 bytes
+Transfer cloud application results to edge device: completed in 1.715689700 secs
+Transfer rate from the cloud: metricsValues[11] bytes per second
+
+Round Trip Time: 3.338537249 secs
+Cloud cost for application computation (£0.016 per hour): £.0000001355

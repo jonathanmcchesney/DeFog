@@ -7,30 +7,10 @@ function remove_docker_images_and_containers {
 	docker rmi $(docker images -q)
 }
 
-# build ipokemon image on cloud only or edge only platform
-function build_docker_ipokemon {
-	# echo Removing docker images and containers...
-	# remove_docker_images_and_containers
-	# echo -n DONE removing d
-
-	echo Entering ipokemonbuild...
-	mkdir ipokemonbuild
-	cd ipokemonbuild
-
-	echo Pulling down ipokemon docker file...
-	sudo git init 
-	sudo git remote add -f csc4006-EdgeBenchmarking https://gitlab.eeecs.qub.ac.uk/40126401/csc4006-EdgeBenchmarking.git
-	sudo git config core.sparsecheckout true
-	echo Experiments/iPokeMon/docker/ >> .git/info/sparse-checkout
-	sudo git pull https://gitlab.eeecs.qub.ac.uk/40126401/csc4006-EdgeBenchmarking.git master
-	
-	echo Experiments/iPokeMon/docker...
-	cd Experiments/iPokeMon/docker
-
-	echo Building iPokeMon docker image...
-	chmod 777 execute.sh
-	time . build.sh 
-	echo -n DONE building iPokeMon docker container
+# remove docker contianers
+function remove_docker_containers {
+	docker stop $(docker ps -aq)
+	docker rm $(docker ps -aq)
 }
 
 # run and enter ipokemon container on cloud only or edge only platform
@@ -51,11 +31,11 @@ function run_docker_app {
 
 	cd ${path}
 	
-	echo -n Running ${applicationname} container...
+	echo -n -e Running ${applicationname} container...
 
 	. ${runscript} ${currentapp} ${currentplatform}
 	
-	echo -n DONE running ${applicationname}
+	echo -n -e DONE running ${applicationname}
 }
 
 # utility function to print sepeartor/formatter line
@@ -65,7 +45,7 @@ echo -e "***********************************************************************
 
 # run the application script on the cloud for the cloud/edge pipeline
 function bothcloudbench {
-	echo "Cloud/Edge - Cloud applications benchmarks: " | tee $filename.txt
+	echo -e "Cloud/Edge - Cloud applications benchmarks: " | tee $filename.txt
 	seperator
 	
 	test $run_yolo && run_docker_app "bothcloudyolobuild/Experiments/YOLO/bothclouddocker" "YOLO-Edge/Cloud-Cloud-instance" "run.sh" "0" "1"
@@ -76,7 +56,7 @@ function bothcloudbench {
 
 # run the application script on the edge for the cloud/edge pipeline
 function bothedgebench {
-	echo "Cloud/Edge - Edge applications benchmarks: " | tee $filename.txt
+	echo -e "Cloud/Edge - Edge applications benchmarks: " | tee $filename.txt
 	seperator
 	
 	test $run_yolo && run_docker_app "bothedgeyolobuild/Experiments/YOLO/bothedgedocker" "YOLO-Edge/Cloud-Edge-instance" "runedge.sh" "0" "2"
@@ -87,7 +67,7 @@ function bothedgebench {
 
 # run the application script on the edge for the edge only pipeline
 function edgebench {
-	echo "Edge applications benchmarks: " | tee $filename.txt
+	echo -e "Edge applications benchmarks: " | tee $filename.txt
 	seperator
 	
 	test $run_yolo && run_docker_app "yolobuild/Experiments/YOLO/docker" "YOLO" "runedge.sh" "0" "0"
@@ -100,7 +80,7 @@ function edgebench {
 
 # run the application script on the cloud for the cloud only pipeline
 function cloudbench {
-	echo "Cloud applications benchmarks: " | tee $filename.txt
+	echo -e "Cloud applications benchmarks: " | tee $filename.txt
 	seperator
 	
 	test $run_yolo && run_docker_app "yolobuild/Experiments/YOLO/docker" "YOLO" "run.sh" "0" "0"
@@ -114,8 +94,8 @@ function cloudbench {
 # applications main function
 function main {
 	cd defog  # navigate to the defog folder (for defog benchmarks)
-	#cd defog  # navigate to the defog folder (for defog benchmarks)
 	chmod 400 configs
+	echo -e
 	
 	# determine what function to call based on user input
     test $run_cloud && cloudbench

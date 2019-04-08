@@ -4,7 +4,7 @@
 function simple_benchmark {
 
     today=$(date +"%m/%d/%Y")
-	echo "Starting Simple benchmarks..."
+	echo -e "Starting Simple benchmarks..."
     
 	simple_CPU_benchmark
 
@@ -12,12 +12,12 @@ function simple_benchmark {
 
 	simple_network_benchmark
 	
-	displayInfo | tee -a $filename.txt
+	display_info | tee -a $filename.txt
 
 }
 
 # format information to display on screen to the user
-function displayInfo {
+function display_info {
 cat <<INFO
 
 	Run Date: $today 
@@ -26,7 +26,7 @@ cat <<INFO
 	Number of Cores: $cpuCores
 	CPU Frequency (if available on platform): $cpuFrequency MHz
 	System Uptime: $sysUptime
-	Small Weights dl speed: $smallWeights
+	Small Weights unzip rate: $smallWeights
 	Large Weights dl rate: $downloadTest
 	Sys I/O Rate: $inputOutput
 	*********************************
@@ -42,27 +42,27 @@ function simple_CPU_benchmark {
     cpuFrequency=$( awk -F: ' /cpu MHz/ {cpuFrequency=$2} END {print cpuFrequency}' /proc/cpuinfo )
     cpuCores=$( awk -F: '/model name/ {core++} END {print core}' /proc/cpuinfo )
 	
-	echo -n "Benching System CPU..."
+	echo  "Benching System CPU..."
     dd if=/dev/urandom of=$zippedFile bs=1024 count=20000 >>/dev/null 2>&1
-	echo -n "Unzipping small weights file ..."
+	echo -e "Unzipping small weights file ..."
     smallWeights=$( (/usr/bin/time -f "%es" tar cfj $zippedFile.bz2 $zippedFile) 2>&1 )
     rm -f zipFile*
-    echo -n DONE running CPU benchmarks
+    echo -e DONE - running CPU benchmarks
 		
 }
 
 function simple_IO_benchmark {
     local benchmarkFile=benchmarker__$$
 
-	echo -n "Benching System Input & Output ... "
+	echo -e "Benching System Input & Output ... "
     inputOutput=$( ( dd if=/dev/zero of=$benchmarkFile bs=64k count=16k conv=fdatasync && rm -f $benchmarkFile ) 2>&1 | awk -F, '{inputOutput=$NF} END { print inputOutput}' )
-    echo -n DONE  running IO benchmarks
+    echo -e DONE  running IO benchmarks
 }
 
 function simple_network_benchmark {
-	echo -n "Benching network download speed, downloading large weights file... "
+	echo -e "Benching network download speed, downloading large weights file... "
     downloadTest=$( _downloadTest https://pjreddie.com/media/files/yolov3.weights )
-    echo -n DONE network benchmark
+    echo -e DONE network benchmark
 }
 
 function _downloadTest {
@@ -72,17 +72,17 @@ function _downloadTest {
 	local end=$(date +%s.%N)
 	local runtime=$( echo "$end - $start" | bc -l )
 		
-	echo -n Download test: completed in $runtime secs | tee -a $filename.txt
+	echo -e Network test: completed in $runtime secs | tee -a $filename.txt
 }
 
 
 function download_benchmark {
-    echo -n "Downloading file(s) from $1 ... "
+    echo -e "Downloading file(s) from $1 ... "
     _downloadTest "$2"
 }
 
 function downloads_benchmark {
-    echo-n "Downloading weights files ... "
+    echo -e "Downloading weights files ... "
 
     download_benchmark "yolov3 weights" \
         https://pjreddie.com/media/files/yolov3.weights
@@ -93,27 +93,27 @@ function downloads_benchmark {
 }
 
 function instantiate_file {
-    echo -n Creating file ...
+    echo -e Creating file ...
 	local start=$(date +%s.%N)
     dd if=/dev/urandom of=large_file bs=1024 count=102400
-    echo OK
+    echo -e DONE - creating file
 	local end=$(date +%s.%N)
 	local runtime=$( echo "$end - $start" | bc -l )
 		
-	echo -n Creating large file speed: completed in $runtime secs | tee -a $filename.txt
+	echo  Creating large file speed: completed in $runtime secs | tee -a $filename.txt
 	
 	remove_file
 }
 
 function remove_file {
-	echo -n Removing file ...
+	echo -e Removing file ...
 	local start=$(date +%s.%N)
 	rm large_file
-    echo OK
+    echo -e DONE - removing file
 	local end=$(date +%s.%N)
 	local runtime=$( echo "$end - $start" | bc -l )
 		
-	echo -n Removing large file speed: completed in $runtime secs | tee -a $filename.txt
+	echo  Removing large file speed: completed in $runtime secs | tee -a $filename.txt
 }
 
 function install_unixbench {
@@ -121,7 +121,7 @@ function install_unixbench {
     apt-get install build-essential
 
     local file_ver=UnixBench5.1.3
-	echo -n "Getting UnixBench..."
+	echo -e "Getting UnixBench..."
  	wget -N https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/teddysun/UnixBench5.1.3.tgz
 	tar xvfz $file_ver.tgz
 }
@@ -140,11 +140,11 @@ function benchmark_unixbench {
 }
 
 function benchmark_sysbench {
-    echo -n Installing sysbench...
+    echo -e Installing sysbench...
 
 	install_sysbench
 	
-	echo -n Benchmarking using sysbench...
+	echo -e Benchmarking using sysbench...
 	sysbench --test=cpu --cpu-max-prime=20000 run | tee -a $filename.txt
 }
 
@@ -179,8 +179,8 @@ function delete_utility {
 	rm -rf assets
     echo OK
 	
-	echo Removing docker containers and images...
-		remove_docker_images_and_containers &>/dev/null
+	echo Removing docker containers...
+		remove_docker_containers &>/dev/null
 	echo OK
 }
 
@@ -264,7 +264,7 @@ echo -e "***********************************************************************
 
 function benchcloudinstance {
 
-	echo "Cloud/Edge - Cloud actions and system benchmarks: " | tee $filename.txt
+	echo -e "Cloud/Edge - Cloud actions and system benchmarks: " | tee $filename.txt
 	seperator
 	test $run_yolo && build_docker_app "Experiments/YOLO/bothclouddocker/" "bothcloudyolobuild" "YOLO-Cloud/Edge-Cloud-instance"
 	test $run_psphinx && build_docker_app "Experiments/PocketSphinx/bothclouddocker/" "bothcloudpsphinxbuild" "PocketSphinx-Cloud/Edge-Cloud-instance"
@@ -274,7 +274,7 @@ function benchcloudinstance {
 
 function benchedgeinstance {
 	
-	echo "Cloud/Edge - Edge actions and system benchmarks: " | tee $filename.txt
+	echo -e "Cloud/Edge - Edge actions and system benchmarks: " | tee $filename.txt
 	seperator
 	test $run_yolo && build_docker_app "Experiments/YOLO/bothedgedocker/" "bothedgeyolobuild" "YOLO-Cloud/Edge-Edge-instance"
 	test $run_psphinx && build_docker_app "Experiments/PocketSphinx/bothedgedocker/" "bothedgepsphinxbuild" "PocketSphinx-Cloud/Edge-Edge-instance"
@@ -285,9 +285,9 @@ function benchedgeinstance {
 function bench {
 	if [ "$run_cloud" ];
 	then
-		echo "Cloud actions and system benchmarks: " | tee $filename.txt
+		echo -e "Cloud actions and system benchmarks: " | tee $filename.txt
 	else
-		echo "Edge actions and system benchmarks: " | tee $filename.txt
+		echo -e "Edge actions and system benchmarks: " | tee $filename.txt
 	fi
 	seperator
 
@@ -300,7 +300,7 @@ function bench {
 	test $run_yolo && build_docker_app "Experiments/YOLO/docker/" "yolobuild" "YOLO"
 	test $run_psphinx && build_docker_app "Experiments/PocketSphinx/docker" "psphinxbuild" "PocketSphinx"
 	test $run_aeneas && build_docker_app "Experiments/Aeneas/docker/" "aeneasbuild" "Aeneas"
-	test $build_ipokemon && build_docker_ipokemon "Experiments/iPokeMon/docker/" "ipokemonbuild" "iPokeMon"
+	test $build_ipokemon && build_docker_app "Experiments/iPokeMon/docker/" "ipokemonbuild" "iPokeMon"
 	test $run_foglamp && build_docker_app "Experiments/FogLAMP/docker/" "foglampbuild" "FogLAMP"
 
 }
@@ -309,10 +309,12 @@ function run_setup {
 	mkdir -p defog && cd defog 		
 	test $run_delete && delete_utility
 	
-	rm results.txt
+	rm results.txt 2>/dev/null
 	rm -rf dir assets && mkdir assets && chmod 777 assets
 	rm -rf dir results && mkdir results && chmod 777 results
 	rm -rf dir configs && mkdir configs && chmod 777 configs
+	
+	echo -e
 }
 
 # actions main

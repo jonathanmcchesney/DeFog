@@ -1,1 +1,1 @@
-curl -s $1/foglamp/statistics
+curl -X GET $1/foglamp/task

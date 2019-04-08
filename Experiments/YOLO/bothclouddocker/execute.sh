@@ -228,7 +228,7 @@ function execute_cloud_to_edge_transfer {
 	end=$(date +%s.%N) # stop the timer
 	runtime=$( echo "$end - $start" | bc -l ) # calculate the time difference
 	
-	echo "Cloud to Edge Transfer: completed in $runtime secs" | tee -a results.txt
+	echo -e "Cloud to Edge Transfer: completed in $runtime secs" | tee -a results.txt
 	metricsValues[9]=${newarr1[1]}
 	metricsValues[13]=$runtime
 	
@@ -246,7 +246,8 @@ function execute_program_only {
 	end=$(date +%s.%N)
 	
 	runtime=$( echo "$end - $start" | bc -l )
-	echo "Computation: completed in $runtime secs" | tee -a results.txt
+	echo -e
+	echo -e "Computation: completed in $runtime secs" | tee -a results.txt
 	
 	# set execution time metric
 	metricsValues[1]=$runtime
@@ -254,7 +255,8 @@ function execute_program_only {
 
 # upload the relevant data to the S3 bucket and capture the necessary metrics
 function upload_to_s3 {
-	echo "Starting Upload to S3 Bucket..."
+	echo -e
+	echo -e "Starting Upload to S3 Bucket..."
 	# capture time it takes to transfer to the S3 bucket
 	start=$(date +%s.%N)
 	python s3Upload.py $predictions $predictions
@@ -334,7 +336,7 @@ function execute_only_pipelines {
 	if [ "$application" == 3 ]; # FogLamp
 	then
 		start_foglamp
-		echo -n Starting FogLamp
+		echo -e Starting FogLamp
 	fi
 	
 	execute_program_only
@@ -342,7 +344,7 @@ function execute_only_pipelines {
 	if [ "$application" == 3 ]; # FogLamp
 	then
 		stop_foglamp
-		echo -n Stopping FogLamp
+		echo -e Stopping FogLamp
 
 	fi
 	

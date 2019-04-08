@@ -1,0 +1,10 @@
+{
+ "execution": [
+  {
+   "executor": "jmeter",
+   "scenario": {
+    "script": "../../assets/ipokemon-assets/iPokemon.jmx"
+   }
+  }
+ ]
+}
