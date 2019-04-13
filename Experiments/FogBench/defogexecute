@@ -1,46 +1,7 @@
 #!/bin/bash
 
-# help function that displays commandline help to the user
-function HELP {
-    cat <<HELP
-	Help: DeFog: Demystifying Fog Systems Interaction via Container based benchmarking [OPTION...]
-	DeFog allows you to build and run applications through container based benchmarks, select the desired environment as well as the application to benchmark.
-
-	Environments:
-
-	- Run Benchmarks on both Cloud and Edge
-	- Run Benchmarks on Cloud Only
-	- Run Benchmarks on Edge Only
-
-	Pre-Setup Edge Devices:
-	- Odroid XU4
-	- Raspberry Pi
-
-	Actions:
-	- Run all system benchmarks
-	- Runs small and large weight downloads test
-	- Test large file create/remove speed
-	- Run Sysbench
-	- Run UnixBench
-	- Delete temporary files
-	- Run Simple System Benchmarks
-	- No actions
-
-	Applications Benchmarks:
-	- Run Yolo
-	- Run Pocket Sphinx
-	- Run Aeneas
-	- Build and Run iPokeMon
-	- Run iPokeMon
-	- Run FogLAMP
-	- No Applications
-
-HELP
-}
-
 # function to invoke commandline help by sshing into destination using identity file
 function executebenchmarkhelp {
-		# ssh -i $awskey $clouduser@$cloudaddress 'bash -s' -- < ./defog -?
 		./defogexecute -?
 }
 
@@ -429,7 +390,8 @@ function benchmark_application {
 			fi
 			calc_edge_cost
 		fi
-		echo -e "Commandline results:"
+		echo -e
+		echo -e "DeFog Metrics:"
 		echo -e ${metricsValues[@]} | tee -a $metrics_verbose_filename.txt
 }
 
@@ -617,7 +579,7 @@ function transfer_config {
 
 # utility function to print sepeartor/formatter line
 function seperator {
-echo -e "*****************************************************************************" | tee -a $verbose_filename.txt
+	echo -e "*****************************************************************************" | tee -a $verbose_filename.txt
 }
 
 # application main
@@ -656,19 +618,5 @@ function main {
 	mv $metrics_verbose_filename.csv results/ 2>/dev/null
 
 }
-
-# expect user input for displaying helphelp
-while getopts :h: opt; do
-    case "$opt" in
-        h)
-            HELP
-            exit 2
-            ;;	
-        ?)
-            HELP
-            exit 2
-            ;;
-    esac
-done
 
 main

@@ -19,6 +19,91 @@ users=5
 ramp_up=0
 test_duration=300
 
+# help function that displays commandline help to the user
+function HELP {
+	echo "  _    _      _           ";
+	echo " | |  | |    | |        _ ";
+	echo " | |__| | ___| |_ __   (_)";
+	echo " |  __  |/ _ \ | '_ \     ";
+	echo " | |  | |  __/ | |_) |  _ ";
+	echo " |_|  |_|\___|_| .__/  (_)";
+	echo "               | |        ";
+	echo "               |_|        ";
+
+
+    cat <<HELP
+	
+	HELP: DeFog: Demystifying Fog Systems Interaction via Container based benchmarking [OPTION...]
+	DeFog allows you to build and run applications depyloed on the Edge and Cloud through container based benchmarking, 
+	please select the desired environment as well as the application or system to benchmark.
+	
+	Run Defog using:
+	$ sh defog
+	
+	Environments:
+	- Run Benchmarks on both Cloud and Edge
+	- Run Benchmarks on Cloud Only
+	- Run Benchmarks on Edge Only
+
+	Pre-Setup Edge Devices:
+	- Odroid XU4
+	- Raspberry Pi
+
+	Actions:
+	- Run all system benchmarks
+	- Runs small and large weight downloads test
+	- Test large file create/remove speed
+	- Run Sysbench
+	- Run UnixBench
+	- Delete temporary files
+	- Run Simple System Benchmarks
+	- No actions
+
+	Applications Benchmarks:
+	- Run Yolo
+	- Run Pocket Sphinx
+	- Run Aeneas
+	- Build and Run iPokeMon
+	- Run iPokeMon
+	- Run FogLAMP
+	- No Applications
+
+	FAQ: 
+
+	Question 1: What is DeFog?
+	
+	Answer 1: DeFog is a benchmarking method that builds and runs containerised fog 
+	applications on the Edge and the Cloud. DeFog also allows for system 
+	benchmarks to be generated.
+
+	Question 2: What is the difference between the Edge and the Cloud.
+	
+	Answer 2: The Edge is a more versatile system than the Cloud, that makes use of 
+	Edge nodes such as routers and swithces that have a limited availability 
+	of hardware but are geographically closer to end user devices such as 
+	laptops and smartphones than the Cloud.
+
+	Question 3: What applications can I benchmark?
+	
+	Answer 3: Currently DeFog supports a range of applications with different workloads: 
+	Deep learning object classification tool YOLO, speech to text generator 
+	PocketSphinx, forced alignment tool Aeneas, IoT Edge gateway application 
+	FogLAMP and GPS based VR based mobile online game iPokemon.
+
+	Question 4: How can I run DeFog?
+	
+	Answer 4: You can run DeFog using bash: '$ sh defog' or '$ bash defog' 
+	and following the on screen prompts.
+
+	Question 5: What is a DeFog pipeline?
+	
+	Answer 5: A pipeline is the series of tasks performed by DeFog on the Edge, Cloud 
+	or Both. The pipeline controls the flow of data and where the application 
+	will be built, run and benchmarked.
+	
+HELP
+}
+
 # utility function to determine the edge device address (i.e. ipaddress) based on user input
 function edgeaddress_selector {
 	if [ "$environment" == "-e" ] || [ "$environment" == "-b" ];
@@ -386,11 +471,23 @@ function setup_jmeter {
 	fi
 }
 
+function display_help {
+	eval get_help=$1
+	
+	if [ "$get_help" == "-?" ] || [ "$applications" == "-h" ];
+	then
+		HELP
+		exit 2
+	fi
+}
+
 # application main
-function main {
 
 	create_result_files
 	display_ascii_header
+	
+	display_help $1
+
 	
 	env_user_input
 		
@@ -463,6 +560,14 @@ function main {
 		source ./defogexecute
 	)
 
-}
-
-main
+# expect user input for displaying helphelp
+while getopts :h: opt; do
+    case "$opt" in
+        h)
+            HELP
+            ;;	
+        ?)
+            HELP
+            ;;
+    esac
+done

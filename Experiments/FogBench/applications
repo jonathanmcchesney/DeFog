@@ -36,6 +36,7 @@ function run_docker_app {
 	. ${runscript} ${currentapp} ${currentplatform}
 	
 	echo -n -e DONE running ${applicationname}
+	echo -e
 }
 
 # utility function to print sepeartor/formatter line

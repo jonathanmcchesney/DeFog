@@ -244,20 +244,6 @@ function build_docker_app {
 	
 }
 
-function HELP {
-    cat <<HELP
-Help: benchmarker [OPTION...]
-
--a Benchmark all processes
--c Benchmark YOLO
--d Benchmark only small and large weight downloads
--f Create large weights file
--s Run sysbench CPU benchmark
--u Run UnixBench
--x Delete temporary files
-HELP
-}
-
 function seperator {
 echo -e "*****************************************************************************" | tee -a $filename.txt
 }
@@ -397,10 +383,6 @@ while getopts :cebz:adfsxluhngs:yijpmk opt; do
             ;;	
 		m)
 			;;
-        ?)
-            HELP
-            exit 2
-            ;;
     esac
 done
 

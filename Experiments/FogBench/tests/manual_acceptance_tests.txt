@@ -1,0 +1,72 @@
+Test  1: Run Defog on Cloud Only pipeline, benchmark YOLO 
+	Case 1:
+	Case 2:
+	Case 3:
+Test  2: Run Defog on Cloud Only pipeline, benchmark PocketSphinx 
+	Case 1:
+	Case 2:
+	Case 3:
+Test  3: Run Defog on Cloud Only pipeline, benchmark Aeneas 
+	Case 1:
+	Case 2:
+	Case 3:
+Test  4: Run Defog on Cloud Only pipeline, benchmark FogLAMP 
+	Case 1:
+	Case 2:
+	Case 3:
+Test  5: Run Defog on Cloud Only pipeline, benchmark iPokeMon 
+	Case 1:
+	Case 2:
+	Case 3:
+Test  6: Run Defog on Edge Only pipeline, benchmark YOLO 
+	Case 1:
+	Case 2:
+	Case 3:
+Test  7: Run Defog on Edge Only pipeline, benchmark PocketSphinx 
+	Case 1:
+	Case 2:
+	Case 3:
+Test  8: Run Defog on Edge Only pipeline, benchmark Aeneas 
+	Case 1:
+	Case 2:
+	Case 3:
+Test  9: Run Defog on Edge Only pipeline, benchmark FogLAMP 
+	Case 1:
+	Case 2:
+	Case 3:
+Test 10: Run Defog on Edge Only pipeline, benchmark iPokeMon 
+	Case 1:
+	Case 2:
+	Case 3:
+Test 11: Run Defog on Cloud-Edge pipeline, benchmark YOLO 
+	Case 1:
+	Case 2:
+	Case 3:
+Test 12: Run Defog on Cloud-Edge pipeline, benchmark PocketSphinx 
+	Case 1:
+	Case 2:
+	Case 3:
+Test 13: Run Defog on Cloud-Edge pipeline, benchmark Aeneas 
+	Case 1:
+	Case 2:
+	Case 3:
+Test 14: Run Defog on Cloud-Edge pipeline, benchmark FogLAMP 
+	Case 1:
+	Case 2:
+	Case 3:
+Test 15: Run Defog on Cloud-Edge pipeline, benchmark iPokeMon 
+	Case 1:
+	Case 2:
+	Case 3:
+Test 16: Run Platform tests on Cloud Only
+	Case 1:
+	Case 2:
+	Case 3:
+Test 17: Run Platform tests on Edge Only
+	Case 1:
+	Case 2:
+	Case 3:
+Test 18: Run Platform tests on Cloud-Edge
+	Case 1:
+	Case 2:
+	Case 3:

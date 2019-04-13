@@ -1,27 +1,49 @@
-2019-04-03 18:52:47,993 INFO o.j.r.PluginManagerCMD: Command is: install-for-jmx
-2019-04-03 18:52:48,962 INFO o.j.r.JARSourceHTTP: Requesting https://jmeter-plugins.org/repo/?installID=windows_10-75a1adca1401538edf6dc2964d5fad67-nongui
-2019-04-03 18:52:53,313 INFO o.j.r.PluginManager: Plugins Status: [jpgc-functions=2.1, jpgc-casutg=2.6, jpgc-dummy=0.2, jpgc-ffw=2.0, jpgc-fifo=0.2, jpgc-json=2.7, jpgc-prmctl=0.4, jpgc-perfmon=2.1, jpgc-plugins-manager=1.3, jpgc-tst=2.5, jmeter-core=5.0, jmeter-ftp=5.0, jmeter-http=5.0, jmeter-jdbc=5.0, jmeter-jms=5.0, jmeter-junit=5.0, jmeter-java=5.0, jmeter-ldap=5.0, jmeter-mail=5.0, jmeter-mongodb=5.0, jmeter-native=5.0, jmeter-tcp=5.0, jmeter-components=5.0]
-2019-04-03 18:52:53,322 INFO o.j.r.PluginManagerCMD: Params line is: C:\Users\jmcch\Documents\csc4006Gitlab\csc4006-EdgeBenchmarking\Experiments\FogBench\assets\ipokemon-assets\modified_iPokemon.jmx
-2019-04-03 18:52:54,487 INFO o.a.j.s.SaveService: Testplan (JMX) version: 2.2. Testlog (JTL) version: 2.2
-2019-04-03 18:52:54,519 INFO o.a.j.s.SaveService: Using SaveService properties version 5.0
-2019-04-03 18:52:54,528 INFO o.a.j.s.SaveService: Using SaveService properties file encoding UTF-8
-2019-04-03 18:52:55,902 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/html is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
-2019-04-03 18:52:55,903 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xhtml+xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
-2019-04-03 18:52:55,903 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
-2019-04-03 18:52:55,903 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
-2019-04-03 18:52:55,904 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/vnd.wap.wml is org.apache.jmeter.protocol.http.parser.RegexpHTMLParser
-2019-04-03 18:52:55,904 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/css is org.apache.jmeter.protocol.http.parser.CssParser
-2019-04-03 18:52:55,934 WARN o.a.j.u.JMeterUtils: ERROR! Resource string not found: [test_action_target]
-2019-04-03 18:52:55,935 WARN o.a.j.u.JMeterUtils: ERROR! Resource string not found: [test_action_target_thread]
-2019-04-03 18:52:55,935 WARN o.a.j.u.JMeterUtils: ERROR! Resource string not found: [test_action_target_test]
-2019-04-03 18:52:55,935 WARN o.a.j.u.JMeterUtils: ERROR! Resource string not found: [test_action_action_thread]
-2019-04-03 18:52:55,936 WARN o.a.j.u.JMeterUtils: ERROR! Resource string not found: [test_action_action_test_thread]
-2019-04-03 18:52:55,936 WARN o.a.j.u.JMeterUtils: ERROR! Resource string not found: [test_action_pause]
-2019-04-03 18:52:55,936 WARN o.a.j.u.JMeterUtils: ERROR! Resource string not found: [test_action_stop]
-2019-04-03 18:52:55,936 WARN o.a.j.u.JMeterUtils: ERROR! Resource string not found: [test_action_stop_now]
-2019-04-03 18:52:55,936 WARN o.a.j.u.JMeterUtils: ERROR! Resource string not found: [test_action_restart_next_loop]
-2019-04-03 18:52:55,936 WARN o.a.j.u.JMeterUtils: ERROR! Resource string not found: [test_action_continue_current_loop]
-2019-04-03 18:52:55,936 WARN o.a.j.u.JMeterUtils: ERROR! Resource string not found: [test_action_break_current_loop]
-2019-04-03 18:52:55,937 WARN o.a.j.u.JMeterUtils: ERROR! Resource string not found: [test_action_duration]
-2019-04-03 18:52:55,963 WARN o.a.j.u.JMeterUtils: ERROR! Resource string not found: [aggregate_report_total_label]
-2019-04-03 18:52:56,006 INFO o.j.r.PluginManager: Finishing without changes
+2019-04-13 20:23:56,205 INFO o.a.j.u.JMeterUtils: Setting Locale to en_GB
+2019-04-13 20:23:56,534 INFO o.a.j.JMeter: Loading user properties from: user.properties
+2019-04-13 20:23:56,545 INFO o.a.j.JMeter: Loading system properties from: system.properties
+2019-04-13 20:23:56,592 INFO o.a.j.JMeter: Copyright (c) 1998-2018 The Apache Software Foundation
+2019-04-13 20:23:56,592 INFO o.a.j.JMeter: Version 5.0 r1840935
+2019-04-13 20:23:56,592 INFO o.a.j.JMeter: java.version=10.0.2
+2019-04-13 20:23:56,592 INFO o.a.j.JMeter: java.vm.name=Java HotSpot(TM) 64-Bit Server VM
+2019-04-13 20:23:56,592 INFO o.a.j.JMeter: os.name=Windows 10
+2019-04-13 20:23:56,592 INFO o.a.j.JMeter: os.arch=amd64
+2019-04-13 20:23:56,592 INFO o.a.j.JMeter: os.version=10.0
+2019-04-13 20:23:56,592 INFO o.a.j.JMeter: file.encoding=Cp1252
+2019-04-13 20:23:56,593 INFO o.a.j.JMeter: Max memory     =2126512128
+2019-04-13 20:23:56,593 INFO o.a.j.JMeter: Available Processors =4
+2019-04-13 20:23:56,644 INFO o.a.j.JMeter: Default Locale=English (United Kingdom)
+2019-04-13 20:23:56,644 INFO o.a.j.JMeter: JMeter  Locale=English (United Kingdom)
+2019-04-13 20:23:56,644 INFO o.a.j.JMeter: JMeterHome=C:\Users\jmcch\Documents\csc4006Gitlab\csc4006-EdgeBenchmarking\Experiments\FogBench\jmeter
+2019-04-13 20:23:56,644 INFO o.a.j.JMeter: user.dir  =C:\Users\jmcch\Documents\csc4006Gitlab\csc4006-EdgeBenchmarking\Experiments\FogBench\jmeter\bin
+2019-04-13 20:23:56,646 INFO o.a.j.JMeter: PWD       =C:\Users\jmcch\Documents\csc4006Gitlab\csc4006-EdgeBenchmarking\Experiments\FogBench\jmeter\bin
+2019-04-13 20:24:05,666 INFO o.a.j.JMeter: IP: 192.168.56.1 Name: DESKTOP-JQOCQB2 FullName: DESKTOP-JQOCQB2
+2019-04-13 20:24:08,282 INFO o.a.j.g.a.LookAndFeelCommand: Installing Darcula LAF
+2019-04-13 20:24:08,478 INFO o.a.j.g.a.LookAndFeelCommand: Using look and feel: com.bulenkov.darcula.DarculaLaf [Darcula]
+2019-04-13 20:24:08,479 INFO o.a.j.JMeter: Setting LAF to: com.bulenkov.darcula.DarculaLaf
+2019-04-13 20:24:08,966 INFO o.a.j.JMeter: Loaded icon properties from org/apache/jmeter/images/icon.properties
+2019-04-13 20:24:10,160 INFO o.a.j.e.u.CompoundVariable: Note: Function class names must contain the string: '.functions.'
+2019-04-13 20:24:10,160 INFO o.a.j.e.u.CompoundVariable: Note: Function class names must not contain the string: '.gui.'
+2019-04-13 20:24:13,245 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/html is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2019-04-13 20:24:13,246 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xhtml+xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2019-04-13 20:24:13,246 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2019-04-13 20:24:13,246 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2019-04-13 20:24:13,246 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/vnd.wap.wml is org.apache.jmeter.protocol.http.parser.RegexpHTMLParser
+2019-04-13 20:24:13,246 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/css is org.apache.jmeter.protocol.http.parser.CssParser
+2019-04-13 20:24:14,774 INFO o.a.j.e.KeyToolUtils: keytool found at 'keytool'
+2019-04-13 20:24:14,774 INFO o.a.j.p.h.p.ProxyControl: HTTP(S) Test Script Recorder SSL Proxy will use keys that support embedded 3rd party resources in file C:\Users\jmcch\Documents\csc4006Gitlab\csc4006-EdgeBenchmarking\Experiments\FogBench\jmeter\bin\proxyserver.jks
+2019-04-13 20:24:15,034 INFO o.a.j.s.FileServer: Default base='C:\Users\jmcch\Documents\csc4006Gitlab\csc4006-EdgeBenchmarking\Experiments\FogBench\jmeter\bin'
+2019-04-13 20:24:16,904 INFO o.a.j.s.SampleResult: Note: Sample TimeStamps are START times
+2019-04-13 20:24:16,904 INFO o.a.j.s.SampleResult: sampleresult.default.encoding is set to ISO-8859-1
+2019-04-13 20:24:16,904 INFO o.a.j.s.SampleResult: sampleresult.useNanoTime=true
+2019-04-13 20:24:16,904 INFO o.a.j.s.SampleResult: sampleresult.nanoThreadSleep=5000
+2019-04-13 20:28:58,403 INFO o.a.j.g.a.Load: Loading file: C:\Users\jmcch\Documents\csc4006Gitlab\csc4006-EdgeBenchmarking\Experiments\FogBench\jmeter\bin\iPokeMon.jmx
+2019-04-13 20:28:58,405 INFO o.a.j.s.FileServer: Set new base='C:\Users\jmcch\Documents\csc4006Gitlab\csc4006-EdgeBenchmarking\Experiments\FogBench\jmeter\bin'
+2019-04-13 20:28:58,696 INFO o.a.j.s.SaveService: Testplan (JMX) version: 2.2. Testlog (JTL) version: 2.2
+2019-04-13 20:28:58,770 INFO o.a.j.s.SaveService: Using SaveService properties version 5.0
+2019-04-13 20:28:58,772 INFO o.a.j.s.SaveService: Using SaveService properties file encoding UTF-8
+2019-04-13 20:28:58,773 INFO o.a.j.s.SaveService: Loading file: C:\Users\jmcch\Documents\csc4006Gitlab\csc4006-EdgeBenchmarking\Experiments\FogBench\jmeter\bin\iPokeMon.jmx
+2019-04-13 20:28:59,094 INFO o.a.j.s.FileServer: Set new base='C:\Users\jmcch\Documents\csc4006Gitlab\csc4006-EdgeBenchmarking\Experiments\FogBench\jmeter\bin'
+2019-04-13 20:29:05,005 INFO o.a.j.g.a.Load: Loading file: C:\Users\jmcch\Documents\csc4006Gitlab\csc4006-EdgeBenchmarking\Experiments\FogBench\jmeter\bin\iPokemon1.jmx
+2019-04-13 20:29:05,005 INFO o.a.j.s.FileServer: Set new base='C:\Users\jmcch\Documents\csc4006Gitlab\csc4006-EdgeBenchmarking\Experiments\FogBench\jmeter\bin'
+2019-04-13 20:29:05,005 INFO o.a.j.s.SaveService: Loading file: C:\Users\jmcch\Documents\csc4006Gitlab\csc4006-EdgeBenchmarking\Experiments\FogBench\jmeter\bin\iPokemon1.jmx
+2019-04-13 20:29:05,244 INFO o.a.j.s.FileServer: Set new base='C:\Users\jmcch\Documents\csc4006Gitlab\csc4006-EdgeBenchmarking\Experiments\FogBench\jmeter\bin'
