@@ -1,0 +1,405 @@
+Test  1: Run Defog on Cloud Only pipeline, benchmark YOLO PASS
+	
+	Case 1: User runs no system benchmarks, builds YOLO on the Cloud and executes YOLO benchmarks for all YOLO image assets.
+		Result: Application image builds successfully, asset folder is iterated through and transferred to the destination service. Benchmarks complete successfully and are reported back to user and S3 bucket. 
+	
+	Case 2: User runs simple system benchmarks, builds YOLO on the Cloud and executes YOLO benchmarks for all YOLO image assets.
+		Result: DeFog simple system benchamrks complete successfully and are reported on screen, application image builds successfully, asset folder is iterated through and transferred to the destination service. System and application benchmarks complete successfully and are reported back to user and S3 bucket. 
+	
+	Case 3: User runs TPI system benchmarks, builds YOLO on the Cloud and executes YOLO benchmarks for all YOLO image assets.
+		Result: TPI system benchamrks complete successfully and are reported on screen, application image builds successfully, asset folder is iterated through and transferred to the destination service. Application benchmarks complete successfully and are reported back to user and S3 bucket. 
+	
+	Case 4: User benchmarks YOLO but connection is lost with the Cloud.
+		Result: If connection is lost during initial connection, the entire benchmarking process will be aborted. If aborted during the benchmark process, the system will intuitvely finish the current process and report back the results up until loss of connectivity.
+	
+	Case 5: User benchmarks YOLO but the process is manually interrupted by the user.
+		Result: The current process will finish and report back the results genereated before the manual interruption.
+	
+	Case 6: User benchmarks YOLO but no assets are present.
+		Result: The system will not transfer an asset or perform a compute task and will display a verbose description of the issue.
+	
+	Case 7: User benchmarks YOLO assets are incorrect type.
+		Result: The system will not perform a compute task and will display a verbose description of the issue.
+	
+	Case 8: User benchmarks YOLO but no space is avaliable on the Cloud for running an container.
+		Result: The system will finish the current benchmark run and will display a verbose description of the issue. The user may be required to remove all docker containers and images to free space using remove script.
+	
+	Case 9: User attempts to builds YOLO but the process is manually interrupted by the user or connection is lost with the Cloud.
+		Result: The issue is displayed verbosely on screen along with how far the building process progressed. The user may be required to remove all docker containers and images as well as application folder.
+
+Test  2: Run Defog on Cloud Only pipeline, benchmark PocketSphinx PASS
+	
+	Case 1: User runs no system benchmarks, builds PocketSphinx on the Cloud and executes PocketSphinx benchmarks for all PocketSphinx audio assets.
+		Result: Application image builds successfully, asset folder is iterated through and transferred to the destination service. Benchmarks complete successfully and are reported back to user and S3 bucket. 
+	
+	Case 2: User runs simple system benchmarks, builds PocketSphinx on the Cloud and executes PocketSphinx benchmarks for all PocketSphinx audio assets.
+		Result: DeFog simple system benchamrks complete successfully and are reported on screen, application image builds successfully, asset folder is iterated through and transferred to the destination service. System and application benchmarks complete successfully and are reported back to user and S3 bucket. 
+	
+	Case 3: User runs TPI system benchmarks, builds PocketSphinx on the Cloud and executes PocketSphinx benchmarks for all PocketSphinx audio assets.
+		Result: TPI system benchamrks complete successfully and are reported on screen, application image builds successfully, asset folder is iterated through and transferred to the destination service. Application benchmarks complete successfully and are reported back to user and S3 bucket. 
+	
+	Case 4: User benchmarks PocketSphinx but connection is lost with the Cloud.
+		Result: If connection is lost during initial connection, the entire benchmarking process will be aborted. If aborted during the benchmark process, the system will intuitvely finish the current process and report back the results up until loss of connectivity.
+	
+	Case 5: User benchmarks PocketSphinx but the process is manually interrupted by the user.
+		Result: The current process will finish and report back the results genereated before the manual interruption.
+	
+	Case 6: User benchmarks PocketSphinx but no assets are present.
+		Result: The system will not transfer an asset or perform a compute task and will display a verbose description of the issue.
+	
+	Case 7: User benchmarks PocketSphinx assets are incorrect type.
+		Result: The system will not perform a compute task and will display a verbose description of the issue.
+	
+	Case 8: User benchmarks PocketSphinx but no space is avaliable on the Cloud for running an container.
+		Result: The system will finish the current benchmark run and will display a verbose description of the issue. The user may be required to remove all docker containers and images to free space using remove script.
+	
+	Case 9: User attempts to builds PocketSphinx but the process is manually interrupted by the user or connection is lost with the Cloud.
+		Result: The issue is displayed verbosely on screen along with how far the building process progressed. The user may be required to remove all docker containers and images as well as application folder.
+	
+Test  3: Run Defog on Cloud Only pipeline, benchmark Aeneas PASS
+
+	Case 1: User runs no system benchmarks, builds Aeneas on the Cloud and executes Aeneas benchmarks for all Aeneas audio and text assets.
+		Result: Application image builds successfully, asset folder is iterated through and transferred to the destination service. Benchmarks complete successfully and are reported back to user and S3 bucket.
+	
+	Case 2: User runs simple system benchmarks, builds Aeneas on the Cloud and executes Aeneas benchmarks for all Aeneas audio and text assets.
+		Result: DeFog simple system benchamrks complete successfully and are reported on screen, application image builds successfully, asset folder is iterated through and transferred to the destination service. System and application benchmarks complete successfully and are reported back to user and S3 bucket. 	
+	
+	Case 3: User runs TPI system benchmarks, builds Aeneas on the Cloud and executes Aeneas benchmarks for all Aeneas audio and text assets.
+		Result: TPI system benchamrks complete successfully and are reported on screen, application image builds successfully, asset folder is iterated through and transferred to the destination service. Application benchmarks complete successfully and are reported back to user and S3 bucket. 
+	
+	Case 4: User benchmarks Aeneas but connection is lost with the Cloud.
+		Result: If connection is lost during initial connection, the entire benchmarking process will be aborted. If aborted during the benchmark process, the system will intuitvely finish the current process and report back the results up until loss of connectivity.
+	
+	Case 5: User benchmarks Aeneas but the process is manually interrupted by the user.
+		Result: The current process will finish and report back the results genereated before the manual interruption.
+	
+	Case 6: User benchmarks Aeneas but no assets are present.
+		Result: The system will not transfer an asset or perform a compute task and will display a verbose description of the issue.
+	
+	Case 7: User benchmarks Aeneas assets are incorrect type.
+		Result: The system will not perform a compute task and will display a verbose description of the issue.
+	
+	Case 8: User benchmarks Aeneas but no space is avaliable on the Cloud for running an container.
+		Result: The system will finish the current benchmark run and will display a verbose description of the issue. The user may be required to remove all docker containers and images to free space using remove script.
+	
+	Case 9: User attempts to builds Aeneas but the process is manually interrupted by the user or connection is lost with the Cloud.
+		Result: The issue is displayed verbosely on screen along with how far the building process progressed. The user may be required to remove all docker containers and images as well as application folder.
+
+Test  4: Run Defog on Cloud Only pipeline, benchmark FogLAMP PASS
+	
+	Case 1: User runs no system benchmarks, builds FogLAMP on the Cloud and executes FogLAMP benchmarks for all FogLAMP curl command assets.
+		Result: Application image builds successfully, asset folder is iterated through and transferred to the destination service. Benchmarks complete successfully and are reported back to user and S3 bucket.
+	
+	Case 2: User runs simple system benchmarks, builds FogLAMP on the Cloud and executes FogLAMP benchmarks for all FogLAMP curl command assets.
+		Result: DeFog simple system benchamrks complete successfully and are reported on screen, application image builds successfully, asset folder is iterated through and transferred to the destination service. System and application benchmarks complete successfully and are reported back to user and S3 bucket. 
+	
+	Case 3: User runs TPI system benchmarks, builds FogLAMP on the Cloud and executes FogLAMP benchmarks for all FogLAMP curl command assets.
+		Result: TPI system benchamrks complete successfully and are reported on screen, application image builds successfully, asset folder is iterated through and transferred to the destination service. Application benchmarks complete successfully and are reported back to user and S3 bucket. 
+	
+	Case 4: User benchmarks FogLAMP but connection is lost with the Cloud.
+		Result: If connection is lost during initial connection, the entire benchmarking process will be aborted. If aborted during the benchmark process, the system will intuitvely finish the current process and report back the results up until loss of connectivity.
+	
+	Case 5: User benchmarks FogLAMP but the process is manually interrupted by the user.
+		Result: The current process will finish and report back the results genereated before the manual interruption.
+	
+	Case 6: User benchmarks FogLAMP but no assets are present.
+		Result: The system will not transfer an asset or perform a compute task and will display a verbose description of the issue.
+	
+	Case 7: User benchmarks FogLAMP assets are incorrect type.
+		Result: The system will not perform a compute task and will display a verbose description of the issue.
+	
+	Case 8: User benchmarks FogLAMP but no space is avaliable on the Cloud for running an container.
+		Result: The system will finish the current benchmark run and will display a verbose description of the issue. The user may be required to remove all docker containers and images to free space using remove script.
+	
+	Case 9: User attempts to builds FogLAMP but the process is manually interrupted by the user or connection is lost with the Cloud.
+		Result: The issue is displayed verbosely on screen along with how far the building process progressed. The user may be required to remove all docker containers and images as well as application folder.
+	
+Test  5: Run Defog on Cloud Only pipeline, benchmark iPokeMon server PASS
+	
+	Case 1: User runs no system benchmarks, builds iPokeMon on the Cloud and executes iPokeMon benchmarks for iPokeMon jmx file assets.
+		Result: Application image builds successfully, asset folder is iterated through and transferred to the destination service. Benchmarks complete successfully and are reported back to user and S3 bucket.
+	
+	Case 2: User runs simple system benchmarks, builds iPokeMon on the Cloud and executes iPokeMon benchmarks for iPokeMon jmx file assets.
+		Result: DeFog simple system benchamrks complete successfully and are reported on screen, application image builds successfully, asset folder is iterated through and transferred to the destination service. System and application benchmarks complete successfully and are reported back to user and S3 bucket. 	
+	
+	Case 3: User runs TPI system benchmarks, builds iPokeMon on the Cloud and executes iPokeMon benchmarks for iPokeMon jmx file assets.
+		Result: TPI system benchamrks complete successfully and are reported on screen, application image builds successfully, asset folder is iterated through and transferred to the destination service. Application benchmarks complete successfully and are reported back to user and S3 bucket. 
+	
+	Case 4: User benchmarks iPokeMon but connection is lost with the Cloud.
+		Result: If connection is lost during initial connection, the entire benchmarking process will be aborted. If aborted during the benchmark process, the system will intuitvely finish the current process and report back the results up until loss of connectivity.
+	
+	Case 5: User benchmarks iPokeMon but the process is manually interrupted by the user.
+		Result: The current process will finish and report back the results genereated before the manual interruption.
+	
+	Case 6: User benchmarks iPokeMon but no jmx asset file is present.
+		Result: The system will not transfer an asset or perform a compute task and will display a verbose description of the issue.
+	
+	Case 7: User benchmarks iPokeMon asset is incorrect type.
+		Result: The system will not perform a compute task and will display a verbose description of the issue.
+	
+	Case 8: User benchmarks iPokeMon but no space is avaliable on the Cloud for running an container.
+		Result: The system will finish the current benchmark run and will display a verbose description of the issue. The user may be required to remove all docker containers and images to free space using remove script.
+	
+	Case 9: User attempts to builds iPokeMon server but the process is manually interrupted by the user or connection is lost with the Cloud.
+		Result: The issue is displayed verbosely on screen along with how far the building process progressed. The user may be required to remove all docker containers and images as well as application folder.
+	
+	
+Test  6: Run Defog on Edge Only pipeline, benchmark YOLO PASS
+	
+	Case 1: User runs no system benchmarks, builds YOLO on the Edge and executes YOLO benchmarks for all YOLO image assets.
+		Result: Application image builds successfully, asset folder is iterated through and transferred to the destination service. Benchmarks complete successfully and are reported back to user and S3 bucket. 
+	
+	Case 2: User runs simple system benchmarks, builds YOLO on the Edge and executes YOLO benchmarks for all YOLO image assets.
+		Result: DeFog simple system benchamrks complete successfully and are reported on screen, application image builds successfully, asset folder is iterated through and transferred to the destination service. System and application benchmarks complete successfully and are reported back to user and S3 bucket. 
+	
+	Case 3: User runs TPI system benchmarks, builds YOLO on the Edge and executes YOLO benchmarks for all YOLO image assets.
+		Result: TPI system benchamrks complete successfully and are reported on screen, application image builds successfully, asset folder is iterated through and transferred to the destination service. Application benchmarks complete successfully and are reported back to user and S3 bucket. 
+	
+	Case 4: User benchmarks YOLO but connection is lost with the Edge.
+		Result: If connection is lost during initial connection, the entire benchmarking process will be aborted. If aborted during the benchmark process, the system will intuitvely finish the current process and report back the results up until loss of connectivity.
+	
+	Case 5: User benchmarks YOLO but the process is manually interrupted by the user.
+		Result: The current process will finish and report back the results genereated before the manual interruption.
+	
+	Case 6: User benchmarks YOLO but no assets are present.
+		Result: The system will not transfer an asset or perform a compute task and will display a verbose description of the issue.
+	
+	Case 7: User benchmarks YOLO assets are incorrect type.
+		Result: The system will not perform a compute task and will display a verbose description of the issue.
+	
+	Case 8: User benchmarks YOLO but no space is avaliable on the Edge for running an container.
+		Result: The system will finish the current benchmark run and will display a verbose description of the issue. The user may be required to remove all docker containers and images to free space using remove script.
+	
+	Case 9: User attempts to builds YOLO but the process is manually interrupted by the user or connection is lost with the Edge.
+		Result: The issue is displayed verbosely on screen along with how far the building process progressed. The user may be required to remove all docker containers and images as well as application folder.
+
+Test  7: Run Defog on Edge Only pipeline, benchmark PocketSphinx PASS
+	
+	Case 1: User runs no system benchmarks, builds PocketSphinx on the Edge and executes PocketSphinx benchmarks for all PocketSphinx audio assets.
+		Result: Application image builds successfully, asset folder is iterated through and transferred to the destination service. Benchmarks complete successfully and are reported back to user and S3 bucket. 
+	
+	Case 2: User runs simple system benchmarks, builds PocketSphinx on the Edge and executes PocketSphinx benchmarks for all PocketSphinx audio assets.
+		Result: DeFog simple system benchamrks complete successfully and are reported on screen, application image builds successfully, asset folder is iterated through and transferred to the destination service. System and application benchmarks complete successfully and are reported back to user and S3 bucket. 
+	
+	Case 3: User runs TPI system benchmarks, builds PocketSphinx on the Edge and executes PocketSphinx benchmarks for all PocketSphinx audio assets.
+		Result: TPI system benchamrks complete successfully and are reported on screen, application image builds successfully, asset folder is iterated through and transferred to the destination service. Application benchmarks complete successfully and are reported back to user and S3 bucket. 
+	
+	Case 4: User benchmarks PocketSphinx but connection is lost with the Edge.
+		Result: If connection is lost during initial connection, the entire benchmarking process will be aborted. If aborted during the benchmark process, the system will intuitvely finish the current process and report back the results up until loss of connectivity.
+	
+	Case 5: User benchmarks PocketSphinx but the process is manually interrupted by the user.
+		Result: The current process will finish and report back the results genereated before the manual interruption.
+	
+	Case 6: User benchmarks PocketSphinx but no assets are present.
+		Result: The system will not transfer an asset or perform a compute task and will display a verbose description of the issue.
+	
+	Case 7: User benchmarks PocketSphinx assets are incorrect type.
+		Result: The system will not perform a compute task and will display a verbose description of the issue.
+	
+	Case 8: User benchmarks PocketSphinx but no space is avaliable on the Edge for running an container.
+		Result: The system will finish the current benchmark run and will display a verbose description of the issue. The user may be required to remove all docker containers and images to free space using remove script.
+	
+	Case 9: User attempts to builds PocketSphinx but the process is manually interrupted by the user or connection is lost with the Edge.
+		Result: The issue is displayed verbosely on screen along with how far the building process progressed. The user may be required to remove all docker containers and images as well as application folder.
+	
+Test  8: Run Defog on Edge Only pipeline, benchmark Aeneas PASS
+
+	Case 1: User runs no system benchmarks, builds Aeneas on the Edge and executes Aeneas benchmarks for all Aeneas audio and text assets.
+		Result: Application image builds successfully, asset folder is iterated through and transferred to the destination service. Benchmarks complete successfully and are reported back to user and S3 bucket.
+	
+	Case 2: User runs simple system benchmarks, builds Aeneas on the Edge and executes Aeneas benchmarks for all Aeneas audio and text assets.
+		Result: DeFog simple system benchamrks complete successfully and are reported on screen, application image builds successfully, asset folder is iterated through and transferred to the destination service. System and application benchmarks complete successfully and are reported back to user and S3 bucket. 	
+	
+	Case 3: User runs TPI system benchmarks, builds Aeneas on the Edge and executes Aeneas benchmarks for all Aeneas audio and text assets.
+		Result: TPI system benchamrks complete successfully and are reported on screen, application image builds successfully, asset folder is iterated through and transferred to the destination service. Application benchmarks complete successfully and are reported back to user and S3 bucket. 
+	
+	Case 4: User benchmarks Aeneas but connection is lost with the Edge.
+		Result: If connection is lost during initial connection, the entire benchmarking process will be aborted. If aborted during the benchmark process, the system will intuitvely finish the current process and report back the results up until loss of connectivity.
+	
+	Case 5: User benchmarks Aeneas but the process is manually interrupted by the user.
+		Result: The current process will finish and report back the results genereated before the manual interruption.
+	
+	Case 6: User benchmarks Aeneas but no assets are present.
+		Result: The system will not transfer an asset or perform a compute task and will display a verbose description of the issue.
+	
+	Case 7: User benchmarks Aeneas assets are incorrect type.
+		Result: The system will not perform a compute task and will display a verbose description of the issue.
+	
+	Case 8: User benchmarks Aeneas but no space is avaliable on the Edge for running an container.
+		Result: The system will finish the current benchmark run and will display a verbose description of the issue. The user may be required to remove all docker containers and images to free space using remove script.
+	
+	Case 9: User attempts to builds Aeneas but the process is manually interrupted by the user or connection is lost with the Edge.
+		Result: The issue is displayed verbosely on screen along with how far the building process progressed. The user may be required to remove all docker containers and images as well as application folder.
+
+Test  9: Run Defog on Edge Only pipeline, benchmark FogLAMP PASS
+	
+	Case 1: User runs no system benchmarks, builds FogLAMP on the Edge and executes FogLAMP benchmarks for all FogLAMP curl command assets.
+		Result: Application image builds successfully, asset folder is iterated through and transferred to the destination service. Benchmarks complete successfully and are reported back to user and S3 bucket.
+	
+	Case 2: User runs simple system benchmarks, builds FogLAMP on the Edge and executes FogLAMP benchmarks for all FogLAMP curl command assets.
+		Result: DeFog simple system benchamrks complete successfully and are reported on screen, application image builds successfully, asset folder is iterated through and transferred to the destination service. System and application benchmarks complete successfully and are reported back to user and S3 bucket. 
+	
+	Case 3: User runs TPI system benchmarks, builds FogLAMP on the Edge and executes FogLAMP benchmarks for all FogLAMP curl command assets.
+		Result: TPI system benchamrks complete successfully and are reported on screen, application image builds successfully, asset folder is iterated through and transferred to the destination service. Application benchmarks complete successfully and are reported back to user and S3 bucket. 
+	
+	Case 4: User benchmarks FogLAMP but connection is lost with the Edge.
+		Result: If connection is lost during initial connection, the entire benchmarking process will be aborted. If aborted during the benchmark process, the system will intuitvely finish the current process and report back the results up until loss of connectivity.
+	
+	Case 5: User benchmarks FogLAMP but the process is manually interrupted by the user.
+		Result: The current process will finish and report back the results genereated before the manual interruption.
+	
+	Case 6: User benchmarks FogLAMP but no assets are present.
+		Result: The system will not transfer an asset or perform a compute task and will display a verbose description of the issue.
+	
+	Case 7: User benchmarks FogLAMP assets are incorrect type.
+		Result: The system will not perform a compute task and will display a verbose description of the issue.
+	
+	Case 8: User benchmarks FogLAMP but no space is avaliable on the Edge for running an container.
+		Result: The system will finish the current benchmark run and will display a verbose description of the issue. The user may be required to remove all docker containers and images to free space using remove script.
+	
+	Case 9: User attempts to builds FogLAMP but the process is manually interrupted by the user or connection is lost with the Edge.
+		Result: The issue is displayed verbosely on screen along with how far the building process progressed. The user may be required to remove all docker containers and images as well as application folder.
+	
+Test  10: Run Defog on Edge Only pipeline, benchmark iPokeMon server PASS
+	
+	Case 1: User runs no system benchmarks, builds iPokeMon on the Edge and executes iPokeMon benchmarks for iPokeMon jmx file assets.
+		Result: Application image builds successfully, asset folder is iterated through and transferred to the destination service. Benchmarks complete successfully and are reported back to user and S3 bucket.
+	
+	Case 2: User runs simple system benchmarks, builds iPokeMon on the Edge and executes iPokeMon benchmarks for iPokeMon jmx file assets.
+		Result: DeFog simple system benchamrks complete successfully and are reported on screen, application image builds successfully, asset folder is iterated through and transferred to the destination service. System and application benchmarks complete successfully and are reported back to user and S3 bucket. 	
+	
+	Case 3: User runs TPI system benchmarks, builds iPokeMon on the Edge and executes iPokeMon benchmarks for iPokeMon jmx file assets.
+		Result: TPI system benchamrks complete successfully and are reported on screen, application image builds successfully, asset folder is iterated through and transferred to the destination service. Application benchmarks complete successfully and are reported back to user and S3 bucket. 
+	
+	Case 4: User benchmarks iPokeMon but connection is lost with the Edge.
+		Result: If connection is lost during initial connection, the entire benchmarking process will be aborted. If aborted during the benchmark process, the system will intuitvely finish the current process and report back the results up until loss of connectivity.
+	
+	Case 5: User benchmarks iPokeMon but the process is manually interrupted by the user.
+		Result: The current process will finish and report back the results genereated before the manual interruption.
+	
+	Case 6: User benchmarks iPokeMon but no jmx asset file is present.
+		Result: The system will not transfer an asset or perform a compute task and will display a verbose description of the issue.
+	
+	Case 7: User benchmarks iPokeMon asset is incorrect type.
+		Result: The system will not perform a compute task and will display a verbose description of the issue.
+	
+	Case 8: User benchmarks iPokeMon but no space is avaliable on the Edge for running an container.
+		Result: The system will finish the current benchmark run and will display a verbose description of the issue. The user may be required to remove all docker containers and images to free space using remove script.
+	
+	Case 9: User attempts to builds iPokeMon server but the process is manually interrupted by the user or connection is lost with the Edge.
+		Result: The issue is displayed verbosely on screen along with how far the building process progressed. The user may be required to remove all docker containers and images as well as application folder.
+	
+
+Test  11: Run Defog on Cloud-Edge pipeline, benchmark YOLO PASS
+	
+	Case 1: User runs no system benchmarks, builds YOLO on the Cloud and Edge and executes YOLO benchmarks for all YOLO image assets.
+		Result: Application image builds successfully, asset folder is iterated through and transferred to the destination service, weights model is transferred to the Edge from the Cloud. Benchmarks complete successfully and are reported back to user and S3 bucket. 
+	
+	Case 2: User runs simple system benchmarks, builds YOLO on the Cloud and Edge and executes YOLO benchmarks for all YOLO image assets.
+		Result: DeFog simple system benchamrks complete successfully and are reported on screen, application image builds successfully, asset folder is iterated through and transferred to the destination service. System and application benchmarks complete successfully and are reported back to user and S3 bucket. 
+	
+	Case 3: User attempts to run TPI system benchmarks, builds YOLO on the Cloud and Edge and executes YOLO benchmarks for all YOLO image assets.
+		Result: TPI benchmarks are not available on the Cloud-Edge pipeline and is not presented as for user selection, application image builds successfully, asset folder is iterated through and transferred to the destination service. Application benchmarks complete successfully and are reported back to user and S3 bucket. 
+	
+	Case 4: User benchmarks YOLO but connection is lost with the Cloud or Edge.
+		Result: If connection is lost during initial connection, the entire benchmarking process will be aborted. If aborted during the benchmark process, the system will intuitvely finish the current process and report back the results up until loss of connectivity.
+	
+	Case 5: User benchmarks YOLO but the process is manually interrupted by the user.
+		Result: The current process will finish and report back the results genereated before the manual interruption.
+	
+	Case 6: User benchmarks YOLO but no assets are present.
+		Result: The system will not transfer an asset or perform a compute task and will display a verbose description of the issue.
+	
+	Case 7: User benchmarks YOLO assets are incorrect type.
+		Result: The system will not perform a compute task and will display a verbose description of the issue.
+	
+	Case 8: User benchmarks YOLO but no space is avaliable on the Cloud-Edge for running an container.
+		Result: The system will finish the current benchmark run and will display a verbose description of the issue. The user may be required to remove all docker containers and images to free space using remove script.
+	
+	Case 9: User attempts to builds YOLO but the process is manually interrupted by the user or connection is lost with the Cloud or Edge.
+		Result: The issue is displayed verbosely on screen along with how far the building process progressed. The user may be required to remove all docker containers and images as well as application folder.
+
+Test  12: Run Defog on Cloud-Edge Only pipeline, benchmark PocketSphinx PASS
+	
+	Case 1: User runs no system benchmarks, builds PocketSphinx on the Cloud and Edge and executes PocketSphinx benchmarks for all PocketSphinx audio assets.
+		Result: Application image builds successfully, asset folder is iterated through and transferred to the destination service, acoustic model is trasnferred to the Edge from the Cloud. Benchmarks complete successfully and are reported back to user and S3 bucket. 
+	
+	Case 2: User runs simple system benchmarks, builds PocketSphinx on the Cloud and Edge and executes PocketSphinx benchmarks for all PocketSphinx audio assets.
+		Result: DeFog simple system benchamrks complete successfully and are reported on screen, application image builds successfully, asset folder is iterated through and transferred to the destination service. System and application benchmarks complete successfully and are reported back to user and S3 bucket. 
+	
+	Case 3: User attempts to run TPI system benchmarks, builds PocketSphinx on the Cloud and Edge and executes PocketSphinx benchmarks for all PocketSphinx audio assets.
+		Result:  TPI benchmarks are not available on the Cloud-Edge pipeline and is not presented as for user selection, application image builds successfully, asset folder is iterated through and transferred to the destination service. Application benchmarks complete successfully and are reported back to user and S3 bucket. 
+	
+	Case 4: User benchmarks PocketSphinx but connection is lost with the Cloud or Edge.
+		Result: If connection is lost during initial connection, the entire benchmarking process will be aborted. If aborted during the benchmark process, the system will intuitvely finish the current process and report back the results up until loss of connectivity.
+	
+	Case 5: User benchmarks PocketSphinx but the process is manually interrupted by the user.
+		Result: The current process will finish and report back the results genereated before the manual interruption.
+	
+	Case 6: User benchmarks PocketSphinx but no assets are present.
+		Result: The system will not transfer an asset or perform a compute task and will display a verbose description of the issue.
+	
+	Case 7: User benchmarks PocketSphinx assets are incorrect type.
+		Result: The system will not perform a compute task and will display a verbose description of the issue.
+	
+	Case 8: User benchmarks PocketSphinx but no space is avaliable on the Cloud-Edge for running an container.
+		Result: The system will finish the current benchmark run and will display a verbose description of the issue. The user may be required to remove all docker containers and images to free space using remove script.
+	
+	Case 9: User attempts to builds PocketSphinx but the process is manually interrupted by the user or connection is lost with the Cloud or Edge.
+		Result: The issue is displayed verbosely on screen along with how far the building process progressed. The user may be required to remove all docker containers and images as well as application folder.
+	
+Test  13: Run Defog on Cloud-Edge Only pipeline, benchmark Aeneas PASS
+
+	Case 1: User runs no system benchmarks, builds Aeneas on the Cloud and Edge and executes Aeneas benchmarks for all Aeneas audio and text assets.
+		Result: Application image builds successfully, asset folder is iterated through and transferred to the destination service, audio model asset is transffered from the Cloud to the Edge. Benchmarks complete successfully and are reported back to user and S3 bucket.
+	
+	Case 2: User runs simple system benchmarks, builds Aeneas on the Cloud and Edge and executes Aeneas benchmarks for all Aeneas audio and text assets.
+		Result: DeFog simple system benchamrks complete successfully and are reported on screen, application image builds successfully, asset folder is iterated through and transferred to the destination service. System and application benchmarks complete successfully and are reported back to user and S3 bucket. 	
+	
+	Case 3: User attempts to run TPI system benchmarks, builds Aeneas on the Cloud and Edge and executes Aeneas benchmarks for all Aeneas audio and text assets.
+		Result: TPI benchmarks are not available on the Cloud-Edge pipeline and is not presented as for user selection, application image builds successfully, asset folder is iterated through and transferred to the destination service. Application benchmarks complete successfully and are reported back to user and S3 bucket. 
+	
+	Case 4: User benchmarks Aeneas but connection is lost with the Cloud or Edge.
+		Result: If connection is lost during initial connection, the entire benchmarking process will be aborted. If aborted during the benchmark process, the system will intuitvely finish the current process and report back the results up until loss of connectivity.
+	
+	Case 5: User benchmarks Aeneas but the process is manually interrupted by the user.
+		Result: The current process will finish and report back the results genereated before the manual interruption.
+	
+	Case 6: User benchmarks Aeneas but no assets are present.
+		Result: The system will not transfer an asset or perform a compute task and will display a verbose description of the issue.
+	
+	Case 7: User benchmarks Aeneas assets are incorrect type.
+		Result: The system will not perform a compute task and will display a verbose description of the issue.
+	
+	Case 8: User benchmarks Aeneas but no space is avaliable on the Cloud-Edge for running an container.
+		Result: The system will finish the current benchmark run and will display a verbose description of the issue. The user may be required to remove all docker containers and images to free space using remove script.
+	
+	Case 9: User attempts to builds Aeneas but the process is manually interrupted by the user or connection is lost with the Cloud or Edge.
+		Result: The issue is displayed verbosely on screen along with how far the building process progressed. The user may be required to remove all docker containers and images as well as application folder.	
+	
+Test 14: General DeFog Use Cases PASS
+
+	Case 1: User Runs Sysbench on the Cloud Only pipeline and does not run fog application benchmarks
+		Result: 
+	Case 2: User Runs Sysbench on the Edge Only pipeline and does not run fog application benchmarks
+		Result: 
+	Case 3: User Runs Sysbench on the Cloud Only pipeline and runs fog application benchmarks
+		Result: 
+	Case 4: User Runs Sysbench on the Edge Only pipeline and runs fog application benchmarks
+		Result:
+	Case 5: User Runs UnixBench on the Cloud Only pipeline and does not run fog application benchmarks
+		Result: 
+	Case 6: User Runs UnixBench on the Edge Only pipeline and does not run fog application benchmarks
+		Result: 
+	Case 7: User Runs UnixBench on the Cloud Only pipeline and runs fog application benchmarks
+		Result: 
+	Case 8: User Runs UnixBench on the Edge Only pipeline and runs fog application benchmarks
+		Result: 			
+	Case 9: User inputs an out of range numeric character when presented with user input
+		Result: 
+	Case 10: User inputs a non numeric character when presented user input
+		Result:
+	Case 11: User inputs a non numeric character and non enligsh alphabetical character when presented user input
+		Result:	
+	Case 12: User manually removes a results file from the results folder before/during the benchmarking process
+		Result:	
