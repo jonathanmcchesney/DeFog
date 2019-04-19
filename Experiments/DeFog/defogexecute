@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# CSC4006 - Research And Development Project
+# Developed by: Jonathan McChesney (MEng Computer Games Development)
+# Queen's
+
 # function to invoke help and FAQ command line output
 function executebenchmarkhelp {
 		./defogexecute -?
