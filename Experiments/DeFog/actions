@@ -316,6 +316,9 @@ function benchcloudinstance {
 	echo -e "Cloud/Edge - Cloud actions and system benchmarks: " | tee $filename.txt
 	seperator
 	
+	echo here
+	echo $run_yolo
+	
 	# Run the relevant fog application build on the Cloud-Edge pipeline - Cloud instance, passing the path, build name and application name as parameters
 	test $run_yolo && build_docker_app "Experiments/YOLO/bothclouddocker/" "bothcloudyolobuild" "YOLO-Cloud/Edge-Cloud-instance"
 	test $run_psphinx && build_docker_app "Experiments/PocketSphinx/bothclouddocker/" "bothcloudpsphinxbuild" "PocketSphinx-Cloud/Edge-Cloud-instance"
@@ -440,6 +443,7 @@ while getopts :cebz:adfsxluhngs:yijpmk opt; do
 			run_simple=true
 			;;
 		n)
+			do_nothing=true
 			;;	
 		z)
 			run_both_cloud=true

@@ -221,18 +221,17 @@ function execute_cloud_to_edge_transfer {
 	# execute the task
 	if [ "$application" == 0 ] # YOLO
 	then
-	
-		transfer_cloud=$(scp -v -o StrictHostKeyChecking=no -i $edgeawskey2 $clouduser2@$cloudaddress2:/home/ubuntu/fogbench/assets/yolov3-tiny.weights ./ 2>&1 | grep "Transferred") 		
+		transfer_cloud=$(scp -v -o StrictHostKeyChecking=no -i $edgeawskey2 $clouduser2@$cloudaddress2:/home/ubuntu/defog/assets/yolov3-tiny.weights ./ 2>&1 | grep "Transferred") 		
 
 	elif [ "$application" == 1 ] # Pocket Sphinx
 	then
 		
-		transfer_cloud=$(scp -v -o StrictHostKeyChecking=no -i $edgeawskey2 $clouduser2@$cloudaddress2:/home/ubuntu/fogbench/assets/en-us/* ./model/en-us/ 2>&1 | grep "Transferred") 		
+		transfer_cloud=$(scp -v -o StrictHostKeyChecking=no -i $edgeawskey2 $clouduser2@$cloudaddress2:/home/ubuntu/defog/assets/en-us/* ./model/en-us/ 2>&1 | grep "Transferred") 		
 
 	elif [ "$application" == 2 ] # Aeneas
 	then
 	
-		transfer_cloud=$(scp -v -o StrictHostKeyChecking=no -i $edgeawskey2 $clouduser2@$cloudaddress2:/home/ubuntu/fogbench/assets/aeneas-assets/text/$new_file.xhtml ./ 2>&1 | grep "Transferred")
+		transfer_cloud=$(scp -v -o StrictHostKeyChecking=no -i $edgeawskey2 $clouduser2@$cloudaddress2:/home/ubuntu/defog/assets/aeneas-assets/text/$new_file.xhtml ./ 2>&1 | grep "Transferred")
 		
 	fi
 	
