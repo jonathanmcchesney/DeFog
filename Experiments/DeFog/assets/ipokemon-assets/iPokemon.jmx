@@ -1950,7 +1950,7 @@ Make test last 5 minute (see Scheduler)</stringProp>
             <connectTime>true</connectTime>
           </value>
         </objProp>
-        <stringProp name="filename">C:\Users\jmcch\Documents\csc4006Gitlab\csc4006-EdgeBenchmarking\Experiments\FogBench\jmeter\bin\2019-02-03_19-01-50.221216\kpi.jtl</stringProp>
+        <stringProp name="filename">C:\Users\jmcch\Documents\csc4006Gitlab\csc4006-EdgeBenchmarking\Experiments\DeFog\jmeter\bin\2019-02-03_19-01-50.221216\kpi.jtl</stringProp>
       </ResultCollector>
       <hashTree/>
       <ResultCollector guiclass="SimpleDataWriter" testclass="ResultCollector" testname="Errors Writer" enabled="true">
@@ -1984,7 +1984,7 @@ Make test last 5 minute (see Scheduler)</stringProp>
             <threadCounts>true</threadCounts>
           </value>
         </objProp>
-        <stringProp name="filename">C:\Users\jmcch\Documents\csc4006Gitlab\csc4006-EdgeBenchmarking\Experiments\FogBench\jmeter\bin\2019-02-03_19-01-50.221216\error.jtl</stringProp>
+        <stringProp name="filename">C:\Users\jmcch\Documents\csc4006Gitlab\csc4006-EdgeBenchmarking\Experiments\DeFog\jmeter\bin\2019-02-03_19-01-50.221216\error.jtl</stringProp>
       </ResultCollector>
       <hashTree/>
     </hashTree>
