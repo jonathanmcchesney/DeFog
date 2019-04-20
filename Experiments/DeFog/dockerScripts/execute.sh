@@ -1,5 +1,20 @@
 #!/bin/bash
 source /mnt/configs/config.sh
+
+#########################################################################################################################
+# CSC4006 - Research And Development Project
+# Developed by: Jonathan McChesney (MEng Computer Games Development)
+# Queen's University Belfast
+#
+# Component: execute.sh
+#
+# Purpose: This script is passed into the Dockerfile during the build process initialised by the build.sh script.
+#			This component is supplied the application and pipeline ID to determine the functions invoked. The config
+#			file is sourced to allow for communication with the Cloud during the Cloud-Edge pipeline. This script
+#			executes a computational task for the specified fog application, calculates several metrics and then
+#			uploads the results to an S3 bucket and back to the user device.
+#
+#########################################################################################################################
 	
 cloudaddress1="${cloudaddress/$'\r'/}"
 clouduser1="${clouduser/$'\r'/}"

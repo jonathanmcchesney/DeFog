@@ -3,6 +3,17 @@ import sys # system functionality to accept paramter input
 import boto3 # AWS utility
 import botocore  #Core functionalirt for exception handling
 
+#########################################################################################################################
+# CSC4006 - Research And Development Project
+# Developed by: Jonathan McChesney (MEng Computer Games Development)
+# Queen's University Belfast
+#
+# Component: s3Download.py
+#
+# Purpose: This component downloads an asset from an S3 bucket.
+#
+#########################################################################################################################
+
 # initialise the bucket and object key values
 s3_bucket = 'csc4006benchbucket' # replace with bucket name
 obj_key = sys.argv[1] # replace with object key

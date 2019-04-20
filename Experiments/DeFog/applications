@@ -1,5 +1,19 @@
 #!/bin/bash
 
+#########################################################################################################################
+# CSC4006 - Research And Development Project
+# Developed by: Jonathan McChesney (MEng Computer Games Development)
+# Queen's University Belfast
+#
+# Component: defogexecute.sh
+#
+# Purpose: This script is passed to the Cloud or Edge instance by the defogexecute.sh script. This component handles
+#			the execution of fog applications. This component determines which pipeline (Cloud Only, Edge Only or 
+#			Cloud-Edge Combined) to deploy and benchmark the fog application selected. The relevant docker run.sh 
+#			script is invoked as passed the application and platform ID variables.
+#
+#########################################################################################################################
+
 # remove docker images and contianers
 function remove_docker_images_and_containers {
 	docker stop $(docker ps -aq)
@@ -155,6 +169,7 @@ while getopts :cebz:adfsxulhngs:yipjmk opt; do
 			;;
         x)
             run_delete=true
+			remove_docker_containers
             ;;
 		u)
             run_unixbench=true

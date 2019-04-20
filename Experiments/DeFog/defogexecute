@@ -1,8 +1,20 @@
 #!/bin/bash
 
+#########################################################################################################################
 # CSC4006 - Research And Development Project
 # Developed by: Jonathan McChesney (MEng Computer Games Development)
-# Queen's
+# Queen's University Belfast
+#
+# Component: defogexecute.sh
+#
+# Purpose: This script uses Secure Shell and Secure Copy Protocol to execute the actions.sh and applications.sh scripts
+#			on the Cloud and Edge instances. This component also handles the calculation of metrics such as the return
+#			trip time, real time factor and the full computation/communication latency time. Finally this component 
+#			also parses the return data and metrics and outputs the calculated metrics to the terminal and relevant 
+#			results files. This script passes the actions.sh and applications.sh to the Edge or Cloud instance.
+#
+#########################################################################################################################
+
 
 # function to invoke help and FAQ command line output
 function executebenchmarkhelp {
@@ -664,7 +676,7 @@ function main {
 	mv $verbose_filename.txt results/ 2>/dev/null
 	mv $metrics_verbose_filename.txt results/ 2>/dev/null
 	mv $metrics_verbose_filename.csv results/ 2>/dev/null
-
+	rm results.txt 2>/dev/null
 }
 
 main

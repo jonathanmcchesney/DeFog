@@ -2,6 +2,17 @@
 import socket # socket stream/connections
 import platform, os, subprocess, sys # provides the system and subprocess utilities to run bash and receive data
 
+#########################################################################################################################
+# CSC4006 - Research And Development Project
+# Developed by: Jonathan McChesney (MEng Computer Games Development)
+# Queen's University Belfast
+#
+# Component: receiver.py
+#
+# Purpose: This component opens a socket and expects to receive a data asset from the client (sender.py).
+#
+#########################################################################################################################
+
 # initialise input paramaters: filename, localhost and port
 filename=sys.argv[1] # 1st param - filename to create and write the input stream data to
 CLIENT_HOST = sys.argv[2] # 2nd param - localhost

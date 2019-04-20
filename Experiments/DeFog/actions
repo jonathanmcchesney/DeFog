@@ -1,5 +1,20 @@
 #!/bin/bash
 
+#########################################################################################################################
+# CSC4006 - Research And Development Project
+# Developed by: Jonathan McChesney (MEng Computer Games Development)
+# Queen's University Belfast
+#
+# Component: defogexecute.sh
+#
+# Purpose: This script is passed to the Cloud or Edge instance by the defogexecute.sh script. This component handles
+#			the building of fog applications and execution of platform benchmarks as well as TPI integration with
+#			tools such as Unixbench and Sysbench. This component determines what pipeline (Cloud Only, Edge Only or 
+#			Cloud-Edge Combined) to run the action benchmark processes on. The docker build.sh script is invoked by
+#			this component.
+#
+#########################################################################################################################
+
 # run simple benchmarks for the current running platform to generate CPU, network and IO statistics
 function simple_benchmark {
 

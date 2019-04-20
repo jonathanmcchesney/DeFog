@@ -1,5 +1,24 @@
 #!/bin/bash
 
+#########################################################################################################################
+# CSC4006 - Research And Development Project
+# Developed by: Jonathan McChesney (MEng Computer Games Development)
+# Queen's University Belfast
+#
+# Component: defog.sh
+#	
+# How to run: sh defog .
+#
+# How to view help: sh defog -?
+#
+# Purpose: This component handles user input, as well as sourcing the configuration file. This script presents the user
+#			with a series of on screen options which the user can interact with using numeric input to select the necessary 
+#			parameters for the deployment pipeline, TPI environment variables and fog application to benchmark. This script
+#			also displays the Help and FAQ section. The defogexecute.sh script is invoked and sourced by this component.
+#			This allows the defogexecute.sh script access to the configuration file and user input variables. 
+#
+#########################################################################################################################
+
 # link local address to the config file
 source ~/Documents/configs/config.sh
 

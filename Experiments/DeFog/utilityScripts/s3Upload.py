@@ -2,6 +2,17 @@
 import boto3 # AWS utility
 import sys # System utility to accept command line arguements
 
+#########################################################################################################################
+# CSC4006 - Research And Development Project
+# Developed by: Jonathan McChesney (MEng Computer Games Development)
+# Queen's University Belfast
+#
+# Component: s3Upload.py
+#
+# Purpose: This component uploads an asset to an S3 bucket.
+#
+#########################################################################################################################
+
 # Create an S3 boto client
 s3 = boto3.client('s3')
 

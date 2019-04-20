@@ -2,6 +2,17 @@
 import socket # importation for socket connections
 import sys # system utility functionality
 
+#########################################################################################################################
+# CSC4006 - Research And Development Project
+# Developed by: Jonathan McChesney (MEng Computer Games Development)
+# Queen's University Belfast
+#
+# Component: sender.py
+#
+# Purpose: This component opens a socket and sends a data asset to the server (receiver.py).
+#
+#########################################################################################################################
+
 filename = sys.argv[1] # 1st param = asset to be transferred
 SERVER_HOST = sys.argv[2] # 2nd param = destination host address
 SERVER_PORT = sys.argv[3] # 3rd param = destination port
