@@ -1,10 +1,41 @@
-# CSC4006 - CS FogBench: Edge Benchmarking Online Games & Deep Learning Applications
+# CSC4006 - Research & Development Project
 
-## Members
+Jonathan McChesney (MEng Computer Games Development)
 
-* Jonathan McChesney (MEng Computer Games Development)
+This repository contains:
+* Experiments: Modified fog applications and the main DeFog codebase.
+* Minutes: Weekly meeting minutes with supervisor Blesson Varghese.
 
-## Games Researched
+# DeFog: 
+## Demystifying Fog System Interactions Using Container-based Benchmarking
+
+### How to Run
+navigate to the DeFog folder:
+```$ sh defog .```
+
+### How to View Help
+navigate to the DeFog folder:
+```$ sh defog -?```
+
+### User Device Dependencies
+* Install 'bc'
+* Ensure the latest version of bash is installed
+* Update the configuration file (DeFog/configs/config.sh) is updated to the relevant values
+* Use putty to create a .pem file and update the awsemptykey.pem
+
+### Cloud Platform
+* DeFog has been tested using an AWS EC2 ubuntu 18.04 instance, located in Dublin, Ireland. As well as an AWS S3 bucket.
+* Create an AWS account and create an IAM user with the necessary privileges.
+* Create an EC2 instance and S3 bucket. Update the sender.py application files to the new S3 bucket name.
+* Update the local .ssh and .aws with the IAM users credentials (secret access keys) on the user device and Edge Nodes.
+
+### Edge Platform
+* DeFog has been tested using an Odroid XU 4 board with ubuntu 14.04 and a Raspberry Pi 3 running NOOBS Raspbian.
+* Update the local .ssh and .aws with the IAM users credentials on the edge Edge Nodes.
+
+
+# Background Research
+### Games Researched
 
 * 360BattleShip
 * ALightInTheVoid
@@ -16,7 +47,7 @@
 * bzflag
 * freeciv-web
 * galaxy
-* iPokeMon (Edge Suitable)
+* `iPokeMon`
 * Koru
 * Last-Colony
 * minetest
@@ -29,38 +60,42 @@
 * vue-chess
 * xonotic
 
-## LEGACY: Cloud & Edge Based game server deployments
+## Initial Cloud & Edge Based game server deployments
 
-iPokeMon and Xonotic were chosen to be taken through to the next stage, cloud and edge server deployments:
+iPokeMon and Xonotic were chosen as potentially feasible fog applications and as a result were deployed to the Cloud and Edge:
 
 Server instances were instantiated for iPokeMon and Xonotic, using Amazon Web Services:
 
 ```
-iPokeMon AWS cloud server EC2 instance.
+iPokeMon AWS cloud server EC2 instance & Edge Node instance.
 ```
 
 ```
-Xonotic AWS cloud EC2 sever instance.
+Xonotic AWS cloud EC2 sever instance & Edge Node instance.
 ```
 
-Next these games were set up on an Odroid XU4 board.
-During this process it become apparent that xonotic was not suitable for edge offload, as the server and client code bases run on the same thread and was not easily seperated.
-The necessary to refactor this codebase to become edge suitable was too large for this research project, as such the project scope was expanded.
+It became apparent that Xonotic was not feasible for deploying to the Edge, and as a result a larger range of fog applications were researched to determine potential applications to leverage the Edge.
 
 ## Applications Researched
 
 * TeaStore
 * Sphinx
-* Pocket Sphinx
-* Yolo
+* `PocketSphinx`
+* PocketSphinx-Python
+* `Yolo`
 * Iris
 * microservices-demo
 * Merlin
-* Aeneas
+* `Aeneas`
 * mozilla-DeepLearning
 * Lip Reading - Cross Audio-Visual Recognition using 3D Architectures
 * text-to-speech
+* Merlin
 * microservices-example-systems
+* `FogLAMP`
+* iRoboticsChallenge
+
+These applications range from microservices, deep learning, Internet of Things, speech to text engines, forced alignment and latency critical robotics applications.
 
 ## Benchmark Tools Researched
 
@@ -75,77 +110,55 @@ The necessary to refactor this codebase to become edge suitable was too large fo
 * TailBench
 * sst-benchmark (speech to text benchmark)
 * Wakeword-benchmark
+* benchmarker
+* DCBench
+* LINPACK
+* nench
+* DAWNbench
+* bench-sh-2
 
-## CS FogBench
+## System Metrics
 
-Detail the bencmark tool, how it can be invoked, the cloud and edge pipelines and the results
+* CPU Model Nmae
+* Number of Cores
+* CPU Frequency
+* System Uptime
+* Uzip Time
+* Download eate
+* System I/O
 
-### Execute Script
+## Fog Application Metrics
 
-Detail the execute script
+* Execution Time
+* Time in Flight
+* S3 Transfer Time
+* Results Transfer Time
+* Computation Latency
+* Computation Cost
+* Real Time Factor
+* Bytes Up Transfer
+* Bytes Down Transfer
+* Bytes Up Per Second
+* Bytes Down Per Second
+* Cloud/Edge Model Tranfer Time
+* Communication Latency
+* Full Computation Latency
+* Full Communication Latency
 
-### Actions Script
+## External Metrics
 
-Detail the benchmark actions
-
-### Applications Script
-
-Detail the benchmark applications
-
-## Cloud Pipeline
-
-Detail the cloud pipeline process
-
-## Edge Pipeline
-
-Detail the cloud/edge pipeline process
-
-## Yolo
-
-Detail Yolo and the relevant benchmarks
-
-## Pocket Sphinx
-
-Detail Pocket sphinx and the relevant benchmarks
-
-## Aeneas
-
-Detail Aeneas and the relevant benchmarks
-
-## iPokeMon
-
-Detail iPokeMon and the relevant benchmarks
-
-### Apache JMeter
-
-Apache JMeter was used test requests to the iPokeMon cloud server, this was used to simulate user behaviour as a workload.
-
-## Metrics
-
-### RTF
-
-### Time in flight
-
-### Latency
-
-### Execute Time
-
-### Memory Usage
-
-### System Stats
-
-### Cost
+* Completion Rate
+* Number of Threads/Users
+* Response Latency
+* Throughput
+* Standard Deviation Response Time
+* Average Latency
 
 ## Repositories used
 
 ### iPokeMon:
 ```
 https://github.com/qub-blesson/ENORM.git
-```
-
-### LEGACY: Xonotic
-```
-https://gitlab.com/xonotic/xonotic.git
 ```
 
 ### YOLO v3
@@ -161,6 +174,11 @@ https://github.com/readbeyond/aeneas
 ### Pocket Sphinx
 ```
 https://github.com/cmusphinx/pocketsphinx
+```
+
+### FogLAMP
+```
+https://github.com/foglamp/FogLAMP
 ```
 
 ## Acknowledgments - Papers researched:
