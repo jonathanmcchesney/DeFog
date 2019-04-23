@@ -1,18 +1,14 @@
-# Application Experiments
+# DeFog Codebase & Modified Fog Applications
 
-## Instructions
+This subfolder contains the fog applications integrated within DeFog to perform containerised benchmarks on the Cloud and Edge:
 
-Within this folder exists the ```FogBench``` folder and various benchmark applications folders.
+* YOLOv3 - Deep Learning Application
+* PocketSphinx - Speech to Text Engine
+* Aeneas - Forced Alignment Tool
+* iPokeMon - Latency Critical GPS based VR Online Mobile Game
+* FogLAMP - Internet of Things (IoT) Edge Gateway application
 
-The ```FogBench``` folder contains the scripts and assets needed to execute the application benchmarks.
+This sub folder also contains the main DeFog code base:
 
-The ```Application``` folders contain the modified src code to be used for benchmarking on the cloud and edge, as well as a docker folder for building and running the applications.
-
-The ```docker``` folder within each application allows the application(s) to be easily compiled on the respective platform. This is currently tested using ubuntu:18.04. To build the image run ```. build.sh```, then to run the automated process run ```. run.sh``` or to manually enter the container run ```. enter.sh```. To stop and remove all instances and containers run ```. remove.sh```.
-
-## List of Benchmark Application
-
-* iPokeMon
-* Aeneas
-* Pocket Sphinx
-* YOLO
+* DeFog - Folder containing all defog benchmarking scripts
+* Scripts - Folder containing several utility functions
