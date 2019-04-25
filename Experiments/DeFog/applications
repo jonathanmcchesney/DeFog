@@ -14,7 +14,7 @@
 #
 #########################################################################################################################
 
-# remove docker images and contianers
+# remove docker images and containers
 function remove_docker_images_and_containers {
 	docker stop $(docker ps -aq)
 	docker rm $(docker ps -aq)

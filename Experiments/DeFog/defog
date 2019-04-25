@@ -223,7 +223,7 @@ while true; do
 done
 }
 
-# utility function to determine the platform applications to be benchmarked based on user input
+# utility function to determine the platform application to be benchmarked based on user input
 function applications_user_input {
 while true; do
 	echo -e

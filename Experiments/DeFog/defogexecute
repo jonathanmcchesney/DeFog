@@ -314,7 +314,7 @@ function set_pipeline {
 		fi
 }
 
-# invoke the relevant application benchmark utility function
+# function to invoke the relevant application benchmark utility function
 function benchmark_applications {
 		
 		set_pipeline
