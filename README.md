@@ -34,6 +34,8 @@ Include a JAVA_HOME path variable, with value C:\Program Files\Java\jdk1.8.0_181
 Append C:\Users\jmcch\AppData\Local\Taurus\bin, C:\Program Files (x86)\Common Files\Oracle\Java\javapath and C:\Program Files\Java\jdk1.8.0_181 to the system and user variables
 ```
 
+If `Files/Java/jdk1.8.0_102/bin/java: No such file or directory` appears, this means the path/user variables are not set up correctly for JMeter, please consult the Apache JMeter documentation to fix this issue.
+
 * Install `Taurus` bzt
 * Update the configuration file `DeFog/configs/config.sh` is updated to the relevant values.
 * Update the reference to the configuration folder/file(s) at the top of the defog.sh script. The default value is `~/Documents/configs`, update to the new location.
