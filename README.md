@@ -45,6 +45,13 @@ aws_secret_access_key = YYYY
 Creating a ssh key documentation: ```https://docs.joyent.com/public-cloud/getting-started/ssh-keys/generating-an-ssh-key-manually/manually-generating-your-ssh-key-in-windows```
 
 If an issue us thrown regarding '\r' line endings, this is due to GitLab automatically converting line endings LF to CRLF. The line endings should be Unix (LF), consult git documentation to update the local git attributes to ensure the correct line endings are used.
+```
+* text=auto
+*.txt text
+*.c text
+*.h text
+*.jpg binary
+```
 
 If an error is thrown when connecting to the Cloud instance this is likely due to the .aws folder's contents not being set up correctly, ensure the IAM user created has the necessary priviliges/authentication to remotely access the EC2 instance and the keys are added in the format above. If the issue persists then it may be benefical to consult the AWS documentation regarding remotely accessing an EC2, as this will outline the individual steps required to set up the .aws folder.
 
