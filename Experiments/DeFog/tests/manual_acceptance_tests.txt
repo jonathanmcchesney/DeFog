@@ -380,26 +380,26 @@ Test  13: Run Defog on Cloud-Edge Only pipeline, benchmark Aeneas PASS
 Test 14: General DeFog Use Cases PASS
 
 	Case 1: User Runs Sysbench on the Cloud Only pipeline and does not run fog application benchmarks
-		Result: 
+		Result: Various platform metrics are generated on the Cloud by the TPI testing tool and are saved to the verbose results file.
 	Case 2: User Runs Sysbench on the Edge Only pipeline and does not run fog application benchmarks
-		Result: 
+		Result: Various platform metrics are generated on the Edge by the TPI testing tool and are saved to the verbose results file.
 	Case 3: User Runs Sysbench on the Cloud Only pipeline and runs fog application benchmarks
-		Result: 
+		Result: Various platform metrics are generated on the Cloud by the TPI testing tool and are saved to the verbose results file. Then the application benchmarking process continues and completes as normal.
 	Case 4: User Runs Sysbench on the Edge Only pipeline and runs fog application benchmarks
-		Result:
+		Result: Various platform metrics are generated on the Edge by the TPI testing tool and are saved to the verbose results file. Then the application benchmarking process continues and completes as normal.
 	Case 5: User Runs UnixBench on the Cloud Only pipeline and does not run fog application benchmarks
-		Result: 
+		Result: Various platform metrics are generated on the Cloud by the TPI testing tool and are saved to the verbose results file.
 	Case 6: User Runs UnixBench on the Edge Only pipeline and does not run fog application benchmarks
-		Result: 
+		Result: Various platform metrics are generated on the Edge by the TPI testing tool and are saved to the verbose results file.
 	Case 7: User Runs UnixBench on the Cloud Only pipeline and runs fog application benchmarks
-		Result: 
+		Result: Various platform metrics are generated on the Cloud by the TPI testing tool and are saved to the verbose results file. Then the application benchmarking process continues and completes as normal.
 	Case 8: User Runs UnixBench on the Edge Only pipeline and runs fog application benchmarks
-		Result: 			
+		Result: Various platform metrics are generated on the Edge by the TPI testing tool and are saved to the verbose results file. Then the application benchmarking process continues and completes as normal.
 	Case 9: User inputs an out of range numeric character when presented with user input
-		Result: 
+		Result: A message is presented to the user informing them that incorrect input was detected and to try again, the input is then displayed to the user again.
 	Case 10: User inputs a non numeric character when presented user input
-		Result:
-	Case 11: User inputs a non numeric character and non enligsh alphabetical character when presented user input
-		Result:	
+		Result: A message is presented to the user informing them that incorrect input was detected and to try again, the input is then displayed to the user again.
+	Case 11: User inputs a non numeric character and non English alphabetical character when presented user input
+		Result:	A message is presented to the user informing them that incorrect input was detected and to try again, the input is then displayed to the user again.
 	Case 12: User manually removes a results file from the results folder before/during the benchmarking process
-		Result:	
+		Result:	The system will label each of the results files by the lowest numeric value available, e.g. if results files exist for 0,1,3,4 then then the results for the current benchmark run will be labelled as results-2.
