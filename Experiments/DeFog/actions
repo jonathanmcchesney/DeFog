@@ -49,7 +49,7 @@ cat <<INFO
 INFO
 }
 
-# Run DeFog system (CPU) benchmarks
+# Run DeFog system CPU benchmarks
 function simple_CPU_benchmark {
 	local zippedFile=zipFile
 	

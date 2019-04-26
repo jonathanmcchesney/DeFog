@@ -19,10 +19,10 @@
 #
 #########################################################################################################################
 
-# link local address to the config file - UPDATE THIS TO THE LOCATION OF THE CONFIG SCRIPT
+# link local address to the config file :- UPDATE THIS TO THE LOCATION OF THE CONFIG SCRIPT
 source ~/Documents/configs/config.sh
 
-# create local variables from config - UPDATE CONFIG LOCATIONS
+# create local variables from config :- UPDATE CONFIG LOCATIONS
 cloudaddress=$cloudaddress
 clouduser=$clouduser
 edgeaddress1=$edgeaddress1
