@@ -29,6 +29,11 @@ exit back to the user device
 * Ensure the latest version of bash is installed
 * Install JMeter to the JMeter folder, a template structure is provided, but this may not be compatible with the edge devices local java version etc.
 * Ensure JMeter path/environment variables are set up and linked to the DeFog JMeter bin folder. Defog uses `jdk1.8.0_102`.
+```
+Include a JAVA_HOME path variable, with value C:\Program Files\Java\jdk1.8.0_181
+Append C:\Users\jmcch\AppData\Local\Taurus\bin, C:\Program Files (x86)\Common Files\Oracle\Java\javapath and C:\Program Files\Java\jdk1.8.0_181 to the system and user variables
+```
+
 * Install `Taurus` bzt
 * Update the configuration file `DeFog/configs/config.sh` is updated to the relevant values.
 * Update the reference to the configuration folder/file(s) at the top of the defog.sh script. The default value is `~/Documents/configs`, update to the new location.
