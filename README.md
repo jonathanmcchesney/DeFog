@@ -27,8 +27,8 @@ exit back to the user device
 ### User Device Dependencies
 * Install `bc`
 * Ensure the latest version of bash is installed
-* Install the latest version JMeter to the JMeter folder, a template structure is provided, but this may not be compatible with the edge devices local java version etc. As such, the contents of this folder can be overwritten with the newest version of JMeter running Java 8.
-* Ensure JMeter path/environment variables are set up and linked to the DeFog JMeter bin folder. Defog uses `jdk1.8.0_102`.
+* Install the latest version JMeter to the JMeter folder, a template structure is provided, but this may not be compatible with the edge devices local java version etc. Ensure the version of JMeter installed has the ApacheJMeter.jar within the bin folder. As such, the contents of this folder can be overwritten with the newest version of JMeter running Java 8.
+* Ensure JMeter user and system path/environment variables are set up (JAVA_HOME and PATH). Defog has been using `jdk1.8.0_101` and `jdk1.8.0_102`.
 ```
 Include a JAVA_HOME path variable, with value C:\Program Files\Java\jdk1.8.0_181 (or the latest version of JAVA 8 jdk/jre)
 Append C:\Users\jmcch\AppData\Local\Taurus\bin, C:\Program Files (x86)\Common Files\Oracle\Java\javapath and C:\Program Files\Java\jdk1.8.0_181 to the system and user variables
