@@ -17,6 +17,13 @@ navigate to the DeFog folder:
 navigate to the DeFog folder:
 ```$ sh defog -?```
 
+### How to run iPokeMon JMeter
+first build the docker image and container, use `$ . enter` to manually enter the container
+navigate to the Cloud-Server using `$ cd Experiments/iPokeMon/ipokemon/Application/iPokeMon-CloudServer/`
+start up the server `$ . runCloud.sh`, use `crtl-c` to return from console output
+use `ctrl-p and ctrl-q` to detach container
+exit back to the user device
+
 ### User Device Dependencies
 * Install `bc`
 * Ensure the latest version of bash is installed
