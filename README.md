@@ -18,15 +18,18 @@ navigate to the DeFog folder:
 ```$ sh defog -?```
 
 ### How to run iPokeMon JMeter
-first build the docker image and container, use `$ . enter` to manually enter the container
-navigate to the Cloud-Server using `$ cd Experiments/iPokeMon/ipokemon/Application/iPokeMon-CloudServer/`
-start up the server `$ . runCloud.sh`, use `crtl-c` to return from console output
-use `ctrl-p and ctrl-q` to detach container
+* First build the docker image and container, use `$ . enter` to manually enter the container
+* Navigate to the Cloud-Server using `$ cd Experiments/iPokeMon/ipokemon/Application/iPokeMon-CloudServer/`
+* Start up the server `$ . runCloud.sh`, and use `crtl-c` to return from console output
+* Enter `ctrl-p and ctrl-q` to detach container
 exit back to the user device
 
 ### User Device Dependencies
 * Install `bc`
 * Ensure the latest version of bash is installed
+* Install JMeter to the JMeter folder, a template structure is provided, but this may not be compatible with the edge devices local java version etc.
+* Ensure JMeter path/environment variables are set up and linked to the DeFog JMeter bin folder. Defog uses `jdk1.8.0_102`.
+* Install `Taurus` bzt
 * Update the configuration file `DeFog/configs/config.sh` is updated to the relevant values.
 * Update the reference to the configuration folder/file(s) at the top of the defog.sh script. The default value is `~/Documents/configs`, update to the new location.
 Using root access allows elevated permissions, e.g. root@123.123.12 etc. Ensure DeFog can use SSH without prompting for user interaction, e.g. entering a password. If prompted to enter a password consult ssh password-less documentation. If its the first time use, the terminal may prompt to add the address to known hosts, which is populated in the user device (or edge nodes) .ssh folder.
