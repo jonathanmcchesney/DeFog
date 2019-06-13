@@ -242,10 +242,10 @@ function build_docker_app_always {
 	# pull down the docker file sub tree for a fog application
 	echo Pulling down ${applicationname} docker file...
 	sudo git init 
-	sudo git remote add -f csc4006-EdgeBenchmarking https://gitlab.eeecs.qub.ac.uk/40126401/csc4006-EdgeBenchmarking.git
+	sudo git remote add -f origin https://github.com/jonathanmcchesney/DeFog.git
 	sudo git config core.sparsecheckout true
 	echo ${buildpath} >> .git/info/sparse-checkout
-	sudo git pull https://gitlab.eeecs.qub.ac.uk/40126401/csc4006-EdgeBenchmarking.git master
+	sudo git pull https://github.com/jonathanmcchesney/DeFog.git master
 	
 	echo ${buildpath}...
 	cd ${buildpath}
@@ -283,10 +283,10 @@ function build_docker_app {
 		# pull down the docker file sub tree for a fog application
 		echo Pulling down ${applicationname} docker file...
 		sudo git init 
-		sudo git remote add -f csc4006-EdgeBenchmarking https://gitlab.eeecs.qub.ac.uk/40126401/csc4006-EdgeBenchmarking.git
+		sudo git remote add -f origin https://github.com/jonathanmcchesney/DeFog.git
 		sudo git config core.sparsecheckout true
 		echo ${buildpath} >> .git/info/sparse-checkout
-		sudo git pull https://gitlab.eeecs.qub.ac.uk/40126401/csc4006-EdgeBenchmarking.git master
+		sudo git pull https://github.com/jonathanmcchesney/DeFog.git master
 		
 		echo ${buildpath}...
 		cd ${buildpath}

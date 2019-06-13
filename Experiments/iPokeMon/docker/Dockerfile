@@ -46,11 +46,11 @@ RUN \
 	
 RUN \
 	git init && \
-	git remote add -f csc4006-EdgeBenchmarking https://gitlab.eeecs.qub.ac.uk/40126401/csc4006-EdgeBenchmarking.git && \
+	git remote add -f origin https://github.com/jonathanmcchesney/DeFog.git && \
 	ls && \
 	git config core.sparsecheckout true && \
 	echo Experiments/iPokeMon/ipokemon >> .git/info/sparse-checkout && \
-	git pull https://gitlab.eeecs.qub.ac.uk/40126401/csc4006-EdgeBenchmarking.git master
+	git pull https://github.com/jonathanmcchesney/DeFog.git master
 	
 RUN \
 	cd Experiments/iPokeMon/ipokemon/Application/iPokeMon-CloudServer && \

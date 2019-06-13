@@ -40,10 +40,10 @@ RUN \
 
 RUN \
 	git init && \
-	git remote add -f csc4006-EdgeBenchmarking https://gitlab.eeecs.qub.ac.uk/40126401/csc4006-EdgeBenchmarking.git && \
+	git remote add -f origin https://github.com/jonathanmcchesney/DeFog.git && \
 	git config core.sparsecheckout true && \
 	echo Experiments/YOLO/yolo/ >> .git/info/sparse-checkout && \
-	git pull https://gitlab.eeecs.qub.ac.uk/40126401/csc4006-EdgeBenchmarking.git master
+	git pull https://github.com/jonathanmcchesney/DeFog.git master
 	
 RUN \
 	cd Experiments/YOLO/yolo && \

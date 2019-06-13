@@ -5,6 +5,7 @@ Jonathan McChesney (MEng Computer Games Development)
 This repository contains:
 * `Experiments`: Modified fog applications and the main DeFog codebase.
 * `Minutes`: Weekly meeting minutes with supervisor Blesson Varghese.
+* `ResearchArticle`: DeFog research article and software development documentation.
 
 # DeFog: 
 ## Demystifying Fog System Interactions Using Container-based Benchmarking
