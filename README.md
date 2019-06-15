@@ -1,6 +1,8 @@
-# CSC4006 - Research & Development Project
+# Computer Science Masters - Research & Development Project
 
-Jonathan McChesney (MEng Computer Games Development)
+Jonathan McChesney: (MEng) Computer Science: Computer Games Development - First Class Honours
+
+This research and development project, along with the corresponding dissertation/research article were created as part of my final year masters project for Queen's University Belfast - Computer Science, with a specialisation in Computer Games Development. This project achieved a First Class Honours classification.
 
 This repository contains:
 * `Experiments`: Modified fog applications and the main DeFog codebase.
